@@ -2,22 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/gines-lopez/DWES/index.html</loc>
-         <lastmod>2023-11-27</lastmod>
+         <lastmod>2023-11-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/gines-lopez/DWES/evaluacion.html</loc>
-         <lastmod>2023-11-27</lastmod>
+         <lastmod>2023-11-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/gines-lopez/DWES/planificacionaula.html</loc>
-         <lastmod>2023-11-27</lastmod>
+         <lastmod>2023-11-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/gines-lopez/DWES/uutt/ut01.html</loc>
-         <lastmod>2023-11-27</lastmod>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/011_ModeloClienteServidor.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/012_Arquitectura3Capas.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/013_MCV.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/014_Decisiones.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/015_Herramientas.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/016_PuestaEnMarcha.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/017_ReferenciaLinks.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/018_Autoevaluacion.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/019_PruebaEspecifica.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/ProgramacionAula.html</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/ResumenUD.html</loc>
+         <lastmod>2023-11-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
