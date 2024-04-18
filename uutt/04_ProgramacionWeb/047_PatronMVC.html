@@ -8,24 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://github.com/gines-lopez/DWES/planificacionaula.html">
+        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/047_PatronMVC.html">
       
       
+        <link rel="prev" href="046_SeguridadFiltrado.html">
       
       
-      <link rel="icon" href="img/favicon.ico">
+        <link rel="next" href="048_Autoevaluacion.html">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>Programación de Aula - Desarrollo Web en Entorno Servidor</title>
+        <title>4.7- Patron MVC en PHP - Desarrollo Web en Entorno Servidor</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -44,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#programacion-de-aula" class="md-skip">
+        <a href="#el-patron-de-diseno-mvc" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -89,9 +93,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="index.html" title="Desarrollo Web en Entorno Servidor" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
+    <a href="../../index.html" title="Desarrollo Web en Entorno Servidor" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
       
-  <img src="img/logofp.png" alt="logo">
+  <img src="../../img/logofp.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Programación de Aula
+              4.7- Patron MVC en PHP
             
           </span>
         </div>
@@ -208,9 +212,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Desarrollo Web en Entorno Servidor" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
+    <a href="../../index.html" title="Desarrollo Web en Entorno Servidor" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
       
-  <img src="img/logofp.png" alt="logo">
+  <img src="../../img/logofp.png" alt="logo">
 
     </a>
     Desarrollo Web en Entorno Servidor
@@ -224,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -243,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="evaluacion.html" class="md-nav__link">
+      <a href="../../evaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -262,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="metodologia.html" class="md-nav__link">
+      <a href="../../metodologia.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -341,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/ProgramacionAula.html" class="md-nav__link">
+      <a href="../01_Arquitectura/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -361,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/ResumenUD.html" class="md-nav__link">
+      <a href="../01_Arquitectura/ResumenUD.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -381,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/011_ModeloClienteServidor.html" class="md-nav__link">
+      <a href="../01_Arquitectura/011_ModeloClienteServidor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -401,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/012_Arquitectura3Capas.html" class="md-nav__link">
+      <a href="../01_Arquitectura/012_Arquitectura3Capas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -421,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/013_MCV.html" class="md-nav__link">
+      <a href="../01_Arquitectura/013_MCV.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -441,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/014_Decisiones.html" class="md-nav__link">
+      <a href="../01_Arquitectura/014_Decisiones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -461,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/015_Herramientas.html" class="md-nav__link">
+      <a href="../01_Arquitectura/015_Herramientas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -481,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/016_PuestaEnMarcha.html" class="md-nav__link">
+      <a href="../01_Arquitectura/016_PuestaEnMarcha.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -501,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/017_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../01_Arquitectura/017_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -521,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/018_Autoevaluacion.html" class="md-nav__link">
+      <a href="../01_Arquitectura/018_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/01_Arquitectura/019_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../01_Arquitectura/019_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/ProgramacionAula.html" class="md-nav__link">
+      <a href="../02_PHP/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -652,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/ResumenUD.html" class="md-nav__link">
+      <a href="../02_PHP/ResumenUD.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/021_LenguajePHP.html" class="md-nav__link">
+      <a href="../02_PHP/021_LenguajePHP.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -692,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/022_VariablesDatosOperadores.html" class="md-nav__link">
+      <a href="../02_PHP/022_VariablesDatosOperadores.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -712,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/023_EstructurasControl.html" class="md-nav__link">
+      <a href="../02_PHP/023_EstructurasControl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -732,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/024_Arrays.html" class="md-nav__link">
+      <a href="../02_PHP/024_Arrays.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/025_Funciones.html" class="md-nav__link">
+      <a href="../02_PHP/025_Funciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -772,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/026_Strings.html" class="md-nav__link">
+      <a href="../02_PHP/026_Strings.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -792,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/027_OperacionesMatematicas.html" class="md-nav__link">
+      <a href="../02_PHP/027_OperacionesMatematicas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/028_Formularios.html" class="md-nav__link">
+      <a href="../02_PHP/028_Formularios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -832,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/029_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../02_PHP/029_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/0210_Autoevaluacion.html" class="md-nav__link">
+      <a href="../02_PHP/0210_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -872,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/02_PHP/0211_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../02_PHP/0211_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -971,11 +975,11 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/ProgramacionAula.html" class="md-nav__link">
+      <a href="../03_PHPPOO/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Programación de aula
   </span>
   
 
@@ -991,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/ResumenUD.html" class="md-nav__link">
+      <a href="../03_PHPPOO/ResumenUD.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/031_ClasesObjetos.html" class="md-nav__link">
+      <a href="../03_PHPPOO/031_ClasesObjetos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/032_Encapsulacion.html" class="md-nav__link">
+      <a href="../03_PHPPOO/032_Encapsulacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/033_Constructor.html" class="md-nav__link">
+      <a href="../03_PHPPOO/033_Constructor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1071,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/034_ClasesEstaticas.html" class="md-nav__link">
+      <a href="../03_PHPPOO/034_ClasesEstaticas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/035_TrabajandoObjetos.html" class="md-nav__link">
+      <a href="../03_PHPPOO/035_TrabajandoObjetos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1111,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/036_Herencia.html" class="md-nav__link">
+      <a href="../03_PHPPOO/036_Herencia.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1131,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/037_Interfaces.html" class="md-nav__link">
+      <a href="../03_PHPPOO/037_Interfaces.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1151,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/038_Metodos.html" class="md-nav__link">
+      <a href="../03_PHPPOO/038_Metodos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/039_Namespace.html" class="md-nav__link">
+      <a href="../03_PHPPOO/039_Namespace.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1191,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/0310_GestionErrores.html" class="md-nav__link">
+      <a href="../03_PHPPOO/0310_GestionErrores.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1211,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/0311_Excepciones.html" class="md-nav__link">
+      <a href="../03_PHPPOO/0311_Excepciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1231,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/0312_SPL.html" class="md-nav__link">
+      <a href="../03_PHPPOO/0312_SPL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1251,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/0313_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../03_PHPPOO/0313_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1271,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/0314_Autoevaluacion.html" class="md-nav__link">
+      <a href="../03_PHPPOO/0314_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1291,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/0315_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../03_PHPPOO/0315_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1316,22 +1320,44 @@
       
   
   
+    
+  
   
     
     
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1345,7 +1371,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             UD4. Programación web
@@ -1358,11 +1384,299 @@
   
   
     <li class="md-nav__item">
-      <a href="uutt/03_PHPPOO/ProgramacionAula.html" class="md-nav__link">
+      <a href="ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Programación de aula
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ResumenUD.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resumen UD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="041_VariablesServidor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1- Variables en servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="042_Formularios.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2- Formularios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="043_CabecerasRespuesta.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3- Cabeceras de respuesta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="044_GestionEstado.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4- Gestión de estados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="045_AutentifcacionUsuarios.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5- Autentificación de usuarios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="046_SeguridadFiltrado.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6- Seguridad y filtrado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4.7- Patron MVC en PHP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="047_PatronMVC.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4.7- Patron MVC en PHP
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-del-mvc-en-php" class="md-nav__link">
+    Componentes del MVC en PHP
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes del MVC en PHP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-model" class="md-nav__link">
+    Modelo (Model)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vista-view" class="md-nav__link">
+    Vista (View)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlador" class="md-nav__link">
+    Controlador
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flujo-de-trabajo-en-mvc" class="md-nav__link">
+    Flujo de Trabajo en MVC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ventajas-del-patron-mvc-en-php" class="md-nav__link">
+    Ventajas del Patrón MVC en PHP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="048_Autoevaluacion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.8- Autoevaluación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="049_PruebaEspecifica.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.9- Prueba específica
   </span>
   
 
@@ -1394,58 +1708,65 @@
                   
 
 
-<h1 id="programacion-de-aula">Programación de Aula<a class="headerlink" href="#programacion-de-aula" title="Permanent link">&para;</a></h1>
-<p>A continuación se muestra una <strong>estimación temporal</strong> de la obtención de las <strong>unidades didácticas</strong> secuenciadas anteriormente. Se ha planificado basándose en <strong>4 sesiones lectivas por semana</strong>, con 2 horas de duración cada una de ellas.</p>
-<table style="width:100%">
-    <thead>
-        <th style="background:#2094f3;text-align:center; color:#ffffff">Sesión</th>
-        <th style="background:#2094f3;text-align:center; color:#ffffff">Fecha</th>
-        <th style="width: 33.33%;background:#2094f3;text-align:center; color:#ffffff">Conceptos</th> 
-        <th style="width: 33.33%;background:#2094f3;text-align:center; color:#ffffff">Actividad</th>
-    </thead>
-    <tbody>
-        <!-- UT 01 -->
-        <tr>
-            <td colspan="4" style="background:#4CC9F0;text-align:center; color:#ffffff">UT 01</td>
-        </tr>
-        <tr> 
-            <td colspan="1" style="text-align:center;">01</td>
-            <td colspan="1" style="text-align:center;">xx/xx/xxxx</td>
-            <td style="width: 33.33%;"><p>Se trabajará la teoría de <strong>Arquitectura web</strong></p>
-                <ul>
-                    <li>Cliente/Servidor</li>
-                    <li>Arquitectura de una web dinámica</li>
-                    <li>MVC</li>
-                </ul>
-            </td>                
-            <td style="width: 33.33%;">
-                <p>Se trabajarán las siguientes actividades: </p>
-                <ul>
-                    <li>AC101. Buscar los tres frameworks de PHP más utilizados</li>
-                    <li>PR101. Investigar las tecnologías empleadas en cliente y servidor por tu red social favorita.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="1" style="text-align:center;">02</td>
-            <td colspan="1" style="text-align:center;">xx/xx/xxxx</td>
-            <td style="width: 33.33%;"><p>Se trabajará la teoría de <strong>Herramientas</strong></p>
-                <ul>
-                    <li>Servidores</li>
-                    <li>Puesta en marcha entorno de trabajo</li>
-                </ul>
-            </td>                
-            <td style="width: 33.33%;">
-                <p>Se trabajarán las siguientes actividades: </p>
-                <ul>
-                    <li>AC102. Configurar un servidor PHP y mostrar características</li>
-                    <li>PR102. Conocer contenido de variables en el fichero php.ini</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
+<h1 id="el-patron-de-diseno-mvc">El patron de diseño MVC<a class="headerlink" href="#el-patron-de-diseno-mvc" title="Permanent link">&para;</a></h1>
+<p>El patrón de diseño <strong>Modelo-Vista-Controlador</strong> (MVC) es una arquitectura de software que separa una aplicación en tres componentes principales: el Modelo, la Vista y el Controlador. En el contexto de PHP, MVC se utiliza comúnmente para desarrollar aplicaciones web.</p>
+<h2 id="componentes-del-mvc-en-php">Componentes del MVC en PHP<a class="headerlink" href="#componentes-del-mvc-en-php" title="Permanent link">&para;</a></h2>
+<h3 id="modelo-model">Modelo (Model)<a class="headerlink" href="#modelo-model" title="Permanent link">&para;</a></h3>
+<p>El Modelo representa la capa de datos de la aplicación. Contiene la lógica de negocio, la lógica de acceso a datos y cualquier otra lógica relacionada con la manipulación de datos. En PHP, los modelos suelen ser clases que interactúan con la base de datos, realizan consultas y manipulan datos.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">    </span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>    <span class="k">class</span> <span class="nc">UsuarioModel</span> <span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>        <span class="k">public</span> <span class="k">function</span> <span class="nf">obtenerUsuarios</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>            <span class="c1">// Lógica para obtener usuarios de la base de datos</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>        <span class="p">}</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>    <span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a>    <span class="cp">?&gt;</span>
+</span></code></pre></div>
+<h3 id="vista-view">Vista (View)<a class="headerlink" href="#vista-view" title="Permanent link">&para;</a></h3>
+<p>La Vista es la capa de presentación de la aplicación. Se encarga de mostrar la información al usuario de manera visual. En PHP, las vistas suelen ser archivos de plantilla que contienen código HTML y pueden incluir fragmentos de PHP para mostrar datos dinámicos.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="x">    &lt;!-- archivo vista_usuarios.php --&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="x">    &lt;html&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="x">    &lt;head&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="x">        &lt;title&gt;Lista de Usuarios&lt;/title&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="x">    &lt;/head&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="x">    &lt;body&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="x">        &lt;h1&gt;Lista de Usuarios&lt;/h1&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="x">        &lt;ul&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$usuarios</span> <span class="k">as</span> <span class="nv">$usuario</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a><span class="x">                &lt;li&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$usuario</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/li&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a><span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a><span class="x">        &lt;/ul&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a><span class="x">    &lt;/body&gt;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a><span class="x">    &lt;/html&gt;</span>
+</span></code></pre></div>
+<h3 id="controlador">Controlador<a class="headerlink" href="#controlador" title="Permanent link">&para;</a></h3>
+<p>El Controlador actúa como intermediario entre el Modelo y la Vista. Se encarga de procesar las solicitudes del usuario, interactuar con el Modelo para obtener datos y enviar esos datos a la Vista para su presentación. En PHP, los controladores suelen ser clases que manejan las solicitudes HTTP y llaman a los métodos apropiados del Modelo y la Vista.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="x">    </span><span class="cp">&lt;?php</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>    <span class="k">class</span> <span class="nc">UsuarioController</span> <span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>        <span class="k">public</span> <span class="k">function</span> <span class="nf">listar</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>            <span class="c1">// Lógica para obtener datos del modelo</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>            <span class="nv">$usuarioModel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UsuarioModel</span><span class="p">();</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>            <span class="nv">$usuarios</span> <span class="o">=</span> <span class="nv">$usuarioModel</span><span class="o">-&gt;</span><span class="na">obtenerUsuarios</span><span class="p">();</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>            <span class="c1">// Cargar la vista con los datos obtenidos</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>            <span class="k">include</span> <span class="s1">&#39;vista_usuarios.php&#39;</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>        <span class="p">}</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>    <span class="p">}</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>    <span class="cp">?&gt;</span>
+</span></code></pre></div>
+<h2 id="flujo-de-trabajo-en-mvc">Flujo de Trabajo en MVC<a class="headerlink" href="#flujo-de-trabajo-en-mvc" title="Permanent link">&para;</a></h2>
+<ol>
+<li>El usuario realiza una solicitud HTTP, por ejemplo, para ver una lista de usuarios.</li>
+<li>El enrutador (Router) dirige la solicitud al controlador apropiado, en este caso, al método listar del controlador UsuarioController.</li>
+<li>El controlador interactúa con el modelo para obtener los datos necesarios, en este caso, la lista de usuarios.</li>
+<li>El controlador envía los datos a la vista correspondiente.</li>
+<li>La vista utiliza los datos proporcionados por el controlador para generar la respuesta HTML, que se envía al usuario.</li>
+</ol>
+<h2 id="ventajas-del-patron-mvc-en-php">Ventajas del Patrón MVC en PHP<a class="headerlink" href="#ventajas-del-patron-mvc-en-php" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Separación de preocupaciones: Permite separar la lógica de negocio, la presentación y el control de flujo en componentes distintos, lo que facilita el mantenimiento y la escalabilidad del código.</li>
+<li>Reutilización de código: Al dividir la aplicación en componentes independientes, se puede reutilizar el código de manera más eficiente.</li>
+<li>Facilita la colaboración: Dado que cada componente tiene responsabilidades claras y definidas, varios desarrolladores pueden trabajar en paralelo en diferentes partes de la aplicación.</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
@@ -1471,6 +1792,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="046_SeguridadFiltrado.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 4.6- Seguridad y filtrado">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                4.6- Seguridad y filtrado
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="048_Autoevaluacion.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 4.8- Autoevaluación">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                4.8- Autoevaluación
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1550,10 +1909,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
