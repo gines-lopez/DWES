@@ -1766,13 +1766,13 @@
 
 
 <h1 id="el-lenguaje-php">El lenguaje PHP<a class="headerlink" href="#el-lenguaje-php" title="Permanent link">&para;</a></h1>
-<p>Una página PHP es una página web normal en la que utilizamos la extensión “.php” en lugar de
-“.htm” o “.html”.</p>
-<p>En una página “.php” se pueden insertar bloques de código escrito en lenguaje PHP. Estos
-bloques de código reciben el nombre de scripts. Un script PHP se limita anteponiendo los símbolos &lt;?php a la primera instrucción y escribiendo después de la última instrucción los símbolos ?&gt;.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">    </span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>        <span class="nb">phpinfo</span><span class="p">();</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>    <span class="cp">?&gt;</span>
+<p>Una página PHP es una página web normal en la que utilizamos la extensión <code>.php</code> en lugar de
+<code>.htm</code> o <code>.html</code>.</p>
+<p>En una página <code>.php</code> se pueden insertar bloques de código escrito en lenguaje PHP. Estos
+bloques de código reciben el nombre de scripts. Un script PHP se limita anteponiendo los símbolos <code>&lt;?php</code> a la primera instrucción y escribiendo después de la última instrucción los símbolos <code>?&gt;</code>.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>    <span class="nb">phpinfo</span><span class="p">();</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="curiosidades">Curiosidades<a class="headerlink" href="#curiosidades" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1785,7 +1785,7 @@ bloques de código reciben el nombre de scripts. Un script PHP se limita antepon
 </ul>
 <p>Su documentación es extensa y está traducida: <a href="https://www.php.net/manual/es/">https://www.php.net/manual/es/</a>.</p>
 <h2 id="codigo-embebido">Código embebido<a class="headerlink" href="#codigo-embebido" title="Permanent link">&para;</a></h2>
-<p>Los bloques de código se escriben entre <strong><code>&lt;?php</code></strong> y <strong><code>?&gt;</code></strong>, mientras que las sentencias se separan mediante <strong><code>;</code></strong>.</p>
+<p>Los bloques de código se escriben entre <code>&lt;?php</code> y <code>?&gt;</code>, mientras que las sentencias se separan mediante <code>;</code>.</p>
 <div class="language-html+php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1807,9 +1807,9 @@ bloques de código reciben el nombre de scripts. Un script PHP se limita antepon
 <h2 id="generando-contenido">Generando contenido<a class="headerlink" href="#generando-contenido" title="Permanent link">&para;</a></h2>
 <p>Tenemos tres posibilidades a la hora de generar contenido en nuestros documentos PHP:</p>
 <ul>
-<li><strong><code>echo</code></strong><code>expresión;</code></li>
-<li><strong><code>print</code></strong><code>(expresión);</code></li>
-<li><strong><code>&lt;?=</code></strong><code>expresión ?&gt;</code></li>
+<li><code>echo expresión;</code></li>
+<li><code>print (expresión);</code></li>
+<li><code>&lt;?= expresión ?&gt;</code></li>
 </ul>
 <p>Las que vamos a utilizar son <code>echo</code> cuando lo hagamos dentro de un bloque de instrucciones y <code>&lt;?=</code> cuando sólo vayamos a mostrar el valor de una variable dentro de un fragmento HTML.</p>
 <div class="language-html+php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -1829,13 +1829,13 @@ bloques de código reciben el nombre de scripts. Un script PHP se limita antepon
 <h2 id="comentarios">Comentarios<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
 <p>Podemos utilizar comentarios de una línea o de bloque:</p>
 <div class="language-html+php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="c1">// Este es un comentario de una sola línea</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="cm">/*</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="cm">  Este es</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a><span class="cm">  un comentario</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a><span class="cm">  que ocupa</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos="7 "></span></a><span class="cm">  varias líneas</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos="8 "></span></a><span class="cm">*/</span> 
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>    <span class="c1">// Este es un comentario de una sola línea</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a>    <span class="cm">/*</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="cm">    Este es</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a><span class="cm">    un comentario</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a><span class="cm">    que ocupa</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos="7 "></span></a><span class="cm">    varias líneas</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos="8 "></span></a><span class="cm">    */</span> 
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos="9 "></span></a><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="errores">Errores<a class="headerlink" href="#errores" title="Permanent link">&para;</a></h2>
@@ -1847,7 +1847,9 @@ bloques de código reciben el nombre de scripts. Un script PHP se limita antepon
 </span></code></pre></div>
 <p>Desde PHP 5 se lanzan como una excepción. Más adelante veremos el uso de <code>try</code> / <code>catch</code>.</p>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<p>AC201 (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes de marcas con código embebido.">CE2a</abbr> <abbr title="Se han utilizado etiquetas para la inclusión de código en el lenguaje de marcas.">CE2c</abbr> <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - El Supervisor Técnico (CTO) te solicita una prueba en PHP para saber si puedes seguir las mejores prácticas de desarrollo. Para ello te solicita que muestres 3 frases, cada una en un párrafo utilizando las tres posibilidades que existen de mostrar contenido. Tras ello, introduce dos comentarios, uno de bloque y otro de una línea.</p>
+<ul>
+<li><strong>AC201</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes de marcas con código embebido.">CE2a</abbr> <abbr title="Se han utilizado etiquetas para la inclusión de código en el lenguaje de marcas.">CE2c</abbr> <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - El Supervisor Técnico (CTO) te solicita una prueba en PHP para saber si puedes seguir las mejores prácticas de desarrollo. Para ello te solicita que muestres 3 frases, cada una en un párrafo utilizando las tres posibilidades que existen de mostrar contenido. Tras ello, introduce dos comentarios, uno de bloque y otro de una línea.</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
