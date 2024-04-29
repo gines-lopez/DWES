@@ -226,6 +226,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/0410_PruebaEspecifica.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/041_VariablesServidor.html</loc>
          <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
@@ -261,12 +266,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/048_Autoevaluacion.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/048_ReferenciaLinks.html</loc>
          <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/049_PruebaEspecifica.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/049_Autoevaluacion.html</loc>
          <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -277,6 +282,51 @@
     </url>
     <url>
          <loc>https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/ResumenUD.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/051_Composer.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/052_Monolog.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/053_phpDocumentor.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/054_PHPUnit.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/055_ReferenciaLinks.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/056_Autoevaluacion.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/057_PruebaEspecifica.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/ProgramacionAula.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/05_HerramientasWeb/ResumenUD.html</loc>
          <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
