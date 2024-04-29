@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -1593,6 +1593,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1765,11 +1774,11 @@ Las cookies se almacenan en el navegador, y la sesión en el servidor web.</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="nx">valor</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">)</span> <span class="c1">// Caducan dentro de una hora</span>
 </span></code></pre></div>
-<figure style="align: center;">
-    <img src="imagenes/04/04cookies.png" width="700">
-    <figcaption>Comunicación con cookies</figcaption>
+<figure>
+<p><img alt="Comunicación con cookies" src="../../img/ut04/04cookies.png" />
+  </p>
+<figcaption>Comunicación con cookies</figcaption>
 </figure>
-
 <p>Se utilizan para:</p>
 <ul>
 <li>Recordar los inicios de sesión</li>
@@ -1783,11 +1792,11 @@ Cada visitante tiene un ID de sesión único, el cual por defecto se almacena en
 Si el cliente no tiene las cookies activas, el ID se propaga en cada URL dentro del mismo dominio.
 Cada sesión tiene asociado un almacén de datos mediante el array global <code>$_SESSION</code>, en el cual podemos almacenar y recuperar información.</p>
 <p>La sesión comienza al ejecutar un script PHP. Se genera un nuevo ID y se cargan los datos del almacén:</p>
-<figure style="align: center;">
-    <img src="imagenes/04/04sesion.png" width="700">
-    <figcaption>Comunicación con sesión</figcaption>
+<figure>
+<p><img alt="Comunicación con sesión" src="../../img/ut04/04sesion.png" />
+  </p>
+<figcaption>Comunicación con sesión</figcaption>
 </figure>
-
 <p>Las operaciones que podemos realizar con la sesión son:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">session_start</span><span class="p">();</span> <span class="c1">// carga la sesión</span>
@@ -1825,6 +1834,30 @@ Cada sesión tiene asociado un almacén de datos mediante el array global <code>
 </ul>
 <p>Más información en la <a href="https://www.php.net/manual/es/session.configuration.php">documentación oficial</a>.</p>
 </div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>AC409</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Mediante el uso de cookies, informa al usuario de si es su primera visita, o si no lo es, muestre su valor (valor de un contador). Además, debes permitir que el usuario reinicialice su contador de visitas.</p>
+</li>
+<li>
+<p><strong>AC410</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Mediante el uso de cookies, crea una página con un desplegable con varios colores, de manera que el usuario pueda cambiar el color de fondo de la página (atributo <code>bgcolor</code>). Al cerrar la página, ésta debe recordar, al menos durante 24h, el color elegido y la próxima vez que se cargue la pagina, lo haga con el último color seleccionado.</p>
+</li>
+<li>
+<p><strong>AC411</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica el ejercicio <strong>AC410</strong> para almacenar el color de fondo en la sesión y no emplear cookies. Además, debe contener un enlace a un archivo que muestre el color y dar la posibilidad de:</p>
+<ul>
+<li>volver a la página anterior mediante un enlace</li>
+<li>mediante otro enlace, vaciar la sesión y volver a la página anterior.</li>
+</ul>
+</li>
+<li>
+<p><strong>AC412</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Haciendo uso de la sesión, vamos a dividir el formulario del ejercicio <strong>AC402</strong> en subformularios:</p>
+<ul>
+<li>El primero envía los datos (nombre y apellidos, email, url y sexo) a un segundo formulario.</li>
+<li>El segundo formulario lee los datos y los mete en la sesión. A continuación, muestra el resto de campos del formulario a rellenar (convivientes, aficiones y menú). Envía estos datos a un tercer formulario.</li>
+<li>El tercer formulario recoge los datos enviados en el paso anterior y junto a los que ya estaban en la sesión, se muestran todos los datos en una tabla/lista desordenada.</li>
+</ul>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
@@ -1978,7 +2011,7 @@ Cada sesión tiene asociado un almacén de datos mediante el array global <code>
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>

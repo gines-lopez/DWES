@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -1518,6 +1518,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4.3- Cabeceras de respuesta
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="043_CabecerasRespuesta.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1527,6 +1538,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-y-depuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración y depuración
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1687,6 +1735,7 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="cp">&lt;?php</span> <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: http://www.ejemplo.com/inicio.html&quot;</span><span class="p">);</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="k">exit</span><span class="p">();</span> 
 </span></code></pre></div>
+<h2 id="configuracion-y-depuracion">Configuración y depuración<a class="headerlink" href="#configuracion-y-depuracion" title="Permanent link">&para;</a></h2>
 <p>Se puede comprobar en las herramientas del desarrollador de los navegadores web mediante <em>Developer Tools --&gt; Network --&gt; Headers</em>.</p>
 <p>Es muy común configurar las cabeceras para evitar consultas a la caché o provocar su renovación:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">&lt;?php</span>
@@ -1709,6 +1758,19 @@
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><a href="#__codelineno-1-18"><span class="linenos" data-linenos="18 "></span></a><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Cache-Control: post-check=0, pre-check=0&quot;</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><a href="#__codelineno-1-19"><span class="linenos" data-linenos="19 "></span></a><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Pragma: no-cache&quot;</span><span class="p">);</span>
 </span></code></pre></div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>AC407</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Desde la secretaria del centro se te solicita que desarrolles un script que redirija al usuario a diferentes páginas dependiendo de la hora del día. En una deberás poner el horario de mañanas y en otra el de tardes.</p>
+</li>
+<li>
+<p><strong>AC408</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Desde la secretaría del centro necesitan saber cuando se ha modificado cierto fichero. Para ello debes implementar un script PHP que utilice la cabecera <code>Last-Modified</code> para gestionar la caché de manera efectiva y responder de forma condicional a las solicitudes del cliente.</p>
+<div class="admonition tip">
+<p class="admonition-title">Ayuda</p>
+<p>Hazte uso de un fichero que puedas modificar fácilmente como un fichero de texto.</p>
+</div>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
@@ -1862,7 +1924,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>

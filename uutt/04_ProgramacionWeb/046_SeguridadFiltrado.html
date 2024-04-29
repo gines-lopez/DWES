@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -1650,6 +1650,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1761,7 +1770,8 @@
 <h3 id="limpieza-eliminar-posibles-problemas-con-los-datos">Limpieza: Eliminar posibles problemas con los datos<a class="headerlink" href="#limpieza-eliminar-posibles-problemas-con-los-datos" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Limpiar contenido para eliminar marcas HTML** que podrían ser utilizadas para ataques de inyección de código (XSS). Funciones PHP relevantes:</p>
+<p>Limpiar contenido para eliminar marcas HTML que podrían ser utilizadas para ataques de inyección de código (XSS). 
+  Funciones PHP relevantes:</p>
 <ul>
 <li><code>htmlentities</code>
   <div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$clean_input = htmlentities($input);</span>
@@ -1772,12 +1782,13 @@
 </ul>
 </li>
 <li>
-<p>Uso de funciones de filtrado para cualquier variable. <strong>Función PHP relevante</strong>: <code>filter_var</code></p>
+<p>Uso de funciones de filtrado para cualquier variable. 
+  Función PHP relevante: </p>
 <ul>
-<li>Aplicar sobre un valor:
+<li><code>filter_var</code>: Aplicar sobre un valor:
   <div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$clean_email = filter_var($email, FILTER_SANITIZE_EMAIL);</span>
 </span></code></pre></div></li>
-<li>Aplica una serie de filtros:
+<li><code>filter_var</code>: Aplica una serie de filtros:
   <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$options = array(</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="x">    &#39;options&#39; =&gt; array(</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a><span class="x">        &#39;min_range&#39; =&gt; 1,</span>
@@ -1788,6 +1799,10 @@
 </span></code></pre></div></li>
 </ul>
 </li>
+</ul>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>AC416</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica la actividad <strong>AC415</strong> para que el acceso sea seguro.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Calificación -->
@@ -1942,7 +1957,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>
