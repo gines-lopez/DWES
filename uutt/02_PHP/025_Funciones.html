@@ -327,7 +327,7 @@
             
   
   <span class="md-ellipsis">
-    UD1. Arquitectura Web
+    UT 01. Arquitectura Web
   </span>
   
 
@@ -337,7 +337,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            UD1. Arquitectura Web
+            UT 01. Arquitectura Web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -630,7 +630,7 @@
             
   
   <span class="md-ellipsis">
-    UD2. PHP
+    UT 02. PHP
   </span>
   
 
@@ -640,7 +640,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            UD2. PHP
+            UT 02. PHP
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1126,7 +1126,7 @@
             
   
   <span class="md-ellipsis">
-    UD3. POO en PHP
+    UT 03. POO en PHP
   </span>
   
 
@@ -1136,7 +1136,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            UD3. POO en PHP
+            UT 03. POO en PHP
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1551,7 +1551,7 @@
             
   
   <span class="md-ellipsis">
-    UD4. Programación web
+    UT 04. Programación web
   </span>
   
 
@@ -1561,7 +1561,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            UD4. Programación web
+            UT 04. Programación web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1865,7 +1865,7 @@
             
   
   <span class="md-ellipsis">
-    UD5. Herramientas programación web
+    UT 05. Herramientas programación web
   </span>
   
 
@@ -1875,7 +1875,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            UD5. Herramientas programación web
+            UT 05. Herramientas programación web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2266,7 +2266,9 @@
 <p>Las variables definidas fuera de las funciones tienen alcance <strong>global</strong>: accesibles desde cualquier función.
 Los parámetros de una función y las variables declaradas dentro de una función (se conocen como variables locales) sólo son accesibles desde dentro de la misma función → alcance de <strong>función</strong>.</p>
 <p>En caso de conflicto, tienen prioridad las variables locales. Para evitar el conflicto, dentro de la función, podemos declarar la variable como <code>global</code>.</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Alcance local</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Alcance local</label><label for="__tabbed_1_2">Alcance global</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-php highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">&lt;?php</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">function</span> <span class="nf">miCiudad</span><span class="p">()</span> <span class="p">{</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos=" 3 "></span></a>    <span class="nv">$ciudad</span> <span class="o">=</span> <span class="s2">&quot;Elche&quot;</span><span class="p">;</span>
@@ -2280,7 +2282,7 @@ Los parámetros de una función y las variables declaradas dentro de una funció
 </span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a><a href="#__codelineno-12-11"><span class="linenos" data-linenos="11 "></span></a><span class="cp">?&gt;</span>
 </span></code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Alcance global</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-php highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">&lt;?php</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><a href="#__codelineno-13-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">function</span> <span class="nf">miCiudad</span><span class="p">()</span> <span class="p">{</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><a href="#__codelineno-13-3"><span class="linenos" data-linenos=" 3 "></span></a>    <span class="k">global</span> <span class="nv">$ciudad</span><span class="p">;</span>
@@ -2294,6 +2296,7 @@ Los parámetros de una función y las variables declaradas dentro de una funció
 </span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><a href="#__codelineno-13-11"><span class="linenos" data-linenos="11 "></span></a><span class="k">echo</span> <span class="s2">&quot;Después de llamar: </span><span class="si">$ciudad</span><span class="s2">.&lt;br&gt;&quot;</span>
 </span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a><a href="#__codelineno-13-12"><span class="linenos" data-linenos="12 "></span></a><span class="cp">?&gt;</span>
 </span></code></pre></div>
+</div>
 </div>
 </div>
 <div class="admonition important">

@@ -327,7 +327,7 @@
             
   
   <span class="md-ellipsis">
-    UD1. Arquitectura Web
+    UT 01. Arquitectura Web
   </span>
   
 
@@ -337,7 +337,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            UD1. Arquitectura Web
+            UT 01. Arquitectura Web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -628,7 +628,7 @@
             
   
   <span class="md-ellipsis">
-    UD2. PHP
+    UT 02. PHP
   </span>
   
 
@@ -638,7 +638,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            UD2. PHP
+            UT 02. PHP
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -981,7 +981,7 @@
             
   
   <span class="md-ellipsis">
-    UD3. POO en PHP
+    UT 03. POO en PHP
   </span>
   
 
@@ -991,7 +991,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            UD3. POO en PHP
+            UT 03. POO en PHP
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1482,7 +1482,7 @@
             
   
   <span class="md-ellipsis">
-    UD4. Programación web
+    UT 04. Programación web
   </span>
   
 
@@ -1492,7 +1492,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            UD4. Programación web
+            UT 04. Programación web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1796,7 +1796,7 @@
             
   
   <span class="md-ellipsis">
-    UD5. Herramientas programación web
+    UT 05. Herramientas programación web
   </span>
   
 
@@ -1806,7 +1806,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            UD5. Herramientas programación web
+            UT 05. Herramientas programación web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2058,14 +2058,16 @@ Si detectamos una situación anómala y queremos lanzar una excepción, deberemo
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Si definimos una excepción de aplicación dentro de un <em>namespace</em>, cuando referenciemos a <code>Exception</code>, deberemos referenciarla mediante su nombre totalmente cualificado (<code>\Exception</code>), o utilizando <code>use</code>:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Mediante nombre totalmente cualificado</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Mediante nombre totalmente cualificado</label><label for="__tabbed_1_2">Mediante <code>use</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">namespace</span> <span class="nx">\Dwes\Ejemplos</span><span class="p">;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="k">class</span> <span class="nc">AppExcepcion extends \Exception </span><span class="p">{}</span>
 </span></code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Mediante <code>use</code></label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">namespace</span> <span class="nx">\Dwes\Ejemplos</span><span class="p">;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a>
@@ -2073,6 +2075,7 @@ Si detectamos una situación anómala y queremos lanzar una excepción, deberemo
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos="5 "></span></a>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos="6 "></span></a><span class="k">class</span> <span class="nc">AppExcepcion extends Exception </span><span class="p">{}</span>
 </span></code></pre></div>
+</div>
 </div>
 </div>
 <h2 id="excepciones-multiples">Excepciones múltiples<a class="headerlink" href="#excepciones-multiples" title="Permanent link">&para;</a></h2>

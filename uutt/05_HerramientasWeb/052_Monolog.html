@@ -327,7 +327,7 @@
             
   
   <span class="md-ellipsis">
-    UD1. Arquitectura Web
+    UT 01. Arquitectura Web
   </span>
   
 
@@ -337,7 +337,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            UD1. Arquitectura Web
+            UT 01. Arquitectura Web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -628,7 +628,7 @@
             
   
   <span class="md-ellipsis">
-    UD2. PHP
+    UT 02. PHP
   </span>
   
 
@@ -638,7 +638,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            UD2. PHP
+            UT 02. PHP
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -979,7 +979,7 @@
             
   
   <span class="md-ellipsis">
-    UD3. POO en PHP
+    UT 03. POO en PHP
   </span>
   
 
@@ -989,7 +989,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            UD3. POO en PHP
+            UT 03. POO en PHP
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1404,7 +1404,7 @@
             
   
   <span class="md-ellipsis">
-    UD4. Programación web
+    UT 04. Programación web
   </span>
   
 
@@ -1414,7 +1414,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            UD4. Programación web
+            UT 04. Programación web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1720,7 +1720,7 @@
             
   
   <span class="md-ellipsis">
-    UD5. Herramientas programación web
+    UT 05. Herramientas programación web
   </span>
   
 
@@ -1730,7 +1730,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            UD5. Herramientas programación web
+            UT 05. Herramientas programación web
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2173,7 +2173,9 @@ No es una buena práctica usar el nombre de la clase como canal, esto se hace co
 <h2 id="procesadores">Procesadores<a class="headerlink" href="#procesadores" title="Permanent link">&para;</a></h2>
 <p>Los procesadores permiten añadir información a los mensajes. Para ello, se apilan después de cada manejador mediante el método <code>pushProcessor($procesador)</code>.</p>
 <p>Algunos procesadores conocidos son <code>IntrospectionProcessor</code> (muestran la linea, fichero, clase y metodo desde el que se invoca el log), <code>WebProcessor</code> (añade la URI, método e IP) o <code>GitProcessor</code> (añade la rama y el commit).</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">PHP</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PHP</label><label for="__tabbed_1_2">Consola en formato texto</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a><span class="nv">$log</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s2">&quot;MiLogger&quot;</span><span class="p">);</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a><span class="nv">$log</span><span class="o">-&gt;</span><span class="na">pushHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">RotatingFileHandler</span><span class="p">(</span><span class="s2">&quot;logs/milog.log&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">Logger</span><span class="o">::</span><span class="na">DEBUG</span><span class="p">));</span>
@@ -2183,15 +2185,18 @@ No es una buena práctica usar el nombre de la clase como canal, esto se hace co
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><a href="#__codelineno-7-7"><span class="linenos" data-linenos="7 "></span></a><span class="nv">$log</span><span class="o">-&gt;</span><span class="na">pushProcessor</span><span class="p">(</span><span class="k">new</span> <span class="nx">WebProcessor</span><span class="p">());</span>
 </span></code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Consola en formato texto</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>[2020-11-26T13:35:31.076138+01:00] MiLogger.DEBUG: Esto es un mensaje de DEBUG [] {&quot;file&quot;:&quot;C:\\xampp\\htdocs\\log\\procesador.php&quot;,&quot;line&quot;:12,&quot;class&quot;:null,&quot;function&quot;:null}
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>[2020-11-26T13:35:31.078344+01:00] MiLogger.INFO: Esto es un mensaje de INFO [] {&quot;file&quot;:&quot;C:\\xampp\\htdocs\\log\\procesador.php&quot;,&quot;line&quot;:13,&quot;class&quot;:null,&quot;function&quot;:null}
 </span></code></pre></div>
 </div>
 </div>
+</div>
 <h2 id="formateadores">Formateadores<a class="headerlink" href="#formateadores" title="Permanent link">&para;</a></h2>
 <p>Se asocian a los manejadores con <code>setFormatter</code>. Los formateadores más utilizados son <code>LineFormatter</code>, <code>HtmlFormatter</code> o <code>JsonFormatter</code>.</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">PHP</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">PHP</label><label for="__tabbed_2_2">Consola en JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-php highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos="2 "></span></a><span class="nv">$log</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s2">&quot;MiLogger&quot;</span><span class="p">);</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos="3 "></span></a><span class="nv">$rfh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RotatingFileHandler</span><span class="p">(</span><span class="s2">&quot;logs/milog.log&quot;</span><span class="p">,</span> <span class="nx">Logger</span><span class="o">::</span><span class="na">DEBUG</span><span class="p">);</span>
@@ -2199,10 +2204,11 @@ No es una buena práctica usar el nombre de la clase como canal, esto se hace co
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos="5 "></span></a><span class="nv">$log</span><span class="o">-&gt;</span><span class="na">pushHandler</span><span class="p">(</span><span class="nv">$rfh</span><span class="p">);</span>
 </span></code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Consola en JSON</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Esto es un mensaje de DEBUG&quot;</span><span class="p">,</span><span class="nt">&quot;context&quot;</span><span class="p">:{},</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;level_name&quot;</span><span class="p">:</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="s2">&quot;MiLogger&quot;</span><span class="p">,</span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="s2">&quot;2020-11-27T15:36:52.747211+01:00&quot;</span><span class="p">,</span><span class="nt">&quot;extra&quot;</span><span class="p">:{}}</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Esto es un mensaje de INFO&quot;</span><span class="p">,</span><span class="nt">&quot;context&quot;</span><span class="p">:{},</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;level_name&quot;</span><span class="p">:</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="s2">&quot;MiLogger&quot;</span><span class="p">,</span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="s2">&quot;2020-11-27T15:36:52.747538+01:00&quot;</span><span class="p">,</span><span class="nt">&quot;extra&quot;</span><span class="p">:{}}</span>
 </span></code></pre></div>
+</div>
 </div>
 </div>
 <div class="admonition tip">
