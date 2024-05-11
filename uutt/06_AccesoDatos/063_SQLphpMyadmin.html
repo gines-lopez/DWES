@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/06_AccesoDatos/063_CRUD.html">
+        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/06_AccesoDatos/063_SQLphpMyadmin.html">
       
       
         <link rel="prev" href="062_PersistenciaDatos.html">
       
       
-        <link rel="next" href="064_SQLphpMyadmin.html">
+        <link rel="next" href="064_CRUD.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>6.3- Operaciones CRUD - Desarrollo Web en Entorno Servidor</title>
+        <title>6.3- SQL y phpMyadmim - Desarrollo Web en Entorno Servidor</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#operaciones-crud" class="md-skip">
+        <a href="#sql-y-phpmyadmin" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6.3- Operaciones CRUD
+              6.3- SQL y phpMyadmim
             
           </span>
         </div>
@@ -2078,18 +2078,18 @@
           
   
   <span class="md-ellipsis">
-    6.3- Operaciones CRUD
+    6.3- SQL y phpMyadmim
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="063_CRUD.html" class="md-nav__link md-nav__link--active">
+      <a href="063_SQLphpMyadmin.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    6.3- Operaciones CRUD
+    6.3- SQL y phpMyadmim
   </span>
   
 
@@ -2111,56 +2111,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-crear-c" class="md-nav__link">
+  <a href="#sql" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Crear (C)
+      SQL
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-leer-r" class="md-nav__link">
+  <a href="#phpmyadmin" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Leer (R)
+      phpMyAdmin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="phpMyAdmin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creando-una-base-de-datos-dentro-de-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando una base de datos dentro de phpMyAdmin
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3-actualizar-u" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#opciones-en-phpmyadmin" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Actualizar (U)
+      Opciones en phpMyAdmin
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#4-borrar-d" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Borrar (D)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementacion-en-el-desarrollo-web" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implementación en el Desarrollo Web
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2180,11 +2168,11 @@
   
   
     <li class="md-nav__item">
-      <a href="064_SQLphpMyadmin.html" class="md-nav__link">
+      <a href="064_CRUD.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6.4- SQL y phpMyadmim
+    6.4- Operaciones CRUD
   </span>
   
 
@@ -2216,41 +2204,61 @@
                   
 
 
-<h1 id="operaciones-crud">Operaciones CRUD<a class="headerlink" href="#operaciones-crud" title="Permanent link">&para;</a></h1>
-<p>El concepto de <strong>operaciones CRUD</strong> es fundamental en el desarrollo de aplicaciones que involucran la gestión de datos. CRUD es un acrónimo que se refiere a las cuatro funciones básicas que se deben implementar en cualquier sistema de gestión de datos persistente:</p>
-<h2 id="1-crear-c">1. Crear (C)<a class="headerlink" href="#1-crear-c" title="Permanent link">&para;</a></h2>
-<p>Esta operación se refiere a la capacidad de añadir nuevos registros o datos al sistema. En el contexto de una base de datos, esto se traduce típicamente en insertar nuevas filas en una tabla. Ejemplo en PHP utilizando una sentencia SQL <code>INSERT</code>:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$sql = &quot;INSERT INTO usuarios (nombre, email) VALUES (&#39;Juan&#39;, &#39;juan@example.com&#39;)&quot;;</span>
+<h1 id="sql-y-phpmyadmin">SQL y phpMyadmin<a class="headerlink" href="#sql-y-phpmyadmin" title="Permanent link">&para;</a></h1>
+<h2 id="sql">SQL<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h2>
+<p>Este lenguaje de consulta estructurada (<em>Structured Query Language</em>) es el que vamos a utilizar para realizar las consultas a nuestras bases de datos para mostrar el contenido en las distintas interfaces web que creemos a lo largo de la unidad. Si quieres saber más detalles visita <a href="https://es.wikipedia.org/wiki/SQL">Wiki SQL</a></p>
+<p>Ejemplo de una sentencia SQL donde seleccionamos todas las filas y columnas de nuestra tabla llamada <strong>'pais'</strong></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pais</span>
 </span></code></pre></div>
-Este comando añadiría un nuevo usuario con nombre "Juan" y correo electrónico "juan@example.com" a la tabla usuarios.</p>
-<h2 id="2-leer-r">2. Leer (R)<a class="headerlink" href="#2-leer-r" title="Permanent link">&para;</a></h2>
-<p>La operación de lectura permite recuperar datos del sistema. Esto puede ser tan simple como obtener un único valor o tan complejo como ejecutar una consulta que recupere grandes conjuntos de datos basados en criterios específicos. Ejemplo en PHP con una sentencia SQL <code>SELECT</code>:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$sql = &quot;SELECT * FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
+<p>Estas sentencias pueden invocarse desde la consola de comandos mediante el intérprete <em>mysql</em> (previamente instalado en el sistema) o a través de la herramienta phpMyAdmin.</p>
+<p>Las sentencias SQL también las podemos usar dentro de nuestro código php, de tal manera que cuando se cargue nuestra interfaz web, lance una sentecia SQL para mostrar los datos que queramos.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>    <span class="c1">// Listado de clientes, ordenados por DNI de manera ASCendente</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>    <span class="nv">$clientesOrdenadosPorDNI</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM `pasajero` ORDER BY `dni`&quot;</span> <span class="nx">ASC</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a><span class="cp">?&gt;</span>
 </span></code></pre></div>
-Este comando recuperaría todos los datos de los usuarios cuyo nombre sea "Juan".</p>
-<h2 id="3-actualizar-u">3. Actualizar (U)<a class="headerlink" href="#3-actualizar-u" title="Permanent link">&para;</a></h2>
-<p>Actualizar se refiere a modificar datos existentes en el sistema. Esta operación es crucial para mantener la relevancia y la precisión de la información almacenada. Ejemplo en PHP utilizando una sentencia SQL <code>UPDATE</code>:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$sql = &quot;UPDATE usuarios SET email = &#39;nuevoemail@example.com&#39; WHERE nombre = &#39;Juan&#39;&quot;;</span>
+<h2 id="phpmyadmin">phpMyAdmin<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h2>
+<p>Este software funciona bajo Apache y PHP y es más que nada una interfaz web para gestionar las bases de datos que tengamos disponibles en nuestro servidor local. Muchos <em>hostings</em> ofrecen esta herramienta por defecto para poder gestionar las BBDD que tengamos configuradas bajo nuestra cuenta.</p>
+<h3 id="creando-una-base-de-datos-dentro-de-phpmyadmin">Creando una base de datos dentro de phpMyAdmin<a class="headerlink" href="#creando-una-base-de-datos-dentro-de-phpmyadmin" title="Permanent link">&para;</a></h3>
+<figure style="align: center;">
+    <a class="glightbox" href="../../img/ut06/0604.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../img/ut06/0604.gif"></a>
+    <figcaption>Creación base datos en phpMyadmin</figcaption>
+</figure>
+
+<ol>
+<li>
+<p>Para crear una nueva base de datos debemos entrar en phpMyAdmin como <strong>usuario root</strong> y pinchar en la opción <span class="warning"><strong><em>Nueva</em></strong></span> del menú de la izquierda.</p>
+</li>
+<li>
+<p>En la nueva ventana de creación pondremos un <strong>nombre</strong> a nuestra bbdd.</p>
+</li>
+<li>
+<p>También estableceremos el <strong>cotejamiento</strong> <span class="warning"><strong><em>utf8m4_unicode_ci</em></strong></span> para que nuestra bbdd soporte todo tipo de caracteres (como los asiáticos) e incluso emojis ;)</p>
+</li>
+<li>
+<p>Le damos al botón de <strong>Crear</strong> para crear la bbdd y empezar a escribir las distintas tablas que vayamos a introducir en ella.</p>
+</li>
+</ol>
+<p>El sistema generará el código SQL para crear todo lo que le hemos puesto y creará la base de datos con las tablas que le hayamos metido.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">persona</span><span class="o">`</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">nombre</span><span class="o">`</span><span class="w"> </span><span class="n">TINYTEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">apellidos</span><span class="o">`</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">telefono</span><span class="o">`</span><span class="w"> </span><span class="n">TINYTEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">))</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InnoDB</span><span class="p">;</span>
 </span></code></pre></div>
-Este comando actualizaría el correo electrónico del usuario llamado "Juan" al nuevo valor proporcionado.</p>
-<h2 id="4-borrar-d">4. Borrar (D)<a class="headerlink" href="#4-borrar-d" title="Permanent link">&para;</a></h2>
-<p>La última operación es el borrado de datos. Permite eliminar información innecesaria o desactualizada del sistema. Ejemplo en PHP con una sentencia SQL <code>DELETE</code>:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$sql = &quot;DELETE FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
-</span></code></pre></div>
-Este comando eliminaría de la base de datos todos los registros de los usuarios cuyo nombre sea "Juan".</p>
-<h2 id="implementacion-en-el-desarrollo-web">Implementación en el Desarrollo Web<a class="headerlink" href="#implementacion-en-el-desarrollo-web" title="Permanent link">&para;</a></h2>
-<p>En el desarrollo web, estas operaciones CRUD son implementadas a menudo a través de formularios web y APIs que interactúan con la base de datos backend. Cada acción CRUD en el frontend (como un formulario de entrada de datos o un botón de eliminar) se traduce en una de estas operaciones en el servidor, asegurando que los datos del usuario se gestionen adecuadamente.</p>
-<p>Además, es esencial implementar medidas de seguridad adecuadas, como la validación de datos y la protección contra inyecciones SQL, para asegurar que las operaciones CRUD no se conviertan en un vector de ataques que comprometan la integridad y la seguridad de la aplicación.</p>
-<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<p>Desarrolla una aplicación web que permita gestionar un almacén de datos de viajeros (dni, nombre, apellidos y fecha de nacimiento) usando un archivo (viajeros.json) donde implementarás las operaciones CRUD.</p>
-<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Create: usas un formulario para añadir usuarios al almacén
-<span class="linenos" data-linenos="2 "></span>
-<span class="linenos" data-linenos="3 "></span>Read: creas una página que muestra los viajeros de tu lista y con enlaces a una página que muestra el detalle para ese viajero. Para cada viajero, habrá tres botones: mostrar (para ver los detalles del usuario)
-<span class="linenos" data-linenos="4 "></span>
-<span class="linenos" data-linenos="5 "></span>Update: en el botón actualizar
-<span class="linenos" data-linenos="6 "></span>
-<span class="linenos" data-linenos="7 "></span>Delete: en el botón borrar
-</code></pre></div>
+<h3 id="opciones-en-phpmyadmin">Opciones en phpMyAdmin<a class="headerlink" href="#opciones-en-phpmyadmin" title="Permanent link">&para;</a></h3>
+<p>Cuando seleccionamos una base de datos de la lista, el sistema nos muestra varias pestañas con las cuales interactuar con la base de datos en cuestión:</p>
+<ul>
+<li><code>Estructura</code>: Podemos ver las distintas tablas que consolidan nuestra base de datos</li>
+<li><code>SQL</code>: Por si queremos inyectar código SQL para que el sistema lo interprete</li>
+<li><code>Buscar</code>: Sirve para buscar por términos, en nuestra base de datos, aplicando distintos filtros de búsqueda</li>
+<li><code>Generar consulta</code>: parecido a SQL pero de una manera más gráfica, sin tener que saber nada del lenguaje</li>
+<li><code>Exportar e importar</code>: Como su nombre indica, para hacer cualquiera de las 2 operaciones sobre la base de datos</li>
+<li>
+<p><code>Operaciones</code>: Distintas opciones avanzadas para realizar en nuestra base de datos, de la cual destacaremos la opción <strong><em>Cotejamiento</em></strong> donde podremos cambiar el cotejamiento de nuestra tabla.</p>
+<div class="admonition danger">
+<p class="admonition-title">Cotejamiento</p>
+<p><strong><em>OJO CON ÉSTO</em></strong> porque podemos eliminar datos sin querer, ya que al cambiar el cotejamiento podemos suprimir caracteres no soportados por el nuevo cotejamiento</p>
+</div>
+</li>
+</ul>
+<p>No vamos a profundizar en el resto de opciones pero, en la pestaña <strong>Más</strong> existe la opción <strong><em>Diseñador</em></strong> para poder editar las relaciones entre tablas de una manera gráfica (pinchando y arrastrando) que veremos más adelante.</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
@@ -2306,13 +2314,13 @@ Este comando eliminaría de la base de datos todos los registros de los usuarios
         
         
           
-          <a href="064_SQLphpMyadmin.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 6.4- SQL y phpMyadmim">
+          <a href="064_CRUD.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 6.4- Operaciones CRUD">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                6.4- SQL y phpMyadmim
+                6.4- Operaciones CRUD
               </div>
             </div>
             <div class="md-footer__button md-icon">
