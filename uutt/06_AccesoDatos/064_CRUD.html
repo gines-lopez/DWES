@@ -2261,11 +2261,11 @@
   
   
     <li class="md-nav__item">
-      <a href="067_OperacionesRegistros.html" class="md-nav__link">
+      <a href="067_Autenticacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6.7- Operaciones con registros
+    6.7- Autenticación
   </span>
   
 
@@ -2282,11 +2282,11 @@
   
   
     <li class="md-nav__item">
-      <a href="068_Transacciones.html" class="md-nav__link">
+      <a href="068_OperacionesRegistros.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6.8- Transacciones
+    6.8- Operaciones con registros
   </span>
   
 
@@ -2303,11 +2303,11 @@
   
   
     <li class="md-nav__item">
-      <a href="069_Autenticacion.html" class="md-nav__link">
+      <a href="069_Transacciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6.9- Autenticación
+    6.9- Transacciones
   </span>
   
 
@@ -2449,15 +2449,26 @@ Este comando eliminaría de la base de datos todos los registros de los usuarios
 <p>En el desarrollo web, estas operaciones CRUD son implementadas a menudo a través de formularios web y APIs que interactúan con la base de datos backend. Cada acción CRUD en el frontend (como un formulario de entrada de datos o un botón de eliminar) se traduce en una de estas operaciones en el servidor, asegurando que los datos del usuario se gestionen adecuadamente.</p>
 <p>Además, es esencial implementar medidas de seguridad adecuadas, como la validación de datos y la protección contra inyecciones SQL, para asegurar que las operaciones CRUD no se conviertan en un vector de ataques que comprometan la integridad y la seguridad de la aplicación.</p>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<p>Desarrolla una aplicación web que permita gestionar un almacén de datos de viajeros (dni, nombre, apellidos y fecha de nacimiento) usando un archivo (viajeros.json) donde implementarás las operaciones CRUD.</p>
-<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Create: usas un formulario para añadir usuarios al almacén
-<span class="linenos" data-linenos="2 "></span>
-<span class="linenos" data-linenos="3 "></span>Read: creas una página que muestra los viajeros de tu lista y con enlaces a una página que muestra el detalle para ese viajero. Para cada viajero, habrá tres botones: mostrar (para ver los detalles del usuario)
-<span class="linenos" data-linenos="4 "></span>
-<span class="linenos" data-linenos="5 "></span>Update: en el botón actualizar
-<span class="linenos" data-linenos="6 "></span>
-<span class="linenos" data-linenos="7 "></span>Delete: en el botón borrar
-</code></pre></div>
+<ul>
+<li>
+<p><strong>AC605</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una tabla llamada <code>clientes</code> con las siguientes columnas: <code>id</code> (clave primaria autoincremental), <code>nombre</code>, <code>apellido</code>, <code>email</code>, y <code>fecha_registro</code> (tipo fecha). Una vez creada la tabla, inserta cinco registros en la tabla con datos ficticios de clientes.</p>
+</li>
+<li>
+<p><strong>AC606</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Utiliza la tabla <code>clientes</code> que creaste. Escribe una consulta SQL que muestre todos los campos de todos los clientes. Luego, modifica esta consulta para que solo muestre los clientes que se registraron en el último mes.</p>
+</li>
+<li>
+<p><strong>AC607</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - En la tabla <code>clientes</code>, actualiza el <code>email</code> de uno de los clientes. Escoge un cliente cuyo <code>id</code> conozcas y cambia su email a uno nuevo. Escribe la consulta SQL que utilizaste para realizar esta actualización.</p>
+</li>
+<li>
+<p><strong>AC608</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Escribe una consulta SQL para eliminar un cliente de la tabla <code>clientes</code> cuyo <code>apellido</code> sea "González". Asegúrate de que la consulta solo afecte a los registros que cumplen con esta condición específica.</p>
+</li>
+<li>
+<p><strong>AC609</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una segunda tabla llamada <code>pedidos</code> que incluya las columnas <code>id</code> (clave primaria autoincremental), <code>id_cliente</code> (clave foránea que referencia a <code>clientes.id</code>), <code>producto</code>, <code>cantidad</code> y <code>fecha_pedido</code>. Asegúrate de establecer la relación de clave foránea correctamente. Inserta datos que representen pedidos de los clientes. Después, escribe una consulta SQL para obtener una lista de todos los clientes junto con los detalles de sus pedidos. Utiliza una consulta de unión (<code>JOIN</code>) para combinar datos de ambas tablas.</p>
+</li>
+<li>
+<p><strong>PR602</strong> (<abbr title="Actividades de la Situación de Aprendizaje">SA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - El CTO necesita que crees la base de datos del e-commerce, en ella deberás tener, al menos, las tablas <code>carrito</code>, <code>cliente</code>, <code>producto</code> y <code>pedido</code>. Te han aconsejado que documentes el proceso justificando la creación de las tablas que te han pedido.</p>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
