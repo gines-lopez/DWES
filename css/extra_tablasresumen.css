@@ -1,0 +1,91 @@
+.ut-div{
+    background: #186eb4;
+    color: #fff;
+}
+.ut-capital{
+    text-transform: uppercase;
+}
+
+.ut-div p{
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.ut-datrecap,.ut-data,
+.ut-datrecap section{
+    display: flex;
+}
+
+.ut-datrecap p, .ut-data p{
+    margin: 0;
+    padding: 10px 10px;
+}
+.ut-datrecap > .ut-ut{
+    width: 75%;
+}
+.ut-datrecap> .ut-hours{
+    width: 25%;
+}
+.ut-emp{
+    background: #2094f3;
+    width: 175px;
+    min-width: 175px;
+    color: #fff;
+}
+
+.ut-hours .ut-emp{
+    max-width: 70px;
+    min-width: 70px;
+    width: 70px;
+}
+
+#objetivos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#objetivos .ut-data{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#objetivos .ut-data p{
+    width: 100%;
+}
+
+#objetivos ul{
+    list-style: none;
+}
+
+#actividades .ut-actividad{
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+#actividades .ut-actividad p{
+    width: 15%;
+    margin: 0;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+#actividades .ut-actividad p:first-child{
+    width: 40%;
+    text-align: left;
+}
+#actividades .ut-actividad p:nth-child(2){
+    width: 30%;
+}
+
+#actividades .ut-actividad.ut-actititulo{
+    background: #2094f3;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    border-left: 1px solid #2094f3;
+    border-right: 1px solid #2094f3;
+}
