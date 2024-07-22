@@ -1,0 +1,125 @@
+/* CSS del index */
+#mapa-general{
+    font-size: 0.64rem;
+}
+#mapa-general #head{
+    display: flex;
+}
+#mapa-general #head > section:nth-child(1) {
+    width: 50%; 
+}
+
+#mapa-general #head > section:nth-child(1) p:last-child{
+    border-left: 1px solid #e0e0e0;
+}
+
+#mapa-general #head > section:last-child p:last-child{
+    border-right: 1px solid #e0e0e0;
+}
+#mapa-general #head > section:nth-child(2), #mapa-general #head > section:nth-child(3){
+    width: 25%;
+}
+
+#mapa-general #head > section p{
+    margin: 0;
+    padding: 10px 0;
+}
+
+#mapa-general #head > section > p:first-child{
+    background: #2094f3;
+    color: #fff;
+}
+
+#mapa-general #head > section > p{
+    text-align: center;
+}
+
+#body-ut-head{
+    display: flex;
+    background: #2094f3;
+    color: #fff;
+    align-items: center;
+}
+
+#body-ut-head > p {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    width: 6%;
+}
+
+#body-ut-head > p:last-child, #body-ut-head > p:nth-child(11) {
+    width: 10.5%;
+}
+
+#body-ut-head > p:first-child {
+    width: 25%;
+}
+
+#body-ut-div{
+    background:#186eb4;
+    color: #fff;
+    text-align: center;
+}
+
+#body-ut-div p{
+    margin: 0;
+    padding: 10px 0;
+}
+
+.body-ut{
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+}
+
+.body-ut > p {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    min-width: 6%;
+    width: 6%;
+}
+
+.body-ut > p:last-child, .body-ut > p:nth-child(11) {
+    min-width: 10.5%;
+    width: 10.5%;
+}
+
+.body-ut> p:first-child {
+    text-align: left;
+    min-width: 25%;
+    width: 25%;
+    padding-left: 10px;
+}
+
+#body-ut-ra{
+    background:#2094f3;
+    color: #fff;
+    text-align: center;
+}
+#body-ut-ra p{
+    margin: 0;
+    padding: 10px 0;
+}
+
+.body-ut-ra{
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+}
+.body-ut-ra p{
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    min-width: 10.5%;
+    width: 10.5%;
+}
+
+.body-ut-ra p:first-child{
+    text-align: left;
+    padding: 10px 10px;
+    width: 79%;
+}
