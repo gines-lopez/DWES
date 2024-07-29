@@ -426,7 +426,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/ProgramacionAula.html</loc>
+         <lastmod>2024-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/ResumenUT.html</loc>
+         <lastmod>2024-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/ProgramacionAula.html</loc>
+         <lastmod>2024-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/Reto4.html</loc>
+         <lastmod>2024-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/09_ProyectoIII/ProgramacionAula.html</loc>
+         <lastmod>2024-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/ProgramacionAula.html</loc>
          <lastmod>2024-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
