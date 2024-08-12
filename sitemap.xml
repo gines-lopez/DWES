@@ -426,6 +426,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/0710_PruebaEspecifica.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/071_LaravelInicio.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
@@ -437,6 +442,36 @@
     </url>
     <url>
          <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/073_EstructuraCarpetas.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/074_RutasControladoresVistas.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/075_Migraciones.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/076_MVCCRUD.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/077_CRUDFormularios.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/078_ReferenciaLinks.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/079_Autoevaluacion.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
