@@ -3195,30 +3195,30 @@ Laravel es un framework de PHP para ayudarnos en un tipo de desarrollo sobre apl
 <p>Todo proyecto debe comenzar con la creación de una carpeta en la que tendremos todos nuestros ficheros, por ello la creamos y desde el terminal nos colocamos en ella. Una vez que estemos en ella, haremos uso de la <a href="https://hub.docker.com/r/bitnami/laravel/">imagen de Docker de Bitnami</a> que incluye todo lo necesario para el desarrollo de de nuestros proyectos.</p>
 <h3 id="paso-1-creando-la-red-para-conectar-la-base-de-datos-con-la-aplicacion">Paso 1: Creando la red para conectar la base de datos con la aplicación<a class="headerlink" href="#paso-1-creando-la-red-para-conectar-la-base-de-datos-con-la-aplicacion" title="Permanent link">&para;</a></h3>
 <p>Laravel necesita una base de datos, ya sea MySQL o MariaDB, para almacenar la información. En este caso, usaremos la imagen de Bitnami de MariaDB para satisfacer este requerimiento. Pero debemos comenzar con el puente de conexión entre la base de datos y nuestro desarrollo.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>docker network create laravel-network
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>docker network create laravel-network
 </span></code></pre></div>
 <p>Siendo <code>laravel-network</code> el nombre de esta conexión. Este nombre ha de ser único en nuestro sistema, por lo que se recomienda que sea lo más significativo posible.</p>
 <h3 id="paso-2-creando-el-volumen-para-la-base-de-datos-y-la-persistencia-de-datos">Paso 2: Creando el volumen para la base de datos y la persistencia de datos<a class="headerlink" href="#paso-2-creando-el-volumen-para-la-base-de-datos-y-la-persistencia-de-datos" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>docker volume create --name mariadb_data
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>docker run -d --name mariadb \
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>  --env ALLOW_EMPTY_PASSWORD=yes \
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>  --env MARIADB_USER=bn_myapp \
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>  --env MARIADB_DATABASE=bitnami_myapp \
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>  --network laravel-network \
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos="7 "></span></a>  --volume mariadb_data:/bitnami/mariadb \
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos="8 "></span></a>  bitnami/mariadb:latest
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>docker volume create --name mariadb_data
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>docker run -d --name mariadb \
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>  --env ALLOW_EMPTY_PASSWORD=yes \
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span>  --env MARIADB_USER=bn_myapp \
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span>  --env MARIADB_DATABASE=bitnami_myapp \
+</span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span>  --network laravel-network \
+</span><span id="__span-1-7"><span class="linenos" data-linenos="7 "></span>  --volume mariadb_data:/bitnami/mariadb \
+</span><span id="__span-1-8"><span class="linenos" data-linenos="8 "></span>  bitnami/mariadb:latest
 </span></code></pre></div>
 <p>Es importante resaltar que del comando anterior debemos de utilizar los datos de nuestra aplicación. En este caso, hemos usado el usuario <code>bn_myapp</code> para la base de datos <code>bitnami_myapp</code> en la red <code>laravel-network</code> sobre el volumen <code>mariadb_data</code> usando la última imagen de Bitnami de MariaDB.</p>
 <h3 id="paso-3-lanzamos-el-contenedor-usando-el-directorio-actual-en-el-que-estamos">Paso 3: Lanzamos el contenedor usando el directorio actual en el que estamos<a class="headerlink" href="#paso-3-lanzamos-el-contenedor-usando-el-directorio-actual-en-el-que-estamos" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>docker run -d --name laravel \
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>  -p 8000:8000 \
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a>  --env DB_HOST=mariadb \
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a>  --env DB_PORT=3306 \
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a>  --env DB_USERNAME=bn_myapp \
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos="6 "></span></a>  --env DB_DATABASE=bitnami_myapp \
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos="7 "></span></a>  --network laravel-network \
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos="8 "></span></a>  --volume ${PWD}/mi-proyecto:/app \
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos="9 "></span></a>  bitnami/laravel:latest
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>docker run -d --name laravel \
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>  -p 8000:8000 \
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span>  --env DB_HOST=mariadb \
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span>  --env DB_PORT=3306 \
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span>  --env DB_USERNAME=bn_myapp \
+</span><span id="__span-2-6"><span class="linenos" data-linenos="6 "></span>  --env DB_DATABASE=bitnami_myapp \
+</span><span id="__span-2-7"><span class="linenos" data-linenos="7 "></span>  --network laravel-network \
+</span><span id="__span-2-8"><span class="linenos" data-linenos="8 "></span>  --volume ${PWD}/mi-proyecto:/app \
+</span><span id="__span-2-9"><span class="linenos" data-linenos="9 "></span>  bitnami/laravel:latest
 </span></code></pre></div>
 <p>En este comando estamos usando la base de datos anteriormente creada, haciendo el nexo de comunicación con nuestra red en el directorio que estamos. Finalmente, se despliega la última versión de la imagen.</p>
 <h3 id="paso-4-comprobar-que-todo-esta-listo-para-el-desarrollo">Paso 4: Comprobar que todo está listo para el desarrollo<a class="headerlink" href="#paso-4-comprobar-que-todo-esta-listo-para-el-desarrollo" title="Permanent link">&para;</a></h3>

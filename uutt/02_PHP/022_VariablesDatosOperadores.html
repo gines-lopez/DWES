@@ -3199,7 +3199,7 @@
 <h1 id="variables-datos-y-operadores">Variables, datos y operadores<a class="headerlink" href="#variables-datos-y-operadores" title="Permanent link">&para;</a></h1>
 <h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
 <p>Para definir su valor se utilizará una expresión del tipo:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="x"> $variable = valor;</span>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x"> $variable = valor;</span>
 </span></code></pre></div>
 A la hora de definir una variable se han de tener una serie de consideraciones</p>
 <ul>
@@ -3223,17 +3223,17 @@ de la variable en el resto del script.</p>
 <p class="admonition-title">Variable estática</p>
 <p>Si definimos una variable como estática dentro de una función, cuando salimos de su ámbito conserva el valor que tenga en el momento de salir y la línea que le da valor inicial la primera vez que se ejecuta no volverá actuar cuando se ejecute la función hasta que actualicemos la página. Para definir la variable $a como estática y con un valor inicial utilizaremos la orden (<code>static $a = 3;</code>), al salir de la función $a conservará el último valor que se haya asignado hasta que se actualice la página</p>
 </div>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>    <span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;Ginés&quot;</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>    <span class="nv">$nombreCompleto</span> <span class="o">=</span> <span class="s2">&quot;Ginés López&quot;</span><span class="p">;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>    <span class="nv">$numero</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>    <span class="nv">$numero2</span> <span class="o">=</span> <span class="mi">456</span><span class="p">;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>    <span class="nv">$pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>    <span class="nv">$suerte</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>    <span class="nv">$sinValor</span><span class="p">;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>    <span class="k">echo</span> <span class="nv">$sinValor</span><span class="p">;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a><span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="nv">$nombre</span> <span class="o">=</span> <span class="s2">&quot;Ginés&quot;</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="nv">$nombreCompleto</span> <span class="o">=</span> <span class="s2">&quot;Ginés López&quot;</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$numero</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$numero2</span> <span class="o">=</span> <span class="mi">456</span><span class="p">;</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="nv">$suerte</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="nv">$sinValor</span><span class="p">;</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    <span class="k">echo</span> <span class="nv">$sinValor</span><span class="p">;</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Tipos</p>
@@ -3253,18 +3253,18 @@ de la variable en el resto del script.</p>
 <li><code>gettype</code>: obtiene el tipo</li>
 <li><code>is_int</code>, <code>is_float</code>, <code>is_string</code>, <code>is_array</code>, <code>is_object</code>: devuelve un booleano a partir del tipo recibido</li>
 </ul>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="nv">$uno</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="nv">$unofloat</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">);</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">);</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_float</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nb">intval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">)));</span> <span class="c1">// true</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a><span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$uno</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="nv">$unofloat</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">);</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="nb">settype</span><span class="p">(</span><span class="nv">$uno</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">);</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// false</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_float</span><span class="p">(</span><span class="nv">$uno</span><span class="p">));</span> <span class="c1">// true</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_int</span><span class="p">(</span><span class="nb">intval</span><span class="p">(</span><span class="nv">$uno</span><span class="p">)));</span> <span class="c1">// true</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="constantes">Constantes<a class="headerlink" href="#constantes" title="Permanent link">&para;</a></h2>
 <p>Son variables cuyo valor no varían. Existen dos posibilidades:</p>
@@ -3272,12 +3272,12 @@ de la variable en el resto del script.</p>
 <li><code>define(NOMBRE, valor);</code></li>
 <li><code>const NOMBRE; // PHP &gt; 5.3</code></li>
 </ul>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;PI&quot;</span><span class="p">,</span> <span class="mf">3.1416</span><span class="p">);</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="k">const</span> <span class="no">IVA</span> <span class="o">=</span> <span class="mf">0.21</span><span class="p">;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a><span class="k">echo</span> <span class="nx">PI</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="nx">IVA</span><span class="p">;</span> <span class="c1">// No se pone el símbolo dolar</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a><span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;PI&quot;</span><span class="p">,</span> <span class="mf">3.1416</span><span class="p">);</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span><span class="k">const</span> <span class="no">IVA</span> <span class="o">=</span> <span class="mf">0.21</span><span class="p">;</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos="5 "></span><span class="k">echo</span> <span class="nx">PI</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="nx">IVA</span><span class="p">;</span> <span class="c1">// No se pone el símbolo dolar</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos="6 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <ul>
 <li>Se declaran siempre en MAYÚSCULAS</li>
@@ -3332,25 +3332,25 @@ de la variable en el resto del script.</p>
 </tbody>
 </table>
 <p>En el caso de <strong>cadenas</strong>, si queremos concatenarlas, se utiliza el operador <code>.</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="nv">$x</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a><span class="nv">$y</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a><span class="nv">$z</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos="5 "></span></a><span class="k">echo</span> <span class="s2">&quot;La suma de 33 y 11 es &quot;</span><span class="o">.</span><span class="mf">44.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos="6 "></span></a><span class="k">echo</span> <span class="s2">&quot;La suma de &quot;</span><span class="o">.</span><span class="nv">$x</span><span class="o">.</span><span class="s2">&quot; y &quot;</span><span class="o">.</span><span class="nv">$y</span><span class="o">.</span><span class="s2">&quot; es &quot;</span><span class="o">.</span><span class="p">(</span><span class="mi">33</span> <span class="o">+</span> <span class="mi">11</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos="7 "></span></a><span class="k">echo</span> <span class="s2">&quot;La suma de &quot;</span><span class="o">.</span><span class="nv">$x</span><span class="o">.</span><span class="s2">&quot; y &quot;</span><span class="o">.</span><span class="nv">$y</span><span class="o">.</span><span class="s2">&quot; es &quot;</span><span class="o">.</span><span class="nv">$z</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos="8 "></span></a><span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$x</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$y</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="nv">$z</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="k">echo</span> <span class="s2">&quot;La suma de 33 y 11 es &quot;</span><span class="o">.</span><span class="mf">44.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span><span class="k">echo</span> <span class="s2">&quot;La suma de &quot;</span><span class="o">.</span><span class="nv">$x</span><span class="o">.</span><span class="s2">&quot; y &quot;</span><span class="o">.</span><span class="nv">$y</span><span class="o">.</span><span class="s2">&quot; es &quot;</span><span class="o">.</span><span class="p">(</span><span class="mi">33</span> <span class="o">+</span> <span class="mi">11</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos="7 "></span><span class="k">echo</span> <span class="s2">&quot;La suma de &quot;</span><span class="o">.</span><span class="nv">$x</span><span class="o">.</span><span class="s2">&quot; y &quot;</span><span class="o">.</span><span class="nv">$y</span><span class="o">.</span><span class="s2">&quot; es &quot;</span><span class="o">.</span><span class="nv">$z</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos="8 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <p>Realmente, en vez de concatenar cadenas con variables, podemos imprimirlas directamente ya que se expanden automáticamente:
-<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">echo</span> <span class="s2">&quot;La suma de </span><span class="si">$x</span><span class="s2"> y </span><span class="si">$y</span><span class="s2"> es </span><span class="si">$z</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos="3 "></span></a><span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span><span class="k">echo</span> <span class="s2">&quot;La suma de </span><span class="si">$x</span><span class="s2"> y </span><span class="si">$y</span><span class="s2"> es </span><span class="si">$z</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div></p>
 <p>En ocasiones, necesitamos rodear el nombre de la variable entre llaves para poder unir más texto al resultado:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="nv">$color</span> <span class="o">=</span> <span class="s2">&quot;rojo&quot;</span><span class="p">;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="k">echo</span> <span class="s2">&quot;El plural de </span><span class="si">$color</span><span class="s2"> el </span><span class="si">${</span><span class="nv">color</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos="4 "></span></a><span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$color</span> <span class="o">=</span> <span class="s2">&quot;rojo&quot;</span><span class="p">;</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span><span class="k">echo</span> <span class="s2">&quot;El plural de </span><span class="si">$color</span><span class="s2"> el </span><span class="si">${</span><span class="nv">color</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">;</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos="4 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <p>Más adelante estudiaremos algunas funciones para el tratamiento de cadenas.</p>
 <h3 id="comparacion">Comparación<a class="headerlink" href="#comparacion" title="Permanent link">&para;</a></h3>
@@ -3520,12 +3520,12 @@ Más información en <a href="https://www.php.net/manual/es/language.operators.p
 <li>
 <p><strong>AC204</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> <abbr title="Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.">CE2g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  A partir de una cantidad de dinero, mostrar su descomposición en billetes (500, 200, 100, 50, 20, 10, 5) y monedas (2, 1), para que el número de elementos sea mínimo. No se utilizar ninguna instrucción condicional. </p>
 <p>Por ejemplo, al introducir 139 debe mostrar:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>1 billete de 100
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a>0 billete de 50
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a>1 billete de 20
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos="4 "></span></a>1 billete de 10
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos="5 "></span></a>1 billete de 5
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><a href="#__codelineno-7-6"><span class="linenos" data-linenos="6 "></span></a>2 moneda de 2
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>1 billete de 100
+</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span>0 billete de 50
+</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span>1 billete de 20
+</span><span id="__span-7-4"><span class="linenos" data-linenos="4 "></span>1 billete de 10
+</span><span id="__span-7-5"><span class="linenos" data-linenos="5 "></span>1 billete de 5
+</span><span id="__span-7-6"><span class="linenos" data-linenos="6 "></span>2 moneda de 2
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

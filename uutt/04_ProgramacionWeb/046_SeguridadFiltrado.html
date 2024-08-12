@@ -3152,9 +3152,9 @@
 <ul>
 <li>Usar expresiones regulares para validar.Es fundamental validar los datos ingresados por el usuario para evitar datos incorrectos o malintencionados. Función PHP relevante: <ul>
 <li><code>preg_match</code>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">if (preg_match(&quot;/^[a-zA-Z ]*$/&quot;, $name)) {</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="x">    // El nombre es válido</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="x">}</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">if (preg_match(&quot;/^[a-zA-Z ]*$/&quot;, $name)) {</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="x">    // El nombre es válido</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="x">}</span>
 </span></code></pre></div></li>
 </ul>
 </li>
@@ -3166,10 +3166,10 @@
   Funciones PHP relevantes:</p>
 <ul>
 <li><code>htmlentities</code>
-  <div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$clean_input = htmlentities($input);</span>
+  <div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_input = htmlentities($input);</span>
 </span></code></pre></div></li>
 <li><code>htmlspecialchars</code>
-  <div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$clean_input = htmlspecialchars($input, ENT_QUOTES, &#39;UTF-8&#39;);</span>
+  <div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_input = htmlspecialchars($input, ENT_QUOTES, &#39;UTF-8&#39;);</span>
 </span></code></pre></div></li>
 </ul>
 </li>
@@ -3178,16 +3178,16 @@
   Función PHP relevante: </p>
 <ul>
 <li><code>filter_var</code>: Aplicar sobre un valor:
-  <div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$clean_email = filter_var($email, FILTER_SANITIZE_EMAIL);</span>
+  <div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_email = filter_var($email, FILTER_SANITIZE_EMAIL);</span>
 </span></code></pre></div></li>
 <li><code>filter_var</code>: Aplica una serie de filtros:
-  <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$options = array(</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="x">    &#39;options&#39; =&gt; array(</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a><span class="x">        &#39;min_range&#39; =&gt; 1,</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a><span class="x">        &#39;max_range&#39; =&gt; 100</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos="5 "></span></a><span class="x">    )</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos="6 "></span></a><span class="x">);</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos="7 "></span></a><span class="x">$age = filter_var($age, FILTER_VALIDATE_INT, $options);</span>
+  <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="x">$options = array(</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="x">    &#39;options&#39; =&gt; array(</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="x">        &#39;min_range&#39; =&gt; 1,</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="x">        &#39;max_range&#39; =&gt; 100</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="x">    )</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span><span class="x">);</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos="7 "></span><span class="x">$age = filter_var($age, FILTER_VALIDATE_INT, $options);</span>
 </span></code></pre></div></li>
 </ul>
 </li>

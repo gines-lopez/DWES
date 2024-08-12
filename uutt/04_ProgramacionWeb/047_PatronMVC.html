@@ -3177,45 +3177,45 @@
 <h2 id="componentes-del-mvc-en-php">Componentes del MVC en PHP<a class="headerlink" href="#componentes-del-mvc-en-php" title="Permanent link">&para;</a></h2>
 <h3 id="modelo-model">Modelo (Model)<a class="headerlink" href="#modelo-model" title="Permanent link">&para;</a></h3>
 <p>El Modelo representa la capa de datos de la aplicación. Contiene la lógica de negocio, la lógica de acceso a datos y cualquier otra lógica relacionada con la manipulación de datos. En PHP, los modelos suelen ser clases que interactúan con la base de datos, realizan consultas y manipulan datos.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">    </span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>    <span class="k">class</span> <span class="nc">UsuarioModel</span> <span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>        <span class="k">public</span> <span class="k">function</span> <span class="nf">obtenerUsuarios</span><span class="p">()</span> <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>            <span class="c1">// Lógica para obtener usuarios de la base de datos</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>        <span class="p">}</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>    <span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a>    <span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">    </span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span>    <span class="k">class</span> <span class="nc">UsuarioModel</span> <span class="p">{</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span>        <span class="k">public</span> <span class="k">function</span> <span class="nf">obtenerUsuarios</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span>            <span class="c1">// Lógica para obtener usuarios de la base de datos</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span>        <span class="p">}</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span>    <span class="p">}</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos="7 "></span>    <span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h3 id="vista-view">Vista (View)<a class="headerlink" href="#vista-view" title="Permanent link">&para;</a></h3>
 <p>La Vista es la capa de presentación de la aplicación. Se encarga de mostrar la información al usuario de manera visual. En PHP, las vistas suelen ser archivos de plantilla que contienen código HTML y pueden incluir fragmentos de PHP para mostrar datos dinámicos.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="x">    &lt;!-- archivo vista_usuarios.php --&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="x">    &lt;html&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="x">    &lt;head&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="x">        &lt;title&gt;Lista de Usuarios&lt;/title&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="x">    &lt;/head&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="x">    &lt;body&gt;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="x">        &lt;h1&gt;Lista de Usuarios&lt;/h1&gt;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="x">        &lt;ul&gt;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$usuarios</span> <span class="k">as</span> <span class="nv">$usuario</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a><span class="x">                &lt;li&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$usuario</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/li&gt;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a><span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a><span class="x">        &lt;/ul&gt;</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a><span class="x">    &lt;/body&gt;</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a><span class="x">    &lt;/html&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="x">    &lt;!-- archivo vista_usuarios.php --&gt;</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="x">    &lt;html&gt;</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="x">    &lt;head&gt;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="x">        &lt;title&gt;Lista de Usuarios&lt;/title&gt;</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="x">    &lt;/head&gt;</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="x">    &lt;body&gt;</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="x">        &lt;h1&gt;Lista de Usuarios&lt;/h1&gt;</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="x">        &lt;ul&gt;</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$usuarios</span> <span class="k">as</span> <span class="nv">$usuario</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="x">                &lt;li&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$usuario</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x">&lt;/li&gt;</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="x">        &lt;/ul&gt;</span>
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="x">    &lt;/body&gt;</span>
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span><span class="x">    &lt;/html&gt;</span>
 </span></code></pre></div>
 <h3 id="controlador">Controlador<a class="headerlink" href="#controlador" title="Permanent link">&para;</a></h3>
 <p>El Controlador actúa como intermediario entre el Modelo y la Vista. Se encarga de procesar las solicitudes del usuario, interactuar con el Modelo para obtener datos y enviar esos datos a la Vista para su presentación. En PHP, los controladores suelen ser clases que manejan las solicitudes HTTP y llaman a los métodos apropiados del Modelo y la Vista.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="x">    </span><span class="cp">&lt;?php</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>    <span class="k">class</span> <span class="nc">UsuarioController</span> <span class="p">{</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>        <span class="k">public</span> <span class="k">function</span> <span class="nf">listar</span><span class="p">()</span> <span class="p">{</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>            <span class="c1">// Lógica para obtener datos del modelo</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>            <span class="nv">$usuarioModel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UsuarioModel</span><span class="p">();</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>            <span class="nv">$usuarios</span> <span class="o">=</span> <span class="nv">$usuarioModel</span><span class="o">-&gt;</span><span class="na">obtenerUsuarios</span><span class="p">();</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>            <span class="c1">// Cargar la vista con los datos obtenidos</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>            <span class="k">include</span> <span class="s1">&#39;vista_usuarios.php&#39;</span><span class="p">;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>        <span class="p">}</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>    <span class="p">}</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>    <span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="x">    </span><span class="cp">&lt;?php</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="k">class</span> <span class="nc">UsuarioController</span> <span class="p">{</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>        <span class="k">public</span> <span class="k">function</span> <span class="nf">listar</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>            <span class="c1">// Lógica para obtener datos del modelo</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>            <span class="nv">$usuarioModel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UsuarioModel</span><span class="p">();</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>            <span class="nv">$usuarios</span> <span class="o">=</span> <span class="nv">$usuarioModel</span><span class="o">-&gt;</span><span class="na">obtenerUsuarios</span><span class="p">();</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>            <span class="c1">// Cargar la vista con los datos obtenidos</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>            <span class="k">include</span> <span class="s1">&#39;vista_usuarios.php&#39;</span><span class="p">;</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>        <span class="p">}</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>    <span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="flujo-de-trabajo-en-mvc">Flujo de Trabajo en MVC<a class="headerlink" href="#flujo-de-trabajo-en-mvc" title="Permanent link">&para;</a></h2>
 <ol>

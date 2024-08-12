@@ -2630,30 +2630,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Rutas con parámetros">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#devolucion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Devolución
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#entrada" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entrada
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3155,19 +3131,19 @@
 
 
 <h1 id="rutas">Rutas<a class="headerlink" href="#rutas" title="Permanent link">&para;</a></h1>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">);</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="p">});</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="cm">/* Vista dentro de una carpeta */</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/admin&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a>    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;admin/index&#39;</span><span class="p">);</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a><span class="p">});</span>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">);</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="p">});</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="cm">/* Vista dentro de una carpeta */</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/admin&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;admin/index&#39;</span><span class="p">);</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="p">});</span>
 </span></code></pre></div>
 En Laravel, las rutas no son más que una instancia de la clase <code>Route</code>que vinculamos a una URI y a la que le pasamos una serie de funciones o métodos. Las rutas pueden ser usadas para realizar:</p>
 <ul>
@@ -3183,40 +3159,71 @@ En Laravel, las rutas no son más que una instancia de la clase <code>Route</cod
 <li><code>web.php</code>: Las rutas para la aplicación web.</li>
 </ul>
 <p>El que más nos interesa es el de <code>web.php</code> ya que es el que nos permite definir las rutas de nuestra aplicación web (las que nuestro cliente consume desde el navegador). Las rutas en Laravel son un elemento central, es por ello que existen los siguiente tipos:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>Route::get($uri, $callback);
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>Route::post($uri, $callback);
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>Route::put($uri, $callback);
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>Route::patch($uri, $callback);
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>Route::delete($uri, $callback);
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>Route::options($uri, $callback);
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="nv">$uri</span><span class="p">,</span> <span class="nv">$callback</span><span class="p">);</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="nv">$uri</span><span class="p">,</span> <span class="nv">$callback</span><span class="p">);</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">put</span><span class="p">(</span><span class="nv">$uri</span><span class="p">,</span> <span class="nv">$callback</span><span class="p">);</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">patch</span><span class="p">(</span><span class="nv">$uri</span><span class="p">,</span> <span class="nv">$callback</span><span class="p">);</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span><span class="nv">$uri</span><span class="p">,</span> <span class="nv">$callback</span><span class="p">);</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos="7 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">options</span><span class="p">(</span><span class="nv">$uri</span><span class="p">,</span> <span class="nv">$callback</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Cada uno tiene un uso específico <a href="https://laravel.com/docs/11.x/routing">que ha de ser consultado en la documentación en caso de duda.</a></p>
 <h2 id="nombre-de-la-ruta">Nombre de la ruta<a class="headerlink" href="#nombre-de-la-ruta" title="Permanent link">&para;</a></h2>
 <p>A las rutas se les puede asignar un nombre:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>Route::get(&#39;/&#39;, function () {
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>    return view(&#39;welcome&#39;);
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a>})-&gt;name(&#39;bienvenida&#39;);
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span>    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">);</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="p">})</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;bienvenida&#39;</span><span class="p">);</span>
 </span></code></pre></div>
-<p>Con este nombre, podremos hacer uso de esta ruta sin tener en cuenta si en el futuro la ruta varía a nivel de código.</p>
+<p>Con este nombre, podremos hacer uso de esta ruta sin tener en cuenta si en el futuro la ruta varía a nivel de código. C</p>
 <h2 id="rutas-con-parametros">Rutas con parámetros<a class="headerlink" href="#rutas-con-parametros" title="Permanent link">&para;</a></h2>
-<h3 id="devolucion">Devolución<a class="headerlink" href="#devolucion" title="Permanent link">&para;</a></h3>
-<h3 id="entrada">Entrada<a class="headerlink" href="#entrada" title="Permanent link">&para;</a></h3>
+<p>Ya hemos visto que con PHP podemos pasar parámetros a través de la URL, como si fueran variables, que las recuperábamos a través del método GET o POST. on Laravel también podemos introducir parámetros pero de una forma más vistosa y ordenada, de tal manera que sea visualmente más cómodo de recordar y de indexar por los motores de búsqueda como Google.</p>
+<p>Para configurar este tipo de rutas en nuestro archivo de rutas public/routes/web.php haremos lo siguiente.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;cliente/{id}&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span>    <span class="k">return</span><span class="p">(</span><span class="s1">&#39;Cliente con el id: &#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">);</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos="5 "></span><span class="p">});</span>
+</span></code></pre></div>
+<p>Pero esto nos daría un error 404 si el parámetro <code>$id</code> no existiera, para resolver ésto, podemos definir una ruta por defecto en caso de que el id (o parámetro) no sea pasado. Para ello usaremos el símbolo ? en nuestro nombre de ruta e inicializaremos la variable con el valor que queramos.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;cliente/{id?}&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span>    <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Cliente con el id: &#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">);</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="p">});</span>
+</span></code></pre></div>
+<p>Ahora tenemos otro problema, porque estamos filtrando por id del cliente que, normalmente es un número, pero si metemos un parámetro que no sea un número, vamos a obtener un resultado no deseado.</p>
+<p>Para resolver este caso haremos uso de la cláusula where junto con una expresión regular numérica.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;cliente/{id?}&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos="4 "></span>    <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Cliente con el id: &#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">);</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos="5 "></span><span class="p">})</span> <span class="o">-&gt;</span> <span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;[0-9]+&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Además, podemos pasarle variables a nuestra URL para luego utilzarlas en nuestros archivos de plantillas o en archivos .php haciendo uso de un array asociativo. Veamos un ejemplo con la forma reducida para ahorrarnos código.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;datos&#39;</span><span class="p">,</span> <span class="s1">&#39;usuarios&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">5446</span><span class="p">]);</span>
+</span></code></pre></div>
 <h2 id="redirecciones">Redirecciones<a class="headerlink" href="#redirecciones" title="Permanent link">&para;</a></h2>
 <p>Muchas veces necesitamos mandar de una página a otra, ya sea porqué la página que está intentando ingresar el usuario no está disponible, o porqué la función en sí no devuelve una vista. Para hacer las redirecciones tenemos tres formas:</p>
 <ul>
 <li>
 <p>Con una redirección directa al URI:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>return redirect(&quot;/post/create&quot;); 
+<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span><span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/post/create&quot;</span><span class="p">);</span> 
 </span></code></pre></div>
 </li>
 <li>
 <p>Una instancia de <code>redirect</code>, que nos permite redireccionar con la ruta con nombre:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>return redirect()-›route(&quot;post.create&quot;);
+<div class="language-php highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span><span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-</span><span class="nx">›route</span><span class="p">(</span><span class="s2">&quot;post.create&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 </li>
 <li>
 <p>En Laravel 9 se introdujo <code>to_route()</code> que redirecciona a una ruta con nombre, como el caso anterior, pero con una sintaxis más sencilla.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>return to_route(&quot;post.index&quot;);
+<div class="language-php highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-9-2"><span class="linenos" data-linenos="2 "></span><span class="k">return</span> <span class="nx">to_route</span><span class="p">(</span><span class="s2">&quot;post.index&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 </li>
 </ul>

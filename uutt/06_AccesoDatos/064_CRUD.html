@@ -3161,22 +3161,22 @@
 <p>El concepto de <strong>operaciones CRUD</strong> es fundamental en el desarrollo de aplicaciones que involucran la gestión de datos. CRUD es un acrónimo que se refiere a las cuatro funciones básicas que se deben implementar en cualquier sistema de gestión de datos persistente:</p>
 <h2 id="1-crear-c">1. Crear (C)<a class="headerlink" href="#1-crear-c" title="Permanent link">&para;</a></h2>
 <p>Esta operación se refiere a la capacidad de añadir nuevos registros o datos al sistema. En el contexto de una base de datos, esto se traduce típicamente en insertar nuevas filas en una tabla. Ejemplo en PHP utilizando una sentencia SQL <code>INSERT</code>:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$sql = &quot;INSERT INTO usuarios (nombre, email) VALUES (&#39;Juan&#39;, &#39;juan@example.com&#39;)&quot;;</span>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;INSERT INTO usuarios (nombre, email) VALUES (&#39;Juan&#39;, &#39;juan@example.com&#39;)&quot;;</span>
 </span></code></pre></div>
 Este comando añadiría un nuevo usuario con nombre "Juan" y correo electrónico "juan@example.com" a la tabla usuarios.</p>
 <h2 id="2-leer-r">2. Leer (R)<a class="headerlink" href="#2-leer-r" title="Permanent link">&para;</a></h2>
 <p>La operación de lectura permite recuperar datos del sistema. Esto puede ser tan simple como obtener un único valor o tan complejo como ejecutar una consulta que recupere grandes conjuntos de datos basados en criterios específicos. Ejemplo en PHP con una sentencia SQL <code>SELECT</code>:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$sql = &quot;SELECT * FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;SELECT * FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
 </span></code></pre></div>
 Este comando recuperaría todos los datos de los usuarios cuyo nombre sea "Juan".</p>
 <h2 id="3-actualizar-u">3. Actualizar (U)<a class="headerlink" href="#3-actualizar-u" title="Permanent link">&para;</a></h2>
 <p>Actualizar se refiere a modificar datos existentes en el sistema. Esta operación es crucial para mantener la relevancia y la precisión de la información almacenada. Ejemplo en PHP utilizando una sentencia SQL <code>UPDATE</code>:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$sql = &quot;UPDATE usuarios SET email = &#39;nuevoemail@example.com&#39; WHERE nombre = &#39;Juan&#39;&quot;;</span>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;UPDATE usuarios SET email = &#39;nuevoemail@example.com&#39; WHERE nombre = &#39;Juan&#39;&quot;;</span>
 </span></code></pre></div>
 Este comando actualizaría el correo electrónico del usuario llamado "Juan" al nuevo valor proporcionado.</p>
 <h2 id="4-borrar-d">4. Borrar (D)<a class="headerlink" href="#4-borrar-d" title="Permanent link">&para;</a></h2>
 <p>La última operación es el borrado de datos. Permite eliminar información innecesaria o desactualizada del sistema. Ejemplo en PHP con una sentencia SQL <code>DELETE</code>:</p>
-<p><div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="x">$sql = &quot;DELETE FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;DELETE FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
 </span></code></pre></div>
 Este comando eliminaría de la base de datos todos los registros de los usuarios cuyo nombre sea "Juan".</p>
 <h2 id="implementacion-en-el-desarrollo-web">Implementación en el Desarrollo Web<a class="headerlink" href="#implementacion-en-el-desarrollo-web" title="Permanent link">&para;</a></h2>

@@ -2599,6 +2599,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.5- Controladores
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="075_Controladores.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2608,6 +2619,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controladores-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controladores resource
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3074,6 +3131,132 @@
 
 
 <h1 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">&para;</a></h1>
+<p>Los controladores son el lugar perfecto para definir la lógica de negocio de nuestra aplicación o sitio web. Hace de intermediario entre la vista (lo que vemos con nuestro navegador o cliente) y el servidor donde la app está alojada.</p>
+<p>Por defecto, los controladores se guardan en una carpeta específica situada en <code>app/Http/Controllers</code> y tienen extensión <code>.php</code>.</p>
+<h2 id="creacion">Creación<a class="headerlink" href="#creacion" title="Permanent link">&para;</a></h2>
+<p>Para crear un controlador nuevo debemos hacer uso de nuestro querido autómata <code>artisan</code> donde le diremos que cree un controlador con el nombre que nosotros queramos.</p>
+<p>Abrimos la consola y nos situamos en la raíz de nuestro proyecto</p>
+<p><div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="go">php artisan make:controller PagesController</span>
+</span></code></pre></div>
+Si todo ha salido bien, recibiremos un mensaje por consola con que todo ha ido bien y podremos comprobar que, efectivamente se ha creado el archivo <code>PagesController.php</code> con una estructura básica de controlador, dentro de la carpeta <code>Controllers</code> que hemos descrito anteriormente.</p>
+<h2 id="uso">Uso<a class="headerlink" href="#uso" title="Permanent link">&para;</a></h2>
+<p>Ahora podemos modificar nuestro archivo de rutas <code>web.pbp</code> para dejarlo limpio de lógica y trasladar ésta a nuestro nuevo controlador. La idea de ésto es dejar el archivo <code>web.php</code> tan limpio como podamos para que, de un vistazo, se entienda todo perfectamente.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Sólo movemos la lógica, mientras que las cláusulas como <code>where</code> y <code>name</code> las seguimos dejando en el archivo de rutas <code>web.php</code></p>
+</div>
+<p>Veamos cómo quedaría un refactor del archivo de rutas utilizando un <code>Controller</code> como el que acabamos de crear</p>
+<p>Ahora nos quedaría de la siguiente manera</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="c1">// web.php (v2.0)</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">App\Http\Controllers\PagesController</span><span class="p">;</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;inicio&#39;</span> <span class="p">]);</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;datos&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;datos&#39;</span> <span class="p">]);</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;cliente/{id?}&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;cliente&#39;</span> <span class="p">])</span> <span class="o">-&gt;</span> <span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;[0-9]+&#39;</span><span class="p">);</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;nosotros/{nosotros?}&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;nosotros&#39;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="na">name</span><span class="p">(</span><span class="s1">&#39;nosotros&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>y en nuestro archivo controlador lo dejaríamos de la siguiente manera</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="c1">// PagesController.php</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="k">class</span> <span class="nc">PagesController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="p">{</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">inicio</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">);</span> <span class="p">}</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">datos</span><span class="p">()</span> <span class="p">{</span> 
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;usuarios&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">56</span><span class="p">]);</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">}</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">cliente</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Cliente con el id: &#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">);</span>
+</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>    <span class="p">}</span>
+</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">nosotros</span><span class="p">(</span><span class="nv">$nombre</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span>        <span class="nv">$equipo</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span>            <span class="s1">&#39;Paco&#39;</span><span class="p">,</span>
+</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span>            <span class="s1">&#39;Enrique&#39;</span><span class="p">,</span>
+</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span>            <span class="s1">&#39;Maria&#39;</span><span class="p">,</span>
+</span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span>            <span class="s1">&#39;Veronica&#39;</span>
+</span><span id="__span-2-25"><span class="linenos" data-linenos="25 "></span>        <span class="p">];</span>
+</span><span id="__span-2-26"><span class="linenos" data-linenos="26 "></span>
+</span><span id="__span-2-27"><span class="linenos" data-linenos="27 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;nosotros&#39;</span><span class="p">,</span> <span class="o">@</span><span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;equipo&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">));</span>
+</span><span id="__span-2-28"><span class="linenos" data-linenos="28 "></span>    <span class="p">}</span>
+</span><span id="__span-2-29"><span class="linenos" data-linenos="29 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="controladores-resource">Controladores resource<a class="headerlink" href="#controladores-resource" title="Permanent link">&para;</a></h2>
+<p>Si a la hora de crear nuestro controlador, lo hacemos con la marca <code>--resource</code>:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="go">php artisan make:controller PhotoController --resource</span>
+</span></code></pre></div>
+<p>Este comando generará un controlador en <code>app/Http/Controllers/PhotoController.php</code>. El controlador contendrá un método para cada uno de los recursos disponibles. A continuación, puedes registrar una ruta de recursos que apunte al controlador:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="k">use</span> <span class="nx">App\Http\Controllers\PhotoController</span><span class="p">;</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="nx">PhotoController</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Esta única declaración de ruta crea múltiples rutas para manejar una variedad de acciones en el recurso. El controlador generado ya tendrá métodos para cada una de estas acciones. Recuerda, siempre puedes obtener una visión rápida de las rutas de tu aplicación ejecutando el comando <code>route:list</code> de <code>artisan</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>URI</th>
+<th>Acción</th>
+<th>Nombre de la ruta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/photos</td>
+<td>index</td>
+<td>photos.index</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/photos/create</td>
+<td>create</td>
+<td>photos.create</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/photos</td>
+<td>store</td>
+<td>photos.store</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/photos/{photo}</td>
+<td>show</td>
+<td>photos.show</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/photos/{photo}/edit</td>
+<td>edit</td>
+<td>photos.edit</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+<td>/photos/{photo}</td>
+<td>update</td>
+<td>photos.update</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/photos/{photo}</td>
+<td>destroy</td>
+<td>photos.destroy</td>
+</tr>
+</tbody>
+</table>
+<p>No olvides consultar la <a href="https://laravel.com/docs/11.x/controllers">documentación</a> para profundizar más en los controladores de Laravel.</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->

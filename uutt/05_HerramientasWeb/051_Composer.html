@@ -3207,11 +3207,11 @@
 <h3 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h3>
 <p>Si estamos usando XAMPP, hemos de instalar <em>Composer</em> en el propio sistema operativo. Se recomienda seguir las <a href="https://getcomposer.org/doc/00-intro.md">instrucciones oficiales</a> según el sistema operativo a emplear.</p>
 <p>En cambio, si usamos <em>Docker</em>, necesitamos modificar la configuración de nuestro contenedor. En nuestro caso, hemos decidido modificar el archivo <code>Dockerfile</code> y añadir el siguiente comando:</p>
-<div class="language-docker highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>composer:2.0<span class="w"> </span>/usr/bin/composer<span class="w"> </span>/usr/local/bin/composer
+<div class="language-docker highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>composer:2.0<span class="w"> </span>/usr/bin/composer<span class="w"> </span>/usr/local/bin/composer
 </span></code></pre></div>
 <p>Para facilitar el trabajo, hemos creado una <a href="../../resources/plantilla-APC.zip">plantilla ya preparada</a>.</p>
 <p>Es importante que dentro del contenedor comprobemos que tenemos la v2:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>composer<span class="w"> </span>-V
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>-V
 </span></code></pre></div>
 <h3 id="primeros-pasos">Primeros pasos<a class="headerlink" href="#primeros-pasos" title="Permanent link">&para;</a></h3>
 <p>Cuando creemos un proyecto por primera vez, hemos de inicializar el repositorio. Para ello, ejecutaremos el comando <code>composer init</code> donde:</p>
@@ -3223,21 +3223,21 @@
 </li>
 </ul>
 <p>Tras su configuración, se creará automáticamente el archivo <code>composer.json</code> con los datos introducidos y descarga las librerías en la carpeta <code>vendor</code>. La instalación de las librerías siempre se realiza de manera local para cada proyecto.</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dwes/log&quot;</span><span class="p">,</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pruebas con Monolog&quot;</span><span class="p">,</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;project&quot;</span><span class="p">,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">    </span><span class="nt">&quot;require&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">        </span><span class="nt">&quot;monolog/monolog&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^2.1&quot;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">        </span><span class="p">{</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ginés López&quot;</span><span class="p">,</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">            </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;g.lopezgarcia2@edu.gva.es&quot;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><a href="#__codelineno-2-15"><span class="linenos" data-linenos="15 "></span></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dwes/log&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pruebas con Monolog&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;project&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nt">&quot;require&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="nt">&quot;monolog/monolog&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^2.1&quot;</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ginés López&quot;</span><span class="p">,</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;g.lopezgarcia2@edu.gva.es&quot;</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span><span class="p">}</span>
 </span></code></pre></div>
 <p>A la hora de indicar cada librería introduciremos:</p>
 <ul>
@@ -3254,30 +3254,30 @@
 </ul>
 <h3 id="actualizar-librerias">Actualizar librerías<a class="headerlink" href="#actualizar-librerias" title="Permanent link">&para;</a></h3>
 <p>Podemos definir las dependencias via el archivo <code>composer.json</code> o mediante comandos con el formato <code>composer require vendor/package:version</code>. Por ejemplo, si queremos añadir phpUnit como librería de desarrollo, haremos:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>composer<span class="w"> </span>require<span class="w"> </span>phpunit/phpunit<span class="w"> </span>–dev
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>phpunit/phpunit<span class="w"> </span>–dev
 </span></code></pre></div>
 <p>Tras añadir nuevas librerías, hemos de actualizar nuestro proyecto:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>composer<span class="w"> </span>update
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>update
 </span></code></pre></div>
 <p>Si creamos el archivo <code>composer.json</code> nosotros directamente sin inicializar el repositorio, hemos de instalar las dependencias:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>composer<span class="w"> </span>install
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>install
 </span></code></pre></div>
 <p>Al hacer este paso (tanto instalar como actualizar), como ya hemos comentado, se descargan las librerías en dentro de la carpeta <code>vendor</code>. Es muy importante añadir esta carpeta al archivo <code>.gitignore</code> para no subirlas a GitHub.</p>
 <p>Además se crea el archivo <code>composer.lock</code>, que almacena la versión exacta que se ha instalado de cada librería (este archivo no se toca).</p>
 <h2 id="autoloadphp"><code>autoload.php</code><a class="headerlink" href="#autoloadphp" title="Permanent link">&para;</a></h2>
 <p><em>Composer</em> crea de forma automática en <code>vendor/autoload.php</code> el código para incluir de forma automática todas las librerías que tengamos configuradas en <code>composer.json</code>.</p>
 <p>Para utilizarlo, en la cabecera de nuestro archivos pondremos:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="cp">&lt;?php</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">require</span> <span class="s1">&#39;vendor/autoload.php&#39;</span><span class="p">;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span><span class="k">require</span> <span class="s1">&#39;vendor/autoload.php&#39;</span><span class="p">;</span>
 </span></code></pre></div>
 <p>En nuestro caso, de momento sólo lo podremos en los archivos donde probamos las clases</p>
 <p>Si queremos que Composer también se encargue de cargar de forma automática nuestras clases de dominio, dentro del archivo <code>composer.json</code>, definiremos la propiedad <code>autoload</code>:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a><span class="nt">&quot;autoload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="nt">&quot;psr-4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Dwes\\&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app/Dwes&quot;</span><span class="p">}</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a><span class="p">},</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&quot;autoload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nt">&quot;psr-4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Dwes\\&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app/Dwes&quot;</span><span class="p">}</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span><span class="p">},</span>
 </span></code></pre></div>
 <p>Posteriormente, hemos de volver a generar el <em>autoload</em> de <em>Composer</em> mediante la opción <code>dump-autoload</code> (o <code>du</code>):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>composer<span class="w"> </span>dump-autoload
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>dump-autoload
 </span></code></pre></div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>

@@ -2620,6 +2620,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.6- Vistas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="076_Vistas.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2629,6 +2640,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#directivas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directivas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directivas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-practico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo práctico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructuras de control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compact" class="md-nav__link">
+    <span class="md-ellipsis">
+      @compact
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3074,6 +3146,100 @@
 
 
 <h1 id="vistas">Vistas<a class="headerlink" href="#vistas" title="Permanent link">&para;</a></h1>
+<p>A través de las plantillas de Laravel vamos a escribir menos código PHP y vamos a tener nuestros archivos mejor organizados. <a href="https://laravel.com/docs/11.x/blade">Blade</a> es el sistema de plantillas que trae Laravel, por eso los archivos de plantillas que guardamos en el directorio de views llevan la extensión blade.php. De esta manera sabemos inmediatamente que se trata de una plantilla de Laravel y que forma parte de una vista que se mostrará en el navegador.</p>
+<h2 id="directivas">Directivas<a class="headerlink" href="#directivas" title="Permanent link">&para;</a></h2>
+<p>Laravel tiene un gran número de directivas que podemos utilizar para ahorrarnos mucho código repetitivo entre otras funciones.</p>
+<p>Digamos que las directivas son pequeñas funciones ya escritas que aceptan parámetros y que cada una de ellas hace una función diferente dentro de Laravel.</p>
+<ul>
+<li><code>@yield</code> Define el contenido dinámico que se va a cargar. Se usa conjuntamente con <code>@section</code>.</li>
+<li><code>@section</code> y <code>@endsection</code> bloque de código dinámico.</li>
+<li><code>@extends</code> importa el contenido de una plantilla ya creada.</li>
+</ul>
+<h3 id="ejemplo-practico">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permanent link">&para;</a></h3>
+<p>Veamos un ejemplo de cómo hacer uso del poder de Laravel para crear plantillas y no repetir código. Supongamos que tenemos ciertas estructuras HTML repetidas como puede ser una cabecera header, un menú de navegación nav y un par de secciones que hacen uso de este mismo código. Para este apartado tenemos 2 apartados en la web:</p>
+<ul>
+<li>Blog</li>
+<li>Fotos</li>
+</ul>
+<p>Primero de todo tendremos que generar un archivo que haga de plantilla de nuestro sitio web. Para ello creamos el archivo <code>plantilla.blade.php</code> dentro de nuestro directorio de plantillas <code>resources/views</code>. Dicho archivo va a contener el típico código de una página simple de HTML y en el body añadiremos nuestros contenido estático y dinámico.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="cm">&lt;!-- CONTENIDO ESTÁTICO PARA TODAS LAS SECCIONES --&gt;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Bienvenid@s a Laravel<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="cm">&lt;!-- MENÚ --&gt;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">{{</span> <span class="na">route</span><span class="err">(&#39;</span><span class="na">noticias</span><span class="err">&#39;)</span> <span class="err">}}</span><span class="p">&gt;</span>Blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> | 
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">{{</span> <span class="na">route</span><span class="err">(&#39;</span><span class="na">galeria</span><span class="err">&#39;)</span> <span class="err">}}</span><span class="p">&gt;</span>Fotos<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>    <span class="cm">&lt;!-- CONTENIDO DINÁMICO EN FUNCIÓN DE LA SECCIÓN QUE SE VISITA --&gt;</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>        @yield(&#39;apartado&#39;)
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Cada sección que haga uso de esta plantilla contendrá el texto estático <code>Bienvenid@s a Laravel</code> seguido de un menú de navegación con enlaces a cada una de las secciones y el contenido dinámico de cada sección. Ahora crearemos los archivos dinámicos de cada una de las secciones, en nuestro caso <code>blog.blade.php</code> y <code>fotos.blade.php</code></p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="c1">// blog.blade.php</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="o">@</span><span class="k">extends</span><span class="p">(</span><span class="s1">&#39;plantilla&#39;</span><span class="p">)</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos="7 "></span><span class="o">@</span><span class="nx">section</span><span class="p">(</span><span class="s1">&#39;apartado&#39;</span><span class="p">)</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos="8 "></span>  <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Estás</span> <span class="nx">en</span> <span class="nx">BLOG</span><span class="o">&lt;/</span><span class="nx">h2</span><span class="o">&gt;</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos="9 "></span><span class="o">@</span><span class="nx">endsection</span>
+</span></code></pre></div>
+<p>Importamos el contenido de <code>plantilla</code> bajo la directiva <code>@extends</code> para que cargue los elementos estáticos que hemos declarado y con la directiva <code>@section</code> y <code>@endsection</code> definimos el bloque de código dinámico, en función de la sección que estemos visitando.</p>
+<p>Ahora casi lo mismo para la sección de <code>fotos</code></p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="c1">// fotos.blade.html</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="o">@</span><span class="k">extends</span><span class="p">(</span><span class="s1">&#39;plantilla&#39;</span><span class="p">)</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos="6 "></span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos="7 "></span><span class="o">@</span><span class="nx">section</span><span class="p">(</span><span class="s1">&#39;apartado&#39;</span><span class="p">)</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos="8 "></span>  <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Estás</span> <span class="nx">en</span> <span class="nx">FOTOS</span><span class="o">&lt;/</span><span class="nx">h2</span><span class="o">&gt;</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos="9 "></span><span class="o">@</span><span class="nx">endsection</span>
+</span></code></pre></div>
+<p>El último paso que nos queda es configurar el archivo de rutas <code>routes/web.php</code></p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span><span class="c1">// web.php</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos="5 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">,</span> <span class="s1">&#39;blog&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">name</span><span class="p">(</span><span class="s1">&#39;noticias&#39;</span><span class="p">);</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos="6 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;fotos&#39;</span><span class="p">,</span> <span class="s1">&#39;fotos&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">name</span><span class="p">(</span><span class="s1">&#39;galeria&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>De esta manera podremos hacer uso del menú de navegación que hemos puesto en nuestra plantilla y gracias a los alias <code>noticias</code> y <code>galeria</code>, la URL será más amigable.</p>
+<h2 id="estructuras-de-control">Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permanent link">&para;</a></h2>
+<p>Como en todo buen lenguaje de programación, en Laravel también tenemos estructuras de control.</p>
+<p>En Blade (plantillas de Laravel) siempre que iniciemos un bloque de estructura de control <strong>debemos</strong> cerrarla:</p>
+<ul>
+<li><code>@foreach</code> ~ <code>@endforeach</code> lo usamos para recorrer arrays</li>
+<li><code>@if</code> ~ <code>@endif</code> para comprobar condiciones lógicas</li>
+<li><code>@switch</code> ~ <code>@endswitch</code> en función del valor de una variable ejecutar un código</li>
+<li><code>@case</code> define la casuística del switch</li>
+<li><code>@break</code> rompe la ejecución del código en curso</li>
+<li><code>@default</code> si ninguna casuística se cumple</li>
+</ul>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$equipo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;María&#39;</span><span class="p">,</span> <span class="s1">&#39;Alfredo&#39;</span><span class="p">,</span> <span class="s1">&#39;William&#39;</span><span class="p">,</span> <span class="s1">&#39;Verónica&#39;</span><span class="p">];</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="o">@</span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$equipo</span> <span class="k">as</span> <span class="nv">$nombre</span><span class="p">)</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span>  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="p">{{</span> <span class="nv">$nombre</span> <span class="p">}}</span> <span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos="7 "></span><span class="o">@</span><span class="k">endforeach</span>
+</span></code></pre></div>
+<h2 id="compact"><code>@compact</code><a class="headerlink" href="#compact" title="Permanent link">&para;</a></h2>
+<p>Se puede pasar variables a través de las rutas como si fueran parámetros. Pero en este caso, vamos a ver otra directiva más, el uso de <code>@compact</code>.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span><span class="c1">// Uso de @compact</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos="4 "></span><span class="nv">$equipo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;María&#39;</span><span class="p">,</span> <span class="s1">&#39;Alfredo&#39;</span><span class="p">,</span> <span class="s1">&#39;William&#39;</span><span class="p">,</span> <span class="s1">&#39;Verónica&#39;</span><span class="p">];</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos="5 "></span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos="6 "></span><span class="c1">// Route::view(&#39;nosotros&#39;, [&#39;equipo&#39; =&gt; &#39;equipo&#39;]);</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos="7 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;nosotros&#39;</span><span class="p">,</span> <span class="o">@</span><span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;equipo&#39;</span><span class="p">));</span>
+</span></code></pre></div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
