@@ -14,7 +14,7 @@
         <link rel="prev" href="072_LaravelDescripcion.html">
       
       
-        <link rel="next" href="074_RutasControladoresVistas.html">
+        <link rel="next" href="074_Rutas.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -159,6 +159,43 @@
       <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
     
   </nav>
@@ -2388,6 +2425,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2516,6 +2557,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.3- Estructura de carpetas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="073_EstructuraCarpetas.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2525,6 +2577,133 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta bootstrap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta config
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta database
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-public" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta public
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta resource
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta routes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta storage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpeta-vendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpeta vendor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otros-ficheros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otros ficheros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2538,11 +2717,11 @@
   
   
     <li class="md-nav__item">
-      <a href="074_RutasControladoresVistas.html" class="md-nav__link">
+      <a href="074_Rutas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.4- Rutas, controladores y vistas
+    7.4- Rutas
   </span>
   
 
@@ -2559,11 +2738,11 @@
   
   
     <li class="md-nav__item">
-      <a href="075_Migraciones.html" class="md-nav__link">
+      <a href="075_Controladores.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.5- Migraciones
+    7.5- Controladores
   </span>
   
 
@@ -2580,11 +2759,11 @@
   
   
     <li class="md-nav__item">
-      <a href="076_MVCCRUD.html" class="md-nav__link">
+      <a href="076_Vistas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.6- MVC y CRUD
+    7.6- Vistas
   </span>
   
 
@@ -2601,11 +2780,11 @@
   
   
     <li class="md-nav__item">
-      <a href="077_CRUDFormularios.html" class="md-nav__link">
+      <a href="077_Migraciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.7- CRUD y formularios
+    7.7- Migraciones
   </span>
   
 
@@ -2622,11 +2801,11 @@
   
   
     <li class="md-nav__item">
-      <a href="078_ReferenciaLinks.html" class="md-nav__link">
+      <a href="078_MVCCRUD.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.8- Referencia y links de interés
+    7.8- MVC y CRUD
   </span>
   
 
@@ -2643,11 +2822,11 @@
   
   
     <li class="md-nav__item">
-      <a href="079_Autoevaluacion.html" class="md-nav__link">
+      <a href="079_CRUDFormularios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.9- Autoevaluación
+    7.9- CRUD y formularios
   </span>
   
 
@@ -2664,11 +2843,53 @@
   
   
     <li class="md-nav__item">
-      <a href="0710_PruebaEspecifica.html" class="md-nav__link">
+      <a href="0710_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.10- Prueba específica
+    7.10- Referencia y links de interés
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0711_Autoevaluacion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.11- Autoevaluación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0712_PruebaEspecifica.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.12- Prueba específica
   </span>
   
 
@@ -2991,6 +3212,58 @@
 
 
 <h1 id="estructura-de-carpetas">Estructura de carpetas<a class="headerlink" href="#estructura-de-carpetas" title="Permanent link">&para;</a></h1>
+<p><a class="glightbox" href="../../img/ut07/ut07-carpetasLaravel.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Carpetas por defecto de un proyecto con Laravel" src="../../img/ut07/ut07-carpetasLaravel.png" /></a></p>
+<p>Cada vez que inicializamos un proyecto con Laravel, se crean una serie de carpetas y ficheros que son fundamentales para que nuestra aplicación, bajo este framework, funcione correctamente. Su conocimiento hará que nuestro desarrollo sea mucho más ágil y óptimo.</p>
+<h2 id="carpeta-app">Carpeta <code>app</code><a class="headerlink" href="#carpeta-app" title="Permanent link">&para;</a></h2>
+<p>Es la que contiene una serie de archivos fundamentales para nuestro proyecto. Esta carpeta contiene tres carpetas:</p>
+<ul>
+<li><code>Http</code>: contiene los controladores.</li>
+<li><code>Models</code>: contiene los modelos.</li>
+<li><code>Providers</code>: contiene los proveedores de servicios que son necesarios para el correcto funcionamiento del framework.</li>
+</ul>
+<h2 id="carpeta-bootstrap">Carpeta <code>bootstrap</code><a class="headerlink" href="#carpeta-bootstrap" title="Permanent link">&para;</a></h2>
+<p>Aquí se ubica el fichero <code>app.php</code> que es uno de los primeros en cargarse tras el <code>index.php</code>. Además, contiene una carpeta de <code>cache</code>y el fichero <code>providers.php</code>que es el que debemos modificar si generamos nuestros propios proveedores de servicios. Es una carpeta que por lo general no es necesario realizar muchos cambios en ella.</p>
+<h2 id="carpeta-config">Carpeta <code>config</code><a class="headerlink" href="#carpeta-config" title="Permanent link">&para;</a></h2>
+<p>En esta carpeta, encontramos todos los ficheros de configuración de nuestra aplicación como son:</p>
+<ul>
+<li><code>app.php</code>: lugar en el que se definen variables como el nombre de la app, si está en producción o no, si tiene el modo de depuración activo o la url de nuestra app. Es un fichero que hay que tener en cuenta para el correcto funcionamiento. Suelen ser las variables que tendremos en producción.</li>
+<li><code>auth.php</code>: todo lo relacionado con la autenticación se encuentra aquí.</li>
+<li><code>database.php</code>: todo lo relacionado con la base datos está en este fichero, como el tipo de base de datos que usa (por defecto es SQLite) o la conexión al servidor de base de datos.</li>
+</ul>
+<h2 id="carpeta-database">Carpeta <code>database</code><a class="headerlink" href="#carpeta-database" title="Permanent link">&para;</a></h2>
+<p>Lugar donde se almacenan las migraciones, seeders y factorías. Estos conceptos los veremos a lo largo de esta unidad y de la siguiente.
+Adicionalmente, si usásemos SQLite, es la carpeta donde se almacena.</p>
+<h2 id="carpeta-public">Carpeta <code>public</code><a class="headerlink" href="#carpeta-public" title="Permanent link">&para;</a></h2>
+<p>Es la única carpeta a la que se puede acceder desde el navegador. Contiene una serie de ficheros que te deberían sonar del módulo de Despliegue de Aplicaciones Web:</p>
+<ul>
+<li><code>.htaccess</code>: gestiona el acceso de las peticiones.</li>
+<li><code>index.php</code>: primer fichero que se carga de nuestra aplicación.</li>
+<li><code>robots.txt</code>: fichero con las directrices para los robots de los distintos buscadores.</li>
+</ul>
+<h2 id="carpeta-resource">Carpeta <code>resource</code><a class="headerlink" href="#carpeta-resource" title="Permanent link">&para;</a></h2>
+<p>Esta es nuestra carpeta de recursos donde guardaremos, separados en carpetas, los siguientes tipos de ficheros:</p>
+<ul>
+<li><code>css</code>: ficheros de hojas de estilos o CSS</li>
+<li><code>js</code>: ficheros de JavaScript.</li>
+<li><code>views</code>: las vistas de nuestra aplicación.</li>
+</ul>
+<h2 id="carpeta-routes">Carpeta <code>routes</code><a class="headerlink" href="#carpeta-routes" title="Permanent link">&para;</a></h2>
+<p>En ella se albergan todas las rutas (redirecciones web) de nuestro proyecto. El fichero <code>web.php</code> es el que para cada ruta nos cargará una vista. Es una de las carpetas que veremos en profundidad en el siguiente apartado de la unidad de trabajo.</p>
+<h2 id="carpeta-storage">Carpeta <code>storage</code><a class="headerlink" href="#carpeta-storage" title="Permanent link">&para;</a></h2>
+<p>Carpeta que almacena registros y archivos generados por Laravel o nuestra app.</p>
+<h2 id="carpeta-test">Carpeta <code>test</code><a class="headerlink" href="#carpeta-test" title="Permanent link">&para;</a></h2>
+<p>Los test en PHPUnit estarán localizados en esta carpeta.</p>
+<h2 id="carpeta-vendor">Carpeta <code>vendor</code><a class="headerlink" href="#carpeta-vendor" title="Permanent link">&para;</a></h2>
+<p>Todas las dependencias de nuestro framework se ubican aquí. Es una carpeta que no deberíamos modificar o dejaremos de poder recibir actualizaciones de las versiones de Laravel de manera segura.</p>
+<h2 id="otros-ficheros">Otros ficheros<a class="headerlink" href="#otros-ficheros" title="Permanent link">&para;</a></h2>
+<p>Fuera de estas carpetas se encuentran una serie de ficheros que es necesario conocer de su existencia para un mejor desarrollo:</p>
+<ul>
+<li><code>.env</code>: fichero de variables del entorno de desarrollo.</li>
+<li><code>compose.json</code>: fichero con la configuración de la app que usa compose.</li>
+<li><code>readme.md</code>: fichero que se carga en le repositorio a modo de descripción o de explicación de nuestro proyecto.</li>
+<li><code>vite.config.js</code>: una de las grandes ventajas que nos permite Laravel es el uso de integraciones de node con PHP. Estas integraciones se hacen en este fichero.</li>
+</ul>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
@@ -3047,13 +3320,13 @@
         
         
           
-          <a href="074_RutasControladoresVistas.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 7.4- Rutas, controladores y vistas">
+          <a href="074_Rutas.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 7.4- Rutas">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                7.4- Rutas, controladores y vistas
+                7.4- Rutas
               </div>
             </div>
             <div class="md-footer__button md-icon">

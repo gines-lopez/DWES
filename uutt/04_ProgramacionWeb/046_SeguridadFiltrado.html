@@ -160,6 +160,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -2470,6 +2507,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2610,11 +2651,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/074_RutasControladoresVistas.html" class="md-nav__link">
+      <a href="../07_ProyectoI/074_Rutas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.4- Rutas, controladores y vistas
+    7.4- Rutas
   </span>
   
 
@@ -2631,11 +2672,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/075_Migraciones.html" class="md-nav__link">
+      <a href="../07_ProyectoI/075_Controladores.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.5- Migraciones
+    7.5- Controladores
   </span>
   
 
@@ -2652,11 +2693,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/076_MVCCRUD.html" class="md-nav__link">
+      <a href="../07_ProyectoI/076_Vistas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.6- MVC y CRUD
+    7.6- Vistas
   </span>
   
 
@@ -2673,11 +2714,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/077_CRUDFormularios.html" class="md-nav__link">
+      <a href="../07_ProyectoI/077_Migraciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.7- CRUD y formularios
+    7.7- Migraciones
   </span>
   
 
@@ -2694,11 +2735,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/078_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../07_ProyectoI/078_MVCCRUD.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.8- Referencia y links de interés
+    7.8- MVC y CRUD
   </span>
   
 
@@ -2715,11 +2756,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/079_Autoevaluacion.html" class="md-nav__link">
+      <a href="../07_ProyectoI/079_CRUDFormularios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.9- Autoevaluación
+    7.9- CRUD y formularios
   </span>
   
 
@@ -2736,11 +2777,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/0710_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../07_ProyectoI/0710_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.10- Prueba específica
+    7.10- Referencia y links de interés
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_ProyectoI/0711_Autoevaluacion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.11- Autoevaluación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_ProyectoI/0712_PruebaEspecifica.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.12- Prueba específica
   </span>
   
 

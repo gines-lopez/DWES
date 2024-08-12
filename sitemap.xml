@@ -426,7 +426,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/0710_PruebaEspecifica.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/0710_ReferenciaLinks.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/0711_Autoevaluacion.html</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/0712_PruebaEspecifica.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -446,32 +456,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/074_RutasControladoresVistas.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/074_Rutas.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/075_Migraciones.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/075_Controladores.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/076_MVCCRUD.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/076_Vistas.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/077_CRUDFormularios.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/077_Migraciones.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/078_ReferenciaLinks.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/078_MVCCRUD.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/079_Autoevaluacion.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/07_ProyectoI/079_CRUDFormularios.html</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
