@@ -501,16 +501,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/0810_Autoevaluacion.html</loc>
-         <lastmod>2024-08-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/0811_PruebaEspecifica.html</loc>
-         <lastmod>2024-08-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/081_LaravelBreeze.html</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
@@ -536,22 +526,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/086_ComponentesI.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/086_SeedersFactories.html</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/087_ComponentesII.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/087_ReferenciaLinks.html</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/088_SeedersFactories.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/088_Autoevaluacion.html</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/089_ReferenciaLinks.html</loc>
+         <loc>https://github.com/gines-lopez/DWES/uutt/08_ProyectoII/089_PruebaEspecifica.html</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
