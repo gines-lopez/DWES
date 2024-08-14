@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -85,6 +85,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#mvc-y-crud" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -2424,6 +2429,8 @@
       
         
       
+        
+      
     
     
     
@@ -2654,6 +2661,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7.8- MVC y CRUD
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="078_MVCCRUD.html" class="md-nav__link md-nav__link--active">
         
@@ -2664,6 +2684,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-con-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión con MySQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlador-tipo-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlador tipo resource
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-de-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de CRUD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de CRUD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-un-registro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear un registro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leer-un-registro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leer un registro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-un-registro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizar un registro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-un-registro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrar un registro
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructor-de-consultas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructor de consultas.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2698,11 +2815,11 @@
   
   
     <li class="md-nav__item">
-      <a href="0710_ReferenciaLinks.html" class="md-nav__link">
+      <a href="0710_Paginacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.10- Referencia y links de interés
+    7.10- Paginación
   </span>
   
 
@@ -2719,11 +2836,11 @@
   
   
     <li class="md-nav__item">
-      <a href="0711_Autoevaluacion.html" class="md-nav__link">
+      <a href="0711_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.11- Autoevaluación
+    7.11- Referencia y links de interés
   </span>
   
 
@@ -2740,11 +2857,32 @@
   
   
     <li class="md-nav__item">
-      <a href="0712_PruebaEspecifica.html" class="md-nav__link">
+      <a href="0712_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7.12- Prueba específica
+    7.12- Autoevaluación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0713_PruebaEspecifica.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.13- Prueba específica
   </span>
   
 
@@ -2789,6 +2927,28 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -2850,11 +3010,242 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="../08_ProyectoII/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Resumen UT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/081_LaravelBreeze.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1- Laravel Breeze
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/082_Tailwind.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2- Tailwind: dando estilos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/083_VarianteVue.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3- Variante Vue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/084_ManejoRoles.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4- Manejo de roles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/085_EloquentORM.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5- Eloquent ORM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/086_ComponentesI.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.6- Componentes I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/087_ComponentesII.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.7- Componentes II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/088_SeedersFactories.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.8- Seeders y Factories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/089_ReferenciaLinks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.9- Referencia y links de interés
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/0810_Autoevaluacion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.10- Autoevaluación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ProyectoII/0811_PruebaEspecifica.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.11- Prueba específica
   </span>
   
 
@@ -2940,7 +3331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="../09_ProyectoIII/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3030,7 +3421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="../10_ProyectoReactivo/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3066,9 +3457,126 @@
                   
 
 
-  <h1>7.8- MVC y CRUD</h1>
-
-
+<h1 id="mvc-y-crud">MVC y <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr><a class="headerlink" href="#mvc-y-crud" title="Permanent link">&para;</a></h1>
+<p>En la <a href="../06_AccesoDatos/064_CRUD.html">UT anterior</a> vimos lo que era el <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr>, ahora vamos a trasladarlo a nuestro framework para poder trabajar con él. El manejo de datos es una parte fundamental en cualquier aplicación, es por ello, que debemos hacerlo de una manera segura, eficaz y óptima. Por suerte, Laravel nos ayuda con todo esto.</p>
+<h2 id="conexion-con-mysql">Conexión con MySQL<a class="headerlink" href="#conexion-con-mysql" title="Permanent link">&para;</a></h2>
+<p>Hasta ahora hemos estado trabajando con SQLite, pero para nuestros proyectos a gran escala vamos a necesitar usar un gestor más potente como es MySQL. Para ello, abre el archivo <code>.env</code> en el directorio raíz de tu proyecto y configura tu conexión de base de datos MySQL actualizando las siguientes líneas con la información de tu base de datos:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="n">DB_CONNECTION</span><span class="o">=</span><span class="n">mysql</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="n">DB_HOST</span><span class="o">=</span><span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="n">DB_PORT</span><span class="o">=</span><span class="mi">3306</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="n">DB_DATABASE</span><span class="o">=</span><span class="n">nombre_de_tu_base_de_datos</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="n">DB_USERNAME</span><span class="o">=</span><span class="n">usuario_de_tu_base_de_datos</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span><span class="n">DB_PASSWORD</span><span class="o">=</span><span class="n">password_de_tu_base_de_datos</span>
+</span></code></pre></div>
+<p>Ejecuta la migración:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>php artisan migrate
+</span></code></pre></div>
+<p>Si nos vamos al cliente que utilicemos para manejar la base de datos (phpMyAdmin por ejemplo) veremos que en nuestra base de datos se han creado todas las tablas de la migración que hemos ejecutado y además una tabla que se llama <code>migrations</code>. La tabla <code>migrations</code> es simplemente un registro de todas las migraciones llevadas a cabo.</p>
+<h2 id="controlador-tipo-resource">Controlador tipo <code>resource</code><a class="headerlink" href="#controlador-tipo-resource" title="Permanent link">&para;</a></h2>
+<p>Aunque ya <a href="075_Controladores.html">vimos</a> qué eran este tipo de controladores, su verdadera utilidad se da cuando entramos a trabajar con el <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr>. Para ello comenzaremos creando nuestro controlador:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>php artisan make:controller PostController -r
+</span></code></pre></div>
+<p>Esto nos creará un controlador del tipo <code>resource</code> vacío. Pero podemos crear también el modelo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>php artisan make:controller PostController -r -m
+</span></code></pre></div>
+<h2 id="uso-de-crud">Uso de <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr><a class="headerlink" href="#uso-de-crud" title="Permanent link">&para;</a></h2>
+<p>Para poder usar los controladores deberemos añadirlos al fichero <code>web.php</code>, que como vivos en el apartado de <a href="074_Rutas.html">rutas</a>:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="x">Route::resource(&#39;post&#39;, PostController::class);</span>
+</span></code></pre></div>
+<p>Con esto ya podemos ir trabajando en el controlador y en el modelo que hemos creado anteriormente. Ahora seguiremos un ejemplo, un post, para poder comprender cómo trabaja Laravel a la hora de interactuar con la base de datos.</p>
+<h3 id="crear-un-registro">Crear un registro<a class="headerlink" href="#crear-un-registro" title="Permanent link">&para;</a></h3>
+<p>A la hora de crear el registro, modificaremos el modelo ya que debemos indicar los campos que se pueden rellenar, de lo contrario nos dará error.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">Illuminate\Database\Eloquent\Factories\HasFactory</span><span class="p">;</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">Illuminate\Database\Eloquent\Model</span><span class="p">;</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="k">class</span> <span class="nc">Post</span> <span class="k">extends</span> <span class="nx">Model</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">{</span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span>    <span class="k">use</span> <span class="nx">HasFactory</span><span class="p">;</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>    <span class="k">protected</span> <span class="nv">$fillable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="s1">&#39;category_id&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;posted&#39;</span><span class="p">,</span> <span class="s1">&#39;image&#39;</span><span class="p">];</span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Ahora en nuestro controlador, en el momento que consideremos podemos crear nuestro post:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="nx">Post</span><span class="o">::</span><span class="na">create</span><span class="p">(</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span> <span class="p">[</span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span> <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test title&#39;</span><span class="p">,</span>
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span> <span class="s1">&#39;slug&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test slug&#39;</span><span class="p">,</span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span> <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test content&#39;</span><span class="p">,</span>
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span> <span class="s1">&#39;category_id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span> <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test description&#39;</span><span class="p">,</span>
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span> <span class="s1">&#39;posted&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;not&#39;</span><span class="p">,</span>
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span> <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test image&#39;</span><span class="p">,</span>
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span> <span class="p">]</span>
+</span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span><span class="p">);</span>
+</span></code></pre></div>
+<p>Esto será especialmente útil en combinación con los <a href="079_CRUDFormularios.html">formularios</a> ya que nos permitirá recoger datos e insertarlos en la base de datos.</p>
+<h3 id="leer-un-registro">Leer un registro<a class="headerlink" href="#leer-un-registro" title="Permanent link">&para;</a></h3>
+<p>Esto se hace desde el propio objeto y los métodos que se implemente en él. Es por ello que será particular de cada uno de los desarrollos que hagamos.</p>
+<h3 id="actualizar-un-registro">Actualizar un registro<a class="headerlink" href="#actualizar-un-registro" title="Permanent link">&para;</a></h3>
+<p>Para actualizar un objeto necesitamos tener la instancia del objeto en concreto. En este ejemplo suponemos que es el de id=1, pero cada programa se registrará de una manera diferente:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$post</span> <span class="o">=</span> <span class="nx">Post</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$post</span> <span class="o">=</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos="4 "></span>    <span class="p">[</span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos="5 "></span>    <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test title new&#39;</span><span class="p">,</span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos="6 "></span>    <span class="s1">&#39;slug&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test slug&#39;</span><span class="p">,</span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos="7 "></span>    <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test content&#39;</span><span class="p">,</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos="8 "></span>    <span class="p">]</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos="9 "></span>    <span class="p">);</span> 
+</span></code></pre></div>
+<p>De este modo, se actualizan los campos que nosotros queremos que se actualicen.</p>
+<h3 id="borrar-un-registro">Borrar un registro<a class="headerlink" href="#borrar-un-registro" title="Permanent link">&para;</a></h3>
+<p>Para borrar un registro debemos tener la instancia del objeto, una vez que lo tengamos, es muy parecido a la actualización.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$post</span> <span class="o">=</span> <span class="nx">Post</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Con esto borraríamos el post de id=1.</p>
+<h2 id="constructor-de-consultas">Constructor de consultas.<a class="headerlink" href="#constructor-de-consultas" title="Permanent link">&para;</a></h2>
+<p>El constructor de consultas de base de datos de Laravel proporciona una interfaz fluida y conveniente para crear y ejecutar consultas de base de datos. Se puede utilizar para realizar la mayoría de las operaciones de base de datos en su aplicación y funciona perfectamente con todos los sistemas de base de datos compatibles con Laravel.</p>
+<p>El constructor de consultas de Laravel utiliza la vinculación de parámetros PDO para proteger su aplicación contra ataques de inyección SQL. No es necesario limpiar o sanitizar las cadenas pasadas al constructor de consultas como vinculaciones de consulta.</p>
+<p>Debido a su extensión, veremos un sencillo ejemplo, pero es muy recomendable consultar la <a href="https://documentacionlaravel.com/docs/11.x/queries">documentación</a> para conocer todas las posibilidades que nos da.</p>
+<p>Puedes utilizar el método <code>table</code> proporcionado por el DB facade (o helper) para comenzar una consulta. El método <code>table</code> devuelve una instancia de constructor de consultas fluido para la tabla dada, lo que le permite encadenar más restricciones a la consulta y luego finalmente recuperar los resultados de la consulta utilizando el método get:</p>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-9-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-9-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+</span><span id="__span-9-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-9-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\DB</span><span class="p">;</span>
+</span><span id="__span-9-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">Illuminate\View\View</span><span class="p">;</span>
+</span><span id="__span-9-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-9-8"><span class="linenos" data-linenos=" 8 "></span><span class="k">class</span> <span class="nc">UserController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+</span><span id="__span-9-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">{</span>
+</span><span id="__span-9-10"><span class="linenos" data-linenos="10 "></span>    <span class="sd">/**</span>
+</span><span id="__span-9-11"><span class="linenos" data-linenos="11 "></span><span class="sd">     * Mostrar una lista de todos los usuarios de la aplicación.</span>
+</span><span id="__span-9-12"><span class="linenos" data-linenos="12 "></span><span class="sd">     */</span>
+</span><span id="__span-9-13"><span class="linenos" data-linenos="13 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span><span class="o">:</span> <span class="nx">View</span>
+</span><span id="__span-9-14"><span class="linenos" data-linenos="14 "></span>    <span class="p">{</span>
+</span><span id="__span-9-15"><span class="linenos" data-linenos="15 "></span>        <span class="nv">$users</span> <span class="o">=</span> <span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+</span><span id="__span-9-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-9-17"><span class="linenos" data-linenos="17 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;user.index&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;users&#39;</span> <span class="o">=&gt;</span> <span class="nv">$users</span><span class="p">]);</span>
+</span><span id="__span-9-18"><span class="linenos" data-linenos="18 "></span>    <span class="p">}</span>
+</span><span id="__span-9-19"><span class="linenos" data-linenos="19 "></span><span class="p">}</span>
+</span></code></pre></div>
+El método get devuelve una instancia de <code>Illuminate\Support\Collection</code> que contiene los resultados de la consulta donde cada resultado es una instancia del objeto PHP <code>stdClass</code>. Puedes acceder al valor de cada columna accediendo a la columna como una propiedad del objeto:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-10-2"><span class="linenos" data-linenos="2 "></span><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\DB</span><span class="p">;</span>
+</span><span id="__span-10-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-10-4"><span class="linenos" data-linenos="4 "></span><span class="nv">$users</span> <span class="o">=</span> <span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+</span><span id="__span-10-5"><span class="linenos" data-linenos="5 "></span>
+</span><span id="__span-10-6"><span class="linenos" data-linenos="6 "></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$users</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-10-7"><span class="linenos" data-linenos="7 "></span>    <span class="k">echo</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+</span><span id="__span-10-8"><span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</span></code></pre></div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
