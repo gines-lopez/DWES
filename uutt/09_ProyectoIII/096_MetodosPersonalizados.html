@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#metodos-personalizados" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -3314,6 +3319,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9.6- Métodos personalizados
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="096_MetodosPersonalizados.html" class="md-nav__link md-nav__link--active">
         
@@ -3324,6 +3342,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modificando-el-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificando el controlador
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modificando-apiphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificando api.php
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3526,9 +3581,35 @@
                   
 
 
-  <h1>9.6- Métodos personalizados</h1>
-
-
+<h1 id="metodos-personalizados">Métodos personalizados<a class="headerlink" href="#metodos-personalizados" title="Permanent link">&para;</a></h1>
+<p>Nada nos impide que nos salgamos del flujo establecido de Laravel, es más seguramente en algún momento de tu vida como desarrollador te pedirán algo más personalizado para una integración específica. En estos casos, necesitas conocer la manera de hacerlo y, hablando de API, nos tocará modificar el controlador y el fichero <code>api.php</code> para la ruta.</p>
+<h2 id="modificando-el-controlador">Modificando el controlador<a class="headerlink" href="#modificando-el-controlador" title="Permanent link">&para;</a></h2>
+<p>En este apartado, debes programar lo que se te solicite, pero en nuestro caso vamos a listar todas las categorías (recuerda que el <a href="094_CRUDAPI.html">controlador</a> hemos paginado la función <code>index()</code>).</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">public function all()</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="x">    return response()-&gt;json(Category::get());</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</span></code></pre></div>
+<p>Creamos un método que nos devuelve todas las categorías. </p>
+<h2 id="modificando-apiphp">Modificando <code>api.php</code><a class="headerlink" href="#modificando-apiphp" title="Permanent link">&para;</a></h2>
+<p>En este fichero hay una peculiaridad, y es que actúa, salvando las distancias, bajo la premisa FIFO<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, es por ello que deberás colocar primero las reglas específicas y después las genéricas. Te dejo un ejemplo de cómo sería en este caso:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>Route::get(&#39;category/all&#39;, [CategoryController::class, &#39;all&#39;]);
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>Route::resource(&#39;category&#39;, CategoryController::class)-&gt;except([&#39;create&#39;, &#39;edit&#39;]);
+</span></code></pre></div>
+<p>Si lo hiciéramos al revés no nos dejaría hacer uso de nuestro método personalizado ya que trataría de buscar "all" en la base de datos.</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>First In First Out. Metodología de listas en las que atiende primero a la solicitud que llegue primero.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

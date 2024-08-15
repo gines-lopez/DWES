@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#manejar-excepciones" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -3335,6 +3340,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="097_ManejoExcepciones.html" class="md-nav__link md-nav__link--active">
         
@@ -3526,9 +3533,42 @@
                   
 
 
-  <h1>9.7- Manejo de excepciones</h1>
-
-
+<h1 id="manejar-excepciones">Manejar Excepciones<a class="headerlink" href="#manejar-excepciones" title="Permanent link">&para;</a></h1>
+<p>Estamos ante otro de los grandes cambios de Laravel 11, y es que con respecto versiones anteriores, se han fusionado muchos ficheros en <code>bootstrap\app.php</code>. Para manejar las <a href="https://laravel.com/docs/11.x/errors#rendering-exceptions">excepciones</a>, debemos siempre de capturarla y devolver una vista o un JSON. </p>
+<p>Es por esto, que debemos hacer uso de la función <code>render()</code> de la clase <code>Exceptions</code>. El problema es que debemos saber si viene de la API o no, para lo que necesitamos hacer uso de <code>$request</code>.
+Gracias a <code>$request</code> podemos saber si esperamos un JSON o no.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">use</span> <span class="nx">Illuminate\Foundation\Application</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">use</span> <span class="nx">Illuminate\Foundation\Configuration\Exceptions</span><span class="p">;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">Illuminate\Foundation\Configuration\Middleware</span><span class="p">;</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">Symfony\Component\HttpKernel\Exception\NotFoundHttpException</span><span class="p">;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="k">return</span> <span class="nx">Application</span><span class="o">::</span><span class="na">configure</span><span class="p">(</span><span class="nx">basePath</span><span class="o">:</span> <span class="nb">dirname</span><span class="p">(</span><span class="no">__DIR__</span><span class="p">))</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="o">-&gt;</span><span class="na">withRouting</span><span class="p">(</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>        <span class="nx">web</span><span class="o">:</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s1">&#39;/../routes/web.php&#39;</span><span class="p">,</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>        <span class="nx">api</span><span class="o">:</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s1">&#39;/../routes/api.php&#39;</span><span class="p">,</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>        <span class="nx">commands</span><span class="o">:</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s1">&#39;/../routes/console.php&#39;</span><span class="p">,</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>        <span class="nx">health</span><span class="o">:</span> <span class="s1">&#39;/up&#39;</span><span class="p">,</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>    <span class="p">)</span>
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>    <span class="o">-&gt;</span><span class="na">withMiddleware</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Middleware</span> <span class="nv">$middleware</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>        <span class="c1">//</span>
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>    <span class="p">})</span>
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span>    <span class="o">-&gt;</span><span class="na">withExceptions</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Exceptions</span> <span class="nv">$exceptions</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span>        <span class="nv">$exceptions</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nx">NotFoundHttpException</span> <span class="nv">$e</span><span class="p">,</span> <span class="nv">$request</span><span class="p">){</span>
+</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span>            <span class="k">if</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">expectsJson</span><span class="p">()){</span>
+</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span>                <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="s1">&#39;Not found&#39;</span><span class="p">,</span><span class="mi">404</span><span class="p">);</span>
+</span><span id="__span-0-22"><span class="linenos" data-linenos="22 "></span>            <span class="p">}</span>
+</span><span id="__span-0-23"><span class="linenos" data-linenos="23 "></span>        <span class="p">});</span>
+</span><span id="__span-0-24"><span class="linenos" data-linenos="24 "></span>    <span class="p">})</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
+</span></code></pre></div>
+<p>De este modo, si hay una excepción del tipo <em>NotFoundHttpException</em>, y se espera un JSON, devolverá un JSON con el mensaje <em>Not Found</em> y un 404 en lugar del error. Si no lo espera, el sistema lo gestionará dando el 404 habitual.</p>
+<p>Siguiendo estas pautas, estaremos construyendo una API robusta y sobre las que tendremos control en cualquier momento de lo que pasa.</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
