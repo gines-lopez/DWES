@@ -3703,36 +3703,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tag" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tag
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#manejo-de-errores-en-el-formulario" class="md-nav__link">
     <span class="md-ellipsis">
       Manejo de errores en el formulario
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#drag-and-drop-arrastrar-y-soltar" class="md-nav__link">
-    <span class="md-ellipsis">
-      Drag and Drop (Arrastrar y soltar)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#borrar-archivos-anteriores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Borrar Archivos anteriores
     </span>
   </a>
   
@@ -3775,11 +3748,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1008_Login.html" class="md-nav__link">
+      <a href="1008_Seguridad.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.8- Login
+    10.8- Seguridad en el proyecto reactivo
   </span>
   
 
@@ -3796,11 +3769,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1009_Seguridad.html" class="md-nav__link">
+      <a href="1009_AutenticacionToken.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.9- Seguridad en el proyecto reactivo
+    10.9- Autenticación con tokens
   </span>
   
 
@@ -3917,12 +3890,132 @@
 
 
 <h1 id="gestion-subida-de-ficheros">Gestión subida de ficheros<a class="headerlink" href="#gestion-subida-de-ficheros" title="Permanent link">&para;</a></h1>
+<p>La carga de ficheros es algo muy común en las aplicaciones de hoy en día. En este apartado vamos a ver los pasos que debemos dar para implementar la carga de archivos con Laravel en nuestro proyecto reactivo.</p>
+<p>En esta parte seguiremos haciendo uso del formulario que hemos creado en el <a href="1005_AplicacionRutasCrearPost.html">apartado anterior</a>, por lo que gran parte del código está ya creado. Ahora vamos a ver lo que realmente necesitamos para la gestión de ficheros en nuestro proyecto reactivo.</p>
 <h2 id="controlador">Controlador<a class="headerlink" href="#controlador" title="Permanent link">&para;</a></h2>
+<p>Lo primero que debemos hacer es implementar un recurso rest para la carga de ficheros. Esto lo haremos sobre el controlador, en este caso <code>PostController.php</code>. Esta función de subida deberá darnos un JSON.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span> 
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">function</span> <span class="nf">upload</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$filename</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">.</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">image</span><span class="o">-&gt;</span><span class="na">extension</span><span class="p">();</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>        <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">image</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">),</span> <span class="nv">$filename</span><span class="p">);</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="c1">// Esto actualizará el post siempre que en el modelo la imagen se llame &#39;image&#39;</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nv">$post</span><span class="p">);</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>    <span class="p">}</span>
+</span></code></pre></div>
+<p>Ahora debemos añadir la ruta en nuestro fichero <code>api.php</code>:</p>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="x">Route::post(&#39;post/upload/{post}&#39;,[PostController::class, &#39;upload&#39;]);</span>
+</span></code></pre></div>
+Puedes realizar una prueba con <a href="../09_ProyectoIII/095_ProbarAPI.html">Postman</a> eligiendo el método <code>POST</code> y el tipo de datos como <code>form-data</code> de tipo <code>file</code>.</p>
 <h2 id="implementacion-en-vue">Implementación en Vue<a class="headerlink" href="#implementacion-en-vue" title="Permanent link">&para;</a></h2>
-<h2 id="tag">Tag<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h2>
+<p>Una vez que nuestro proyecto es capaz de subir ficheros y actualizar en la base de datos, toca hacerlo de una manera más amigable para el usuario. En este punto retomamos el fichero que creamos en el apartado anterior. Seguimos haciendo uso de Oruga UI, pero sería parecido si lo hiciésemos sin él o con Tailwind.</p>
+<p><div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex gap-2 mt-5&quot;</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">o-field</span><span class="p">&gt;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>        <span class="p">&lt;</span><span class="nt">o-upload</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;file&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>            <span class="p">&lt;</span><span class="nt">o-button</span> <span class="na">tag</span><span class="o">=</span><span class="s">&quot;upload-tag&quot;</span> <span class="na">variant</span><span class="o">=</span><span class="s">&quot;primary&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>                <span class="p">&lt;</span><span class="nt">o-icon</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;upload&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">o-icon</span><span class="p">&gt;</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>                <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click to upload<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>            <span class="p">&lt;/</span><span class="nt">o-button</span><span class="p">&gt;</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;/</span><span class="nt">o-upload</span><span class="p">&gt;</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="p">&lt;/</span><span class="nt">o-field</span><span class="p">&gt;</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>    <span class="p">&lt;</span><span class="nt">o-button</span> <span class="na">icon-left</span><span class="o">=</span><span class="s">&quot;upload&quot;</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;upload&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>        Upload
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">&lt;/</span><span class="nt">o-button</span><span class="p">&gt;</span>     
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+Y la parte de Vue, añadimos la parte de gestión del upload. </p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="nx">upload</span><span class="p">(){</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">formData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">()</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">file</span><span class="p">)</span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">$axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/api/post/upload/&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">formData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">                </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="w">                    </span><span class="s1">&#39;Content-Type&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;multipart/form-data&#39;</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span><span class="w">            </span><span class="p">})</span>
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-3-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-19"><span class="linenos" data-linenos="19 "></span><span class="p">}</span>
+</span><span id="__span-3-20"><span class="linenos" data-linenos="20 "></span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></div>
+<p>Con esto ya tendríamos una simple gestión de subida de ficheros, pero sin control alguno de errores.</p>
 <h2 id="manejo-de-errores-en-el-formulario">Manejo de errores en el formulario<a class="headerlink" href="#manejo-de-errores-en-el-formulario" title="Permanent link">&para;</a></h2>
-<h2 id="drag-and-drop-arrastrar-y-soltar">Drag and Drop (Arrastrar y soltar)<a class="headerlink" href="#drag-and-drop-arrastrar-y-soltar" title="Permanent link">&para;</a></h2>
-<h2 id="borrar-archivos-anteriores">Borrar Archivos anteriores<a class="headerlink" href="#borrar-archivos-anteriores" title="Permanent link">&para;</a></h2>
+<p>En todo proceso que interviene un usuario debemos de dar la información de lo que está pasando en nuestro proyecto, y es por eso que debemos gestionar los diferentes errores que se pueden dar en nuestro proceso de subida de ficheros a nuestro servidor.</p>
+<p>De entrada, comenzamos con el controlador, donde indicaremos las extensiones aceptadas y el tamaño máximo que permitimos.:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">function</span> <span class="nf">upload</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-4-3"><span class="hll"><span class="linenos" data-linenos=" 3 "></span>
+</span></span><span id="__span-4-4"><span class="hll"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+</span></span><span id="__span-4-5"><span class="hll"><span class="linenos" data-linenos=" 5 "></span>        <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|mimes:jpg,jpeg,png,gif|max:10240&#39;</span>
+</span></span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="p">]);</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$filename</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">.</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">image</span><span class="o">-&gt;</span><span class="na">extension</span><span class="p">();</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">image</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">public_path</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">),</span> <span class="nv">$filename</span><span class="p">);</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>    <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>    <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nv">$post</span><span class="p">);</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Seguidamente variamos el componente:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex gap-2 mt-5&quot;</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-5-2"><span class="hll"><span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">o-field</span> <span class="na">:message</span><span class="o">=</span><span class="s">&quot;fileError&quot;</span> <span class="na">:variant</span><span class="o">=</span><span class="s">&quot;fileError ? &#39;danger&#39; : &#39;primary&#39;&quot;</span><span class="p">&gt;</span>
+</span></span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span>        <span class="p">&lt;</span><span class="nt">o-upload</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;file&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>            <span class="p">&lt;</span><span class="nt">o-button</span> <span class="na">tag</span><span class="o">=</span><span class="s">&quot;upload-tag&quot;</span> <span class="na">variant</span><span class="o">=</span><span class="s">&quot;primary&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>                <span class="p">&lt;</span><span class="nt">o-icon</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;upload&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">o-icon</span><span class="p">&gt;</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span>                <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Click to upload<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span>            <span class="p">&lt;/</span><span class="nt">o-button</span><span class="p">&gt;</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;/</span><span class="nt">o-upload</span><span class="p">&gt;</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="p">&lt;/</span><span class="nt">o-field</span><span class="p">&gt;</span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span>    <span class="p">&lt;</span><span class="nt">o-button</span> <span class="na">icon-left</span><span class="o">=</span><span class="s">&quot;upload&quot;</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&quot;upload&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>        Upload
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">&lt;/</span><span class="nt">o-button</span><span class="p">&gt;</span>     
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Y finalmente el control en Vue:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">mounted</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="nx">data</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-6"><span class="hll"><span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="nx">fileError</span><span class="o">:</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span id="__span-6-7"><span class="hll"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span></span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="nx">upload</span><span class="p">(){</span>
+</span><span id="__span-6-13"><span class="hll"><span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">fileError</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</span></span><span id="__span-6-14"><span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">formData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">()</span>
+</span><span id="__span-6-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-6-16"><span class="linenos" data-linenos="16 "></span><span class="w">            </span><span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">file</span><span class="p">)</span>
+</span><span id="__span-6-17"><span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">$axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/api/post/upload/&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">formData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-18"><span class="linenos" data-linenos="18 "></span><span class="w">                </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span><span class="w">                    </span><span class="s1">&#39;Content-Type&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;multipart/form-data&#39;</span>
+</span><span id="__span-6-20"><span class="linenos" data-linenos="20 "></span><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-6-21"><span class="hll"><span class="linenos" data-linenos="21 "></span><span class="w">            </span><span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)=&gt;</span><span class="w"> </span><span class="p">{}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-6-22"><span class="hll"><span class="linenos" data-linenos="22 "></span><span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="nx">fileError</span><span class="o">=</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span>
+</span></span><span id="__span-6-23"><span class="linenos" data-linenos="23 "></span><span class="w">            </span><span class="p">})</span>
+</span><span id="__span-6-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-6-25"><span class="linenos" data-linenos="25 "></span>
+</span><span id="__span-6-26"><span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-6-27"><span class="linenos" data-linenos="27 "></span>
+</span><span id="__span-6-28"><span class="linenos" data-linenos="28 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Con esto tendríamos el control de la subida de archivos realizado tanto en la parte de Laravel (controlador) como en Vue (componente).</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
