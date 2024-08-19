@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1002_OrugaUITailwind.html">
+        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1003_AxiosConsumoAPI.html">
       
       
-        <link rel="prev" href="1001_ProyectoVue.html">
+        <link rel="prev" href="1002_OrugaUI.html">
       
       
-        <link rel="next" href="1003_RutasVue.html">
+        <link rel="next" href="1004_RutasVue.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>10.2- Oruga UI y Tailwind - Desarrollo Web en Entorno Servidor</title>
+        <title>10.3- Axios para consumir API - Desarrollo Web en Entorno Servidor</title>
       
     
     
@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#usando-axios-para-consumir-apis" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -117,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10.2- Oruga UI y Tailwind
+              10.3- Axios para consumir API
             
           </span>
         </div>
@@ -3448,6 +3453,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3543,6 +3552,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="1002_OrugaUI.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2- Oruga UI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -3552,16 +3582,75 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-      <a href="1002_OrugaUITailwind.html" class="md-nav__link md-nav__link--active">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10.3- Axios para consumir API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="1003_AxiosConsumoAPI.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    10.2- Oruga UI y Tailwind
+    10.3- Axios para consumir API
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consumo-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consumo de API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paginacion-de-los-resultados-de-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paginación de los resultados de API
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3575,11 +3664,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1003_RutasVue.html" class="md-nav__link">
+      <a href="1004_RutasVue.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.3- Rutas con Vue
+    10.4- Rutas con Vue
   </span>
   
 
@@ -3596,11 +3685,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1004_CrearPost.html" class="md-nav__link">
+      <a href="1005_AplicacionRutasCrearPost.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.4- Crear Post
+    10.5- Aplicación rutas: Crear Post
   </span>
   
 
@@ -3617,11 +3706,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1005_GestionFicheros.html" class="md-nav__link">
+      <a href="1006_GestionFicheros.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.5- Gestión subida ficheros
+    10.6- Gestión subida ficheros
   </span>
   
 
@@ -3638,11 +3727,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1006_Autenticacion.html" class="md-nav__link">
+      <a href="1007_Autenticacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.6- Autenticacion
+    10.7- Autenticacion
   </span>
   
 
@@ -3659,11 +3748,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1007_Login.html" class="md-nav__link">
+      <a href="1008_Login.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.7- Login
+    10.8- Login
   </span>
   
 
@@ -3680,11 +3769,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1008_Seguridad.html" class="md-nav__link">
+      <a href="1009_Seguridad.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.8- Proyecto con Vue
+    10.9- Seguridad en el proyecto reactivo
   </span>
   
 
@@ -3701,11 +3790,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1009_ReferenciaLinks.html" class="md-nav__link">
+      <a href="1010_Sanctum.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.9- Referencia y links de interés
+    10.10- Sanctum
   </span>
   
 
@@ -3722,11 +3811,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1010_Autoevaluacion.html" class="md-nav__link">
+      <a href="1011_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.10- Autoevaluación
+    10.11- Referencia y links de interés
   </span>
   
 
@@ -3743,11 +3832,32 @@
   
   
     <li class="md-nav__item">
-      <a href="1011_PruebaEspecifica.html" class="md-nav__link">
+      <a href="1012_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.11- Prueba específica
+    10.12- Autoevaluación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1013_PruebaEspecifica.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.13- Prueba específica
   </span>
   
 
@@ -3779,9 +3889,150 @@
                   
 
 
-  <h1>10.2- Oruga UI y Tailwind</h1>
-
-
+<h1 id="usando-axios-para-consumir-apis">Usando Axios para consumir APIs<a class="headerlink" href="#usando-axios-para-consumir-apis" title="Permanent link">&para;</a></h1>
+<p>En muchas ocasiones, al construir una aplicación web, se quiere consumir y mostrar datos de un API. Existen diversas formas de hacerlo, pero un enfoque muy popular es utilizar <a href="https://es.vuejs.org/v2/cookbook/using-axios-to-consume-apis">axios</a>, un cliente HTTP basado en promesas.</p>
+<div class="admonition info">
+<p class="admonition-title">Aclaración uso axios</p>
+<p>Hay varias manera de hacer el consumo de la API, desde el uso de <code>fetch()</code>, que proporciona una forma fácil y lógica de obtener recursos de forma asíncrona por la red, a usar JQuery. El uso de axios reside en aprovechar la potencia que nos da el poder trabajar con las dependencias de node. El uso de uno u otro recaerá en las especificaciones o decisiones tomadas en el proyecto.</p>
+</div>
+<h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h2>
+<p>Axios viene instalado por defecto al instalar Laravel, con lo que ya se puede ver la integración que tiene con nuestro framework. Ahora nos toca exponer axios para que se pueda utilizar, para ello debemos incorporar axios al proyecto y generar una propiedad global para que se pueda utilizar en nuestra app, para ello hay que modificar nuestro fichero <code>main.js</code>:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createApp</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;vue&quot;</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">import</span><span class="w"> </span><span class="nx">Oruga</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@oruga-ui/oruga-next&#39;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;../../css/vue.css&#39;</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;@oruga-ui/theme-oruga/dist/oruga-full.min.css&#39;</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-0-7"><span class="hll"><span class="linenos" data-linenos=" 7 "></span><span class="k">import</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;axios&quot;</span><span class="p">;</span>
+</span></span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./App.vue&quot;</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Oruga</span><span class="p">)</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-0-13"><span class="hll"><span class="linenos" data-linenos="13 "></span><span class="nx">app</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">globalProperties</span><span class="p">.</span><span class="nx">$axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">axios</span>
+</span></span><span id="__span-0-14"><span class="hll"><span class="linenos" data-linenos="14 "></span><span class="nb">window</span><span class="p">.</span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">axios</span>
+</span></span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s2">&quot;#app&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="consumo-de-api">Consumo de API<a class="headerlink" href="#consumo-de-api" title="Permanent link">&para;</a></h2>
+<p>Ahora ya estás en posición de consumir <a href="../09_ProyectoIII/ProgramacionAula.html">la API generada en la UT anterior</a> con axios. A continuación, veremos el ejemplo de un listado de post que nos devolverá nuestra API. Procedemos a generar el fichero que contendrá los componentes.</p>
+<div class="language-html highlight"><span class="filename">resources\js\vue\components\ListComponent.vue</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Post List<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-5&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="p">&lt;</span><span class="nt">o-table</span> <span class="na">:data</span><span class="o">=</span><span class="s">&quot;posts.data&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;</span><span class="nt">o-table-column</span> <span class="na">field</span><span class="o">=</span><span class="s">&quot;id&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;ID&quot;</span> <span class="na">v-slot</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>            {{ p.row.id }}
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>        <span class="p">&lt;/</span><span class="nt">o-table-column</span><span class="p">&gt;</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>        <span class="p">&lt;</span><span class="nt">o-table-column</span> <span class="na">field</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Title&quot;</span> <span class="na">v-slot</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>            {{ p.row.title }}
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span>        <span class="p">&lt;/</span><span class="nt">o-table-column</span><span class="p">&gt;</span>
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>        <span class="p">&lt;</span><span class="nt">o-table-column</span> <span class="na">field</span><span class="o">=</span><span class="s">&quot;posted&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Posted&quot;</span> <span class="na">v-slot</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span>            {{ p.row.posted }}
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span>        <span class="p">&lt;/</span><span class="nt">o-table-column</span><span class="p">&gt;</span>
+</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span>        <span class="p">&lt;</span><span class="nt">o-table-column</span> <span class="na">field</span><span class="o">=</span><span class="s">&quot;category_id&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Category&quot;</span> <span class="na">v-slot</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span>            {{ p.row.category.title }}
+</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span>        <span class="p">&lt;/</span><span class="nt">o-table-column</span><span class="p">&gt;</span>
+</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span>
+</span><span id="__span-1-21"><span class="linenos" data-linenos="21 "></span>    <span class="p">&lt;/</span><span class="nt">o-table</span><span class="p">&gt;</span>
+</span><span id="__span-1-22"><span class="linenos" data-linenos="22 "></span>
+</span><span id="__span-1-23"><span class="linenos" data-linenos="23 "></span><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span><span id="__span-1-24"><span class="linenos" data-linenos="24 "></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-1-25"><span class="linenos" data-linenos="25 "></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-26"><span class="linenos" data-linenos="26 "></span>
+</span><span id="__span-1-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="nx">data</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-29"><span class="linenos" data-linenos="29 "></span><span class="w">            </span><span class="nx">posts</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-1-30"><span class="linenos" data-linenos="30 "></span><span class="w">            </span><span class="nx">isLoading</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-1-31"><span class="linenos" data-linenos="31 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-32"><span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-33"><span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="nx">mounted</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-34"><span class="linenos" data-linenos="34 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">listPage</span><span class="p">()</span>
+</span><span id="__span-1-35"><span class="linenos" data-linenos="35 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-36"><span class="linenos" data-linenos="36 "></span><span class="w">    </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-37"><span class="linenos" data-linenos="37 "></span><span class="w">        </span><span class="nx">listPage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-38"><span class="linenos" data-linenos="38 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">isLoading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-1-39"><span class="linenos" data-linenos="39 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">$axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/post/&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-40"><span class="linenos" data-linenos="40 "></span><span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="nx">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span>
+</span><span id="__span-1-41"><span class="linenos" data-linenos="41 "></span><span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="nx">isLoading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-1-42"><span class="linenos" data-linenos="42 "></span><span class="w">            </span><span class="p">})</span>
+</span><span id="__span-1-43"><span class="linenos" data-linenos="43 "></span><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-1-44"><span class="linenos" data-linenos="44 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-45"><span class="linenos" data-linenos="45 "></span><span class="p">}</span>
+</span><span id="__span-1-46"><span class="linenos" data-linenos="46 "></span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Como se aprecia en la función <code>$axios.get()</code> le facilitamos la ruta de la API que debe consumir. En el siguiente apartado veremos cómo podemos mejorar esta consulta cuando veamos la manera en la que se manejan las rutas, o rutean, en nuestro proyecto reactivo.</p>
+<h2 id="paginacion-de-los-resultados-de-api">Paginación de los resultados de API<a class="headerlink" href="#paginacion-de-los-resultados-de-api" title="Permanent link">&para;</a></h2>
+<p>En muchos casos nuestra API nos devolverá más datos de los que queremos mostrar, en estos casos la paginación es vital. Siguiendo con la filosofía que hemos estado desarrollando, para realizar la paginación de nuestro proyecto deberemos modificar el fichero del listado para hacer uso del componente de paginación.</p>
+<div class="language-html highlight"><span class="filename">resources\js\vue\components\ListComponent.vue</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Post List<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-5&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="p">&lt;</span><span class="nt">o-table</span> <span class="na">:data</span><span class="o">=</span><span class="s">&quot;posts.data&quot;</span> <span class="na">:loading</span><span class="o">=</span><span class="s">&quot;isLoading&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;</span><span class="nt">o-table-column</span> <span class="na">field</span><span class="o">=</span><span class="s">&quot;id&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;ID&quot;</span> <span class="na">v-slot</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>            {{ p.row.id }}
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>        <span class="p">&lt;/</span><span class="nt">o-table-column</span><span class="p">&gt;</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>        <span class="p">&lt;</span><span class="nt">o-table-column</span> <span class="na">field</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Title&quot;</span> <span class="na">v-slot</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>            {{ p.row.title }}
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>        <span class="p">&lt;/</span><span class="nt">o-table-column</span><span class="p">&gt;</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>        <span class="p">&lt;</span><span class="nt">o-table-column</span> <span class="na">field</span><span class="o">=</span><span class="s">&quot;posted&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Posted&quot;</span> <span class="na">v-slot</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>            {{ p.row.posted }}
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>        <span class="p">&lt;/</span><span class="nt">o-table-column</span><span class="p">&gt;</span>
+</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>        <span class="p">&lt;</span><span class="nt">o-table-column</span> <span class="na">field</span><span class="o">=</span><span class="s">&quot;category_id&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Category&quot;</span> <span class="na">v-slot</span><span class="o">=</span><span class="s">&quot;p&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span>            {{ p.row.category.title }}
+</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>        <span class="p">&lt;/</span><span class="nt">o-table-column</span><span class="p">&gt;</span>
+</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span>
+</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span>    <span class="p">&lt;/</span><span class="nt">o-table</span><span class="p">&gt;</span>
+</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-5&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span>
+</span><span id="__span-2-24"><span class="hll"><span class="linenos" data-linenos="24 "></span>    <span class="p">&lt;</span><span class="nt">o-pagination</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;posts.data &amp;&amp; posts.data.length &gt; 0&quot;</span> <span class="err">@</span><span class="na">change</span><span class="o">=</span><span class="s">&quot;updatePage&quot;</span> <span class="na">:total</span><span class="o">=</span><span class="s">&quot;posts.total&quot;</span>
+</span></span><span id="__span-2-25"><span class="hll"><span class="linenos" data-linenos="25 "></span>        <span class="na">v-model:current</span><span class="o">=</span><span class="s">&quot;currentPage&quot;</span> <span class="na">:range-before</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">:range-after</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;small&quot;</span> <span class="na">:simple</span><span class="o">=</span><span class="s">&quot;false&quot;</span> 
+</span></span><span id="__span-2-26"><span class="hll"><span class="linenos" data-linenos="26 "></span>        <span class="na">:rounded</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="na">:per-page</span><span class="o">=</span><span class="s">&quot;posts.per_page&quot;</span><span class="p">&gt;</span>
+</span></span><span id="__span-2-27"><span class="hll"><span class="linenos" data-linenos="27 "></span>    <span class="p">&lt;/</span><span class="nt">o-pagination</span><span class="p">&gt;</span>
+</span></span><span id="__span-2-28"><span class="linenos" data-linenos="28 "></span><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span><span id="__span-2-29"><span class="linenos" data-linenos="29 "></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-2-30"><span class="linenos" data-linenos="30 "></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-31"><span class="linenos" data-linenos="31 "></span>
+</span><span id="__span-2-32"><span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="nx">data</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-33"><span class="linenos" data-linenos="33 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-34"><span class="linenos" data-linenos="34 "></span><span class="w">            </span><span class="nx">posts</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-2-35"><span class="linenos" data-linenos="35 "></span><span class="w">            </span><span class="nx">isLoading</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-36"><span class="hll"><span class="linenos" data-linenos="36 "></span><span class="w">            </span><span class="nx">currentPage</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+</span></span><span id="__span-2-37"><span class="linenos" data-linenos="37 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-38"><span class="linenos" data-linenos="38 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-2-39"><span class="linenos" data-linenos="39 "></span><span class="w">    </span><span class="nx">mounted</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-40"><span class="linenos" data-linenos="40 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">listPage</span><span class="p">()</span>
+</span><span id="__span-2-41"><span class="linenos" data-linenos="41 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-2-42"><span class="linenos" data-linenos="42 "></span><span class="w">    </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-43"><span class="linenos" data-linenos="43 "></span><span class="w">        </span><span class="nx">updatePage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-44"><span class="linenos" data-linenos="44 "></span><span class="w">            </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-45"><span class="linenos" data-linenos="45 "></span><span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="nx">listPage</span><span class="p">()</span>
+</span><span id="__span-2-46"><span class="linenos" data-linenos="46 "></span><span class="w">            </span><span class="p">},</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</span><span id="__span-2-47"><span class="linenos" data-linenos="47 "></span><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-2-48"><span class="hll"><span class="linenos" data-linenos="48 "></span><span class="w">        </span><span class="nx">listPage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-2-49"><span class="hll"><span class="linenos" data-linenos="49 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">isLoading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span></span><span id="__span-2-50"><span class="hll"><span class="linenos" data-linenos="50 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">$axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/post/&#39;</span><span class="o">+</span><span class="s1">&#39;?page=&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">currentPage</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-2-51"><span class="hll"><span class="linenos" data-linenos="51 "></span><span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="nx">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span>
+</span></span><span id="__span-2-52"><span class="hll"><span class="linenos" data-linenos="52 "></span><span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="nx">isLoading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</span></span><span id="__span-2-53"><span class="hll"><span class="linenos" data-linenos="53 "></span><span class="w">            </span><span class="p">})</span>
+</span></span><span id="__span-2-54"><span class="hll"><span class="linenos" data-linenos="54 "></span><span class="w">        </span><span class="p">},</span>
+</span></span><span id="__span-2-55"><span class="linenos" data-linenos="55 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-56"><span class="linenos" data-linenos="56 "></span><span class="p">}</span>
+</span><span id="__span-2-57"><span class="linenos" data-linenos="57 "></span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>Debido hay que hay un retraso con la carga de datos del componente, se pone un tiempo de espera a la hora de cargar la página. Esto deberá de comprobarse, ya que de no darse el retraso, no es una buena práctica y debería eliminarse.</p>
+</div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
@@ -3817,7 +4068,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="1001_ProyectoVue.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10.1- Proyecto con Vue">
+          <a href="1002_OrugaUI.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10.2- Oruga UI">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3827,20 +4078,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                10.1- Proyecto con Vue
+                10.2- Oruga UI
               </div>
             </div>
           </a>
         
         
           
-          <a href="1003_RutasVue.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 10.3- Rutas con Vue">
+          <a href="1004_RutasVue.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 10.4- Rutas con Vue">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                10.3- Rutas con Vue
+                10.4- Rutas con Vue
               </div>
             </div>
             <div class="md-footer__button md-icon">
