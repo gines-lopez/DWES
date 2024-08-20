@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1010_BigData.html">
       
       
-        <link rel="prev" href="1009_SanctumUnificar.html">
+        <link rel="prev" href="1009_AProduccion.html">
       
       
         <link rel="next" href="1011_ReferenciaLinks.html">
@@ -85,6 +85,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#laravel-vue-y-el-big-data" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -3697,11 +3702,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1009_SanctumUnificar.html" class="md-nav__link">
+      <a href="1009_AProduccion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.9- Sanctum
+    10.9- A producción
   </span>
   
 
@@ -3724,6 +3729,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10.10- Big Data
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="1010_BigData.html" class="md-nav__link md-nav__link--active">
         
@@ -3734,6 +3752,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-las-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar las dependencias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conectar-con-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conectar con MongoDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-el-consumo-de-la-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear el consumo de la API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-proyecto-reactivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear proyecto reactivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejecutar-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecutar la aplicación
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3825,18 +3907,99 @@
                   
 
 
-  <h1>10.10- Big Data</h1>
+<h1 id="laravel-vue-y-el-big-data">Laravel, Vue y el Big Data<a class="headerlink" href="#laravel-vue-y-el-big-data" title="Permanent link">&para;</a></h1>
+<p>Hoy en día el uso de la ingeniería de datos está a la orden del día. Es por ello que una de las aplicaciones de los proyectos reactivos es la de poder presentar grandes cantidades de datos de una manera fácil de entender. </p>
+<p>En este apartado, vamos a partir de un proyecto en Laravel con Vue que consume una base de datos en <a href="https://www.mongodb.com/resources/products/compatibilities/mongodb-laravel-integration">MongoDB</a>. Para este proyecto nos hará falta:</p>
+<ul>
+<li>Integración de MongoDB o API que nos permita consultar grandes cantidades de datos.</li>
+<li>Axios.</li>
+<li><a href="https://d3js.org/">d3.js</a> visualización de datos.</li>
+</ul>
+<h2 id="instalar-las-dependencias">Instalar las dependencias<a class="headerlink" href="#instalar-las-dependencias" title="Permanent link">&para;</a></h2>
+<p>Aunque nuestro proyecto en Laravel esté ya configurado con Vue, nos hace falta algunas dependencias:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>npm install d3
+</span></code></pre></div>
+<h2 id="conectar-con-mongodb">Conectar con MongoDB<a class="headerlink" href="#conectar-con-mongodb" title="Permanent link">&para;</a></h2>
+<p>Configura tu conexión en config/database.php:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>&#39;mongodb&#39; =&gt; [
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>    &#39;driver&#39; =&gt; &#39;mongodb&#39;,
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>    &#39;host&#39; =&gt; env(&#39;DB_HOST&#39;, &#39;localhost&#39;),
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span>    &#39;database&#39; =&gt; env(&#39;DB_DATABASE&#39;, &#39;miDB&#39;),
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span>],
+</span></code></pre></div>
+<h2 id="crear-el-consumo-de-la-api">Crear el consumo de la API<a class="headerlink" href="#crear-el-consumo-de-la-api" title="Permanent link">&para;</a></h2>
+<p>Tal y como hemos visto a lo largo de la <a href="../09_ProyectoIII/ProgramacionAula.html">UT anterior</a>, se ha de crear una serie de controladores que nos permitan consumir la API. </p>
+<h2 id="crear-proyecto-reactivo">Crear proyecto reactivo<a class="headerlink" href="#crear-proyecto-reactivo" title="Permanent link">&para;</a></h2>
+<p>Necesitamos nuestro componente vue:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">import</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;axios&#39;</span><span class="p">;</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">d3</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;d3&#39;</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">  </span><span class="nx">data</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">      </span><span class="nx">datos</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="w">  </span><span class="nx">mounted</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">obtenerDatos</span><span class="p">();</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="w">  </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nx">obtenerDatos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-15"><span class="hll"><span class="linenos" data-linenos="15 "></span><span class="w">      </span><span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:8000/api/datos&#39;</span><span class="p">)</span>
+</span></span><span id="__span-2-16"><span class="hll"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-2-17"><span class="hll"><span class="linenos" data-linenos="17 "></span><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="nx">datos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+</span></span><span id="__span-2-18"><span class="hll"><span class="linenos" data-linenos="18 "></span><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="nx">renderizarGrafico</span><span class="p">();</span>
+</span></span><span id="__span-2-19"><span class="hll"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="p">});</span>
+</span></span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="nx">renderizarGrafico</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">svg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#contenedor&quot;</span><span class="p">)</span>
+</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+</span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">)</span>
+</span><span id="__span-2-25"><span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">);</span>
+</span><span id="__span-2-26"><span class="linenos" data-linenos="26 "></span>
+</span><span id="__span-2-27"><span class="linenos" data-linenos="27 "></span><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">xScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d3</span><span class="p">.</span><span class="nx">scaleBand</span><span class="p">()</span>
+</span><span id="__span-2-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">datos</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">fecha</span><span class="p">))</span>
+</span><span id="__span-2-29"><span class="linenos" data-linenos="29 "></span><span class="w">        </span><span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">])</span>
+</span><span id="__span-2-30"><span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="p">.</span><span class="nx">padding</span><span class="p">(</span><span class="mf">0.1</span><span class="p">);</span>
+</span><span id="__span-2-31"><span class="linenos" data-linenos="31 "></span>
+</span><span id="__span-2-32"><span class="linenos" data-linenos="32 "></span><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">yScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+</span><span id="__span-2-33"><span class="linenos" data-linenos="33 "></span><span class="w">        </span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">d3</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">datos</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">valor</span><span class="p">)])</span>
+</span><span id="__span-2-34"><span class="linenos" data-linenos="34 "></span><span class="w">        </span><span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">]);</span>
+</span><span id="__span-2-35"><span class="linenos" data-linenos="35 "></span>
+</span><span id="__span-2-36"><span class="linenos" data-linenos="36 "></span><span class="w">      </span><span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;.bar&quot;</span><span class="p">)</span>
+</span><span id="__span-2-37"><span class="linenos" data-linenos="37 "></span><span class="w">        </span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">datos</span><span class="p">)</span>
+</span><span id="__span-2-38"><span class="linenos" data-linenos="38 "></span><span class="w">        </span><span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+</span><span id="__span-2-39"><span class="linenos" data-linenos="39 "></span><span class="w">        </span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;rect&quot;</span><span class="p">)</span>
+</span><span id="__span-2-40"><span class="linenos" data-linenos="40 "></span><span class="w">        </span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+</span><span id="__span-2-41"><span class="linenos" data-linenos="41 "></span><span class="w">        </span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">fecha</span><span class="p">))</span>
+</span><span id="__span-2-42"><span class="linenos" data-linenos="42 "></span><span class="w">        </span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">valor</span><span class="p">))</span>
+</span><span id="__span-2-43"><span class="linenos" data-linenos="43 "></span><span class="w">        </span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">xScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">())</span>
+</span><span id="__span-2-44"><span class="linenos" data-linenos="44 "></span><span class="w">        </span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mf">300</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">valor</span><span class="p">));</span>
+</span><span id="__span-2-45"><span class="linenos" data-linenos="45 "></span><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-2-46"><span class="linenos" data-linenos="46 "></span><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-2-47"><span class="linenos" data-linenos="47 "></span><span class="p">};</span>
+</span></code></pre></div>
+<p>Las líneas marcadas variarán según el enfoque que le demos a la consulta, hay que tener siempre presente que nos va a hacer falta una gran cantidad de datos. Puede darse el caso que la base de datos esté en otro servidor.</p>
+<p>Además habría que generar el controlador que nos permita obtener los datos.</p>
+<h2 id="ejecutar-la-aplicacion">Ejecutar la aplicación<a class="headerlink" href="#ejecutar-la-aplicacion" title="Permanent link">&para;</a></h2>
+<p>Toca arrancar todo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>php artisan serve
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>npm run serve
+</span></code></pre></div>
+<figure>
+<p><a class="glightbox" href="../../img/ut10/ut10-bigdata.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Visualización datos" src="../../img/ut10/ut10-bigdata.png" /></a></p>
+</figure>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
 
 
 
-
-
-
-  
-  
 
 
 
@@ -3866,7 +4029,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="1009_SanctumUnificar.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10.9- Sanctum">
+          <a href="1009_AProduccion.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10.9- A producción">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3876,7 +4039,7 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                10.9- Sanctum
+                10.9- A producción
               </div>
             </div>
           </a>

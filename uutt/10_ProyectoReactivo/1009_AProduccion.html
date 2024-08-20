@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1009_SanctumUnificar.html">
+        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1009_AProduccion.html">
       
       
         <link rel="prev" href="1008_AutenticacionToken.html">
@@ -22,7 +22,7 @@
     
     
       
-        <title>10.9- Sanctum - Desarrollo Web en Entorno Servidor</title>
+        <title>10.9- A producción - Desarrollo Web en Entorno Servidor</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sanctum" class="md-skip">
+        <a href="#nuestro-proyecto-a-produccion" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10.9- Sanctum
+              10.9- A producción
             
           </span>
         </div>
@@ -3715,18 +3715,18 @@
           
   
   <span class="md-ellipsis">
-    10.9- Sanctum
+    10.9- A producción
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="1009_SanctumUnificar.html" class="md-nav__link md-nav__link--active">
+      <a href="1009_AProduccion.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    10.9- Sanctum
+    10.9- A producción
   </span>
   
 
@@ -3748,9 +3748,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unificar-token-y-sesion" class="md-nav__link">
+  <a href="#requisitos-del-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Unificar token y sesión
+      Requisitos del server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-servidor-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del servidor: Nginx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizaciom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizacióm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimizacióm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimizacion-del-autoloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimización del autoloader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizacion-de-la-carga-de-configuraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimización de la carga de configuraciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizacion-de-la-carga-de-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimización de la carga de rutas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizacion-de-la-carga-de-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimización de la carga de vistas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modo-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modo debug
     </span>
   </a>
   
@@ -3871,8 +3940,93 @@
                   
 
 
-<h1 id="sanctum">Sanctum<a class="headerlink" href="#sanctum" title="Permanent link">&para;</a></h1>
-<h2 id="unificar-token-y-sesion">Unificar token y sesión<a class="headerlink" href="#unificar-token-y-sesion" title="Permanent link">&para;</a></h2>
+<h1 id="nuestro-proyecto-a-produccion">Nuestro proyecto a producción<a class="headerlink" href="#nuestro-proyecto-a-produccion" title="Permanent link">&para;</a></h1>
+<p>Cuando estés listo para desplegar tu aplicación Laravel en producción, hay algunas cosas importantes que puedes hacer para asegurarte de que tu aplicación se ejecuta de la manera más eficiente posible. Ten en mente que no es un simple "copiar y pegar ficheros", si no que tienes que tener en cuenta una serie de configuraciones para su funcionamiento.</p>
+<h2 id="requisitos-del-server">Requisitos del server<a class="headerlink" href="#requisitos-del-server" title="Permanent link">&para;</a></h2>
+<p>El framework Laravel tiene algunos requisitos de sistema. Debes asegurarte tiene un entorno idéntico al tuyo de desarrollo:</p>
+<ul>
+<li>PHP &gt;= 8.3</li>
+<li>Ctype PHP Extension</li>
+<li>cURL PHP Extension</li>
+<li>DOM PHP Extension</li>
+<li>Fileinfo PHP Extension</li>
+<li>Filter PHP Extension</li>
+<li>Hash PHP Extension</li>
+<li>Mbstring PHP Extension</li>
+<li>OpenSSL PHP Extension</li>
+<li>PCRE PHP Extension</li>
+<li>PDO PHP Extension</li>
+<li>Session PHP Extension</li>
+<li>Tokenizer PHP Extension</li>
+<li>XML PHP Extension</li>
+</ul>
+<p>Aunque parezcan muchas, todos son comunes en la mayoría de los proveedores de hosting.</p>
+<h2 id="configuracion-del-servidor-nginx">Configuración del servidor: Nginx<a class="headerlink" href="#configuracion-del-servidor-nginx" title="Permanent link">&para;</a></h2>
+<p>Si estás desplegando su aplicación en un servidor que ejecuta Nginx, puedes utilizar el siguiente archivo de configuración como punto de partida para configurar tu servidor web. Lo más probable es que este archivo tenga que ser personalizado dependiendo de la configuración de tu servidor. </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>server {
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    listen 80;
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    listen [::]:80;
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    server_name example.com;
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>    root /srv/example.com/public;
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    add_header X-Frame-Options &quot;SAMEORIGIN&quot;;
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    add_header X-Content-Type-Options &quot;nosniff&quot;;
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>    index index.php;
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>    charset utf-8;
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>    location / {
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>        try_files $uri $uri/ /index.php?$query_string;
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>    }
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span>    location = /favicon.ico { access_log off; log_not_found off; }
+</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span>    location = /robots.txt  { access_log off; log_not_found off; }
+</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span>
+</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span>    error_page 404 /index.php;
+</span><span id="__span-0-22"><span class="linenos" data-linenos="22 "></span>
+</span><span id="__span-0-23"><span class="linenos" data-linenos="23 "></span>    location ~ \.php$ {
+</span><span id="__span-0-24"><span class="linenos" data-linenos="24 "></span>        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+</span><span id="__span-0-25"><span class="linenos" data-linenos="25 "></span>        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+</span><span id="__span-0-26"><span class="linenos" data-linenos="26 "></span>        include fastcgi_params;
+</span><span id="__span-0-27"><span class="linenos" data-linenos="27 "></span>    }
+</span><span id="__span-0-28"><span class="linenos" data-linenos="28 "></span>
+</span><span id="__span-0-29"><span class="linenos" data-linenos="29 "></span>    location ~ /\.(?!well-known).* {
+</span><span id="__span-0-30"><span class="linenos" data-linenos="30 "></span>        deny all;
+</span><span id="__span-0-31"><span class="linenos" data-linenos="31 "></span>    }
+</span><span id="__span-0-32"><span class="linenos" data-linenos="32 "></span>}
+</span></code></pre></div>
+<h2 id="optimizaciom">Optimizacióm<a class="headerlink" href="#optimizaciom" title="Permanent link">&para;</a></h2>
+<h3 id="optimizacion-del-autoloader">Optimización del autoloader<a class="headerlink" href="#optimizacion-del-autoloader" title="Permanent link">&para;</a></h3>
+<p>Al desplegar en producción, asegúrate de que está optimizando el mapa de autocarga de clases de Composer para que Composer pueda encontrar rápidamente el archivo adecuado para cargar una clase determinada:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>composer install --optimize-autoloader --no-dev
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Además de optimizar el autoloader, siempre debes asegurarte de incluir un archivo <code>composer.lock</code> en el repositorio de control de código fuente de tu proyecto. Las dependencias de su proyecto se pueden instalar mucho más rápido cuando un archivo <code>composer.lock</code> está presente.</p>
+</div>
+<h3 id="optimizacion-de-la-carga-de-configuraciones">Optimización de la carga de configuraciones<a class="headerlink" href="#optimizacion-de-la-carga-de-configuraciones" title="Permanent link">&para;</a></h3>
+<p>Cuando despliegues tu aplicación a producción, debes asegurarte de ejecutar el comando Artisan <code>config:cache</code> durante tu proceso de despliegue:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>php artisan config:cache
+</span></code></pre></div>
+Este comando combinará todos los archivos de configuración de Laravel en un único archivo en caché, lo que reduce en gran medida el número de viajes que el framework debe hacer al sistema de archivos al cargar los valores de configuración.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Si ejecutas el comando <code>config:cache</code> durante tu proceso de despliegue, debes asegurarte de que sólo estás llamando a la función <code>env</code> desde dentro de tus ficheros de configuración. Una vez que la configuración se ha almacenado en caché, el archivo <code>.env</code> no se cargará y todas las llamadas a la función env para variables <code>.env</code> devolverán null.</p>
+</div>
+<h3 id="optimizacion-de-la-carga-de-rutas">Optimización de la carga de rutas<a class="headerlink" href="#optimizacion-de-la-carga-de-rutas" title="Permanent link">&para;</a></h3>
+<p>Si estás construyendo una aplicación grande con muchas rutas, debes asegurarte de que estás ejecutando el comando Artisan <code>route:cache</code> durante tu proceso de despliegue:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>php artisan route:cache
+</span></code></pre></div>
+Este comando reduce todos los registros de rutas en una única llamada a un método dentro de un archivo en caché, lo que mejora el rendimiento del registro de rutas cuando se registran cientos de rutas.</p>
+<h3 id="optimizacion-de-la-carga-de-vistas">Optimización de la carga de vistas<a class="headerlink" href="#optimizacion-de-la-carga-de-vistas" title="Permanent link">&para;</a></h3>
+<p>Cuando despliegues tu aplicación a producción, debes asegurarte de ejecutar el comando Artisan <code>view:cache</code> durante tu proceso de despliegue:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>php artisan view:cache
+</span></code></pre></div>
+Este comando precompila todas tus vistas Blade para que no se compilen bajo demanda, mejorando el rendimiento de cada petición que devuelve una vista.</p>
+<h2 id="modo-debug">Modo debug<a class="headerlink" href="#modo-debug" title="Permanent link">&para;</a></h2>
+<p>La opción de depuración en su archivo de configuración <code>config/app.php</code> determina cuánta información sobre un error se muestra realmente al usuario. Por defecto, esta opción está configurada para respetar el valor de la variable de entorno <code>APP_DEBUG</code>, que se almacena en el archivo <code>.env</code> de su aplicación.</p>
+<p>En su entorno de producción, este valor debe ser siempre <code>false</code> . Si la variable <code>APP_DEBUG</code> se establece en <code>true</code> en producción, corres el riesgo de exponer valores de configuración sensibles a los usuarios finales de tu aplicación.</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
