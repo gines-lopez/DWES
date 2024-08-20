@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1008_Seguridad.html">
+        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1008_AutenticacionToken.html">
       
       
         <link rel="prev" href="1007_Autenticacion.html">
       
       
-        <link rel="next" href="1009_AutenticacionToken.html">
+        <link rel="next" href="1009_SanctumUnificar.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>10.8- Seguridad en el proyecto reactivo - Desarrollo Web en Entorno Servidor</title>
+        <title>10.8- Autenticación con tokens - Desarrollo Web en Entorno Servidor</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#seguridad-en-nuestro-proyecto" class="md-skip">
+        <a href="#autenticacion-mediante-tokens" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10.8- Seguridad en el proyecto reactivo
+              10.8- Autenticación con tokens
             
           </span>
         </div>
@@ -3690,15 +3690,114 @@
         
       
       
-      <a href="1008_Seguridad.html" class="md-nav__link md-nav__link--active">
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10.8- Autenticación con tokens
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="1008_AutenticacionToken.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    10.8- Seguridad en el proyecto reactivo
+    10.8- Autenticación con tokens
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuraciones-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuraciones base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear tokens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consumir-recurso-protegido-por-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consumir recurso protegido por token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-del-token-de-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo del token de autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-objeto-global-de-usuario-en-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear objeto global de usuario en Vue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-token-en-las-peticiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enviar token en las peticiones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-mediante-cookie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo mediante cookie
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3712,11 +3811,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1009_AutenticacionToken.html" class="md-nav__link">
+      <a href="1009_SanctumUnificar.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.9- Autenticación con tokens
+    10.9- Sanctum
   </span>
   
 
@@ -3733,11 +3832,11 @@
   
   
     <li class="md-nav__item">
-      <a href="1010_Sanctum.html" class="md-nav__link">
+      <a href="1010_BigData.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.10- Sanctum
+    10.10- Big Data
   </span>
   
 
@@ -3832,7 +3931,190 @@
                   
 
 
-<h1 id="seguridad-en-nuestro-proyecto">Seguridad en nuestro proyecto<a class="headerlink" href="#seguridad-en-nuestro-proyecto" title="Permanent link">&para;</a></h1>
+<h1 id="autenticacion-mediante-tokens">Autenticación mediante tokens<a class="headerlink" href="#autenticacion-mediante-tokens" title="Permanent link">&para;</a></h1>
+<p>Para evitar que en cada llamada el usuario deba entregar su clave y password se usa un token, que no es más que una cadena de texto bien larga, encriptada con una clave. Según se hace el login, el servidor devuelve al cliente un token y el cliente en futuros accesos entrega ese token para certificar que está autenticado. </p>
+<figure>
+<p><a class="glightbox" href="../../img/ut10/ut10-logintoken.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Autenticación por token" src="../../img/ut10/ut10-logintoken.png" /></a></p>
+</figure>
+<h2 id="configuraciones-base">Configuraciones base<a class="headerlink" href="#configuraciones-base" title="Permanent link">&para;</a></h2>
+<p>Para llevar a cabo este proceso de trabajar con tokens, necesitamos crear una serie de ficheros que nos lo permitan.</p>
+<div class="language-php highlight"><span class="filename">UserController.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Http\Controllers\Api</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">App\Http\Controllers\Controller</span><span class="p">;</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">Auth</span><span class="p">;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="k">use</span> <span class="nx">Exception</span><span class="p">;</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="k">use</span> <span class="nx">Laravel\Sanctum\PersonalAccessToken</span><span class="p">;</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="k">class</span> <span class="nc">UserController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="p">{</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    <span class="k">function</span> <span class="nf">login</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>    <span class="p">{</span>
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>        <span class="nv">$validator</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">make</span><span class="p">(</span>
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>            <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">(),</span>
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span>            <span class="p">[</span>
+</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span>                <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
+</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span>                <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span>            <span class="p">]</span>
+</span><span id="__span-0-22"><span class="linenos" data-linenos="22 "></span>        <span class="p">);</span>
+</span><span id="__span-0-23"><span class="linenos" data-linenos="23 "></span>
+</span><span id="__span-0-24"><span class="linenos" data-linenos="24 "></span>        <span class="k">if</span> <span class="p">(</span><span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">fails</span><span class="p">())</span> <span class="p">{</span>
+</span><span id="__span-0-25"><span class="linenos" data-linenos="25 "></span>            <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">errors</span><span class="p">(),</span> <span class="mi">422</span><span class="p">);</span>
+</span><span id="__span-0-26"><span class="linenos" data-linenos="26 "></span>        <span class="p">}</span>
+</span><span id="__span-0-27"><span class="linenos" data-linenos="27 "></span>
+</span><span id="__span-0-28"><span class="linenos" data-linenos="28 "></span>        <span class="nv">$credentials</span> <span class="o">=</span> <span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">valid</span><span class="p">();</span>
+</span><span id="__span-0-29"><span class="linenos" data-linenos="29 "></span>
+</span><span id="__span-0-30"><span class="linenos" data-linenos="30 "></span>        <span class="k">if</span> <span class="p">(</span><span class="nx">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">attempt</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-0-31"><span class="linenos" data-linenos="31 "></span>            <span class="nv">$token</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">createToken</span><span class="p">(</span><span class="s1">&#39;myapptoken&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">plainTextToken</span><span class="p">;</span>
+</span><span id="__span-0-32"><span class="linenos" data-linenos="32 "></span>            <span class="nx">session</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">put</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span id="__span-0-33"><span class="linenos" data-linenos="33 "></span>            <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span>
+</span><span id="__span-0-34"><span class="linenos" data-linenos="34 "></span>                <span class="p">[</span>
+</span><span id="__span-0-35"><span class="linenos" data-linenos="35 "></span>                    <span class="s1">&#39;isLoggedIn&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span><span id="__span-0-36"><span class="linenos" data-linenos="36 "></span>                    <span class="s1">&#39;token&#39;</span> <span class="o">=&gt;</span> <span class="nv">$token</span><span class="p">,</span>
+</span><span id="__span-0-37"><span class="linenos" data-linenos="37 "></span>                    <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">(),</span>
+</span><span id="__span-0-38"><span class="linenos" data-linenos="38 "></span>                <span class="p">]</span>
+</span><span id="__span-0-39"><span class="linenos" data-linenos="39 "></span>            <span class="p">);</span>
+</span><span id="__span-0-40"><span class="linenos" data-linenos="40 "></span>        <span class="p">}</span>
+</span><span id="__span-0-41"><span class="linenos" data-linenos="41 "></span>
+</span><span id="__span-0-42"><span class="linenos" data-linenos="42 "></span>        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="s1">&#39;The username and/or password do not match&#39;</span><span class="p">,</span> <span class="mi">422</span><span class="p">);</span>
+</span><span id="__span-0-43"><span class="linenos" data-linenos="43 "></span>
+</span><span id="__span-0-44"><span class="linenos" data-linenos="44 "></span>    <span class="p">}</span>
+</span><span id="__span-0-45"><span class="linenos" data-linenos="45 "></span>
+</span><span id="__span-0-46"><span class="linenos" data-linenos="46 "></span>    <span class="k">function</span> <span class="nf">checkToken</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-0-47"><span class="linenos" data-linenos="47 "></span>        <span class="k">try</span><span class="p">{</span>
+</span><span id="__span-0-48"><span class="linenos" data-linenos="48 "></span>            <span class="p">[</span><span class="nv">$id</span><span class="p">,</span> <span class="nv">$token</span><span class="p">]</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="nx">request</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">));</span>
+</span><span id="__span-0-49"><span class="linenos" data-linenos="49 "></span>            <span class="nv">$tokenHash</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;sha256&#39;</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span id="__span-0-50"><span class="linenos" data-linenos="50 "></span>
+</span><span id="__span-0-51"><span class="linenos" data-linenos="51 "></span>            <span class="nv">$tokenModel</span> <span class="o">=</span> <span class="nx">PersonalAccessToken</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">,</span> <span class="nv">$tokenHash</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+</span><span id="__span-0-52"><span class="linenos" data-linenos="52 "></span>
+</span><span id="__span-0-53"><span class="linenos" data-linenos="53 "></span>            <span class="k">if</span><span class="p">(</span><span class="nv">$tokenModel</span><span class="o">-&gt;</span><span class="na">tokenable</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-0-54"><span class="linenos" data-linenos="54 "></span>                <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span>
+</span><span id="__span-0-55"><span class="linenos" data-linenos="55 "></span>                    <span class="p">[</span>
+</span><span id="__span-0-56"><span class="linenos" data-linenos="56 "></span>                        <span class="s1">&#39;isLoggedIn&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span><span id="__span-0-57"><span class="linenos" data-linenos="57 "></span>                        <span class="s1">&#39;token&#39;</span> <span class="o">=&gt;</span> <span class="nv">$token</span><span class="p">,</span>
+</span><span id="__span-0-58"><span class="linenos" data-linenos="58 "></span>                        <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">(),</span>
+</span><span id="__span-0-59"><span class="linenos" data-linenos="59 "></span>                    <span class="p">]</span>
+</span><span id="__span-0-60"><span class="linenos" data-linenos="60 "></span>                <span class="p">);</span>
+</span><span id="__span-0-61"><span class="linenos" data-linenos="61 "></span>            <span class="p">}</span>
+</span><span id="__span-0-62"><span class="linenos" data-linenos="62 "></span>
+</span><span id="__span-0-63"><span class="linenos" data-linenos="63 "></span>        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span> <span class="nx">Exception</span> <span class="nv">$e</span><span class="p">){}</span>
+</span><span id="__span-0-64"><span class="linenos" data-linenos="64 "></span>
+</span><span id="__span-0-65"><span class="linenos" data-linenos="65 "></span>        <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="s1">&#39;Invalid user&#39;</span><span class="p">,</span> <span class="mi">422</span><span class="p">);</span>
+</span><span id="__span-0-66"><span class="linenos" data-linenos="66 "></span>    <span class="p">}</span>
+</span><span id="__span-0-67"><span class="linenos" data-linenos="67 "></span>
+</span><span id="__span-0-68"><span class="linenos" data-linenos="68 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Y modificamos el modelo del usuario:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="c1">// use Illuminate\Contracts\Auth\MustVerifyEmail;</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">Illuminate\Database\Eloquent\Factories\HasFactory</span><span class="p">;</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="k">use</span> <span class="nx">Illuminate\Foundation\Auth\User</span> <span class="k">as</span> <span class="nx">Authenticatable</span><span class="p">;</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="k">use</span> <span class="nx">Illuminate\Notifications\Notifiable</span><span class="p">;</span>
+</span><span id="__span-1-9"><span class="hll"><span class="linenos" data-linenos=" 9 "></span><span class="k">use</span> <span class="nx">Laravel\Sanctum\HasApiTokens</span><span class="p">;</span>
+</span></span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-1-11"><span class="hll"><span class="linenos" data-linenos="11 "></span><span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Authenticatable</span>
+</span></span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="p">{</span>
+</span><span id="__span-1-13"><span class="hll"><span class="linenos" data-linenos="13 "></span>    <span class="k">use</span> <span class="nx">HasApiTokens</span><span class="p">,</span> <span class="nx">HasFactory</span><span class="p">,</span> <span class="nx">Notifiable</span><span class="p">;</span>
+</span></span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    <span class="o">...</span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="crear-tokens">Crear tokens<a class="headerlink" href="#crear-tokens" title="Permanent link">&para;</a></h2>
+<p>En el código del <a href="1008_AutenticacionToken.html#configuraciones-base">controlador que hemos creado</a> en la línea 31 vemos como, gracias a tener el paquete Sanctum instalado, tenemos la creación de tokens:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$token = auth()-&gt;user()-&gt;createToken(&#39;myapptoken&#39;)-&gt;plainTextToken;</span>
+</span></code></pre></div>
+<h3 id="consumir-recurso-protegido-por-token">Consumir recurso protegido por token<a class="headerlink" href="#consumir-recurso-protegido-por-token" title="Permanent link">&para;</a></h3>
+<p>A la hora de consumir un recurso protegido por token, debemos de tenerlo. Ahora vamos a ver la manera de hacerlo, para ello, retomamos el código de App.vue:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="nx">mounted</span><span class="p">(){</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">            </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">                </span><span class="c1">// El token ha de ser el que te de tu aplicación.</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">                </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer 19|2Lu2juLgTCW6rnUATamDpagq0y93Nb2pry5t779W72358518&#39;</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="p">})</span>
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Con esto ya podríamos consumir la API, pero nuevamente, esto no es todo lo funcional que debería ya que debería ser más dinámico.</p>
+<div class="admonition info">
+<p class="admonition-title">authorization bearer</p>
+<p>La cabecera authorization bearer es un tipo de header de una petición HTTP que carga con información relevante al tipo de usuario con el objetivo de darle autoridad para ejecutar la acción requerida en la petición. En este orden de ideas, la cabecera authorization bearer suele contener el JWT o JSON Web Token que se genera cuando el usuario inicia sesión. </p>
+</div>
+<h3 id="manejo-del-token-de-autenticacion">Manejo del token de autenticación<a class="headerlink" href="#manejo-del-token-de-autenticacion" title="Permanent link">&para;</a></h3>
+<p>Para comenzar a hacer este proceso más dinámico, vamos a almacenar el token en nuestra sesión de Laravel. Nuevamente, en el código del <a href="1008_AutenticacionToken.html#configuraciones-base">controlador que hemos creado</a> en la línea 32 vemos cómo se realiza esta acción:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="x">session()-&gt;put(&#39;token&#39;, $token);</span>
+</span></code></pre></div>
+<p>Ahora vamos a pasar toda esta información a Laravel y luego a Vue. Empezaremos modificando la vista principal de nuestra aplicación en Laravel:</p>
+<div class="language-php highlight"><span class="filename">vue.blade.php</span><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="x">@if (Auth::check())</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="x">    &lt;script&gt;</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="x">        window.Laravel = {!! json_encode([</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span><span class="x">            &#39;isLoggedIn&#39; =&gt; true,</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="x">            &#39;user&#39; =&gt; Auth::user(),</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="x">            &#39;token&#39; =&gt; session(&#39;token&#39;),</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="x">        ]) !!}</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="x">    &lt;/script&gt;</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span><span class="x">@else</span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="x">    &lt;script&gt;</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="x">        window.Laravel = {!! json_encode([</span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span><span class="x">            &#39;isLoggedIn&#39; =&gt; false</span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="x">        ]) !!}</span>
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="x">    &lt;/script&gt;</span>
+</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span><span class="x">@endif</span>
+</span></code></pre></div>
+<p>Con esto ya tendríamos una variable global en la que apoyarnos a la hora de realizar el proyecto de manera más dinámica.</p>
+<h3 id="crear-objeto-global-de-usuario-en-vue">Crear objeto global de usuario en Vue<a class="headerlink" href="#crear-objeto-global-de-usuario-en-vue" title="Permanent link">&para;</a></h3>
+<p>Para poder consumirlo en nuestro proyecto reactivo es interesante tener el usuario </p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span>    mounted(){
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span>        if (window.Laravel <span class="err">&amp;&amp;</span> window.Laravel.isLoggedIn) {
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span>            this.isLoggedIn = true
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span>            this.user = window.Laravel.user
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>            this.token = window.Laravel.token
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>            this.$root.setCookieAuth({
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span>                isLoggedIn: this.isLoggedIn,
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span>                token: this.token,
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span>                user: this.user,
+</span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span>            })
+</span><span id="__span-6-14"><span class="linenos" data-linenos="14 "></span>        } else {
+</span><span id="__span-6-15"><span class="linenos" data-linenos="15 "></span>            const auth = this.$cookies.get(&#39;auth&#39;)
+</span><span id="__span-6-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-6-17"><span class="linenos" data-linenos="17 "></span>            if (auth) {
+</span><span id="__span-6-18"><span class="linenos" data-linenos="18 "></span>                this.isLoggedIn = true
+</span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span>                this.user = auth.user
+</span><span id="__span-6-20"><span class="linenos" data-linenos="20 "></span>                this.token = auth.token
+</span><span id="__span-6-21"><span class="linenos" data-linenos="21 "></span>                // verification token
+</span><span id="__span-6-22"><span class="linenos" data-linenos="22 "></span>                this.$axios.post(this.$root.urls.tokenCheck, {
+</span><span id="__span-6-23"><span class="linenos" data-linenos="23 "></span>                    token: auth.token
+</span><span id="__span-6-24"><span class="linenos" data-linenos="24 "></span>                }).then(() =&gt; {
+</span><span id="__span-6-25"><span class="linenos" data-linenos="25 "></span>                    console.log(&#39;tokenCheck&#39;)
+</span><span id="__span-6-26"><span class="linenos" data-linenos="26 "></span>                }).catch(() =&gt; {
+</span><span id="__span-6-27"><span class="linenos" data-linenos="27 "></span>                    this.setCookieAuth(&#39;&#39;);
+</span><span id="__span-6-28"><span class="linenos" data-linenos="28 "></span>                    window.location.href = &#39;/vue/login&#39;
+</span><span id="__span-6-29"><span class="linenos" data-linenos="29 "></span>                })
+</span><span id="__span-6-30"><span class="linenos" data-linenos="30 "></span>            }
+</span><span id="__span-6-31"><span class="linenos" data-linenos="31 "></span>        }
+</span><span id="__span-6-32"><span class="linenos" data-linenos="32 "></span>        ...
+</span><span id="__span-6-33"><span class="linenos" data-linenos="33 "></span>    }
+</span><span id="__span-6-34"><span class="linenos" data-linenos="34 "></span>}
+</span></code></pre></div>
+<h3 id="enviar-token-en-las-peticiones">Enviar token en las peticiones<a class="headerlink" href="#enviar-token-en-las-peticiones" title="Permanent link">&para;</a></h3>
+<h2 id="manejo-mediante-cookie">Manejo mediante cookie<a class="headerlink" href="#manejo-mediante-cookie" title="Permanent link">&para;</a></h2>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
@@ -3890,13 +4172,13 @@
         
         
           
-          <a href="1009_AutenticacionToken.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 10.9- Autenticación con tokens">
+          <a href="1009_SanctumUnificar.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 10.9- Sanctum">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                10.9- Autenticación con tokens
+                10.9- Sanctum
               </div>
             </div>
             <div class="md-footer__button md-icon">

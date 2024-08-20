@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1009_AutenticacionToken.html">
+        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/10_ProyectoReactivo/1010_BigData.html">
       
       
-        <link rel="prev" href="1008_Seguridad.html">
+        <link rel="prev" href="1009_SanctumUnificar.html">
       
       
-        <link rel="next" href="1010_Sanctum.html">
+        <link rel="next" href="1011_ReferenciaLinks.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>10.9- Autenticación con tokens - Desarrollo Web en Entorno Servidor</title>
+        <title>10.10- Big Data - Desarrollo Web en Entorno Servidor</title>
       
     
     
@@ -86,11 +86,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#autenticacion-mediante-tokens" class="md-skip">
-          Saltar a contenido
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -122,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10.9- Autenticación con tokens
+              10.10- Big Data
             
           </span>
         </div>
@@ -3681,11 +3676,32 @@
   
   
     <li class="md-nav__item">
-      <a href="1008_Seguridad.html" class="md-nav__link">
+      <a href="1008_AutenticacionToken.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10.8- Seguridad en el proyecto reactivo
+    10.8- Autenticación con tokens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1009_SanctumUnificar.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.9- Sanctum
   </span>
   
 
@@ -3708,139 +3724,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    10.9- Autenticación con tokens
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="1009_AutenticacionToken.html" class="md-nav__link md-nav__link--active">
+      <a href="1010_BigData.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    10.9- Autenticación con tokens
+    10.10- Big Data
   </span>
   
 
       </a>
       
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuraciones-base" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuraciones base
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crear-tokens" class="md-nav__link">
-    <span class="md-ellipsis">
-      Crear tokens
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Crear tokens">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#consumir-recurso-protegido-por-token" class="md-nav__link">
-    <span class="md-ellipsis">
-      Consumir recurso protegido por token
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manejo-del-token-de-autenticacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Manejo del token de autenticación
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enviar-token-en-las-peticiones" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enviar token en las peticiones
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crear-objeto-global-de-usuario-en-vue" class="md-nav__link">
-    <span class="md-ellipsis">
-      Crear objeto global de usuario en Vue
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manejo-mediante-cookie" class="md-nav__link">
-    <span class="md-ellipsis">
-      Manejo mediante cookie
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="1010_Sanctum.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    10.10- Sanctum
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -3931,25 +3825,18 @@
                   
 
 
-<h1 id="autenticacion-mediante-tokens">Autenticación mediante tokens<a class="headerlink" href="#autenticacion-mediante-tokens" title="Permanent link">&para;</a></h1>
-<h2 id="configuraciones-base">Configuraciones base<a class="headerlink" href="#configuraciones-base" title="Permanent link">&para;</a></h2>
-<h2 id="crear-tokens">Crear tokens<a class="headerlink" href="#crear-tokens" title="Permanent link">&para;</a></h2>
-<h3 id="consumir-recurso-protegido-por-token">Consumir recurso protegido por token<a class="headerlink" href="#consumir-recurso-protegido-por-token" title="Permanent link">&para;</a></h3>
-<h3 id="manejo-del-token-de-autenticacion">Manejo del token de autenticación<a class="headerlink" href="#manejo-del-token-de-autenticacion" title="Permanent link">&para;</a></h3>
-<h3 id="enviar-token-en-las-peticiones">Enviar token en las peticiones<a class="headerlink" href="#enviar-token-en-las-peticiones" title="Permanent link">&para;</a></h3>
-<h2 id="crear-objeto-global-de-usuario-en-vue">Crear objeto global de usuario en Vue<a class="headerlink" href="#crear-objeto-global-de-usuario-en-vue" title="Permanent link">&para;</a></h2>
-<h2 id="manejo-mediante-cookie">Manejo mediante cookie<a class="headerlink" href="#manejo-mediante-cookie" title="Permanent link">&para;</a></h2>
-<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
-<!-- Instrumentos de Evaluación -->
-<!-- Instrumentos de Calificación -->
-<!-- Tipo de actividades -->
-<!-- Otras abreviaciones -->
+  <h1>10.10- Big Data</h1>
 
 
 
 
 
 
+
+
+
+  
+  
 
 
 
@@ -3979,7 +3866,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="1008_Seguridad.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10.8- Seguridad en el proyecto reactivo">
+          <a href="1009_SanctumUnificar.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10.9- Sanctum">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3989,20 +3876,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                10.8- Seguridad en el proyecto reactivo
+                10.9- Sanctum
               </div>
             </div>
           </a>
         
         
           
-          <a href="1010_Sanctum.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 10.10- Sanctum">
+          <a href="1011_ReferenciaLinks.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 10.11- Referencia y links de interés">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                10.10- Sanctum
+                10.11- Referencia y links de interés
               </div>
             </div>
             <div class="md-footer__button md-icon">
