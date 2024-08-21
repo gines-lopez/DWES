@@ -2918,6 +2918,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8.1- Laravel Breeze
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="081_LaravelBreeze.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2927,6 +2938,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3835,13 +3874,13 @@
 <h1 id="laravel-breeze-introduccion">Laravel Breeze: Introducción<a class="headerlink" href="#laravel-breeze-introduccion" title="Permanent link">&para;</a></h1>
 <p>Laravel Breeze lo definen en la documentación oficial como:</p>
 <div class="admonition quote">
-<p class="admonition-title">Quote</p>
+<p class="admonition-title">¿Qué es Laravel Breeze?</p>
 <p>Laravel Breeze es una implementación mínima y simple de todas las funciones de autenticación de Laravel, incluido el inicio de sesión, el registro, el restablecimiento de contraseña, la verificación de correo electrónico y la confirmación de contraseña. La capa de vista predeterminada de Laravel Breeze se compone de vistas Blade simples diseñadas con Tailwind CSS.</p>
 </div>
 <p>Y en pocas palabras nos ofrece dos configuraciones a nivel del proyecto:</p>
 <ol>
 <li>Instalar y configurar Tailwind.css y Alpine.js.</li>
-<li>Instalar y configurar un sencillo esquema de autenticación, registrarse, recuperar la contraseña y middleware <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> para el control de acceso. </li>
+<li>Instalar y configurar un sencillo esquema de autenticación, registrarse, recuperar la contraseña y middleware [^1] para el control de acceso. </li>
 </ol>
 <figure>
 <p><a class="glightbox" href="../../img/ut08/ut08-breeze-register.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ventana registro con Breeze" src="../../img/ut08/ut08-breeze-register.png" /></a>
@@ -3865,19 +3904,27 @@
 <p class="admonition-title">Revisa tus rutas</p>
 <p>Si has instalado Laravel Breeze una vez iniciado tu proyecto, revisa las rutas. Durante la instalación puede que se hayan borrado y es un buen momento de asegurarnos que todo funciona correctamente.</p>
 </div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>AC801</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.">RA8</abbr> / <abbr title="Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente web.">CE8a</abbr> <abbr title="Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.">CE8b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Instala y configura Breeze en la aplicación de blog.</p>
+</li>
+<li>
+<p><strong>AC802</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.">RA8</abbr> / <abbr title="Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente web.">CE8a</abbr> <abbr title="Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.">CE8b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea un proyecto de cero e instala Breeze. Documenta y comprueba todo lo que te ofrece.</p>
+</li>
+<li>
+<p><strong>PR801</strong> (<abbr title="Actividades de la Situación de Aprendizaje">SA</abbr>). (<abbr title="Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.">RA8</abbr> / <abbr title="Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente web.">CE8a</abbr> <abbr title="Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.">CE8b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Tu CTO necesita que instales y configures Breeze en el proyecto de e-commerce, además requiere que se implemente la pantalla de login y que una vez autenticado te muestre el listado de pedidos.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Si te falta algo...</p>
+<p>Puede que durante la UT anterior te faltase implementar algún controlador, vista o modelo. Es el momento de hacerlo pues trabajaremos con ellos a lo largo de la unidad.</p>
+</div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
 <!-- Otras abreviaciones -->
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>Los middleware proporcionan un mecanismo práctico para inspeccionar y filtrar las peticiones HTTP que entran en tu aplicación..&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
 
 

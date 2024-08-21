@@ -3035,6 +3035,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3892,46 +3901,46 @@
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>php artisan make:migration AddRolToUsers
 </span></code></pre></div>
 Quedando el fichero:</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span>&lt;? php
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>// ***
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>public function up(): void
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>{
-</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    Schema::table(&#39;users&#39;, function (Blueprint $table) {
-</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>        $table-›enum(&#39;rol&#39;,[&quot;admin&quot;,&quot;regular&quot;])-›default(&quot;regular&quot;);
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    });
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>}
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?</span> <span class="nx">php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="c1">// ***</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="p">{</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>        <span class="nv">$table</span><span class="o">-</span><span class="nx">›enum</span><span class="p">(</span><span class="s1">&#39;rol&#39;</span><span class="p">,[</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="s2">&quot;regular&quot;</span><span class="p">])</span><span class="o">-</span><span class="nx">›default</span><span class="p">(</span><span class="s2">&quot;regular&quot;</span><span class="p">);</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="p">});</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="p">}</span>
 </span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>public function down() : void
-</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>{
-</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>    Schema::table(&#39;users&#39;, function (Blueprint $table) {
-</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span>        $table-›dropColumn(&#39;rol&#39;);
-</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    });
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span> <span class="o">:</span> <span class="nx">void</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="p">{</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>    <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span>        <span class="nv">$table</span><span class="o">-</span><span class="nx">›dropColumn</span><span class="p">(</span><span class="s1">&#39;rol&#39;</span><span class="p">);</span>
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    <span class="p">});</span>
 </span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span>
-</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span>}
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="p">}</span>
 </span></code></pre></div>
 Y ejecutamos la migración.</p>
 <h2 id="creando-el-middleware-para-la-gestion-de-roles">Creando el Middleware para la gestión de roles<a class="headerlink" href="#creando-el-middleware-para-la-gestion-de-roles" title="Permanent link">&para;</a></h2>
 <p>El siguiente paso, hayamos hecho la migración o no, es añadir la gestión de la aplicación mediante un Middleware que nos permita adaptar nuestro esquema de roles a ella. Es por eso que debemos programar el fichero:</p>
-<div class="language-text highlight"><span class="filename">App\Http\Middleware\UserAccessDashboardMiddleware.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span>&lt;?php
+<div class="language-php highlight"><span class="filename">App\Http\Middleware\UserAccessDashboardMiddleware.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>namespace App\Http\Middleware;
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Http\Middleware</span><span class="p">;</span>
 </span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>use Closure;
-</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>use Illuminate\Http\Request;
-</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>use Illuminate\Support\Facades\Auth;
-</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>use Symfony\Component\HttpFoundation\Response;
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">Closure</span><span class="p">;</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Auth</span><span class="p">;</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
 </span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>
-</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>class UserAccessDashboardMiddleware
-</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>{
-</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>    public function handle(Request $request, Closure $next): Response
-</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>    {
-</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>        if(auth()-&gt;user()-&gt;isAdmin()){
-</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>            return $next($request);
-</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>        }
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="k">class</span> <span class="nc">UserAccessDashboardMiddleware</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="p">{</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Closure</span> <span class="nv">$next</span><span class="p">)</span><span class="o">:</span> <span class="nx">Response</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">{</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>        <span class="k">if</span><span class="p">(</span><span class="nx">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">isAdmin</span><span class="p">()){</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>            <span class="k">return</span> <span class="nv">$next</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>        <span class="p">}</span>
 </span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>
-</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span>        return redirect(&#39;/&#39;);
-</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>    }
-</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span>}
+</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span>        <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>    <span class="p">}</span>
+</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span><span class="p">}</span>
 </span></code></pre></div>
 <p>Y en el modelo de usuario, añadiremos la siguiente función:</p>
 <div class="language-text highlight"><span class="filename">App\Models\User.php</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span> public function isAdmin(): bool{
@@ -3939,35 +3948,49 @@ Y ejecutamos la migración.</p>
 </span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span>    }
 </span></code></pre></div>
 <p>Y para poder usarlo, tocará modificar el fichero <code>web.php</code>, esto es novedad de Laravel 11 ya que antes se debía modificar el kernel.</p>
-<div class="language-text highlight"><span class="filename">web.php</span><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span>&lt;?php
+<div class="language-php highlight"><span class="filename">web.php</span><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>use App\Http\Controllers\ProfileController;
-</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>use Illuminate\Support\Facades\Route;
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">use</span> <span class="nx">App\Http\Controllers\ProfileController</span><span class="p">;</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
 </span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>use App\Http\Middleware\UserAccessDashboardMiddleware;
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">App\Http\Middleware\UserAccessDashboardMiddleware</span><span class="p">;</span>
 </span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>
-</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>Route::get(&#39;/&#39;, function () {
-</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>    return view(&#39;welcome&#39;);
-</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>});
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">);</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="p">});</span>
 </span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>
-</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>Route::middleware(&#39;auth&#39;)-&gt;group(function () {
-</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>    Route::get(&#39;/profile&#39;, [ProfileController::class, &#39;edit&#39;])-&gt;name(&#39;profile.edit&#39;);
-</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span>    Route::patch(&#39;/profile&#39;, [ProfileController::class, &#39;update&#39;])-&gt;name(&#39;profile.update&#39;);
-</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span>    Route::delete(&#39;/profile&#39;, [ProfileController::class, &#39;destroy&#39;])-&gt;name(&#39;profile.destroy&#39;);
-</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span>});
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProfileController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;edit&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;profile.edit&#39;</span><span class="p">);</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span>    <span class="nx">Route</span><span class="o">::</span><span class="na">patch</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProfileController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;update&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;profile.update&#39;</span><span class="p">);</span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span>    <span class="nx">Route</span><span class="o">::</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">ProfileController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;destroy&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;profile.destroy&#39;</span><span class="p">);</span>
+</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span><span class="p">});</span>
 </span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span>
-</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span>Route::group([&#39;prefix&#39; =&gt; &#39;dashboard&#39;, &#39;middleware&#39; =&gt; [&#39;auth&#39;, UserAccessDashboardMiddleware::class]], function () {
-</span><span id="__span-4-19"><span class="linenos" data-linenos="19 "></span>    Route::resources([
-</span><span id="__span-4-20"><span class="linenos" data-linenos="20 "></span>        &#39;post&#39; =&gt; App\Http\Controllers\Dashboard\PostController::class,
-</span><span id="__span-4-21"><span class="linenos" data-linenos="21 "></span>        &#39;category&#39; =&gt; App\Http\Controllers\Dashboard\CategoryController::class,
-</span><span id="__span-4-22"><span class="linenos" data-linenos="22 "></span>    ]);
-</span><span id="__span-4-23"><span class="linenos" data-linenos="23 "></span>    Route::get(&#39;&#39;, function () {
-</span><span id="__span-4-24"><span class="linenos" data-linenos="24 "></span>        return view(&#39;dashboard&#39;);
-</span><span id="__span-4-25"><span class="linenos" data-linenos="25 "></span>    })-&gt;middleware([&#39;auth&#39;])-&gt;name(&#39;dashboard&#39;);
-</span><span id="__span-4-26"><span class="linenos" data-linenos="26 "></span>});
+</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">group</span><span class="p">([</span><span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;dashboard&#39;</span><span class="p">,</span> <span class="s1">&#39;middleware&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;auth&#39;</span><span class="p">,</span> <span class="nx">UserAccessDashboardMiddleware</span><span class="o">::</span><span class="na">class</span><span class="p">]],</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-4-19"><span class="linenos" data-linenos="19 "></span>    <span class="nx">Route</span><span class="o">::</span><span class="na">resources</span><span class="p">([</span>
+</span><span id="__span-4-20"><span class="linenos" data-linenos="20 "></span>        <span class="s1">&#39;post&#39;</span> <span class="o">=&gt;</span> <span class="nx">App\Http\Controllers\Dashboard\PostController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+</span><span id="__span-4-21"><span class="linenos" data-linenos="21 "></span>        <span class="s1">&#39;category&#39;</span> <span class="o">=&gt;</span> <span class="nx">App\Http\Controllers\Dashboard\CategoryController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+</span><span id="__span-4-22"><span class="linenos" data-linenos="22 "></span>    <span class="p">]);</span>
+</span><span id="__span-4-23"><span class="linenos" data-linenos="23 "></span>    <span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-4-24"><span class="linenos" data-linenos="24 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;dashboard&#39;</span><span class="p">);</span>
+</span><span id="__span-4-25"><span class="linenos" data-linenos="25 "></span>    <span class="p">})</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">([</span><span class="s1">&#39;auth&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;dashboard&#39;</span><span class="p">);</span>
+</span><span id="__span-4-26"><span class="linenos" data-linenos="26 "></span><span class="p">});</span>
 </span><span id="__span-4-27"><span class="linenos" data-linenos="27 "></span>
-</span><span id="__span-4-28"><span class="linenos" data-linenos="28 "></span>require __DIR__.&#39;/auth.php&#39;;
+</span><span id="__span-4-28"><span class="linenos" data-linenos="28 "></span><span class="k">require</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s1">&#39;/auth.php&#39;</span><span class="p">;</span>
 </span></code></pre></div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>AC804</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.">RA8</abbr> / <abbr title="Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente web.">CE8a</abbr> <abbr title="Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.">CE8b</abbr> <abbr title="Se han identificado las tecnologías y frameworks relacionadas con la generación por parte del servidor de páginas web con guiones embebidos.">CE8c</abbr> <abbr title="Se han utilizado estas tecnologías y frameworks para generar páginas web que incluyan interacción con el usuario.">CE8d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Realiza la configuración de roles (lector y admin) en la aplicación del blog.</p>
+</li>
+<li>
+<p><strong>PR803</strong> (<abbr title="Actividades de la Situación de Aprendizaje">SA</abbr>). (<abbr title="Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.">RA8</abbr> / <abbr title="Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente web.">CE8a</abbr> <abbr title="Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.">CE8b</abbr> <abbr title="Se han identificado las tecnologías y frameworks relacionadas con la generación por parte del servidor de páginas web con guiones embebidos.">CE8c</abbr> <abbr title="Se han utilizado estas tecnologías y frameworks para generar páginas web que incluyan interacción con el usuario.">CE8d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Tu CTO necesita que se empiece a implementar un sistema de roles, para ello te da una descripción de cada uno de ellos:</p>
+<ul>
+<li>Lector. No debe modificar nada ni entrar a la administración.</li>
+<li>Editor SEO. Puede modificar los productos.</li>
+<li>Administrador. Puede crear, eliminar y editar los productos.</li>
+</ul>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
