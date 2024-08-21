@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
     
     
       
@@ -2664,6 +2664,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3906,48 +3915,44 @@ Si todo ha salido bien, recibiremos un mensaje por consola con que todo ha ido b
 </div>
 <p>Veamos cómo quedaría un refactor del archivo de rutas utilizando un <code>Controller</code> como el que acabamos de crear</p>
 <p>Ahora nos quedaría de la siguiente manera</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="c1">// web.php (v2.0)</span>
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">App\Http\Controllers\PagesController</span><span class="p">;</span>
-</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;inicio&#39;</span> <span class="p">]);</span>
-</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;datos&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;datos&#39;</span> <span class="p">]);</span>
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;cliente/{id?}&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;cliente&#39;</span> <span class="p">])</span> <span class="o">-&gt;</span> <span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;[0-9]+&#39;</span><span class="p">);</span>
-</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;nosotros/{nosotros?}&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;nosotros&#39;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="na">name</span><span class="p">(</span><span class="s1">&#39;nosotros&#39;</span><span class="p">);</span>
+<div class="language-php highlight"><span class="filename">web.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="k">use</span> <span class="nx">App\Http\Controllers\PagesController</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;inicio&#39;</span> <span class="p">]);</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos="7 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;datos&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;datos&#39;</span> <span class="p">]);</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos="8 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;cliente/{id?}&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;cliente&#39;</span> <span class="p">])</span> <span class="o">-&gt;</span> <span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;[0-9]+&#39;</span><span class="p">);</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos="9 "></span><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;nosotros/{nosotros?}&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="nx">PagesController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;nosotros&#39;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="na">name</span><span class="p">(</span><span class="s1">&#39;nosotros&#39;</span><span class="p">);</span>
 </span></code></pre></div>
 <p>y en nuestro archivo controlador lo dejaríamos de la siguiente manera</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">PagesController.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="c1">// PagesController.php</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
 </span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
-</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="k">class</span> <span class="nc">PagesController</span> <span class="k">extends</span> <span class="nx">Controller</span>
-</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="p">{</span>
-</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">inicio</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">);</span> <span class="p">}</span>
-</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">datos</span><span class="p">()</span> <span class="p">{</span> 
-</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;usuarios&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">56</span><span class="p">]);</span>
-</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">}</span>
-</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>
-</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">cliente</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Cliente con el id: &#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">);</span>
-</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>    <span class="p">}</span>
-</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span>
-</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">nosotros</span><span class="p">(</span><span class="nv">$nombre</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span>        <span class="nv">$equipo</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span>            <span class="s1">&#39;Paco&#39;</span><span class="p">,</span>
-</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span>            <span class="s1">&#39;Enrique&#39;</span><span class="p">,</span>
-</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span>            <span class="s1">&#39;Maria&#39;</span><span class="p">,</span>
-</span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span>            <span class="s1">&#39;Veronica&#39;</span>
-</span><span id="__span-2-25"><span class="linenos" data-linenos="25 "></span>        <span class="p">];</span>
-</span><span id="__span-2-26"><span class="linenos" data-linenos="26 "></span>
-</span><span id="__span-2-27"><span class="linenos" data-linenos="27 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;nosotros&#39;</span><span class="p">,</span> <span class="o">@</span><span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;equipo&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">));</span>
-</span><span id="__span-2-28"><span class="linenos" data-linenos="28 "></span>    <span class="p">}</span>
-</span><span id="__span-2-29"><span class="linenos" data-linenos="29 "></span><span class="p">}</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">class</span> <span class="nc">PagesController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="p">{</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">inicio</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">);</span> <span class="p">}</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">datos</span><span class="p">()</span> <span class="p">{</span> 
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;usuarios&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">56</span><span class="p">]);</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">cliente</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Cliente con el id: &#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">);</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>    <span class="p">}</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">nosotros</span><span class="p">(</span><span class="nv">$nombre</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span>        <span class="nv">$equipo</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>            <span class="s1">&#39;Paco&#39;</span><span class="p">,</span>
+</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span>            <span class="s1">&#39;Enrique&#39;</span><span class="p">,</span>
+</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span>            <span class="s1">&#39;Maria&#39;</span><span class="p">,</span>
+</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span>            <span class="s1">&#39;Veronica&#39;</span>
+</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span>        <span class="p">];</span>
+</span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span>
+</span><span id="__span-2-25"><span class="linenos" data-linenos="25 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;nosotros&#39;</span><span class="p">,</span> <span class="o">@</span><span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;equipo&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">));</span>
+</span><span id="__span-2-26"><span class="linenos" data-linenos="26 "></span>    <span class="p">}</span>
+</span><span id="__span-2-27"><span class="linenos" data-linenos="27 "></span><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="controladores-resource">Controladores <code>resource</code><a class="headerlink" href="#controladores-resource" title="Permanent link">&para;</a></h2>
 <p>Si a la hora de crear nuestro controlador, lo hacemos con la marca <code>--resource</code>:</p>
@@ -4016,6 +4021,22 @@ Si todo ha salido bien, recibiremos un mensaje por consola con que todo ha ido b
 </tbody>
 </table>
 <p>No olvides consultar la <a href="https://laravel.com/docs/11.x/controllers">documentación</a> para profundizar más en los controladores de Laravel.</p>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>AC707</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla servicios web reutilizables y accesibles mediante protocolos web, verificando su funcionamiento.">RA7</abbr> / <abbr title="Se han reconocido las ventajas de utilizar servicios web para proporcionar acceso a funcionalidades incorporadas a la lógica de negocio de una aplicación.">CE7b</abbr> <abbr title="Se han identificado las tecnologías y los protocolos implicados en el consumo de servicios web.">CE7c</abbr>  <abbr title="Se han utilizado los estándares y arquitecturas más difundidos e implicados en el desarrollo de servicios web.">CE7d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Genera el controlador de tareas para tu proyecto de listado de tareas iniciado en AC705.</p>
+</li>
+<li>
+<p><strong>AC708</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla servicios web reutilizables y accesibles mediante protocolos web, verificando su funcionamiento.">RA7</abbr> / <abbr title="Se han reconocido las ventajas de utilizar servicios web para proporcionar acceso a funcionalidades incorporadas a la lógica de negocio de una aplicación.">CE7b</abbr> <abbr title="Se han identificado las tecnologías y los protocolos implicados en el consumo de servicios web.">CE7c</abbr>  <abbr title="Se han utilizado los estándares y arquitecturas más difundidos e implicados en el desarrollo de servicios web.">CE7d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Genera los controladores necesarios para la gestión de un blog. Estos deben incluir, al menos, usuario, categorías y post. </p>
+</li>
+<li>
+<p><strong>PR702</strong> (<abbr title="Actividades de la Situación de Aprendizaje">SA</abbr>). (<abbr title="Desarrolla servicios web reutilizables y accesibles mediante protocolos web, verificando su funcionamiento.">RA7</abbr> / <abbr title="Se han reconocido las ventajas de utilizar servicios web para proporcionar acceso a funcionalidades incorporadas a la lógica de negocio de una aplicación.">CE7b</abbr> <abbr title="Se han identificado las tecnologías y los protocolos implicados en el consumo de servicios web.">CE7c</abbr>  <abbr title="Se han utilizado los estándares y arquitecturas más difundidos e implicados en el desarrollo de servicios web.">CE7d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Siguiendo con la solución de e-commerce, necesitas gestionar y crear todos los controladores que te puedan hacer falta a la hora de hacer uso de ella. Deja la parte de pago fuera, pues otro equipo hará su integración. </p>
+<div class="admonition tip">
+<p class="admonition-title">Aprende de los grandes</p>
+<p>Date una vuelta por tu tienda favorita e imagina los controladores que se pueden estar usando. Una buena idea es la de ir mirando las rutas e intentar copiar su arquitectura. Recuerda que siempre debe haber alguien que la pueda administrar. Puede darse el caso que un controlador esté en el frontal y en la administración si hay tareas diferentes, por ejemplo uno pensado en mostrar información y el otro en la gestión.</p>
+</div>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
@@ -4171,7 +4192,7 @@ Si todo ha salido bien, recibiremos un mensaje por consola con que todo ha ido b
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.471ce7a9.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
