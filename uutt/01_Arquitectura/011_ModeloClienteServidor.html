@@ -324,8 +324,6 @@
       
         
       
-        
-      
     
     
     
@@ -571,27 +569,6 @@
   
   <span class="md-ellipsis">
     1.6- Puesta en marcha
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="017_PruebaEspecifica.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    1.7- Prueba específica
   </span>
   
 
@@ -3745,19 +3722,19 @@
 
 
 <h1 id="modelo-clienteservidor">Modelo Cliente/servidor<a class="headerlink" href="#modelo-clienteservidor" title="Permanent link">&para;</a></h1>
-<p>Las arquitecturas web definen la forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí. Las aplicaciones web se basan en en modelo cliente-servidor.</p>
+<p>Las arquitecturas web definen la forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí. Las aplicaciones web se basan en un modelo cliente-servidor.</p>
 <figure>
 <p><a class="glightbox" href="../../img/ut01/ut01-clienteservidor.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Modelo Cliente-Servidor" src="../../img/ut01/ut01-clienteservidor.png" /></a>
   </p>
 <figcaption>Modelo Cliente-Servidor.</figcaption>
 </figure>
-<p>Hoy en día, es frecuente que uno o varios cliente acceden a un servidor. La nuevas arquitecturas sustituyen el servidor por un balanceador de carga de manera que N servidores dan respuesta a M clientes. En las aplicaciones web, el cliente es el navegador web.
-El cliente hace la petición (request normalmente mediante el protocolo GET mediante el puerto 80/443) y el servidor responde (response).</p>
+<p>Hoy en día, es frecuente que uno o varios clientes acceden a un servidor. Las nuevas arquitecturas sustituyen el servidor por un balanceador de carga de manera que N servidores dan respuesta a M clientes. En las aplicaciones web, el cliente es el navegador web.
+El cliente hace la petición (request, normalmente mediante el protocolo GET mediante el puerto 80/443) y el servidor responde (response).</p>
 <h2 id="pagina-web-dinamica">Página web dinámica<a class="headerlink" href="#pagina-web-dinamica" title="Permanent link">&para;</a></h2>
-<p>Si la página web únicamente contiene HTML + CSS se considera una <strong>página estática</strong>. Para generar una <strong>página dinámica</strong>, donde el contenido cambia, a día de hoy tenemos dos alternativas:</p>
+<p>Si la página web únicamente contiene HTML + CSS se considera una <strong>página estática</strong>. Para generar una <strong>página dinámica</strong>, donde el contenido cambia, hoy tenemos dos alternativas:</p>
 <ul>
-<li>Utilizar un lenguaje de servidor que genere el contenido, ya sea mediante el acceso a una BD o servicios externos.</li>
-<li>Utilizar servicios REST de terceros invocados desde JS.</li>
+<li>Utilizar un lenguaje de servidor que genere el contenido, ya sea mediante el acceso a una base de datos (BD) o servicios externos.</li>
+<li>Utilizar servicios REST de terceros invocados desde JavaScript (JS).</li>
 </ul>
 <figure>
 <p><a class="glightbox" href="../../img/ut01/estaticavsdinamica.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Web estática vs Web dinámica" src="../../img/ut01/estaticavsdinamica.png" /></a>
@@ -3795,7 +3772,7 @@ El cliente hace la petición (request normalmente mediante el protocolo GET medi
 </tbody>
 </table>
 <h2 id="single-page-application-spa"><em>Single Page Application (SPA)</em><a class="headerlink" href="#single-page-application-spa" title="Permanent link">&para;</a></h2>
-<p>A día de hoy, gran parte del desarrollo web está en plena transición de una arquitectura web cliente-servidor clásica donde el cliente realiza una llamada al backend, por una arquitectura SPA donde el cliente gana mucho mayor peso y sigue una programación reactiva que accede a servicios remotos REST que realizan las operaciones (comunicándose mediante JSON).</p>
+<p>A día de hoy, gran parte del desarrollo web está en plena transición de una arquitectura web cliente-servidor clásica donde el cliente realiza una llamada al back-end, por una arquitectura SPA donde el cliente gana mucho mayor peso y sigue una programación reactiva que accede a servicios remotos REST que realizan las operaciones (comunicándose mediante JSON).</p>
 <figure>
 <p><a class="glightbox" href="../../img/ut01/tradicionalvsspa.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Arquitectura tradicional vs SPA" src="../../img/ut01/tradicionalvsspa.png" /></a>
   </p>

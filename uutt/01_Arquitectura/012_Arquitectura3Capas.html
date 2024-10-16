@@ -324,8 +324,6 @@
       
         
       
-        
-      
     
     
     
@@ -571,27 +569,6 @@
   
   <span class="md-ellipsis">
     1.6- Puesta en marcha
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="017_PruebaEspecifica.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    1.7- Prueba específica
   </span>
   
 
@@ -3747,23 +3724,23 @@
 <h1 id="arquitectura-de-3-capas">Arquitectura de 3 capas<a class="headerlink" href="#arquitectura-de-3-capas" title="Permanent link">&para;</a></h1>
 <p>Hay que distinguir entre capas <strong>físicas</strong> (<em>tier</em>) y capas <strong>lógicas</strong> (<em>layer</em>).</p>
 <h2 id="tier">Tier<a class="headerlink" href="#tier" title="Permanent link">&para;</a></h2>
-<p>Capa física de una arquitectura. Supone un nuevo elemento hardware separado físicamente. Las capas físicas más alejadas del cliente están más protegidas, tanto por firewalls como por VPN.</p>
+<p>Capa física de una arquitectura. Supone un nuevo elemento hardware separado físicamente. Las capas físicas más alejadas del cliente están más protegidas, tanto por firewalls como por redes privadas virtuales (VPN).</p>
 <p>Ejemplo de arquitectura en tres capas físicas (<em>3 tier</em>):</p>
 <ul>
-<li>Servidor Web</li>
-<li>Servidor de Aplicaciones</li>
+<li>Servidor web</li>
+<li>Servidor de aplicaciones</li>
 <li>Servidor de base de datos</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Cluster en tiers</p>
-<p>No confundir las capas con la cantidad de servidores. Actualmente se trabaja con arquitecturas con múltiples servidores en una misma capa física mediante un cluster, para ofrecer tolerancia a errores y escalabilidad horizontal.</p>
+<p>No confundir las capas con la cantidad de servidores. Actualmente se trabaja con arquitecturas con múltiples servidores en una misma capa física mediante un clúster, para ofrecer tolerancia a errores y escalabilidad horizontal.</p>
 </div>
 <h2 id="layer">Layer<a class="headerlink" href="#layer" title="Permanent link">&para;</a></h2>
 <p>En cambio, las capas lógicas (<em>layers</em>) organizan el código respecto a su funcionalidad:</p>
 <ul>
-<li>Presentación. Es la capa donde la aplicación se muestra al usuario. Básicamente es la GUI (Graphical User Interface, Interfaz Gráfica de Usuario). En el caso de una aplicación web sería el código HTML que se carga directamente en el navegador web. En cualquier caso, se ejecuta directamente en el equipo del cliente.</li>
-<li>Negocio / Aplicación / Proceso. Es la capa intermedia donde se lleva a cabo toda la lógica de la aplicación. Siempre se ejecutará en el lado servidor. Esta capa, tras realizar todos los cálculos y/o operaciones sobre los datos, genera el código HTML que será presentado al usuario en la capa siguiente.</li>
-<li>Datos / Persistencia. Es la capa que almacena los datos. Básicamente, en condiciones normales, hace referencia al propio SGBD que es el encargado de almacenar los datos. Dependiendo de la arquitectura de la aplicación, esta capa y la de negocio se pueden encontrar físicamente en el mismo equipo, aunque también es posible que se tengan que separar por cuestiones de rendimiento. La capa de datos sirve todas la información necesaria a la capa de negocio para llevar a cabo sus operaciones.</li>
+<li><strong>Presentación</strong>. Es la capa donde la aplicación se muestra al usuario. Básicamente es la GUI (Graphical User Interface, Interfaz Gráfica de Usuario). En el caso de una aplicación web sería el código HTML que se carga directamente en el navegador web. En cualquier caso, se ejecuta directamente en el equipo del cliente.</li>
+<li><strong>Negocio / Aplicación / Proceso</strong>. Es la capa intermedia donde se lleva a cabo toda la lógica de la aplicación. Siempre se ejecutará en el lado servidor. Esta capa, tras realizar todos los cálculos y/o operaciones sobre los datos, genera el código HTML que será presentado al usuario en la capa siguiente.</li>
+<li><strong>Datos / Persistencia</strong>. Es la capa que almacena los datos. Básicamente, en condiciones normales, hace referencia al propio SGBD (Sistema de Gestión de Bases de Datos) que es el encargado de almacenar los datos. Dependiendo de la arquitectura de la aplicación, esta capa y la de negocio se pueden encontrar físicamente en el mismo equipo, aunque también es posible que se tengan que separar por cuestiones de rendimiento. La capa de datos sirve toda la información necesaria a la capa de negocio para llevar a cabo sus operaciones.</li>
 </ul>
 <p>Como se observa, cada una de las capas se puede implementar con diferentes lenguajes de programación y/o herramientas.</p>
 <figure>
