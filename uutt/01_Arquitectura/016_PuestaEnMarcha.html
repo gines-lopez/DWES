@@ -3749,11 +3749,11 @@
 
 
 <h1 id="puesta-en-marcha">Puesta en marcha<a class="headerlink" href="#puesta-en-marcha" title="Permanent link">&para;</a></h1>
-<p>Para poder trabajar con un entorno de desarrollo local, hemos de preparar nuestro entorno de desarrollo con las herramientas comentadas. A lo largo del curso vamos a utilizar la versión 8.X de PHP.</p>
+<p>Para poder trabajar con un entorno de desarrollo local, hemos de preparar nuestro entorno de desarrollo con las herramientas comentadas. A lo largo del curso, vamos a utilizar la versión 8.X de PHP.</p>
 <h3 id="xampp">XAMPP<a class="headerlink" href="#xampp" title="Permanent link">&para;</a></h3>
-<p>XAMPP (https://www.apachefriends.org/es/index.html) es una distribución compuesta con el software necesario para desarrollar en entorno servidor. Se compone de las siguientes herramientas en base a sus siglas:</p>
+<p><a href="https://www.apachefriends.org/es/index.html">XAMPP</a> es una distribución compuesta con el software necesario para desarrollar en entorno servidor. Se compone de las siguientes herramientas en base a sus siglas:</p>
 <ul>
-<li>X para el sistema operativo (de ahí que se conozca tamnbién como LAMP o WAMP o MAMP).</li>
+<li>X para el sistema operativo (de ahí que se conozca también como LAMP o WAMP o MAMP).</li>
 <li>A para Apache.</li>
 <li>M para MySQL / MariaDB. También incluye phpMyAdmin para la administración de la base de datos desde un interfaz web.</li>
 <li>P para PHP.</li>
@@ -3762,19 +3762,19 @@
 <p>Desde la propia página se puede descargar el archivo ejecutable para el sistema operativo de nuestro ordenador. Se recomienda leer la FAQ de cada sistema operativo con instrucciones para su puesta en marcha.</p>
 <div class="admonition note">
 <p class="admonition-title">XAMPP en Windows</p>
-<p>Si vas a trabajar con tu propio ordenador, XAMPP es una solución más sencilla que Docker, sobre todo si trabajar con Windows como sistema operativo.</p>
+<p>Si vas a trabajar con tu propio ordenador, XAMPP es una solución más sencilla que Docker, sobre todo si trabajas con Windows como sistema operativo.</p>
 </div>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.docker.com">Docker</a> es un gestor de contenedores, considerando un contenedor como un método de virtualización del sistema operativo.</p>
 <p>El uso de contenedores requiere menos recursos que una máquina virtual, por lo tanto, su lanzamiento y detención son más rápidos que las máquinas virtuales.</p>
 <p>Así pues, <em>Docker</em> permite crear, probar e implementar aplicaciones rápidamente, a partir de una serie de plantillas que se conocen como imágenes de <em>Docker</em>.</p>
-<p>Para ello es necesario tener instalado <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> en nuestros entornos de desarrollo (el cual ya incluye en nucleo de <em>Docker</em> y la herramienta <em>docker compose</em>).</p>
+<p>Para ello es necesario tener instalado <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> en nuestros entornos de desarrollo (el cual ya incluye en núcleo de <em>Docker</em> y la herramienta <em>docker compose</em>).</p>
 <div class="admonition caution">
 <p class="admonition-title">Versiones</p>
 <p>A lo largo del curso vamos a usar PHP <code>8.X</code>. Respecto a <em>Docker</em>, para escribir los apuntes hemos utilizado la version <code>24</code> y la version <code>2.23.2</code> de <em>docker compose</em>. Finalmente, la versión de <em>Docker Desktop</em> que hemos utilizado es la <code>4.25.2</code>.</p>
 </div>
 <h4 id="plantilla-servidor-web-php">Plantilla Servidor Web + PHP<a class="headerlink" href="#plantilla-servidor-web-php" title="Permanent link">&para;</a></h4>
-<p><em>Docker</em> se basa en el uso de imágenes para crear contenedores. <em>Docker Compose</em> simplifica el trabajo con múltiples contenedores, y por ello, para facilitar el arraque, nos centraremos en <em>Docker Compose</em> utilizando una plantilla que únicamente va a contener como servicios Apache/Nginx y PHP.</p>
+<p><em>Docker</em> se basa en el uso de imágenes para crear contenedores. <em>Docker Compose</em> simplifica el trabajo con múltiples contenedores, y por ello, para facilitar el arranque, nos centraremos en <em>Docker Compose</em> utilizando una plantilla que únicamente va a contener como servicios Apache/Nginx y PHP.</p>
 <p>Para ello, vamos a rellenar el archivo <code>docker-compose.yaml</code> con:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Apache y PHP</label></div>
 <div class="tabbed-content">
@@ -3834,7 +3834,7 @@
 </span></code></pre></div>
 <p>Otros comandos que podemos llegar a utilizar son:</p>
 <ul>
-<li><code>docker ps</code>: Ver los contenedores que se estan ejecutando</li>
+<li><code>docker ps</code>: Ver los contenedores que se están ejecutando</li>
 <li><code>docker ps -a</code>: Ver todos los contenedores</li>
 <li><code>docker start nombreContenedor</code>: Arrancar un contenedor</li>
 <li><code>docker images</code>: Ver las imágenes que tenemos descargadas</li>
@@ -3885,7 +3885,7 @@
 <p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 103</strong>. (<abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr> / <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) El departamento de servidores ha contratado un servidor web para desplegar la aplicación. El DevOps a cargo de tu proyecto te solicita que configures tu servidor PHP local de trabajo. No olvides que debes mostrar el proceso y las principales características.</p>
 </li>
 <li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 104</strong>. (<abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr> / <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Como parte de la documentación que debes generar para el proyecto que te han solicitado, muestra y comenta las principales variables que aparecen en el fichero php.ini del servidor que has configurado para trabajar en local.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 104</strong>. (<abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr> / <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Como parte de la documentación que debes generar para el proyecto que te han solicitado, muestra y comenta las principales variables que aparecen en el fichero <code>php.ini</code> del servidor que has configurado para trabajar en local.</p>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
