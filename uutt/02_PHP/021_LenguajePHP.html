@@ -917,11 +917,11 @@
   
   
     <li class="md-nav__item">
-      <a href="029_PruebaEspecifica.html" class="md-nav__link">
+      <a href="029_PruebaConocimiento.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.9- Prueba específica
+    2.9- Prueba de conocimiento
   </span>
   
 
@@ -3758,10 +3758,8 @@
 
 
 <h1 id="el-lenguaje-php">El lenguaje PHP<a class="headerlink" href="#el-lenguaje-php" title="Permanent link">&para;</a></h1>
-<p>Una página PHP es una página web normal en la que utilizamos la extensión <code>.php</code> en lugar de
-<code>.htm</code> o <code>.html</code>.</p>
-<p>En una página <code>.php</code> se pueden insertar bloques de código escrito en lenguaje PHP. Estos
-bloques de código reciben el nombre de scripts. Un script PHP se limita anteponiendo los símbolos <code>&lt;?php</code> a la primera instrucción y escribiendo después de la última instrucción los símbolos <code>?&gt;</code>.</p>
+<p>Una página PHP es una página web normal en la que utilizamos la extensión <code>.php</code> en lugar de <code>.jsp</code> o <code>.html</code>.</p>
+<p>En una página <code>.php</code> se pueden insertar bloques de código escrito en lenguaje PHP. Estos bloques de código reciben el nombre de <em>scripts</em>. Un <em>script</em> PHP scomienza con los símbolos <code>&lt;?php</code> antes de la primera instrucción y termina con los símbolos <code>?&gt;</code> después de la última instrucción.</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span>    <span class="nb">phpinfo</span><span class="p">();</span>
 </span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="cp">?&gt;</span>
@@ -3769,13 +3767,13 @@ bloques de código reciben el nombre de scripts. Un script PHP se limita antepon
 <h2 id="curiosidades">Curiosidades<a class="headerlink" href="#curiosidades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Acrónimo de <em>Personal Home Page</em></li>
-<li>Lenguaje de propósito general, aunque su fuerte es el desarollo web.</li>
+<li>Lenguaje de propósito general, aunque su fuerte es el desarrollo web.</li>
 <li>Sintaxis similar a C / Java</li>
 <li>El código se ejecuta en el servidor (en <em>Apache</em> mediante <em>mod_php</em>)</li>
 <li>El cliente recibe el resultado generado tras interpretar el código en el servidor.</li>
-<li>La última versión es la 8.3.3.</li>
+<li>La última versión es la 8.3.12.</li>
 </ul>
-<p>Su documentación es extensa y está traducida: <a href="https://www.php.net/manual/es/">https://www.php.net/manual/es/</a>.</p>
+<p>Su <a href="https://www.php.net/manual/es/">documentación</a> es extensa y está traducida.</p>
 <h2 id="codigo-embebido">Código embebido<a class="headerlink" href="#codigo-embebido" title="Permanent link">&para;</a></h2>
 <p>Los bloques de código se escriben entre <code>&lt;?php</code> y <code>?&gt;</code>, mientras que las sentencias se separan mediante <code>;</code>.</p>
 <div class="language-html+php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -3794,16 +3792,16 @@ bloques de código reciben el nombre de scripts. Un script PHP se limita antepon
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Sólo etiquetas de apertura</p>
-<p>Si nuestro código sólo va a contener código PHP y nada de html, como por ejemplo, cuando codifiquemos clases o interfaces, sólo pondremos la etiqueta de apertura, para así indicar que es una archivo de php puro.</p>
+<p>Si nuestro archivo sólo va a contener código PHP y nada de HTML, como por ejemplo cuando codifiquemos clases o interfaces, solo utilizaremos la etiqueta de apertura (<code>&lt;?php</code>), indicando que es un archivo de PHP puro.</p>
 </div>
 <h2 id="generando-contenido">Generando contenido<a class="headerlink" href="#generando-contenido" title="Permanent link">&para;</a></h2>
-<p>Tenemos tres posibilidades a la hora de generar contenido en nuestros documentos PHP:</p>
+<p>Tenemos tres maneras de generar contenido en nuestros documentos PHP:</p>
 <ul>
 <li><code>echo expresión;</code></li>
 <li><code>print (expresión);</code></li>
 <li><code>&lt;?= expresión ?&gt;</code></li>
 </ul>
-<p>Las que vamos a utilizar son <code>echo</code> cuando lo hagamos dentro de un bloque de instrucciones y <code>&lt;?=</code> cuando sólo vayamos a mostrar el valor de una variable dentro de un fragmento HTML.</p>
+<p>Usaremos <code>echo</code> dentro de un bloque de instrucciones y <code>&lt;?=</code> cuando solo queramos mostrar el valor de una variable dentro de un fragmento HTML.</p>
 <div class="language-html+php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -3837,10 +3835,10 @@ bloques de código reciben el nombre de scripts. Un script PHP se limita antepon
 </span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="gp"> #</span><span class="m">0</span><span class="w"> </span><span class="o">{</span>main<span class="o">}</span>
 </span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="go">    thrown in C:\xampp\htdocs\202echo.php on line 11</span>
 </span></code></pre></div>
-<p>Desde PHP 5 se lanzan como una excepción. Más adelante veremos el uso de <code>try</code> / <code>catch</code>.</p>
+<p>Desde PHP 5, los errores se lanzan como excepciones. Más adelante veremos el uso de <code>try</code> y <code>catch</code></p>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
-<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 201</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes de marcas con código embebido.">CE2a</abbr> <abbr title="Se han utilizado etiquetas para la inclusión de código en el lenguaje de marcas.">CE2c</abbr> <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - El Supervisor Técnico (CTO) te solicita una prueba en PHP para saber si puedes seguir las mejores prácticas de desarrollo. Para ello te solicita que muestres 3 frases, cada una en un párrafo utilizando las tres posibilidades que existen de mostrar contenido. Tras ello, introduce dos comentarios, uno de bloque y otro de una línea.</li>
+<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 201</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes de marcas con código embebido.">CE2a</abbr> <abbr title="Se han utilizado etiquetas para la inclusión de código en el lenguaje de marcas.">CE2c</abbr> <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - El Supervisor Técnico (CTO) solicita una prueba en PHP para saber si se siguen buenas prácticas de desarrollo. Para ello solicita que se muestren 3 frases, cada una en un párrafo utilizando las tres posibilidades que existen de mostrar contenido. Además, se ha de documentar y mínimo se han de incluir dos comentarios, uno de bloque y otro de una línea.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

@@ -890,11 +890,11 @@
   
   
     <li class="md-nav__item">
-      <a href="029_PruebaEspecifica.html" class="md-nav__link">
+      <a href="029_PruebaConocimiento.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.9- Prueba específica
+    2.9- Prueba de conocimiento
   </span>
   
 
@@ -3731,16 +3731,16 @@
 
 
 <h1 id="estructuras-de-control">Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permanent link">&para;</a></h1>
-<p>A la hora de trasladar problemas a código, se necesita una serie de estructuras que nos permiten programar nuestro código para que se comporte de la manera que se desea. Es por ello que se dividen en dos grandes bloques:</p>
+<p>Al trasladar problemas a código, es necesario utilizar una serie de estructuras que permitan programar el comportamiento deseado. Estas estructuras se dividen en dos grandes bloques:</p>
 <ul>
 <li>Estructuras de condición.</li>
 <li>Estructuras de repetición</li>
 </ul>
 <h2 id="condicion">Condición<a class="headerlink" href="#condicion" title="Permanent link">&para;</a></h2>
-<p>La condición simple se realiza mediante la instrucción <code>if</code>. Entre paréntesis se pone la condición que se evalúa a <code>true</code> o <code>false</code>. Si no se ponen llaves, en vez de abrir un bloque, se ejecutará sólo la siguiente instrucción.</p>
+<p>La condición simple se realiza mediante la instrucción <code>if</code>. Entre paréntesis se coloca la condición, la cual se evalúa como <code>true</code> o <code>false</code>. Si no se utilizan llaves, solo se ejecutará la siguiente instrucción.</p>
 <div class="admonition warning">
 <p class="admonition-title">Siempre llaves</p>
-<p>Es recomendable poner llaves siempre aunque en el momento de codificar sólo haya una única instrucción. De este modo, se queda preparado para añadir más contenido en el futuro sin provocar <em>bugs</em>.</p>
+<p>Es recomendable usar llaves aunque solo haya una instrucción en el momento de codificar. De esta manera, se deja preparado el código para añadir más instrucciones en el futuro, evitando posibles errores (<em>bugs</em>).</p>
 </div>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$hora</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// La hora en formato de 24 horas</span>
@@ -3752,7 +3752,7 @@
 </span><span id="__span-0-8"><span class="linenos" data-linenos="8 "></span>    <span class="k">echo</span> <span class="s2">&quot;Suena el despertador.&quot;</span><span class="p">;</span>
 </span><span id="__span-0-9"><span class="linenos" data-linenos="9 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
-<p>Las condiciones compuesta mediante <code>if-else</code>:</p>
+<p>Las condiciones compuestas se pueden manejar con <code>if-else</code>:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$hora</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span> <span class="c1">// La hora en formato de 24 horas</span>
 </span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$hora</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
@@ -3762,7 +3762,7 @@
 </span><span id="__span-1-7"><span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 </span><span id="__span-1-8"><span class="linenos" data-linenos="8 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
-<p>Las condiciones anidadas mediante <code>if-else if-else</code>:</p>
+<p>Para manejar múltiples condiciones, se utilizan las estructuras <code>if-else if-else</code>:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$hora</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span> <span class="c1">// La hora en formato de 24 horas</span>
 </span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$hora</span> <span class="o">===</span> <span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
@@ -3776,7 +3776,7 @@
 </span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="p">}</span>
 </span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
-<p>La sentencia <code>switch</code> también permite trabajar con condiciones múltiples:</p>
+<p>La sentencia <code>switch</code> también permite gestionar condiciones múltiples de manera eficiente:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$hora</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span> <span class="c1">// La hora en formato de 24 horas</span>
 </span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">switch</span> <span class="p">(</span><span class="nv">$hora</span><span class="p">)</span> <span class="p">{</span>
@@ -3796,9 +3796,9 @@
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">No olvides el <code>break</code></p>
-<p>Un error muy común es olvidar la instrucción <code>break</code> tras cada caso. Si no lo ponemos, ejecutará el siguiente caso automáticamente.</p>
+<p>Un error común es omitir la instrucción <code>break</code> después de cada caso. Si no se incluye, el siguiente caso se ejecutará automáticamente.</p>
 </div>
-<p>Finalmente, también tenemos el operador ternario <code>condición ? valorTrue : valorFalse</code>:</p>
+<p>El operador ternario también puede ser utilizado para condiciones simples en una línea con la sintaxis <code>condición ? valorTrue : valorFalse</code>:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$hora</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
 </span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$formato</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$hora</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span> <span class="o">?</span> <span class="mi">24</span> <span class="o">:</span> <span class="mi">12</span><span class="p">;</span>
@@ -3811,7 +3811,7 @@
 </span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="repeticion">Repetición<a class="headerlink" href="#repeticion" title="Permanent link">&para;</a></h2>
-<p>Mediante la instrucción <code>while</code>:</p>
+<p>La instrucción <code>while</code> permite repetir una serie de instrucciones mientras una condición sea verdadera:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span><span class="k">while</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
@@ -3821,7 +3821,7 @@
 </span><span id="__span-6-7"><span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 </span><span id="__span-6-8"><span class="linenos" data-linenos="8 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
-<p>Mediante la instrucción <code>do-while</code>:</p>
+<p>La instrucción <code>do-while</code> asegura que las instrucciones se ejecuten al menos una vez, incluso si la condición es falsa al inicio::</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">do</span> <span class="p">{</span>
 </span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="nv">$dado</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
@@ -3833,7 +3833,7 @@
 </span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span><span class="k">echo</span> <span class="s2">&quot;¡Bien! Saco una ficha de casa.&quot;</span><span class="p">;</span>
 </span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
-<p>Mediante la instrucción <code>for</code>:</p>
+<p>El bucle <code>for</code> es ideal cuando se conoce el número de iteraciones previamente:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span><span class="c1">// Bucle ascendente</span>
 </span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -3849,11 +3849,10 @@
 </span><span id="__span-8-13"><span class="linenos" data-linenos="13 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <p>Más adelante estudiaremos el bucle <code>foreach</code> para recorrer arrays.</p>
-<p>PHP, del mismo modo que Java y C, permite romper los bucles mediante la instrucción <code>break</code>.
-A su vez, <code>continue</code> permite saltar a la siguiente iteración.</p>
+<p>PHP, al igual que lenguajes como Java y C, permite interrumpir bucles con la instrucción <code>break</code>. La instrucción <code>continue</code> permite saltar a la siguiente iteración.</p>
 <div class="admonition danger">
 <p class="admonition-title">Si puedes, evita <code>break</code> y <code>continue</code></p>
-<p>Personalmente, no me gusta su uso. Prefiero el uso de variables <em>flag</em> para controlar la salida de los bucles. Por ejemplo:</p>
+<p>Aunque son útiles, es preferible evitar su uso en lo posible. En su lugar, se pueden utilizar variables de control (<em>flag</em>) para gestionar la salida de los bucles. Por ejemplo:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-9-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$salir</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
 </span><span id="__span-9-3"><span class="linenos" data-linenos="3 "></span><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nv">$salir</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -3868,13 +3867,13 @@ A su vez, <code>continue</code> permite saltar a la siguiente iteración.</p>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 207</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> <abbr title="Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.">CE2e</abbr> <abbr title="Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.">CE2g</abbr> <abbr title="Se han identificado los ámbitos de utilización de las variables.">CE2h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se te solicita un programa que muestre los números pares del 0 al 50 (dentro de una lista desordenada). Una vez realizado, refactoriza para que funcione con inicio y fin.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 207</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> <abbr title="Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.">CE2e</abbr> <abbr title="Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.">CE2g</abbr> <abbr title="Se han identificado los ámbitos de utilización de las variables.">CE2h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se solicita la creación de un programa que muestre los números pares del 0 al 50 dentro de una lista desordenada. Una vez finalizado, el programa debe ser refactorizado para que funcione con valores de inicio y fin definidos.</p>
 </li>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 208</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> <abbr title="Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.">CE2e</abbr> <abbr title="Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.">CE2g</abbr> <abbr title="Se han identificado los ámbitos de utilización de las variables.">CE2h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Para asegurarse que dominas las matemáticas, tu CTO, te solicita un programa que sume los números del 1 al 10. Una vez realizado, refactoriza para que funcione con inicio y fin.</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 208</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> <abbr title="Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.">CE2e</abbr> <abbr title="Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.">CE2g</abbr> <abbr title="Se han identificado los ámbitos de utilización de las variables.">CE2h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Con el fin de verificar el dominio de las matemáticas, el CTO requiere un programa que sume los números del 1 al 10. Tras completarlo, debe refactorizarse para que funcione con valores de inicio y fin definidos.</p>
 </li>
 <li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 209</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> <abbr title="Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.">CE2e</abbr> <abbr title="Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.">CE2g</abbr> <abbr title="Se han identificado los ámbitos de utilización de las variables.">CE2h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Seguimos en la prueba del dominio de las matemáticas. A partir de una base y exponente, mediante la acumulación de productos, calcula la potencia utilizando la instrucción for. Reescribe el ejercicio anterior haciendo uso sólo de while. Reescribe el ejercicio anterior haciendo uso sólo de do-while.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 209</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.">CE2d</abbr> <abbr title="Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.">CE2e</abbr> <abbr title="Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.">CE2g</abbr> <abbr title="Se han identificado los ámbitos de utilización de las variables.">CE2h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Continuando con la evaluación del dominio matemático, se debe escribir un programa que, a partir de una base y un exponente, calcule la potencia mediante acumulación de productos usando la instrucción <code>for</code>. Posteriormente, el ejercicio debe reescribirse utilizando solo la instrucción <code>while</code>, y luego reescribirse nuevamente utilizando únicamente <code>do-while</code>.</p>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

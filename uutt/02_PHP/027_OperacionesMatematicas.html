@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#operaciones-matematicas" class="md-skip">
+        <a href="#operaciones-matematicas-en-php" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -827,9 +827,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#actividades" class="md-nav__link">
+  <a href="#actividad" class="md-nav__link">
     <span class="md-ellipsis">
-      Actividades
+      Actividad
     </span>
   </a>
   
@@ -872,11 +872,11 @@
   
   
     <li class="md-nav__item">
-      <a href="029_PruebaEspecifica.html" class="md-nav__link">
+      <a href="029_PruebaConocimiento.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.9- Prueba específica
+    2.9- Prueba de conocimiento
   </span>
   
 
@@ -3712,8 +3712,8 @@
                   
 
 
-<h1 id="operaciones-matematicas">Operaciones Matemáticas<a class="headerlink" href="#operaciones-matematicas" title="Permanent link">&para;</a></h1>
-<p>Disponemos tanto de constantes como funciones ya definidas para trabajar con operaciones matemáticas: <a href="https://www.php.net/manual/es/ref.math.php">https://www.php.net/manual/es/ref.math.php</a></p>
+<h1 id="operaciones-matematicas-en-php">Operaciones matemáticas en PHP<a class="headerlink" href="#operaciones-matematicas-en-php" title="Permanent link">&para;</a></h1>
+<p>PHP proporciona varias <strong>constantes</strong> y <strong>funciones matemáticas</strong> ya definidas que facilitan el trabajo con operaciones numéricas. Puedes consultar todas las funciones en <a href="https://www.php.net/manual/es/ref.math.php">Manual PHP - Funciones Matemáticas</a>.</p>
 <ul>
 <li>Constantes ya definidas<ul>
 <li><code>M_PI</code>, <code>M_E</code>, <code>M_EULER</code>, <code>M_LN2</code>, <code>M_LOG2E</code></li>
@@ -3733,29 +3733,44 @@
 </ul>
 </li>
 </ul>
-<p>Aunque la mayoría de ellas son muy específicas de problemas matemáticos / estadísticos, es muy común que tengamos que redondear y/o formatear los cálculos antes de mostrarlos al usuario.</p>
-<p>Mediante la función <code>number_format(numero, cantidadDecimales, separadorDecimales, separadorMiles)</code> podermos pasar números a cadena con decimales y/o separadores de decimales y/o de miles.</p>
+<h4 id="redondeo-y-formato-de-numeros">Redondeo y formato de números<a class="headerlink" href="#redondeo-y-formato-de-numeros" title="Permanent link">&para;</a></h4>
+<p>Es común que después de realizar cálculos, se necesite <strong>redondear</strong> y/o <strong>formatear</strong> los números para mostrarlos al usuario de manera adecuada.</p>
+<p>La función <strong><code>number_format</code></strong> convierte un número a una cadena, aplicando el formato deseado:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$nf</span> <span class="o">=</span> <span class="mf">1234.5678</span><span class="p">;</span>
 </span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="k">echo</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$nf</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 1,234.57</span>
 </span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="k">echo</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$nf</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;#&quot;</span><span class="p">);</span> <span class="c1">// 1#234M57</span>
 </span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
-<p>Para redondear, tenemos <code>abs</code> para el valor absoluto y <code>round</code> para redondear, <code>ceil</code> para aproximación por exceso y <code>floor</code> por defecto.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<ul>
+<li><strong>Primer parámetro</strong>: Número a formatear. </li>
+<li><strong>Segundo parámetro</strong>: Cantidad de decimales. </li>
+<li><strong>Tercer parámetro</strong>: Separador de decimales. </li>
+<li><strong>Cuarto parámetro</strong>: Separador de miles.</li>
+</ul>
+<h4 id="redondeo-de-numeros">Redondeo de números<a class="headerlink" href="#redondeo-de-numeros" title="Permanent link">&para;</a></h4>
+<p>PHP también proporciona funciones para redondear números de diversas formas: </p>
+<ul>
+<li><strong><code>abs</code></strong>: Devuelve el valor absoluto. </li>
+<li><strong><code>round</code></strong>: Redondea un número (por defecto, al entero más cercano).</li>
+<li><strong><code>ceil</code></strong>: Redondea al número entero superior más cercano (aproximación por exceso). </li>
+<li><strong><code>floor</code></strong>: Redondea al número entero inferior más cercano (aproximación por defecto).</li>
+</ul>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$num</span> <span class="o">=</span> <span class="mf">7.7</span><span class="p">;</span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="nv">$siete</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span>
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="nv">$ocho</span> <span class="o">=</span> <span class="nb">ceil</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="nv">$siete</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span> <span class="c1">// 7</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="nv">$ocho</span> <span class="o">=</span> <span class="nb">ceil</span><span class="p">(</span><span class="nv">$num</span><span class="p">);</span> <span class="c1">// 8</span>
 </span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>
 </span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="nv">$otro</span> <span class="o">=</span> <span class="mf">4.49</span><span class="p">;</span>
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="nv">$cuatro</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">);</span>
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="nv">$cuatrocinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="nv">$cinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$cuatrocinco</span><span class="p">);</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="nv">$cuatro</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">);</span> <span class="c1">// 4</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="nv">$cuatrocinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$otro</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 4.5</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="nv">$cinco</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nv">$cuatrocinco</span><span class="p">);</span> <span class="c1">// 5</span>
 </span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
-<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+Con estas funciones y constantes, PHP permite realizar cálculos matemáticos de manera sencilla y eficiente.</p>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
 <ul>
-<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 219</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea un programa que resuelva una ecuación de 2º grado del tipo ax² + bx + c = 0. Ten en cuenta que puede tener 2, 1 o no tener solución dependiendo del valor del discriminante b²-4ac.</li>
+<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 219</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Se solicita desarrollar un programa que resuelva una ecuación de 2º grado del tipo ax² + bx + c = 0. Se ha de tener cuenta que puede tener 2, 1 o no tener solución dependiendo del valor del discriminante b²-4ac.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
