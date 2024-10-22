@@ -3765,9 +3765,9 @@
 </span></code></pre></div>
 <p>Y recogemos los datos:</p>
 <div class="language-php highlight"><span class="filename">saluda.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">];</span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$apellido1</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;apellido1&quot;</span><span class="p">];</span>
-</span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-1-2"><span class="hll"><span class="linenos" data-linenos="2 "></span><span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">];</span>
+</span></span><span id="__span-1-3"><span class="hll"><span class="linenos" data-linenos="3 "></span><span class="nv">$apellido1</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;apellido1&quot;</span><span class="p">];</span>
+</span></span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span>
 </span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span><span class="k">echo</span> <span class="s2">&quot;Hola </span><span class="si">$nombre</span><span class="s2"> </span><span class="si">$apellido1</span><span class="s2">&quot;</span><span class="p">;</span>
 </span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
@@ -3780,16 +3780,15 @@
 </span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;apellido1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;apellido1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;enviar&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="cp">&lt;?php</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]))</span> <span class="p">{</span>
 </span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>        <span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">];</span>
 </span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>        <span class="nv">$apellido1</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;apellido1&quot;</span><span class="p">];</span>
 </span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>
 </span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>        <span class="k">echo</span> <span class="s2">&quot;Hola </span><span class="si">$nombre</span><span class="s2"> </span><span class="si">$apellido1</span><span class="s2">&quot;</span><span class="p">;</span>
 </span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>    <span class="p">}</span>
-</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>    <span class="cp">?&gt;</span>
-</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h3 id="consideraciones-adicionales">Consideraciones adicionales<a class="headerlink" href="#consideraciones-adicionales" title="Permanent link">&para;</a></h3>
 <ul>
