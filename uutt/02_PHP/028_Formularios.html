@@ -3747,9 +3747,11 @@
 
 <h1 id="formularios">Formularios<a class="headerlink" href="#formularios" title="Permanent link">&para;</a></h1>
 <p>Los datos se envían via URL con el formato <code>var1=valor1&amp;var2=valor2…</code>. Por ejemplo: <code>ejemplo.php?nombre=Bruce+apellido1=Wayne</code></p>
-<p>El proceso consta de dos pasos principales: 
-1. Generar un formulario con <code>action='archivo.php'</code> y <code>method='GET'</code>. 
-2. En el archivo <code>.php</code>, leer los datos enviados a través de la superglobal <code>$_GET['nombreVar']</code>.</p>
+<p>El proceso consta de dos pasos principales: </p>
+<ol>
+<li>Generar un formulario con <code>action='archivo.php'</code> y <code>method='GET'</code>. </li>
+<li>En el archivo <code>.php</code>, leer los datos enviados a través de la superglobal <code>$_GET['nombreVar']</code>.</li>
+</ol>
 <p>Es recomendable separar el código HTML del PHP siempre que sea posible. A continuación, se muestra cómo realizar esta separación.</p>
 <h2 id="ejemplo-formulario">Ejemplo formulario<a class="headerlink" href="#ejemplo-formulario" title="Permanent link">&para;</a></h2>
 <p>El código HTML sería:</p>
