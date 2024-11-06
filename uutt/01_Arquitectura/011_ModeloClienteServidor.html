@@ -3722,22 +3722,18 @@
 
 
 <h1 id="modelo-clienteservidor">Modelo Cliente/servidor<a class="headerlink" href="#modelo-clienteservidor" title="Permanent link">&para;</a></h1>
-<p>Las arquitecturas web definen la forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí. Las aplicaciones web se basan en un modelo cliente-servidor.</p>
+<p>El modelo <strong>Cliente-Servidor</strong> es una arquitectura en la cual dos entidades principales interactúan: el cliente y el servidor. En este modelo, el <strong>cliente</strong> es quien solicita servicios o recursos, mientras que el <strong>servidor</strong> es quien los proporciona y gestiona. Este tipo de arquitectura es común en aplicaciones web, bases de datos y sistemas de mensajería.</p>
 <figure>
 <p><a class="glightbox" href="../../img/ut01/ut01-clienteservidor.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Modelo Cliente-Servidor" src="../../img/ut01/ut01-clienteservidor.png" /></a>
   </p>
 <figcaption>Modelo Cliente-Servidor.</figcaption>
 </figure>
-<p>Hoy en día, es frecuente que uno o varios clientes acceden a un servidor. Las nuevas arquitecturas sustituyen el servidor por un balanceador de carga de manera que N servidores dan respuesta a M clientes. En las aplicaciones web, el cliente es el navegador web.
-El cliente hace la petición (request, normalmente mediante el protocolo GET mediante el puerto 80/443) y el servidor responde (response).</p>
+<p>Hoy en día, es frecuente que uno o varios clientes acceden a un servidor. Las nuevas arquitecturas sustituyen el servidor por un balanceador de carga de manera que N servidores dan respuesta a M clientes. En las aplicaciones web, el cliente es el navegador web.</p>
+<p>El cliente hace la petición (<em>request</em>, normalmente mediante el protocolo GET mediante el puerto 80/443) y el servidor responde (<em>response</em>).</p>
 <h2 id="pagina-web-dinamica">Página web dinámica<a class="headerlink" href="#pagina-web-dinamica" title="Permanent link">&para;</a></h2>
-<p>Si la página web únicamente contiene HTML + CSS se considera una <strong>página estática</strong>. Para generar una <strong>página dinámica</strong>, donde el contenido cambia, hoy tenemos dos alternativas:</p>
-<ul>
-<li>Utilizar un lenguaje de servidor que genere el contenido, ya sea mediante el acceso a una base de datos (BD) o servicios externos.</li>
-<li>Utilizar servicios REST de terceros invocados desde JavaScript (JS).</li>
-</ul>
+<p>Si la página web únicamente contiene HTML + CSS, tecnologías trabajadas en el módulo profesional <abbr title="Lenguaje de Marcas y Sistemas de Gestión de la Información">LMGSI</abbr> (Lenguaje de Marcas y Sistemas de Gestión de Información), se considera una <strong>página estática</strong>. Para generar una página dinámica, donde el contenido puede cambiar en respuesta a la interacción del usuario o a datos externos, existen hoy en día dos alternativas principales. La primera es utilizar JavaScript (estudiado en <abbr title="Desarrollo Web en Entorno Cliente">DWEC</abbr>, Desarrollo Web en Entorno Cliente) para manipular el DOM y realizar peticiones REST a través de APIs, obteniendo datos dinámicos sin recargar la página. La segunda alternativa es implementar frameworks o herramientas de generación dinámica en el servidor, para actualizar el contenido que se envía al cliente según cada petición.</p>
 <figure>
-<p><a class="glightbox" href="../../img/ut01/estaticavsdinamica.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Web estática vs Web dinámica" src="../../img/ut01/estaticavsdinamica.png" /></a>
+<p><a class="glightbox" href="../../img/ut01/estaticavsdinamica.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Web estática vs Web dinámica" src="../../img/ut01/estaticavsdinamica.png" width="500" /></a>
   </p>
 <figcaption>Web estática vs Web dinámica.</figcaption>
 </figure>
@@ -3771,13 +3767,14 @@ El cliente hace la petición (request, normalmente mediante el protocolo GET med
 </tr>
 </tbody>
 </table>
-<h2 id="single-page-application-spa"><em>Single Page Application (SPA)</em><a class="headerlink" href="#single-page-application-spa" title="Permanent link">&para;</a></h2>
-<p>A día de hoy, gran parte del desarrollo web está en plena transición de una arquitectura web cliente-servidor clásica donde el cliente realiza una llamada al back-end, por una arquitectura SPA donde el cliente gana mucho mayor peso y sigue una programación reactiva que accede a servicios remotos REST que realizan las operaciones (comunicándose mediante JSON).</p>
+<h2 id="single-page-application-spa"><em>Single Page Application (<abbr title="Single-Page Application">SPA</abbr>)</em><a class="headerlink" href="#single-page-application-spa" title="Permanent link">&para;</a></h2>
+<p>Actualmente, gran parte del desarrollo web está en plena transición de una arquitectura web cliente-servidor clásica donde el cliente realiza una llamada al back-end, por una arquitectura <abbr title="Single-Page Application">SPA</abbr> donde el cliente gana mucho mayor peso y sigue una programación reactiva que accede a servicios remotos REST que realizan las operaciones (comunicándose mediante <em>JSON</em>).</p>
 <figure>
 <p><a class="glightbox" href="../../img/ut01/tradicionalvsspa.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Arquitectura tradicional vs SPA" src="../../img/ut01/tradicionalvsspa.png" /></a>
   </p>
-<figcaption>Arquitectura tradicional vs SPA.</figcaption>
+<figcaption>Arquitectura tradicional vs <abbr title="Single-Page Application">SPA</abbr>.</figcaption>
 </figure>
+<p>En la <strong>arquitectura tradicional</strong> para aplicaciones web, cada vez que el usuario interactúa con un enlace o envía un formulario, el navegador envía una solicitud al servidor, y este responde enviando una nueva página HTML completa. Mientras que una <strong><abbr title="Single-Page Application">SPA</abbr></strong> o Aplicación de Página Única, es una arquitectura moderna que permite que toda la aplicación web se cargue en una sola página HTML. Una vez cargada la aplicación inicial, el contenido y las vistas cambian de manera dinámica a través de JavaScript, sin necesidad de recargar la página completa. Las <abbr title="Single-Page Application">SPA</abbr> utilizan <em>AJAX</em> y peticiones <em>REST</em> o <em>GraphQL</em> para obtener datos del servidor de forma asíncrona, actualizando solo las partes de la página que han cambiado</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->

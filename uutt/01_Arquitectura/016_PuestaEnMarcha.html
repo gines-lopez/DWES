@@ -3753,11 +3753,11 @@
 <h3 id="xampp">XAMPP<a class="headerlink" href="#xampp" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.apachefriends.org/es/index.html">XAMPP</a> es una distribución compuesta con el software necesario para desarrollar en entorno servidor. Se compone de las siguientes herramientas en base a sus siglas:</p>
 <ul>
-<li>X para el sistema operativo (de ahí que se conozca también como LAMP o WAMP o MAMP).</li>
-<li>A para Apache.</li>
-<li>M para MySQL / MariaDB. También incluye phpMyAdmin para la administración de la base de datos desde un interfaz web.</li>
-<li>P para PHP.</li>
-<li>la última P para Perl.</li>
+<li><strong>X</strong> para el sistema operativo (de ahí que se conozca también como LAMP o WAMP o MAMP, si hablamos de Linux, Windows o macOS).</li>
+<li><strong>A</strong> para Apache.</li>
+<li><strong>M</strong> para MySQL / MariaDB. También incluye phpMyAdmin para la administración de la base de datos desde un interfaz web.</li>
+<li><strong>P</strong> para PHP.</li>
+<li>la última <em>P</em> para Perl.</li>
 </ul>
 <p>Desde la propia página se puede descargar el archivo ejecutable para el sistema operativo de nuestro ordenador. Se recomienda leer la FAQ de cada sistema operativo con instrucciones para su puesta en marcha.</p>
 <div class="admonition note">
@@ -3771,7 +3771,7 @@
 <p>Para ello es necesario tener instalado <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> en nuestros entornos de desarrollo (el cual ya incluye en núcleo de <em>Docker</em> y la herramienta <em>docker compose</em>).</p>
 <div class="admonition caution">
 <p class="admonition-title">Versiones</p>
-<p>A lo largo del curso vamos a usar PHP <code>8.X</code>. Respecto a <em>Docker</em>, para escribir los apuntes hemos utilizado la version <code>24</code> y la version <code>2.23.2</code> de <em>docker compose</em>. Finalmente, la versión de <em>Docker Desktop</em> que hemos utilizado es la <code>4.25.2</code>.</p>
+<p>A lo largo del curso vamos a usar PHP <code>8.3</code>. Respecto a <em>Docker</em>, para escribir los apuntes hemos utilizado la version <code>27</code> y la version <code>2.29.3</code> de <em>docker compose</em>. Finalmente, la versión de <em>Docker Desktop</em> que hemos utilizado es la <code>4.34.2</code>.</p>
 </div>
 <h4 id="plantilla-servidor-web-php">Plantilla Servidor Web + PHP<a class="headerlink" href="#plantilla-servidor-web-php" title="Permanent link">&para;</a></h4>
 <p><em>Docker</em> se basa en el uso de imágenes para crear contenedores. <em>Docker Compose</em> simplifica el trabajo con múltiples contenedores, y por ello, para facilitar el arranque, nos centraremos en <em>Docker Compose</em> utilizando una plantilla que únicamente va a contener como servicios Apache/Nginx y PHP.</p>
@@ -3823,14 +3823,8 @@
 <p>Si queremos ver el contenido de los archivos de log del servicio utilizaremos:</p>
 <div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="go">docker-compose logs -f</span>
 </span></code></pre></div>
-<p>Para copiar un archivo desde nuestro sistema al interior del contenedor:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="go">docker cp ./miFichero idContenedor:/tmp</span>
-</span></code></pre></div>
-<p>Y al revés, si queremos consultar un archivo contenido dentro de un contenedor, lo copiaremos a nuestro sistema:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="go">docker cp idContenedor:/tmp/archivoAConsultar.txt ./</span>
-</span></code></pre></div>
 <p>Finalmente, si queremos acceder a un terminal interactivo dentro del contenedor:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="go">docker exec -it nombreContenedor bash</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="go">docker exec -it nombreContenedor bash</span>
 </span></code></pre></div>
 <p>Otros comandos que podemos llegar a utilizar son:</p>
 <ul>
@@ -3865,27 +3859,32 @@
 <h3 id="hola-mundo">Hola Mundo<a class="headerlink" href="#hola-mundo" title="Permanent link">&para;</a></h3>
 <p>Y como no, nuestro primer ejemplo será un <em>Hola Mundo</em> en PHP.</p>
 <p>Si nombramos el archivo como <code>index.php</code>, al acceder a <code>http://localhost</code> automáticamente cargará el resultado:</p>
-<div class="language-html+php highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hola Mundo<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-7-9"><span class="hll"><span class="linenos" data-linenos=" 9 "></span>    <span class="cp">&lt;?php</span>
-</span></span><span id="__span-7-10"><span class="hll"><span class="linenos" data-linenos="10 "></span>        <span class="k">echo</span> <span class="s2">&quot;Hola Mundo&quot;</span><span class="p">;</span>
-</span></span><span id="__span-7-11"><span class="hll"><span class="linenos" data-linenos="11 "></span>    <span class="cp">?&gt;</span>
-</span></span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="language-html+php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hola Mundo<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-5-9"><span class="hll"><span class="linenos" data-linenos=" 9 "></span>    <span class="cp">&lt;?php</span>
+</span></span><span id="__span-5-10"><span class="hll"><span class="linenos" data-linenos="10 "></span>        <span class="k">echo</span> <span class="s2">&quot;Hola Mundo&quot;</span><span class="p">;</span>
+</span></span><span id="__span-5-11"><span class="hll"><span class="linenos" data-linenos="11 "></span>    <span class="cp">?&gt;</span>
+</span></span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></code></pre></div>
+<figure>
+<p><a class="glightbox" href="../../img/ut01/holamundo.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hola Mundo" src="../../img/ut01/holamundo.png" /></a>
+  </p>
+<figcaption>Hola Mundo.</figcaption>
+</figure>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 103</strong>. (<abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr> / <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) El departamento de servidores ha contratado un servidor web para desplegar la aplicación. El DevOps a cargo de tu proyecto te solicita que configures tu servidor PHP local de trabajo. No olvides que debes mostrar el proceso y las principales características.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 103</strong>. (<abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr> / <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) El Departamento de infraestructuras ha contratado un servidor web para desplegar la aplicación. El DevOps<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> a cargo del proyecto nos solicita que configuremos un entorno de desarrollo local con PHP. No olvidéis que debemos mostrar el proceso y las principales características.</p>
 </li>
 <li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 104</strong>. (<abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr> / <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Como parte de la documentación que debes generar para el proyecto que te han solicitado, muestra y comenta las principales variables que aparecen en el fichero <code>php.ini</code> del servidor que has configurado para trabajar en local.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 104</strong>. (<abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr> / <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Como parte de la documentación que debemos generar para el proyecto que nos han solicitado, debéis mostrar y comentae las principales variables que aparecen en el fichero <code>php.ini</code> del servidor que se ha configurado para trabajar en local.</p>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
@@ -3893,6 +3892,14 @@
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
 <!-- Otras abreviaciones -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>DevOps es un enfoque de desarrollo de software que integra prácticas de desarrollo (Dev) y operaciones (Ops) para mejorar la colaboración, la automatización y la entrega continua de aplicaciones, facilitando así un ciclo de vida del software más ágil y eficiente.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

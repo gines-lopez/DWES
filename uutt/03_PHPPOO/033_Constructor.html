@@ -3722,9 +3722,8 @@
 
 
 <h1 id="el-constructor">El Constructor<a class="headerlink" href="#el-constructor" title="Permanent link">&para;</a></h1>
-<p>El constructor de los objetos se define mediante el método mágico <code>__construct</code>.
-Puede o no tener parámetros, pero sólo puede haber un único constructor.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<p>El constructor de los objetos se define mediante el método mágico <code>__construct</code>. Este puede o no tener parámetros, pero sólo puede haber un único constructor.</p>
+<div class="language-php highlight"><span class="filename">Persona.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Persona </span><span class="p">{</span>
 </span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">private</span> <span class="nx">string</span> <span class="nv">$nombre</span><span class="p">;</span>
 </span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>
@@ -3742,10 +3741,10 @@ Puede o no tener parámetros, pero sólo puede haber un único constructor.</p>
 </span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span><span class="nv">$gines</span><span class="o">-&gt;</span><span class="na">imprimir</span><span class="p">();</span>
 </span></code></pre></div>
 <h2 id="constructores-en-php-8">Constructores en PHP 8<a class="headerlink" href="#constructores-en-php-8" title="Permanent link">&para;</a></h2>
-<p>Una de las grandes novedades que ofrece PHP 8 es la simplificación de los constructores con parámetros, lo que se conoce como <em>promoción de las propiedades del constructor</em>.</p>
-<p>Para ello, en vez de tener que declarar las propiedades como privadas o protegidas, y luego dentro del constructor tener que asignar los parámetros a estás propiedades, el propio constructor promociona las propiedades.</p>
+<p>Una de las grandes novedades que ofrece PHP 8 es la simplificación de los constructores con parámetros, lo que se conoce como <em>promoción de propiedades del constructor</em>.</p>
+<p>En lugar de tener que declarar las propiedades como privadas o protegidas y luego asignar los parámetros a estas propiedades dentro del constructor, el propio constructor ahora promociona las propiedades.</p>
 <p>Veámoslo mejor con un ejemplo. Imaginemos una clase <code>Punto</code> donde queramos almacenar sus coordenadas:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">Punto.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Punto</span> <span class="p">{</span>
 </span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">protected</span> <span class="nx">float</span> <span class="nv">$x</span><span class="p">;</span>
 </span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">protected</span> <span class="nx">float</span> <span class="nv">$y</span><span class="p">;</span>
@@ -3762,8 +3761,8 @@ Puede o no tener parámetros, pero sólo puede haber un único constructor.</p>
 </span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span>    <span class="p">}</span>
 </span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="p">}</span>
 </span></code></pre></div>
-<p>En PHP 8, quedaría del siguiente modo (mucho más corto, lo que facilita su legibilidad):</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<p>En PHP 8, esto quedaría del siguiente modo (mucho más corto, lo que facilita su legibilidad):</p>
+<div class="language-php highlight"><span class="filename">Punto.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="k">class</span> <span class="nc">Punto</span> <span class="p">{</span>
 </span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span>
 </span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span>        <span class="k">protected</span> <span class="nx">float</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
@@ -3774,8 +3773,8 @@ Puede o no tener parámetros, pero sólo puede haber un único constructor.</p>
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">El orden importa</p>
-<p>A la hora de codificar el orden de los elementos debe ser:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<p>Al codificar, el orden de los elementos debe ser:</p>
+<div class="language-php highlight"><span class="filename">NombreClase.php</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 </span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>
 </span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">class</span> <span class="nc">NombreClase</span> <span class="p">{</span>
@@ -3787,16 +3786,19 @@ Puede o no tener parámetros, pero sólo puede haber un único constructor.</p>
 </span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>
 </span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span>    <span class="c1">// resto de métodos</span>
 </span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
-</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 </div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 303</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Copia la clase del ejercicio <strong>AC302</strong> y modifícala. Elimina los setters de nombre y apellidos, de manera que dichos datos se asignan mediante el constructor (utiliza la sintaxis de PHP7). Si el constructor recibe un tercer parámetro, será el sueldo del Empleado. Si no, se le asignará 1000€ como sueldo inicial.</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 303</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se solicita realiazar una copia de la clase del ejercicio <strong><a href="032_Encapsulacion.html#actividades">AC302</a></strong> y realizar una serie de modificaciones:</p>
+<ul>
+<li>Eliminar los <code>setters</code> de nombre y apellidos, de manera que dichos datos se asignan mediante el constructor (se recomienda el uso de la sintaxis de PHP7). </li>
+<li>Si el constructor recibe un tercer parámetro, será el sueldo del <code>Empleado</code>. Si no, se le asignará 1000€ como sueldo inicial.</li>
+</ul>
 </li>
 <li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 304</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.">CE1a</abbr> <abbr title="Se han reconocido las ventajas que proporciona la generación dinámica de páginas Web y sus diferencias con la inclusión de sentencias de guiones en el interior de las páginas Web.">CE1b</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.">CE1f</abbr> <abbr title="Se han reconocido y evaluado las herramientas de programación en entorno servidor.">CE1g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica la clase de la actividad anterior <strong>AC303</strong> y utiliza la sintaxis de PHP 8 de promoción de las propiedades del constructor.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 304</strong>. (<abbr title="Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.">RA2</abbr> / <abbr title="Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.">CE1a</abbr> <abbr title="Se han reconocido las ventajas que proporciona la generación dinámica de páginas Web y sus diferencias con la inclusión de sentencias de guiones en el interior de las páginas Web.">CE1b</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.">CE1f</abbr> <abbr title="Se han reconocido y evaluado las herramientas de programación en entorno servidor.">CE1g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se necesita realizar una modificación más en la clase de la actividad anterior <strong>AC303</strong>, es necesario utilizar la sintaxis de PHP 8 de promoción de las propiedades del constructor.</p>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

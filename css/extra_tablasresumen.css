@@ -22,10 +22,10 @@
     padding: 10px 10px;
 }
 .ut-datrecap > .ut-ut{
-    width: 75%;
+    width: 70%;
 }
 .ut-datrecap> .ut-hours{
-    width: 25%;
+    width: 30%;
 }
 .ut-emp{
     background: #2094f3;
@@ -35,9 +35,9 @@
 }
 
 .ut-hours .ut-emp{
-    max-width: 70px;
-    min-width: 70px;
-    width: 70px;
+    max-width: 85px;
+    min-width: 85px;
+    width: 85px;
 }
 
 #objetivos{

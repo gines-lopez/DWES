@@ -3781,8 +3781,8 @@
 <h2 id="persistencia-en-archivos">Persistencia en archivos<a class="headerlink" href="#persistencia-en-archivos" title="Permanent link">&para;</a></h2>
 <p>Persistir datos en archivos implica escribir y leer datos de archivos en el sistema de archivos del servidor. Esto es útil para datos que no requieren operaciones complejas y pueden ser almacenados de manera permanente en un formato simple como CSV, JSON, o XML. PHP proporciona funciones como <code>file_put_contents()</code> y <code>file_get_contents()</code> que facilitan la escritura y lectura de archivos.</p>
 <p>Esta técnica es adecuada para pequeñas cantidades de datos y donde la estructura de los datos es simple, pero no es recomendable para gestionar grandes volúmenes de datos o requerimientos de alta concurrencia debido a limitaciones de escalabilidad y velocidad.</p>
-<h2 id="persistencia-en-un-sgbd">Persistencia en un SGBD<a class="headerlink" href="#persistencia-en-un-sgbd" title="Permanent link">&para;</a></h2>
-<p>La utilización de Sistemas de Gestión de Bases de Datos (SGBD) es el método más común para la persistencia de datos en aplicaciones web. Los SGBD como MySQL, PostgreSQL, o SQLite manejan la persistencia, consistencia, integridad, y seguridad de los datos. PHP se comunica con estos sistemas a través de extensiones como PDO (PHP Data Objects) o mysqli, que permiten ejecutar consultas SQL, insertar, actualizar, eliminar y recuperar datos de manera eficiente.</p>
+<h2 id="persistencia-en-un-sgbd">Persistencia en un <abbr title="Sistema de Gestión de Bases de Datos">SGBD</abbr><a class="headerlink" href="#persistencia-en-un-sgbd" title="Permanent link">&para;</a></h2>
+<p>La utilización de Sistemas de Gestión de Bases de Datos (<abbr title="Sistema de Gestión de Bases de Datos">SGBD</abbr>) es el método más común para la persistencia de datos en aplicaciones web. Los <abbr title="Sistema de Gestión de Bases de Datos">SGBD</abbr> como MySQL, PostgreSQL, o SQLite manejan la persistencia, consistencia, integridad, y seguridad de los datos. PHP se comunica con estos sistemas a través de extensiones como PDO (PHP Data Objects) o mysqli, que permiten ejecutar consultas SQL, insertar, actualizar, eliminar y recuperar datos de manera eficiente.</p>
 <p>Este enfoque es altamente recomendable para manejar grandes volúmenes de datos, asegurar la integridad de los datos mediante transacciones y restricciones, y proporcionar un acceso concurrente efectivo.</p>
 <h2 id="persistencia-en-una-api">Persistencia en una API<a class="headerlink" href="#persistencia-en-una-api" title="Permanent link">&para;</a></h2>
 <p>La persistencia de datos a través de APIs está ganando popularidad, especialmente con el auge de las arquitecturas basadas en microservicios y la nube. En este modelo, una aplicación web interactúa con una API externa para gestionar los datos. La API puede estar conectada a un backend que utiliza cualquier forma de almacenamiento mencionada anteriormente o incluso servicios especializados como bases de datos en la nube.</p>
@@ -3809,7 +3809,7 @@
 <td>Guardar imágenes de productos, descripciones en formato JSON/XML o configuraciones del sitio en archivos.</td>
 </tr>
 <tr>
-<td><strong>Sistema de Gestión de Bases de Datos (SGBD)</strong></td>
+<td><strong>Sistema de Gestión de Bases de Datos (<abbr title="Sistema de Gestión de Bases de Datos">SGBD</abbr>)</strong></td>
 <td>Almacenar y gestionar inventarios de productos, datos de usuarios, historial de pedidos, y realizar transacciones seguras.</td>
 </tr>
 <tr>
@@ -3830,7 +3830,7 @@
 <p><strong>Archivos</strong>: Para un e-commerce, es práctico almacenar archivos estáticos como catálogos de productos en formato PDF, imágenes de productos o incluso archivos de configuración que controlen aspectos del layout o características del sitio web, que no requieren acceso frecuente a una base de datos.</p>
 </li>
 <li>
-<p><strong>Sistema de Gestión de Bases de Datos (SGBD)</strong>: Las bases de datos son esenciales en e-commerce para gestionar voluminosas y dinámicas informaciones como los detalles de inventarios de productos, precios, usuarios registrados, preferencias de clientes, y registros de transacciones. Permiten realizar consultas complejas, gestionar la integridad de los datos, y asegurar la coherencia a través de transacciones.</p>
+<p><strong>Sistema de Gestión de Bases de Datos (<abbr title="Sistema de Gestión de Bases de Datos">SGBD</abbr>)</strong>: Las bases de datos son esenciales en e-commerce para gestionar voluminosas y dinámicas informaciones como los detalles de inventarios de productos, precios, usuarios registrados, preferencias de clientes, y registros de transacciones. Permiten realizar consultas complejas, gestionar la integridad de los datos, y asegurar la coherencia a través de transacciones.</p>
 </li>
 <li>
 <p><strong>API</strong>: Integrar APIs permite a una tienda de e-commerce extender su funcionalidad y automatización sin tener que manejar todos los datos internamente. Por ejemplo, una API de pagos como Stripe o PayPal gestiona de forma segura las transacciones financieras, mientras que otras APIs pueden ser utilizadas para obtener información en tiempo real sobre el estado del envío o para integrar reseñas de productos de un servicio externo.</p>

@@ -3746,34 +3746,44 @@
 <p>Debido al tipado dinámico, los arrays pueden contener datos de diferentes tipos. No se recomienda mezclar tipos dentro de un mismo array.</p>
 </div>
 <p>Los <code>array</code> en PHP se definen mediante corchetes, son 0-index (la numeración empieza en 0), y es posible asignar un valor a una posición específica:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$frutas</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;naranja&quot;</span><span class="p">,</span> <span class="s2">&quot;pera&quot;</span><span class="p">,</span> <span class="s2">&quot;manzana&quot;</span><span class="p">);</span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span>
-</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="nv">$frutas2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;naranja&quot;</span><span class="p">,</span> <span class="s2">&quot;pera&quot;</span><span class="p">,</span> <span class="s2">&quot;manzana&quot;</span><span class="p">];</span>
-</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span>
-</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span><span class="nv">$frutas3</span> <span class="o">=</span> <span class="p">[];</span>
-</span><span id="__span-0-7"><span class="linenos" data-linenos="7 "></span><span class="nv">$frutas3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;naranja&quot;</span><span class="p">;</span>
-</span><span id="__span-0-8"><span class="linenos" data-linenos="8 "></span><span class="nv">$frutas3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pera&quot;</span><span class="p">;</span>
-</span><span id="__span-0-9"><span class="linenos" data-linenos="9 "></span><span class="nv">$frutas3</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;manzana&quot;</span><span class="p">;</span> <span class="c1">// lo añade al final</span>
+<div class="language-php highlight"><span class="filename">ejemploarray.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$frutas</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;naranja&quot;</span><span class="p">,</span> <span class="s2">&quot;pera&quot;</span><span class="p">,</span> <span class="s2">&quot;manzana&quot;</span><span class="p">);</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="nv">$frutas2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;naranja&quot;</span><span class="p">,</span> <span class="s2">&quot;pera&quot;</span><span class="p">,</span> <span class="s2">&quot;manzana&quot;</span><span class="p">];</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="nv">$frutas3</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="nv">$frutas3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;naranja&quot;</span><span class="p">;</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="nv">$frutas3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pera&quot;</span><span class="p">;</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="nv">$frutas3</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;manzana&quot;</span><span class="p">;</span> <span class="c1">// lo añade al final</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="c1">// Accedemos al primer elemento usando la notación de corchetes y mostramos su valor</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="k">echo</span> <span class="nv">$frutas</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// Imprime &quot;Manzana&quot;</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="k">print</span> <span class="nv">$frutas</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// Imprime &quot;Banana&quot;</span>
 </span></code></pre></div>
 <p>Es posible obtener el tamaño de un <code>array</code> utilizando la función <code>count(array)</code>. Para recorrer el <code>array</code> haremos uso de un bucle <code>for</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">ejemplofor.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$tam</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span> <span class="c1">// tamaño del array</span>
 </span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>
 </span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span><span class="o">&lt;</span><span class="nb">count</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-1-5"><span class="linenos" data-linenos="5 "></span>    <span class="k">echo</span> <span class="s2">&quot;Elemento </span><span class="si">$i</span><span class="s2">: </span><span class="si">$frutas[$i]</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
 </span><span id="__span-1-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span>
 </span></code></pre></div>
-<p>Otra forma de recorrer los<code>array</code>, incluso más elegante, es hacer uso de <code>foreach</code>. Su sintaxis es <code>foreach (array as elemento)</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<p>Otra forma de recorrer los <code>array</code>, incluso más elegante, es hacer uso de <code>foreach</code>. Su sintaxis es <code>foreach (array as elemento)</code>:</p>
+<div class="admonition note">
+<p class="admonition-title">Recordando conceptos</p>
+<p>En el módulo profesional de Programación ya se introdujo este concepto. Recuerda que <code>foreach</code> es una estructura de control que permite recorrer de manera sencilla cada elemento de un array o de un objeto. Por cada iteración, <code>foreach</code> toma un elemento del array y lo asigna a una variable temporal, facilitando el trabajo con cada valor sin necesidad de manejar índices.</p>
+</div>
+<div class="language-php highlight"><span class="filename">ejemploforeach.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="c1">// Mediante foreach no necesitamos saber el tamaño del array</span>
-</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$frutas</span> <span class="k">as</span> <span class="nv">$fruta</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span>    <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$fruta</span><span class="s2"> &lt;br /&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$colores</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rojo&quot;</span><span class="p">,</span> <span class="s2">&quot;Verde&quot;</span><span class="p">,</span> <span class="s2">&quot;Azul&quot;</span><span class="p">];</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$colores</span> <span class="k">as</span> <span class="nv">$color</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos="6 "></span>    <span class="k">echo</span> <span class="nv">$color</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Imprime cada color en una nueva línea</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="arrays-asociativos">Arrays asociativos<a class="headerlink" href="#arrays-asociativos" title="Permanent link">&para;</a></h2>
 <p>En los <code>arrays</code> asociativos, cada elemento es un <strong>par clave-valor</strong>. En lugar de acceder a los elementos por su posición, se accede a ellos mediante una clave. Para recorrer este tipo de <code>arrays</code>, se puede usar <code>foreach</code> separando cada elemento en una pareja <code>clave =&gt; valor</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">ejemploarrayasociativo.php</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$capitales</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Italia&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Roma&quot;</span><span class="p">,</span>
 </span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="s2">&quot;Francia&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span>
 </span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="s2">&quot;Portugal&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Lisboa&quot;</span><span class="p">];</span>
@@ -3809,38 +3819,49 @@
 <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;naranja&quot;</span><span class="p">,</span> <span class="s2">&quot;pera&quot;</span><span class="p">,</span> <span class="s2">&quot;manzana&quot;</span><span class="p">];</span>
 </span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>
-</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="nb">array_push</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">,</span> <span class="s2">&quot;piña&quot;</span><span class="p">);</span>
-</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span>
-</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span><span class="nv">$ultFruta</span> <span class="o">=</span> <span class="nb">array_pop</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span>
-</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;piña&quot;</span><span class="p">,</span> <span class="nv">$frutas</span><span class="p">))</span> <span class="p">{</span>
-</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Queda piña&lt;/p&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;No queda piña&lt;/p&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
-</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="nb">array_push</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">,</span> <span class="s2">&quot;piña&quot;</span><span class="p">);</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="nv">$ultFruta</span> <span class="o">=</span> <span class="nb">array_pop</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;piña&quot;</span><span class="p">,</span> <span class="nv">$frutas</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Queda piña&lt;/p&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;No queda piña&lt;/p&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$frutas</span><span class="p">);</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="go">Array</span>
-</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="go">(</span>
-</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="go">  [0] =&gt; naranja</span>
-</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span><span class="go">  [1] =&gt; pera</span>
-</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="go">  [2] =&gt; manzana</span>
-</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="go">  [3] =&gt; piña</span>
-</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="go">)</span>
-</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="go">&lt;p&gt;No queda piña&lt;/p&gt;</span>
-</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span><span class="go">Array</span>
-</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="go">(</span>
-</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="go">  [0] =&gt; naranja</span>
-</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span><span class="go">  [1] =&gt; pera</span>
-</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="go">  [2] =&gt; manzana</span>
-</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="go">)</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="go">array(3) {</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="go">    [0]=&gt;</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="go">    string(7) &quot;naranja&quot;</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span><span class="go">    [1]=&gt;</span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="go">    string(4) &quot;pera&quot;</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="go">    [2]=&gt;</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="go">    string(7) &quot;manzana&quot;</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="go">}</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="go">Array</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="go">(</span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span><span class="go">  [0] =&gt; naranja</span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="go">  [1] =&gt; pera</span>
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="go">  [2] =&gt; manzana</span>
+</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span><span class="go">  [3] =&gt; piña</span>
+</span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span><span class="go">)</span>
+</span><span id="__span-5-17"><span class="linenos" data-linenos="17 "></span><span class="go">&lt;p&gt;No queda piña&lt;/p&gt;</span>
+</span><span id="__span-5-18"><span class="linenos" data-linenos="18 "></span><span class="go">Array</span>
+</span><span id="__span-5-19"><span class="linenos" data-linenos="19 "></span><span class="go">(</span>
+</span><span id="__span-5-20"><span class="linenos" data-linenos="20 "></span><span class="go">  [0] =&gt; naranja</span>
+</span><span id="__span-5-21"><span class="linenos" data-linenos="21 "></span><span class="go">  [1] =&gt; pera</span>
+</span><span id="__span-5-22"><span class="linenos" data-linenos="22 "></span><span class="go">  [2] =&gt; manzana</span>
+</span><span id="__span-5-23"><span class="linenos" data-linenos="23 "></span><span class="go">)</span>
 </span></code></pre></div>
 </div>
 </div>
 </div>
-<p>Otras funciones útiles: </p>
+<p>Otras funciones útiles son: </p>
 <ul>
 <li><code>array_keys($array)</code>: devuelve las claves de un array asociativo. </li>
 <li><code>count($array)</code>: devuelve el tamaño del array. </li>
@@ -3945,20 +3966,20 @@
 </span><span id="__span-11-14"><span class="linenos" data-linenos="14 "></span><span class="c1">// Para acceder a un elemento concreto se anidan los corchetes</span>
 </span><span id="__span-11-15"><span class="linenos" data-linenos="15 "></span><span class="nv">$postre0</span> <span class="o">=</span> <span class="nv">$menus</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;Postre&quot;</span><span class="p">];</span>
 </span></code></pre></div>
-<p>Aunque es posible crear estas estructuras complejas con arrays, es recomendable usar objetos en conjunto con arrays para modelar mejor los problemas.</p>
+<p>Aunque es posible crear estas estructuras complejas con arrays, es recomendable usar objetos en conjunto con arrays para modelar mejor los problemas. Es por ello que estudiaremos cómo crear y utilizar objetos en la <a href="../03_PHPPOO/PropuestaDidactica.html">unidad siguiente</a></p>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 210</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Implementar un programa que llene un array con 50 números aleatorios comprendidos entre 0 y 99, y los muestre en una lista desordenada. Para generar un número aleatorio, utilizar la función <code>rand(inicio, fin)</code>.</p>
 </li>
 <li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 211</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han utilizado formularios web para interactuar con el usuario del navegador Web.">CE3e</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Desarrollar una aplicación para la oficina de Docentes Asociados S.A. que simule la famosa "Bola 8 mágica". El formulario debe contener una caja de texto donde el usuario realice una pregunta. El programa mostrará la pregunta recibida y generará una respuesta aleatoria entre un conjunto predefinido de opciones almacenadas en un array, como: "Sí", "No", "Quizás", "Claro que sí", "Por supuesto que no", "No lo tengo claro", "Seguro", "Yo diría que sí", "Ni de coña", etc.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 211</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han utilizado formularios web para interactuar con el usuario del navegador Web.">CE3e</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Desarrollar una aplicación para la oficina de Docentes Asociados S.A. que simule las famosas galletas chinas. El programa mostrará una frase motivacional aleatoria entre un conjunto predefinido de opciones almacenadas en un array.</p>
 </li>
 <li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 212</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Se solicita incrementar la complejidad del ejercicio <strong>AC204</strong>. Ahora debe implementarse utilizando arrays y un bucle, y almacenar los resultados en un array asociativo. Mostrar los resultados en una lista desordenada, únicamente con las cantidades que tengan algún valor.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 212</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Se solicita incrementar la complejidad del ejercicio <strong><a href="022_VariablesDatosOperadores.html#actividades">AC204</a></strong>. Ahora debe implementarse utilizando arrays y un bucle, y almacenar los resultados en un array asociativo. Mostrar los resultados en una lista desordenada, únicamente con las cantidades que tengan algún valor.</p>
 </li>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 213</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Implementar un programa que rellene un array bidimensional de 6 filas por 9 columnas con números aleatorios comprendidos entre 100 y 999, sin repetir ningún número. Mostrar el contenido del array de la siguiente forma:</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 213</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.">CE3a</abbr> <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) Implementar un programa que rellene un array bidimensional de 6 filas por 9 columnas con números aleatorios comprendidos entre 100 y 999, sin repetir ningún número. Mostrar el contenido del array de la siguiente en una tabla donde:</p>
 <ul>
 <li>La columna del máximo debe aparecer en azul.</li>
 <li>La fila del mínimo debe aparecer en verde</li>

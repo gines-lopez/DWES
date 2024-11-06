@@ -3674,16 +3674,16 @@
 
 
 <h1 id="clases-y-objetos">Clases y Objetos<a class="headerlink" href="#clases-y-objetos" title="Permanent link">&para;</a></h1>
-<p>PHP sigue un paradigma de programación orientada a objetos (POO) basada en clases.</p>
-<p>Un clase es un plantilla que define las propiedades y métodos para poder crear objetos. De este manera, un objeto es una instancia de una clase.</p>
-<p>Tanto las propiedades como los métodos se definen con una visibilidad (quien puede acceder)</p>
+<p>PHP sigue un paradigma de programación orientada a objetos (POO) basado en clases.</p>
+<p>Una clase es una plantilla que define las propiedades y métodos para poder crear objetos. De esta manera, un objeto es una instancia de una clase.</p>
+<p>Tanto las propiedades como los métodos se definen con una visibilidad (quién puede acceder a ellos):</p>
 <ul>
-<li>Privado - <code>private</code>:  Sólo puede acceder la propia clase.</li>
-<li>Protegido - <code>protected</code>: Sólo puede acceder la propia clase o sus descendientes.</li>
-<li>Público - <code>public</code>: Puede acceder cualquier otra clase.</li>
+<li>Privado - <code>private</code>:  solo puede acceder la propia clase.</li>
+<li>Protegido - <code>protected</code>: solo puede acceder la propia clase o sus descendientes.</li>
+<li>Público - <code>public</code>: puede acceder cualquier otra clase.</li>
 </ul>
-<p>Para declarar una clase, se utiliza la palabra clave <code>class</code> seguido del nombre de la clase. Para instanciar un objeto a partir de la clase, se utiliza <code>new</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<p>Para declarar una clase, se utiliza la palabra clave <code>class</code> seguida del nombre de la clase. Para instanciar un objeto a partir de la clase, se utiliza <code>new</code>:</p>
+<div class="language-php highlight"><span class="filename">ejemploclase.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="k">class</span> <span class="nc">NombreClase</span> <span class="p">{</span>
 </span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="c1">// propiedades</span>
 </span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="c1">// y métodos</span>
@@ -3693,18 +3693,18 @@
 </span></code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">Clases con mayúscula</p>
-<p>Todas las clases empiezan por letra mayúscula.</p>
+<p>Todas las clases empiezan con letra mayúscula.</p>
 </div>
 <p>Una vez que hemos creado un objeto, se utiliza el operador <code>-&gt;</code> para acceder a una propiedad o un método:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="x">$objeto-&gt;propiedad;</span>
+<div class="language-php highlight"><span class="filename">ejemploaccesopropiedad.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="x">$objeto-&gt;propiedad;</span>
 </span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span><span class="x">$objeto-&gt;método(parámetros);</span>
 </span></code></pre></div>
 <p>Si desde dentro de la clase, queremos acceder a una propiedad o método de la misma clase, utilizaremos la referencia <code>$this</code>;</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$this-&gt;propiedad;</span>
+<div class="language-php highlight"><span class="filename">ejemplothis.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$this-&gt;propiedad;</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="x">$this-&gt;método(parámetros);  </span>
 </span></code></pre></div>
 <p>Así pues, como ejemplo, codificaríamos una persona en el fichero <code>Persona.php</code> como:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">Persona.php</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Persona </span><span class="p">{</span>
 </span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">private</span> <span class="nx">string</span> <span class="nv">$nombre</span><span class="p">;</span>
 </span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
@@ -3722,7 +3722,7 @@
 </span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span><span class="nv">$gines</span><span class="o">-&gt;</span><span class="na">setNombre</span><span class="p">(</span><span class="s2">&quot;Ginés López&quot;</span><span class="p">);</span>
 </span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span><span class="nv">$gines</span><span class="o">-&gt;</span><span class="na">imprimir</span><span class="p">();</span>
 </span></code></pre></div>
-<p>Aunque se pueden declarar varias clases en el mismo archivo, es una mala práctica. Así pues, cada fichero contendrá una sola clase, y se nombrará con el nombre de la clase.</p>
+<p>Aunque se pueden declarar varias clases en el mismo archivo, es una mala práctica. Así pues, cada archivo contendrá una sola clase, y se le dará el nombre de la clase.</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->

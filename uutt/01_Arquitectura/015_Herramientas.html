@@ -576,6 +576,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net" class="md-nav__link">
+    <span class="md-ellipsis">
+      .NET
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3765,23 +3783,23 @@
 
 <h1 id="herramientas">Herramientas<a class="headerlink" href="#herramientas" title="Permanent link">&para;</a></h1>
 <h2 id="servidor-web">Servidor Web<a class="headerlink" href="#servidor-web" title="Permanent link">&para;</a></h2>
-<p>Un servidor web es un software que forma parte del servidor y tiene como misión principal devolver información (HTML, CSS, JS, JSON, imágenes, etc.) cuando recibe peticiones HTTP (GET, POST, DELETE, ...) por parte de los usuarios.</p>
-<p>El producto más implantado es <a href="https://httpd.apache.org/">Apache Web Server</a>, creado en 1995.</p>
+<p>Un servidor web es un software que forma parte del servidor y tiene como misión principal devolver recursos (HTML, CSS, JS, JSON, imágenes, etc.) cuando recibe peticiones HTTP (GET, POST, DELETE, ...) por parte de los usuarios.</p>
+<p>El producto más implantado es <a href="https://httpd.apache.org/">Apache Web Server</a>, creado en 1995, el cual destaca por:</p>
 <ul>
 <li>Software libre y multiplataforma</li>
-<li>Sistema de módulos dinámicos → PHP, Python, Perl</li>
+<li>Sistema de módulos dinámicos (PHP, Python, Perl ...)</li>
 <li>Utiliza el archivo <code>.htaccess</code> para su configuración</li>
 </ul>
 <p>En la actualidad, <em>Apache</em> está perdiendo mercado respecto a <a href="https://www.nginx.com">Nginx</a>. Se trata de un producto más moderno (2004) y que, en determinados escenarios, tiene mejor rendimiento que Apache.</p>
 <div class="admonition tip">
 <p class="admonition-title">Para saber más...</p>
-<p><a href="https://w3techs.com/technologies/history_overview/web_server/ms/q">Comparativa servidores web</a></p>
+<p>Aunque estas herramientas se trabajan en el módulo de Despliegue de Aplicaciones Web, es recomendable que visites la siguiente <a href="https://w3techs.com/technologies/history_overview/web_server/ms/q">comparativa servidores web</a></p>
 </div>
 <h2 id="servidor-de-aplicaciones">Servidor de Aplicaciones<a class="headerlink" href="#servidor-de-aplicaciones" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Software que ofrece servicios adicionales a los de un servidor web:<ul>
-<li>Clustering</li>
-<li>Balanceo de carga</li>
+<li>Clustering<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li>Balanceo de carga<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
 <li>Tolerancia a fallos</li>
 </ul>
 </li>
@@ -3790,17 +3808,13 @@
 </ul>
 </li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Tanto los servidores web como los servidores de aplicaciones los estudiaremos en profundidad en el módulo de <em>"Despliegue de Aplicaciones Web"</em>.</p>
-</div>
 <h2 id="lenguajes-en-el-servidor">Lenguajes en el servidor<a class="headerlink" href="#lenguajes-en-el-servidor" title="Permanent link">&para;</a></h2>
 <p>Las aplicaciones que generan las páginas web se programan en alguno de los siguientes lenguajes:</p>
 <ul>
 <li>PHP</li>
 <li>JavaEE: Servlets / JSP</li>
 <li>Python</li>
-<li>ASP.NET → Visual Basic .NET / C#</li>
+<li>ASP.NET (Visual Basic .NET / C#)</li>
 <li>Ruby</li>
 <li>...</li>
 </ul>
@@ -3815,7 +3829,7 @@
 <ul>
 <li>Lenguaje de propósito general diseñado para el desarrollo de páginas web dinámicas</li>
 <li>En un principio, lenguaje no tipado.</li>
-<li>Actualmente en la versión 8.X . Se recomienda al menos utilizar una versión superior a la 7.0.</li>
+<li>Actualmente en la versión 8.3 . Se recomienda al menos utilizar una versión superior a la 7.0.</li>
 <li>Código embebido en el HTML</li>
 <li>Instrucciones entre etiquetas <code>&lt;?php</code> y <code>?&gt;</code><ul>
 <li>Para generar código dentro de PHP, podemos usar la instrucción <code>echo</code></li>
@@ -3833,7 +3847,31 @@
   </p>
 <figcaption>PHP.</figcaption>
 </figure>
-<p>Durante las siguientes unidades vamos a estudiar PHP en profundidad.</p>
+<p>Durante las siguientes unidades vamos a estudiar <a href="../02_PHP/PropuestaDidactica.html">PHP</a> en profundidad.</p>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Lenguaje de propósito general que se utiliza ampliamente en el desarrollo web, análisis de datos, inteligencia artificial y más.</li>
+<li>Lenguaje tipado dinámicamente, lo que permite mayor flexibilidad en la escritura de código.</li>
+<li>La versión más reciente es Python 3.11, y se recomienda utilizar al menos la versión 3.6.</li>
+<li>Código estructurado mediante indentación, sin necesidad de etiquetas específicas.</li>
+<li>Para generar salida en Python, podemos usar la instrucción <code>print()</code>.</li>
+<li>Dispone de una gran cantidad de librerías y frameworks:<ul>
+<li>Django, Flask, FastAPI, Pyramid.</li>
+</ul>
+</li>
+</ul>
+<h3 id="net">.NET<a class="headerlink" href="#net" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Plataforma de desarrollo creada por Microsoft que permite la construcción de aplicaciones web, de escritorio y móviles.</li>
+<li>Utiliza lenguajes como C# y VB.NET, que son tipados de forma estática.</li>
+<li>La versión más reciente es .NET 7, y se recomienda utilizar al menos la versión 5.0.</li>
+<li>Código organizado en clases y métodos, sin necesidad de etiquetas específicas para su inclusión en HTML.</li>
+<li>Para generar contenido dinámico en .NET, se pueden utilizar mecanismos como <code>Response.Write()</code>.</li>
+<li>Cuenta con numerosos frameworks y bibliotecas:<ul>
+<li>ASP.NET Core, Blazor, Entity Framework, Xamarin.</li>
+</ul>
+</li>
+</ul>
 <h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
 <ul>
 <li><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 102</strong>. (<abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr> / <abbr title="Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.">CE1a</abbr> <abbr title="Se han reconocido las ventajas que proporciona la generación dinámica de páginas Web y sus diferencias con la inclusión de sentencias de guiones en el interior de las páginas Web.">CE1b</abbr> <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr> <abbr title="Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.">CE1f</abbr> <abbr title="Se han reconocido y evaluado las herramientas de programación en entorno servidor.">CE1g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Desde el departamento de proyectos nos solicitan que investigues las tecnologías empleadas en cliente y servidor necesarias para el desarrollo de la aplicación encargada por la empresa "Docentes Asociados S.A.". Para ello, no dudes en consultar cuáles son las que usan tus webs de referencia.</li>
@@ -3843,6 +3881,17 @@
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
 <!-- Otras abreviaciones -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>El clustering es una técnica de análisis de datos que agrupa un conjunto de datos en grupos o clusters basados en la similitud entre los datos dentro de cada grupo, sin necesidad de etiquetas predefinidas.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>El balanceo de carga es una técnica utilizada para distribuir de manera equitativa el tráfico y las solicitudes de trabajo entre múltiples servidores o recursos, asegurando así un rendimiento óptimo y evitando la sobrecarga de un solo servidor.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
