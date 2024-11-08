@@ -3713,57 +3713,58 @@
 
 
 <h1 id="clases-estaticas">Clases Estáticas<a class="headerlink" href="#clases-estaticas" title="Permanent link">&para;</a></h1>
-<p>Son aquellas que tienen propiedades y/o métodos estáticos (también se conocen como <em>de clase</em>, por que su valor se comparte entre todas las instancias de la misma clase).</p>
+<p>Son aquellas que tienen propiedades y/o métodos estáticos (también se conocen como <em>de clase</em>, porque su valor se comparte entre todas las instancias de la misma clase).</p>
 <p>Se declaran con <code>static</code> y se referencian con <code>::</code>.</p>
 <ul>
 <li>Si queremos acceder a un método estático, se antepone el nombre de la clase: <code>Producto::nuevoProducto()</code>.</li>
 <li>Si desde un método queremos acceder a una propiedad estática de la misma clase, se utiliza la referencia <code>self</code>: <code>self::$numProductos</code></li>
 </ul>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Producto</span> <span class="p">{</span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">const</span> <span class="no">IVA</span> <span class="o">=</span> <span class="mf">0.23</span><span class="p">;</span>
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">private</span> <span class="k">static</span> <span class="nv">$numProductos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">nuevoProducto</span><span class="p">()</span> <span class="p">{</span>
-</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>        <span class="nx">self</span><span class="o">::</span><span class="nv">$numProductos</span><span class="o">++</span><span class="p">;</span>
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="p">}</span>
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="nx">Producto</span><span class="o">::</span><span class="na">nuevoProducto</span><span class="p">();</span>
-</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="nv">$impuesto</span> <span class="o">=</span> <span class="nx">Producto</span><span class="o">::</span><span class="na">IVA</span><span class="p">;</span>
-</span></code></pre></div>
-<p>También podemos tener clases normales que tengan alguna propiedad estática:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Producto </span><span class="p">{</span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">const</span> <span class="no">IVA </span><span class="o">=</span> <span class="mf">0.23</span><span class="p">;</span>
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">private</span> <span class="k">static</span> <span class="nv">$numProductos </span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
-</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="k">private</span> <span class="nv">$codigo</span><span class="p">;</span>
-</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string </span><span class="nv">$cod</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="nx">self</span><span class="o">::</span><span class="nv">$numProductos</span><span class="o">++</span><span class="p">;</span>
-</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">codigo </span><span class="o">=</span> <span class="nv">$cod</span><span class="p">;</span>
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>
-</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>
-</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">mostrarResumen</span><span class="p">()</span> <span class="o">:</span> <span class="nx">string </span><span class="p">{</span>
-</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span>        <span class="k">return</span> <span class="s2">&quot;El producto &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">codigo</span><span class="o">.</span><span class="s2">&quot; es el número &quot;</span><span class="o">.</span><span class="nx">self</span><span class="o">::</span><span class="nv">$numProductos</span><span class="p">;</span>
-</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    <span class="p">}</span>
-</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="p">}</span>
-</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span>
-</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span><span class="nv">$prod1 </span><span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">(</span><span class="s2">&quot;PS5&quot;</span><span class="p">);</span>
-</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span><span class="nv">$prod2 </span><span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">(</span><span class="s2">&quot;XBOX Series X&quot;</span><span class="p">);</span>
-</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span><span class="nv">$prod3 </span><span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">(</span><span class="s2">&quot;Nintendo Switch&quot;</span><span class="p">);</span>
-</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span><span class="k">echo</span> <span class="nv">$prod3</span><span class="o">-&gt;</span><span class="na">mostrarResumen</span><span class="p">();</span>
+<p>``` php title = "producto.php"
+&lt;?php
+class Producto {
+    const IVA = 0.23;
+    private static $numProductos = 0; </p>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>public static function nuevoProducto() {
+<span class="linenos" data-linenos="2 "></span>    self::$numProductos++;
+<span class="linenos" data-linenos="3 "></span>}
+</code></pre></div>
+<p>}</p>
+<p>Producto::nuevoProducto();
+$impuesto = Producto::IVA;</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>También podemos tener clases normales que tengan alguna propiedad estática:
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>``` php title = &quot;producto.php&quot;
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>&lt;?php
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>class Producto { 
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>    const IVA = 0.23;
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    private static $numProductos = 0; 
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    private $codigo;
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>    public function __construct(string $cod) { 
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>        self::$numProductos++;
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>        $this-&gt;codigo = $cod;
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    }
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>    public function mostrarResumen() : string { 
+</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>        return &quot;El producto &quot; . $this-&gt;codigo . &quot; es el número &quot; . self::$numProductos; 
+</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>    }
+</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span>}
+</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span>
+</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span>$prod1 = new Producto(&quot;PS5&quot;);
+</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span>$prod2 = new Producto(&quot;XBOX Series X&quot;); &lt;!-- Cambio: espacios no estándar eliminados y corregidos en &quot;Series X&quot; --&gt;
+</span><span id="__span-0-22"><span class="linenos" data-linenos="22 "></span>$prod3 = new Producto(&quot;Nintendo Switch&quot;);
+</span><span id="__span-0-23"><span class="linenos" data-linenos="23 "></span>echo $prod3-&gt;mostrarResumen();
 </span></code></pre></div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 305</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica la clase de la actividad anterior <strong><a href="033_Constructor.html#actividades">AC304</a></strong>. Añade una constante <code>SUELDO_TOPE</code> con el valor del sueldo que debe pagar impuestos, y modifica el código para utilizar la constante.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 305</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se ha de modificar la clase de la actividad anterior <strong><a href="033_Constructor.html#actividades">AC304</a></strong>. Además, se ha de añadir una constante <code>SUELDO_TOPE</code> con el valor del sueldo que debe pagar impuestos, y modificar el código para utilizar la constante.</p>
 </li>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 306</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Copia la clase del ejercicio <strong>AC305</strong> y modifícala. Cambia la constante por una variable estática <code>sueldoTope</code>, de manera que mediante <code>getter/setter</code> puedas modificar su valor.</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 306</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Existe la necesidad de realizar mejoras en <strong>AC305</strong>. Se ha de cambiar la constante por una variable estática <code>sueldoTope</code>, de manera que mediante <code>getter/setter</code> se pueda modificar su valor.</p>
 </li>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 307</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Copia la clase del ejercicio <strong>AC306</strong> (si no la has realizado, es el momento de pensarla) y modifícala. Completa el siguiente método con una cadena HTML que muestre los datos de un empleado dentro de un párrafo y todos los teléfonos mediante una lista ordenada (para ello, deberás crear un getter para los teléfonos):</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 307</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se necesita seguir con las mejoras, ahora le toca a <strong>AC306</strong> (si no se ha realizado, es el momento de realizarla). Se ha de implementar el siguiente método con una cadena HTML que muestre los datos de un empleado dentro de un párrafo y todos los teléfonos mediante una lista ordenada (para ello, se deberá crear un <code>getter</code> para los teléfonos):</p>
 <ul>
 <li><code>public static function toHtml(Empleado $emp): string</code></li>
 </ul>

@@ -3749,16 +3749,16 @@
 
 
 <h1 id="herencia">Herencia<a class="headerlink" href="#herencia" title="Permanent link">&para;</a></h1>
-<p>PHP soporta herencia simple, de manera que una clase solo puede heredar de otra, no de dos clases a la vez. Para ello se utiliza la palabra clave <code>extends</code>. Si queremos que la clase A hereda de la clase B haremos:</p>
+<p>PHP soporta herencia simple, de manera que una clase solo puede heredar de otra, no de dos clases a la vez. Para ello se utiliza la palabra clave <code>extends</code>. Si queremos que la clase A herede de la clase B, se hará de la siguiente forma:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">class A extends B</span>
 </span></code></pre></div>
 <p>El hijo hereda los atributos y métodos públicos y protegidos.</p>
 <div class="admonition warning">
 <p class="admonition-title">Cada clase en un archivo</p>
-<p>Como ya hemos comentado, deberíamos colocar cada clase en un archivo diferente para posteriormente utilizarlo mediante <code>include</code>. En los siguiente ejemplo los hemos colocado junto para facilitar su legibilidad.</p>
+<p>Como ya hemos comentado, deberíamos colocar cada clase en un archivo diferente para posteriormente utilizarla mediante <code>include</code>. En el siguiente ejemplo, se han colocado juntas para facilitar su legibilidad.</p>
 </div>
 <p>Por ejemplo, tenemos una clase <code>Producto</code> y una <code>Tv</code> que hereda de <code>Producto</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">ejemploherencia.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Producto</span> <span class="p">{</span>
 </span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">public</span> <span class="nv">$codigo</span><span class="p">;</span>
 </span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">public</span> <span class="nv">$nombre</span><span class="p">;</span>
@@ -3770,52 +3770,51 @@
 </span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>
 </span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="p">}</span>
 </span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="k">class</span> <span class="nc">Tv</span> <span class="k">extends</span> <span class="nx">Producto</span> <span class="p">{</span>
-</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    <span class="k">public</span> <span class="nv">$pulgadas</span><span class="p">;</span>
+</span><span id="__span-1-13"><span class="hll"><span class="linenos" data-linenos="13 "></span><span class="k">class</span> <span class="nc">Tv</span> <span class="k">extends</span> <span class="nx">Producto</span> <span class="p">{</span>
+</span></span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    <span class="k">public</span> <span class="nv">$pulgadas</span><span class="p">;</span>
 </span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span>    <span class="k">public</span> <span class="nv">$tecnologia</span><span class="p">;</span>
 </span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="p">}</span>
 </span></code></pre></div>
-<p>Podemos utilizar las siguientes funciones para averiguar si hay relación entre dos clases:</p>
+<p>Se pueden utilizar las siguientes funciones para averiguar si hay relación entre dos clases:</p>
 <ul>
 <li><code>get_parent_class(object): string</code></li>
 <li><code>is_subclass_of(object, string): bool</code></li>
 </ul>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">ejemploherencia2.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$t</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tv</span><span class="p">();</span>
 </span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="nv">$t</span><span class="o">-&gt;</span><span class="na">codigo</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
 </span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$t</span> <span class="nx">instanceof</span> <span class="nx">Producto</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="k">echo</span> <span class="nv">$t</span><span class="o">-&gt;</span><span class="na">mostrarResumen</span><span class="p">();</span>
 </span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
 </span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>
-</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="nv">$padre</span> <span class="o">=</span> <span class="nb">get_parent_class</span><span class="p">(</span><span class="nv">$t</span><span class="p">);</span>
-</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;La clase padre es: &quot;</span> <span class="o">.</span> <span class="nv">$padre</span><span class="p">;</span>
+</span><span id="__span-2-8"><span class="hll"><span class="linenos" data-linenos=" 8 "></span><span class="nv">$padre</span> <span class="o">=</span> <span class="nb">get_parent_class</span><span class="p">(</span><span class="nv">$t</span><span class="p">);</span>
+</span></span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;La clase padre es: &quot;</span> <span class="o">.</span> <span class="nv">$padre</span><span class="p">;</span>
 </span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="nv">$objetoPadre</span> <span class="o">=</span> <span class="k">new</span> <span class="nv">$padre</span><span class="p">;</span>
 </span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="k">echo</span> <span class="nv">$objetoPadre</span><span class="o">-&gt;</span><span class="na">mostrarResumen</span><span class="p">();</span>
 </span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">is_subclass_of</span><span class="p">(</span><span class="nv">$t</span><span class="p">,</span> <span class="s1">&#39;Producto&#39;</span><span class="p">))</span> <span class="p">{</span>
-</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;Soy un hijo de Producto&quot;</span><span class="p">;</span>
+</span><span id="__span-2-13"><span class="hll"><span class="linenos" data-linenos="13 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">is_subclass_of</span><span class="p">(</span><span class="nv">$t</span><span class="p">,</span> <span class="s1">&#39;Producto&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;Soy un hijo de Producto&quot;</span><span class="p">;</span>
 </span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="sobreescribir-metodos">Sobreescribir métodos<a class="headerlink" href="#sobreescribir-metodos" title="Permanent link">&para;</a></h3>
-<p>Podemos crear métodos en los hijos con el mismo nombre que el padre, cambiando su comportamiento.
-Para invocar a los métodos del padre -&gt; <code>parent::nombreMetodo()</code></p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<p>Se pueden crear métodos en los hijos con el mismo nombre que el padre, cambiando su comportamiento. Para invocar a los métodos del padre <code>parent::nombreMetodo()</code></p>
+<div class="language-php highlight"><span class="filename">ejemploherencia3.php</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Tv</span> <span class="k">extends</span> <span class="nx">Producto</span> <span class="p">{</span>
 </span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>   <span class="k">public</span> <span class="nv">$pulgadas</span><span class="p">;</span>
 </span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>   <span class="k">public</span> <span class="nv">$tecnologia</span><span class="p">;</span>
 </span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>
 </span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>   <span class="k">public</span> <span class="k">function</span> <span class="nf">mostrarResumen</span><span class="p">()</span> <span class="p">{</span>
-</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>      <span class="k">parent</span><span class="o">::</span><span class="na">mostrarResumen</span><span class="p">();</span>
-</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>      <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;TV &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tecnologia</span><span class="o">.</span><span class="s2">&quot; de &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pulgadas</span><span class="o">.</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-3-7"><span class="hll"><span class="linenos" data-linenos=" 7 "></span>      <span class="k">parent</span><span class="o">::</span><span class="na">mostrarResumen</span><span class="p">();</span>
+</span></span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>      <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;TV &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tecnologia</span><span class="o">.</span><span class="s2">&quot; de &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pulgadas</span><span class="o">.</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
 </span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>   <span class="p">}</span>
 </span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="constructor-en-hijos">Constructor en hijos<a class="headerlink" href="#constructor-en-hijos" title="Permanent link">&para;</a></h3>
-<p>En los hijos no se crea ningún constructor de manera automática. Por lo que si no lo hay, se invoca automáticamente al del padre. En cambio, si lo definimos en el hijo, hemos de invocar al del padre de manera explícita.</p>
+<p>En los hijos no se crea ningún constructor de manera automática. Por lo tanto, si no lo hay, se invoca automáticamente al del padre. En cambio, si se define en el hijo, se debe invocar al del padre de manera explícita.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PHP7</label><label for="__tabbed_1_2">PHP8</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">ejemploconstructorhijo7.php</span><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Producto</span> <span class="p">{</span>
 </span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">public</span> <span class="nx">string</span> <span class="nv">$codigo</span><span class="p">;</span>
 </span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>
@@ -3846,7 +3845,7 @@ Para invocar a los métodos del padre -&gt; <code>parent::nombreMetodo()</code><
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">ejemploconstructorhijo8.php</span><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Producto</span> <span class="p">{</span>
 </span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="k">private</span> <span class="nx">string</span> <span class="nv">$codigo</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>
@@ -3875,9 +3874,8 @@ Para invocar a los métodos del padre -&gt; <code>parent::nombreMetodo()</code><
 </div>
 </div>
 <h2 id="clases-abstractas">Clases abstractas<a class="headerlink" href="#clases-abstractas" title="Permanent link">&para;</a></h2>
-<p>Las clases abstractas obligan a heredar de una clase, ya que no se permite su instanciación. Se define mediante <code>abstract class NombreClase {</code>.<br />
-Una clase abstracta puede contener propiedades y métodos no-abstractos, y/o métodos abstractos.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<p>Las clases abstractas obligan a heredar de una clase, ya que no se permite su instanciación. Se define mediante <code>abstract class NombreClase {</code>. Una clase abstracta puede contener propiedades y métodos no abstractos, y/o métodos abstractos.</p>
+<div class="language-php highlight"><span class="filename">ejemploabstracta.php</span><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span><span class="c1">// Clase abstracta</span>
 </span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Producto </span><span class="p">{</span>
 </span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">private</span> <span class="nv">$codigo</span><span class="p">;</span>
@@ -3885,17 +3883,20 @@ Una clase abstracta puede contener propiedades y métodos no-abstractos, y/o mé
 </span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span>        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">codigo</span><span class="p">;</span>
 </span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="p">}</span>
 </span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="c1">// Método abstracto</span>
-</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">mostrarResumen</span><span class="p">();</span>
-</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</span><span id="__span-6-9"><span class="hll"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">mostrarResumen</span><span class="p">();</span>
+</span></span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
 </span></code></pre></div>
-<p>Cuando una clase hereda de una clase abstracta, obligatoriamente debe implementar los métodos que tiene el padre marcados como abstractos.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="admonition info">
+<p class="admonition-title">Recordando clases abstractas</p>
+<p>En el módulo profesional de Programación ya se introdujo el concepto de clase abstracta. Recuerda que, cuando una clase hereda de una clase abstracta, debe implementar obligatoriamente los métodos que el padre ha marcado como abstractos.</p>
+</div>
+<div class="language-php highlight"><span class="filename">ejemploabstracta2.php</span><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Tv</span> <span class="k">extends</span> <span class="nx">Producto</span> <span class="p">{</span>
 </span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">public</span> <span class="nv">$pulgadas</span><span class="p">;</span>
 </span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">public</span> <span class="nv">$tecnologia</span><span class="p">;</span>
 </span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">mostrarResumen</span><span class="p">()</span> <span class="p">{</span> <span class="c1">//obligado a implementarlo</span>
-</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Código &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCodigo</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-7-6"><span class="hll"><span class="linenos" data-linenos=" 6 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">mostrarResumen</span><span class="p">()</span> <span class="p">{</span> <span class="c1">//obligado a implementarlo</span>
+</span></span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Código &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCodigo</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
 </span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;TV &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">tecnologia</span><span class="o">.</span><span class="s2">&quot; de &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pulgadas</span><span class="o">.</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
 </span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="p">}</span>
 </span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
@@ -3904,8 +3905,8 @@ Una clase abstracta puede contener propiedades y métodos no-abstractos, y/o mé
 </span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span><span class="k">echo</span> <span class="nv">$t</span><span class="o">-&gt;</span><span class="na">getCodigo</span><span class="p">();</span>
 </span></code></pre></div>
 <h2 id="clases-finales">Clases finales<a class="headerlink" href="#clases-finales" title="Permanent link">&para;</a></h2>
-<p>Son clases opuestas a abstractas, ya que evitan que se pueda heredar una clase o método para sobreescribirlo.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<p>Son clases opuestas a las abstractas, ya que evitan que se pueda heredar una clase o método para sobreescribirlo.</p>
+<div class="language-php highlight"><span class="filename">ejemploclasesfinales.php</span><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Producto </span><span class="p">{</span>
 </span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">private</span> <span class="nv">$codigo</span><span class="p">;</span>
 </span><span id="__span-8-4"><span class="linenos" data-linenos=" 4 "></span>
@@ -3919,8 +3920,8 @@ Una clase abstracta puede contener propiedades y métodos no-abstractos, y/o mé
 </span><span id="__span-8-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
 </span><span id="__span-8-13"><span class="linenos" data-linenos="13 "></span>
 </span><span id="__span-8-14"><span class="linenos" data-linenos="14 "></span><span class="c1">// No podremos heredar de Microondas</span>
-</span><span id="__span-8-15"><span class="linenos" data-linenos="15 "></span><span class="k">final</span> <span class="k">class</span> <span class="nc">Microondas extends Producto </span><span class="p">{</span>
-</span><span id="__span-8-16"><span class="linenos" data-linenos="16 "></span>    <span class="k">private</span> <span class="nv">$potencia</span><span class="p">;</span>
+</span><span id="__span-8-15"><span class="hll"><span class="linenos" data-linenos="15 "></span><span class="k">final</span> <span class="k">class</span> <span class="nc">Microondas extends Producto </span><span class="p">{</span>
+</span></span><span id="__span-8-16"><span class="linenos" data-linenos="16 "></span>    <span class="k">private</span> <span class="nv">$potencia</span><span class="p">;</span>
 </span><span id="__span-8-17"><span class="linenos" data-linenos="17 "></span>
 </span><span id="__span-8-18"><span class="linenos" data-linenos="18 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPotencia</span><span class="p">()</span> <span class="o">:</span> <span class="nx">int </span><span class="p">{</span>
 </span><span id="__span-8-19"><span class="linenos" data-linenos="19 "></span>        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">potencia</span><span class="p">;</span>
@@ -3932,10 +3933,10 @@ Una clase abstracta puede contener propiedades y métodos no-abstractos, y/o mé
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 308</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Copia la clase del ejercicio <strong>AC307</strong> y modifícala. Crea una clase Persona que sea padre de Empleado, de manera que Persona contenga el nombre y los apellidos, y en Empleado quede el salario y los teléfonos.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 308</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se ha de realizar una copia del ejercicio <a href="034_ClasesEstaticas.html#actividades"><strong>AC307</strong></a> y realizar una serie de modificaciones. Se ha de crear una clase <code>Persona</code> que sea padre de <code>Empleado</code>, de manera que <code>Persona</code> contenga el nombre y los apellidos, y en <code>Empleado</code> quede el salario y los teléfonos.</p>
 </li>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 309</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Copia las clases del ejercicio <strong>AC308</strong> y modifícalas. Crea en Persona el método estático <code>toHtml(Persona $p)</code>, y modifica en Empleado el mismo método <code>toHtml(Persona $p)</code>, pero cambia la firma para que reciba una Persona como parámetro. Para acceder a las propiedades del empleado con la persona que recibimos como parámetro, comprobaremos su tipo</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 309</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se deben realizar modificaciones en <strong>AC308</strong>. Debemos implementar en <code>Persona</code> el método estático <code>toHtml(Persona $p)</code>, y modificar en <code>Empleado</code> el mismo método <code>toHtml(Persona $p)</code>, pero debemos cambiar la firma para que reciba una <code>Persona</code> como parámetro. Para acceder a las propiedades del empleado con la persona que se reciben como parámetro, debemos de comprobar su tipo</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-9-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="k">class</span> <span class="nc">Empleado</span> <span class="k">extends</span> <span class="nx">Persona</span> <span class="p">{</span>
 </span><span id="__span-9-3"><span class="linenos" data-linenos=" 3 "></span>        <span class="c1">/// resto del código</span>
@@ -3949,19 +3950,19 @@ Una clase abstracta puede contener propiedades y métodos no-abstractos, y/o mé
 </span></code></pre></div>
 </li>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 310</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Copia las clases del ejercicio <strong>AC309</strong> y modifícalas. Añade en Persona un atributo edad. A la hora de saber si un empleado debe pagar impuestos, lo hará siempre y cuando tenga más de 21 años y dependa del valor de su sueldo. Modifica todo el código necesario para mostrar y/o editar la edad cuando sea necesario.</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 310</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Nos han solicitado una serie de modificaciones sobre <strong>AC309</strong>. En <code>Persona</code> se ha de añadir un atributo <code>edad</code>. A la hora de saber si un empleado debe pagar impuestos, lo hará siempre y cuando tenga más de 21 años y dependa del valor de su sueldo. Se ha de modificar todo el código necesario para mostrar y/o editar la edad cuando sea necesario.</p>
 </li>
 <li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 311</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Copia las clases del ejercicio <strong>AC311</strong> y modifícalas. Añade nuevos métodos que hagan una representación de todas las propiedades de las clases Persona y Empleado, de forma similar a los realizados en HTML, pero sin que sean estáticos, de manera que obtenga los datos mediante $this.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 311</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Siguiendo con las mejoras en las clases <code>Persona</code>y <code>Empleado</code>, debemos añadir nuevos métodos que hagan una representación de todas las propiedades, de forma similar a los realizados en HTML, pero sin que sean estáticos, de manera que obtenga los datos mediante <code>$this</code>.</p>
 <ul>
 <li><code>function public __toString(): string</code></li>
 </ul>
 </li>
 <li>
-<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 312</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - El CTO del proyecto necesita empezar con él. Para ello has de diseñar un programa que cuente con las siguientes clases: persona, producto, carrito y pedidoComercial. Una vez realizado esto deberás generar las clases: </p>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 312</strong>. (<abbr title="Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.">RA3</abbr> / <abbr title="Se han utilizado bucles y se ha verificado su funcionamiento.">CE3b</abbr> <abbr title="Se han utilizado “arrays” para almacenar y recuperar conjuntos de datos.">CE3c</abbr> <abbr title="Se han creado y utilizado funciones.">CE3d</abbr> <abbr title="Se han añadido comentarios al código.">CE3g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - El CTO del proyecto necesita empezar con él. Para ello se ha de diseñar un programa que contenga las siguientes clases: <code>Persona</code>, <code>Producto</code>, <code>Carrito</code> y <code>PedidoComercial</code>. Una vez realizado esto, se han de generar las clases: </p>
 <ul>
-<li>empleadoTienda, comercial y cliente que heredan de persona</li>
-<li>pedido que hereda de carrito.</li>
+<li><code>EmpleadoTienda</code>, <code>Comercial</code> y <code>Cliente</code> que heredan de <code>Persona</code>.</li>
+<li><code>Pedido</code> que hereda de <code>Carrito</code>.</li>
 </ul>
 </li>
 </ul>

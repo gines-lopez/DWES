@@ -3680,20 +3680,20 @@
 <li><code>E_WARNING</code>: advertencias en tiempo de ejecución. El script no se interrumpe.</li>
 <li><code>E_NOTICE</code>: avisos en tiempo de ejecución.  </li>
 </ul>
-<p>Podéis comprobar el listado completo de constantes de <a href="https://www.php.net/manual/es/errorfunc.constants.php">https://www.php.net/manual/es/errorfunc.constants.php</a></p>
+<p>Podéis comprobar el listado completo de <a href="https://www.php.net/manual/es/errorfunc.constants.php">constantes</a>.</p>
 <p>Para la configuración de los errores podemos hacerlo de dos formas:</p>
 <ul>
 <li>A nivel de <code>php.ini</code>:<ul>
-<li><code>error_reporting</code>: indica los niveles de errores a notificar<ul>
-<li><code>error_reporting = E_ALL &amp; ~E_NOTICE</code> -&gt; Todos los errores menos los avisos en tiempo de ejecución.</li>
+<li><code>error_reporting</code>: indica los niveles de errores a notificar.<ul>
+<li><code>error_reporting = E_ALL &amp; ~E_NOTICE</code>: todos los errores menos los avisos en tiempo de ejecución.</li>
 </ul>
 </li>
-<li><code>display_errors</code>: indica si mostrar o no los errores por pantalla. En entornos de producción es común ponerlo a <code>off</code></li>
+<li><code>display_errors</code>: indica si mostrar o no los errores por pantalla. En entornos de producción es común ponerlo a <code>off</code>.</li>
 </ul>
 </li>
 <li>mediante código con las siguientes funciones:<ul>
-<li><code>error_reporting(codigo)</code> -&gt; Controla qué errores notificar</li>
-<li><code>set_error_handler(nombreManejador)</code> -&gt; Indica que función se invocará cada vez que se encuentre un error. El manejador recibe como parámetros el nivel del error y el mensaje</li>
+<li><code>error_reporting(codigo)</code>: controla qué errores notificar.</li>
+<li><code>set_error_handler(nombreManejador)</code>: indica que función se invocará cada vez que se encuentre un error. El manejador recibe como parámetros el nivel del error y el mensaje.</li>
 </ul>
 </li>
 </ul>
@@ -3701,7 +3701,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Funciones para la gestión de errores</label><label for="__tabbed_1_2">Consola</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">ejemploerrores.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span> <span class="o">&amp;</span> <span class="o">~</span><span class="nx">E_NOTICE </span><span class="o">&amp;</span> <span class="o">~</span><span class="k">E_WARNING</span><span class="p">);</span>
 </span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="nv">$resultado </span><span class="o">=</span> <span class="nv">$dividendo </span><span class="o">/</span> <span class="nv">$divisor</span><span class="p">;</span>
 </span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>

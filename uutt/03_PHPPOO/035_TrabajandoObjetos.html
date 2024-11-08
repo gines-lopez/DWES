@@ -3674,40 +3674,40 @@
 
 
 <h1 id="trabajando-con-objetos">Trabajando con objetos<a class="headerlink" href="#trabajando-con-objetos" title="Permanent link">&para;</a></h1>
-<p>Al trabajar con clases y objetos, existen un conjunto de funciones ya definidas por el lenguaje que permiten obtener información sobre los objetos:</p>
+<p>Al trabajar con clases y objetos, existe un conjunto de funciones ya definidas por el lenguaje que permite obtener información sobre los objetos:</p>
 <ul>
-<li><code>instanceof</code>: permite comprobar si un objeto es de una determinada clase</li>
-<li><code>get_class</code>: devuelve el nombre de la clase</li>
-<li><code>get_declared_class</code>: devuelve un array con los nombres de las clases definidas</li>
-<li><code>class_alias</code>: crea un alias</li>
-<li><code>class_exists</code> / <code>method_exists</code> / <code>property_exists</code>: <code>true</code> si la clase / método / propiedad está definida</li>
-<li><code>get_class_methods</code> / <code>get_class_vars</code> / <code>get_object_vars</code>: Devuelve un array con los nombres de los métodos / propiedades de una clase / propiedades de un objeto que son accesibles desde dónde se hace la llamada.</li>
+<li><code>instanceof</code>: permite comprobar si un objeto es de una determinada clase.</li>
+<li><code>get_class</code>: devuelve el nombre de la clase.</li>
+<li><code>get_declared_class</code>: devuelve un array con los nombres de las clases definidas.</li>
+<li><code>class_alias</code>: crea un alias.</li>
+<li><code>class_exists</code> / <code>method_exists</code> / <code>property_exists</code>: <code>true</code> si la clase / método / propiedad está definida.</li>
+<li><code>get_class_methods</code> / <code>get_class_vars</code> / <code>get_object_vars</code>: devuelve un array con los nombres de los métodos / propiedades de una clase / propiedades de un objeto que son accesibles desde donde se hace la llamada.</li>
 </ul>
 <p>Un ejemplo de estas funciones puede ser el siguiente:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$p </span><span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">(</span><span class="s2">&quot;PS5&quot;</span><span class="p">);</span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$p instanceof Producto</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">echo</span> <span class="s2">&quot;Es un producto&quot;</span><span class="p">;</span>
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="k">echo</span> <span class="s2">&quot;La clase es &quot;</span><span class="o">.</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span>
-</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="nb">class_alias</span><span class="p">(</span><span class="s2">&quot;Producto&quot;</span><span class="p">,</span> <span class="s2">&quot;Articulo&quot;</span><span class="p">);</span>
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="nv">$c </span><span class="o">=</span> <span class="k">new</span> <span class="nx">Articulo</span><span class="p">(</span><span class="s2">&quot;Nintendo Switch&quot;</span><span class="p">);</span>
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">echo</span> <span class="s2">&quot;Un articulo es un &quot;</span><span class="o">.</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span>
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>    <span class="nb">print_r</span><span class="p">(</span><span class="nb">get_class_methods</span><span class="p">(</span><span class="s2">&quot;Producto&quot;</span><span class="p">));</span>
-</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>    <span class="nb">print_r</span><span class="p">(</span><span class="nb">get_class_vars</span><span class="p">(</span><span class="s2">&quot;Producto&quot;</span><span class="p">));</span>
-</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    <span class="nb">print_r</span><span class="p">(</span><span class="nb">get_object_vars</span><span class="p">(</span><span class="nv">$p</span><span class="p">));</span>
-</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>
-</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nb">method_exists</span><span class="p">(</span><span class="nv">$p</span><span class="p">,</span> <span class="s2">&quot;mostrarResumen&quot;</span><span class="p">))</span> <span class="p">{</span>
-</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>        <span class="nv">$p</span><span class="o">-&gt;</span><span class="na">mostrarResumen</span><span class="p">();</span>
+<div class="language-php highlight"><span class="filename">ejemploobjeto.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">(</span><span class="s2">&quot;PS5&quot;</span><span class="p">);</span>
+</span><span id="__span-0-3"><span class="hll"><span class="linenos" data-linenos=" 3 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$p</span> <span class="nx">instanceof</span> <span class="nx">Producto</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">echo</span> <span class="s2">&quot;Es un producto&quot;</span><span class="p">;</span>
+</span><span id="__span-0-5"><span class="hll"><span class="linenos" data-linenos=" 5 "></span>    <span class="k">echo</span> <span class="s2">&quot;La clase es &quot;</span> <span class="o">.</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span>
+</span></span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="nb">class_alias</span><span class="p">(</span><span class="s2">&quot;Producto&quot;</span><span class="p">,</span> <span class="s2">&quot;Articulo&quot;</span><span class="p">);</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="nv">$c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Articulo</span><span class="p">(</span><span class="s2">&quot;Nintendo Switch&quot;</span><span class="p">);</span>
+</span><span id="__span-0-9"><span class="hll"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">echo</span> <span class="s2">&quot;Un artículo es un &quot;</span> <span class="o">.</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span>
+</span></span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-0-11"><span class="hll"><span class="linenos" data-linenos="11 "></span>    <span class="nb">print_r</span><span class="p">(</span><span class="nb">get_class_methods</span><span class="p">(</span><span class="s2">&quot;Producto&quot;</span><span class="p">));</span>
+</span></span><span id="__span-0-12"><span class="hll"><span class="linenos" data-linenos="12 "></span>    <span class="nb">print_r</span><span class="p">(</span><span class="nb">get_class_vars</span><span class="p">(</span><span class="s2">&quot;Producto&quot;</span><span class="p">));</span>
+</span></span><span id="__span-0-13"><span class="hll"><span class="linenos" data-linenos="13 "></span>    <span class="nb">print_r</span><span class="p">(</span><span class="nb">get_object_vars</span><span class="p">(</span><span class="nv">$p</span><span class="p">));</span>
+</span></span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-0-15"><span class="hll"><span class="linenos" data-linenos="15 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nb">method_exists</span><span class="p">(</span><span class="nv">$p</span><span class="p">,</span> <span class="s2">&quot;mostrarResumen&quot;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>        <span class="nv">$p</span><span class="o">-&gt;</span><span class="na">mostrarResumen</span><span class="p">();</span>
 </span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>    <span class="p">}</span>
 </span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span><span class="p">}</span>
 </span></code></pre></div>
 <div class="admonition caution">
 <p class="admonition-title">Clonado</p>
-<p>Al asignar dos objetos no se copian, se crea una nueva referencia. Si queremos una copia, hay que clonarlo mediante el método <code>clone(object) : object</code></p>
-<p>Si queremos modificar el clonado por defecto, hay que definir el método mágico <code>__clone()</code> que se llamará después de copiar todas las propiedades.</p>
-<p>Más información en <a href="https://www.php.net/manual/es/language.oop5.cloning.php">https://www.php.net/manual/es/language.oop5.cloning.php</a></p>
+<p>Al asignar dos objetos, no se copian; se crea una nueva referencia. Si se necesita una copia, hay que clonarlo mediante el método <code>clone(object) : object</code></p>
+<p>Si queremos modificar el clonado por defecto, hay que definir el método mágico <code>__clone()</code>, que se ejecutará después de copiar todas las propiedades.</p>
+<p>Más información en <a href="https://www.php.net/manual/es/language.oop5.cloning.php">la documentación oficial</a></p>
 </div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
