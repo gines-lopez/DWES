@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/06_AccesoDatos/065_MySQLi.html">
+        <link rel="canonical" href="https://github.com/gines-lopez/DWES/evaluacionensenanzaaprendijaze/evaluacionpracticadocente.html">
       
       
-        <link rel="prev" href="064_CRUD.html">
+        <link rel="prev" href="../uutt/10_ProyectoReactivo/1013_PruebaEspecifica.html">
       
       
-        <link rel="next" href="066_PDO.html">
+        <link rel="next" href="evaluacionporalumnado.html">
       
       
-      <link rel="icon" href="../../img/favicon.ico">
+      <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>6.5- MySQLi - Desarrollo Web en Entorno Servidor</title>
+        <title>Evaluación práctica docente - Desarrollo Web en Entorno Servidor</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,20 +48,20 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extra_general.css">
+      <link rel="stylesheet" href="../css/extra_general.css">
     
-      <link rel="stylesheet" href="../../css/extra_index.css">
+      <link rel="stylesheet" href="../css/extra_index.css">
     
-      <link rel="stylesheet" href="../../css/extra_tablasresumen.css">
+      <link rel="stylesheet" href="../css/extra_tablasresumen.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -70,7 +70,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -88,11 +88,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#mysqli" class="md-skip">
-          Saltar a contenido
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -105,9 +100,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../../index.html" title="Desarrollo Web en Entorno Servidor" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
+    <a href="../index.html" title="Desarrollo Web en Entorno Servidor" class="md-header__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
       
-  <img src="../../img/logofp.png" alt="logo">
+  <img src="../img/logofp.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -124,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6.5- MySQLi
+              Evaluación práctica docente
             
           </span>
         </div>
@@ -227,9 +222,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Desarrollo Web en Entorno Servidor" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
+    <a href="../index.html" title="Desarrollo Web en Entorno Servidor" class="md-nav__button md-logo" aria-label="Desarrollo Web en Entorno Servidor" data-md-component="logo">
       
-  <img src="../../img/logofp.png" alt="logo">
+  <img src="../img/logofp.png" alt="logo">
 
     </a>
     Desarrollo Web en Entorno Servidor
@@ -244,7 +239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -264,7 +259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evaluacion.html" class="md-nav__link">
+      <a href="../evaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -284,7 +279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metodologia.html" class="md-nav__link">
+      <a href="../metodologia.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -357,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Arquitectura/PropuestaDidactica.html" class="md-nav__link">
+      <a href="../uutt/01_Arquitectura/PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -378,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Arquitectura/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/01_Arquitectura/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -399,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Arquitectura/011_ModeloClienteServidor.html" class="md-nav__link">
+      <a href="../uutt/01_Arquitectura/011_ModeloClienteServidor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -420,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Arquitectura/012_Arquitectura3Capas.html" class="md-nav__link">
+      <a href="../uutt/01_Arquitectura/012_Arquitectura3Capas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -441,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Arquitectura/013_MCV.html" class="md-nav__link">
+      <a href="../uutt/01_Arquitectura/013_MCV.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Arquitectura/014_Decisiones.html" class="md-nav__link">
+      <a href="../uutt/01_Arquitectura/014_Decisiones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -483,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Arquitectura/015_Herramientas.html" class="md-nav__link">
+      <a href="../uutt/01_Arquitectura/015_Herramientas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Arquitectura/016_PuestaEnMarcha.html" class="md-nav__link">
+      <a href="../uutt/01_Arquitectura/016_PuestaEnMarcha.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto1.html" class="md-nav__link">
+      <a href="../retos/Reto1.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/PropuestaDidactica.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/021_LenguajePHP.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/021_LenguajePHP.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -674,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/022_VariablesDatosOperadores.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/022_VariablesDatosOperadores.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/023_EstructurasControl.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/023_EstructurasControl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -716,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/024_Arrays.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/024_Arrays.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -737,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/025_Funciones.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/025_Funciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/026_Strings.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/026_Strings.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -779,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/027_OperacionesMatematicas.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/027_OperacionesMatematicas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/028_Formularios.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/028_Formularios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PHP/029_PruebaConocimiento.html" class="md-nav__link">
+      <a href="../uutt/02_PHP/029_PruebaConocimiento.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/PropuestaDidactica.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -958,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/031_ClasesObjetos.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/031_ClasesObjetos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -979,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/032_Encapsulacion.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/032_Encapsulacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1000,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/033_Constructor.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/033_Constructor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1021,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/034_ClasesEstaticas.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/034_ClasesEstaticas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/035_TrabajandoObjetos.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/035_TrabajandoObjetos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1063,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/036_Herencia.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/036_Herencia.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1084,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/037_Interfaces.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/037_Interfaces.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1105,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/038_Metodos.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/038_Metodos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1126,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/039_Namespace.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/039_Namespace.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1147,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/0310_GestionErrores.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/0310_GestionErrores.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1168,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/0311_Excepciones.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/0311_Excepciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1189,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/0312_SPL.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/0312_SPL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1210,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PHPPOO/0313_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/03_PHPPOO/0313_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto2.html" class="md-nav__link">
+      <a href="../retos/Reto2.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1319,7 +1314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1340,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/ResumenUT.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1361,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/041_VariablesServidor.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/041_VariablesServidor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1382,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/042_Formularios.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/042_Formularios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1403,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/043_CabecerasRespuesta.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/043_CabecerasRespuesta.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1424,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/044_GestionEstado.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/044_GestionEstado.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1445,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/045_AutentifcacionUsuarios.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/045_AutentifcacionUsuarios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1466,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/046_SeguridadFiltrado.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/046_SeguridadFiltrado.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1487,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/047_PatronMVC.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/047_PatronMVC.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1508,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/048_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/048_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1529,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/049_Autoevaluacion.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/049_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1550,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_ProgramacionWeb/0410_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/04_ProgramacionWeb/0410_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1633,7 +1628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1654,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/ResumenUT.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1675,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/051_Composer.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/051_Composer.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1696,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/052_Monolog.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/052_Monolog.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1717,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/053_phpDocumentor.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/053_phpDocumentor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1738,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/054_PHPUnit.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/054_PHPUnit.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1759,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/055_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/055_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1780,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/056_Autoevaluacion.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/056_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1801,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_HerramientasWeb/057_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/05_HerramientasWeb/057_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1829,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto3.html" class="md-nav__link">
+      <a href="../retos/Reto3.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1846,10 +1841,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1886,11 +1879,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
           <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
@@ -1904,7 +1897,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             📘 UT 06. Acceso a datos
@@ -1918,7 +1911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1939,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1960,7 +1953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="061_IntroduccionConfiguracion.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/061_IntroduccionConfiguracion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1981,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="062_PersistenciaDatos.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/062_PersistenciaDatos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2002,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="063_SQLphpMyadmin.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/063_SQLphpMyadmin.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2023,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="064_CRUD.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/064_CRUD.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,30 +2034,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    6.5- MySQLi
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="065_MySQLi.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../uutt/06_AccesoDatos/065_MySQLi.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2073,104 +2046,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#recuperando-datos-de-una-bd" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recuperando datos de una BD
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flujo-de-trabajo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Flujo de trabajo
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Flujo de trabajo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definir-los-parametros-de-la-cadena-de-conexion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definir los parámetros de la cadena de conexión
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#realizar-la-conexion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Realizar la conexión
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comprobar-errores-usando-excepciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comprobar errores usando excepciones
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cerrar-la-conexion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cerrar la conexión
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ejemplo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ejemplo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2183,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="066_PDO.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/066_PDO.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2204,7 +2079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="067_Autenticacion.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/067_Autenticacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2225,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="068_OperacionesRegistros.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/068_OperacionesRegistros.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2246,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="069_Transacciones.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/069_Transacciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2267,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="0610_Ficheros.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/0610_Ficheros.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2288,7 +2163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="0611_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/0611_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2309,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="0612_Autoevaluacion.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/0612_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2330,7 +2205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="0613_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/06_AccesoDatos/0613_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2425,7 +2300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2446,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/ResumenUT.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2467,7 +2342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/071_LaravelInicio.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/071_LaravelInicio.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2488,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/072_LaravelDescripcion.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/072_LaravelDescripcion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2509,7 +2384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/073_EstructuraCarpetas.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/073_EstructuraCarpetas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2530,7 +2405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/074_Rutas.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/074_Rutas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2551,7 +2426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/075_Controladores.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/075_Controladores.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2572,7 +2447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/076_Vistas.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/076_Vistas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2593,7 +2468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/077_Migraciones.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/077_Migraciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2614,7 +2489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/078_MVCCRUD.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/078_MVCCRUD.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2635,7 +2510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/079_CRUDFormularios.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/079_CRUDFormularios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2656,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/0710_Paginacion.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/0710_Paginacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2677,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/0711_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/0711_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2698,7 +2573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/0712_Autoevaluacion.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/0712_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2719,7 +2594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_ProyectoI/0713_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/07_ProyectoI/0713_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2747,7 +2622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../retos/Reto4.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2826,7 +2701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2847,7 +2722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/ResumenUT.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2868,7 +2743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/081_LaravelBreeze.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/081_LaravelBreeze.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2889,7 +2764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/082_Tailwind.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/082_Tailwind.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2910,7 +2785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/083_VarianteVue.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/083_VarianteVue.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2931,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/084_ManejoRoles.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/084_ManejoRoles.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2952,7 +2827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/085_EloquentORM.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/085_EloquentORM.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2973,7 +2848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/086_SeedersFactories.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/086_SeedersFactories.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2994,7 +2869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/087_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/087_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3015,7 +2890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/088_Autoevaluacion.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/088_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3036,7 +2911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_ProyectoII/089_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/08_ProyectoII/089_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3125,7 +3000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3146,7 +3021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/ResumenUT.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3167,7 +3042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/091_Introduccion.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/091_Introduccion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3188,7 +3063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/092_ArchivoAPI.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/092_ArchivoAPI.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3209,7 +3084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/093_Controlador.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/093_Controlador.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3230,7 +3105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/094_CRUDAPI.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/094_CRUDAPI.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3251,7 +3126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/095_ProbarAPI.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/095_ProbarAPI.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3272,7 +3147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/096_MetodosPersonalizados.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/096_MetodosPersonalizados.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3293,7 +3168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/097_ManejoExcepciones.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/097_ManejoExcepciones.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3314,7 +3189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/098_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/098_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3335,7 +3210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/099_Autoevaluacion.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/099_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3356,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_ProyectoIII/0910_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoIII/0910_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3451,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/ProgramacionAula.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3472,7 +3347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/ResumenUT.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/ResumenUT.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3493,7 +3368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1001_ProyectoVue.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1001_ProyectoVue.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3514,7 +3389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1002_OrugaUI.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1002_OrugaUI.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3535,7 +3410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1003_AxiosConsumoAPI.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1003_AxiosConsumoAPI.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3556,7 +3431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1004_RutasVue.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1004_RutasVue.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3577,7 +3452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1005_AplicacionRutasCrearPost.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1005_AplicacionRutasCrearPost.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3598,7 +3473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1006_GestionFicheros.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1006_GestionFicheros.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3619,7 +3494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1007_Autenticacion.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1007_Autenticacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3640,7 +3515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1008_AutenticacionToken.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1008_AutenticacionToken.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3661,7 +3536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1009_AProduccion.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1009_AProduccion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3682,7 +3557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1010_BigData.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1010_BigData.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3703,7 +3578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1011_ReferenciaLinks.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1011_ReferenciaLinks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3724,7 +3599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1012_Autoevaluacion.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1012_Autoevaluacion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3745,7 +3620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_ProyectoReactivo/1013_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/10_ProyectoReactivo/1013_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3770,8 +3645,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -3784,11 +3661,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -3802,7 +3679,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Evaluación proceso enseñanza-aprendizaje
@@ -3813,10 +3690,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../evaluacionensenanzaaprendijaze/evaluacionpracticadocente.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="evaluacionpracticadocente.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -3825,6 +3709,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -3837,7 +3722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evaluacionensenanzaaprendijaze/evaluacionporalumnado.html" class="md-nav__link">
+      <a href="evaluacionporalumnado.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3858,7 +3743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evaluacionensenanzaaprendijaze/validacionaprendizaje.html" class="md-nav__link">
+      <a href="validacionaprendizaje.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3894,155 +3779,9 @@
                   
 
 
-<h1 id="mysqli">MySQLi<a class="headerlink" href="#mysqli" title="Permanent link">&para;</a></h1>
-<p>PHP hace uso de esta extensión mejorada para poder comunicarse con las bases de datos, ya sean MySQL (4.1 o superior) o MariaDB.</p>
-<p>Cualquier consulta que queramos hacer a una base de datos necesitaremos hacer uso de la extensión mysqli()</p>
-<p>Veamos como conectarnos con una base de datos a través del código PHP</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="c1">// ▒▒▒▒▒▒▒▒ pruebas.php ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="c1">// &quot;SERVIDOR&quot;, &quot;USUARIO&quot;, &quot;CONTRASEÑA&quot;, &quot;BASE DE DATOS&quot;</span>
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="s2">&quot;d939ebf6a741&quot;</span><span class="p">,</span><span class="s2">&quot;tuUsuario&quot;</span><span class="p">,</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;pruebas&quot;</span><span class="p">);</span>
-</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="c1">// COMPROBAMOS LA CONEXIÓN</span>
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_connect_errno</span><span class="p">())</span> <span class="p">{</span>
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="k">echo</span> <span class="s2">&quot;Failed to connect to MySQL: &quot;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">();</span>
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>        <span class="k">exit</span><span class="p">();</span>
-</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
-</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;h1&gt;Bienvenid@ a MySQL !!&lt;/h1&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span><span class="cp">?&gt;</span>
-</span></code></pre></div>
-<ul>
-<li>
-<p><code>servidor</code>: El servidor donde se encuentra la base de datos que queremos usar suele ser <strong>localhost</strong>, pero en nuestro caso, al utilizar Docker será el nombre de la imagen <span class="warning"><strong><em>mysql:8.0</em></strong></span> que aparece al dejar el ratón encima en el Visual Studio Code</p>
-</li>
-<li>
-<p><code>usuarioDB</code>: El usuario de la base de datos</p>
-</li>
-<li><code>passwordDB</code>: La contraseña para ese usuario de la base de datos</li>
-<li><code>baseDeDatos</code>: Nombre de la base de datos que queramos usar</li>
-</ul>
-<p>Si todo ha salido bien habréis visto un mensaje diciendo <span class="success"><strong><em>Bienvenid@ a MySQL !!</em></strong></span></p>
-<h2 id="recuperando-datos-de-una-bd">Recuperando datos de una BD<a class="headerlink" href="#recuperando-datos-de-una-bd" title="Permanent link">&para;</a></h2>
-<p>Ahora que ya sabemos cómo conectarnos a una base de datos alojada en nuestro servidor, lo que necesitamos saber es cómo recuperar datos almacenados en la base de datos.</p>
-<p>Durante la instalación de la imagen de Docker, se ha creado una tabla llamada <strong>Pruebas</strong> que contiene varios registros de distintas personas.</p>
-<p>Vamos a recuperar esos datos para ver de qué forma se hace con PHP.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="c1">// ▒▒▒▒▒▒▒▒ pruebas.php ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="s2">&quot;d939ebf6a741&quot;</span><span class="p">,</span> <span class="s2">&quot;lupa&quot;</span><span class="p">,</span> <span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="s2">&quot;pruebas&quot;</span><span class="p">);</span>
-</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="c1">// COMPROBAMOS LA CONEXIÓN</span>
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">mysqli_connect_errno</span><span class="p">())</span> <span class="p">{</span>
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="k">echo</span> <span class="s2">&quot;Failed to connect to MySQL: &quot;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">();</span>
-</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="k">exit</span><span class="p">();</span>
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>
-</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>
-</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>    <span class="c1">// CONSULTA A LA BASE DE DATOS</span>
-</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span>    <span class="nv">$consulta</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM `Person`&quot;</span><span class="p">;</span>
-</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    <span class="nv">$listaUsuarios</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$conexion</span><span class="p">,</span> <span class="nv">$consulta</span><span class="p">);</span>
-</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span>
-</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span>    <span class="c1">// COMPROBAMOS SI EL SERVIDOR NOS HA DEVUELTO RESULTADOS</span>
-</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span>    <span class="k">if</span><span class="p">(</span><span class="nv">$listaUsuarios</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span>
-</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span>        <span class="c1">// RECORREMOS CADA RESULTADO QUE NOS DEVUELVE EL SERVIDOR</span>
-</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$listaUsuarios</span> <span class="k">as</span> <span class="nv">$usuario</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-1-21"><span class="linenos" data-linenos="21 "></span>            <span class="k">echo</span> <span class="s2">&quot;</span>
-</span><span id="__span-1-22"><span class="linenos" data-linenos="22 "></span><span class="s2">                </span><span class="si">$usuario[id]</span>
-</span><span id="__span-1-23"><span class="linenos" data-linenos="23 "></span><span class="s2">                </span><span class="si">$usuario[name]</span>
-</span><span id="__span-1-24"><span class="linenos" data-linenos="24 "></span><span class="s2">                &lt;br&gt;</span>
-</span><span id="__span-1-25"><span class="linenos" data-linenos="25 "></span><span class="s2">            &quot;</span><span class="p">;</span>
-</span><span id="__span-1-26"><span class="linenos" data-linenos="26 "></span>        <span class="p">}</span>
-</span><span id="__span-1-27"><span class="linenos" data-linenos="27 "></span>    <span class="p">}</span>
-</span><span id="__span-1-28"><span class="linenos" data-linenos="28 "></span><span class="cp">?&gt;</span>
-</span></code></pre></div>
-<p>Si todo ha salido bien, por pantalla verás el siguiente listado</p>
-<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>▒▒▒▒▒▒▒▒ http://localhost/pruebas.php ▒▒▒▒▒▒▒▒
-<span class="linenos" data-linenos="2 "></span>
-<span class="linenos" data-linenos="3 "></span>1 William
-<span class="linenos" data-linenos="4 "></span>2 Marc
-<span class="linenos" data-linenos="5 "></span>3 John
-<span class="linenos" data-linenos="6 "></span>4 Antonio Moreno
-</code></pre></div>
-<h2 id="flujo-de-trabajo">Flujo de trabajo<a class="headerlink" href="#flujo-de-trabajo" title="Permanent link">&para;</a></h2>
-<h3 id="definir-los-parametros-de-la-cadena-de-conexion">Definir los parámetros de la cadena de conexión<a class="headerlink" href="#definir-los-parametros-de-la-cadena-de-conexion" title="Permanent link">&para;</a></h3>
-<p>Antes de realizar la conexión, es necesario definir los parámetros de la cadena de conexión, que incluyen el nombre del servidor, el nombre de usuario, la contraseña y el nombre de la base de datos. Estos parámetros se utilizan para establecer la conexión con el servidor MySQL.</p>
-<h3 id="realizar-la-conexion">Realizar la conexión<a class="headerlink" href="#realizar-la-conexion" title="Permanent link">&para;</a></h3>
-<p>Una vez que se han definido los parámetros de la cadena de conexión, se puede establecer la conexión con el servidor MySQL utilizando la función <code>mysqli_connect()</code> en PHP.</p>
-<h3 id="comprobar-errores-usando-excepciones">Comprobar errores usando excepciones<a class="headerlink" href="#comprobar-errores-usando-excepciones" title="Permanent link">&para;</a></h3>
-<p>Es importante manejar los posibles errores que puedan ocurrir durante la conexión a la base de datos. En este ejemplo, se utiliza un bloque try...catch para capturar cualquier excepción que pueda ser lanzada durante la conexión y mostrar un mensaje de error apropiado.</p>
-<h3 id="cerrar-la-conexion">Cerrar la conexión<a class="headerlink" href="#cerrar-la-conexion" title="Permanent link">&para;</a></h3>
-<p>Una vez que hayamos terminado de realizar todas las operaciones necesarias en la base de datos, es importante cerrar la conexión para liberar los recursos del servidor MySQL y mejorar el rendimiento.</p>
-<h3 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$servername</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
-</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="nv">$username</span> <span class="o">=</span> <span class="s2">&quot;usuario&quot;</span><span class="p">;</span>
-</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="nv">$password</span> <span class="o">=</span> <span class="s2">&quot;contraseña&quot;</span><span class="p">;</span>
-</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="nv">$database</span> <span class="o">=</span> <span class="s2">&quot;basededatos&quot;</span><span class="p">;</span>
-</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="nv">$conn</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="nv">$servername</span><span class="p">,</span> <span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="nv">$database</span><span class="p">);</span>
-</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conn</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>        <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s2">&quot;Error al conectar a la base de datos: &quot;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">());</span>
-</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>        <span class="k">echo</span> <span class="s2">&quot;Conexión establecida correctamente&quot;</span><span class="p">;</span>
-</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">}</span>
-</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span>    <span class="k">echo</span> <span class="s2">&quot;Error: &quot;</span> <span class="o">.</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
-</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span><span class="p">}</span>
-</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>
-</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span><span class="c1">// Realizar acciones pertinentes</span>
-</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>
-</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span><span class="nx">mysqli_close</span><span class="p">(</span><span class="nv">$conn</span><span class="p">);</span>
-</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span><span class="cp">?&gt;</span>
-</span></code></pre></div>
-<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p><strong>AC610</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una nueva base de datos con el nombre <code>lol</code> y cotejamiento de datos <code>utf8mb4_unicode_ci</code>. En nuestra base de datos <code>lol</code>,  vamos a crear la tabla <code>campeon</code> con los siguientes campos.</p>
-<ul>
-<li>id [*]</li>
-<li>nombre</li>
-<li>rol</li>
-<li>dificultad</li>
-<li>descripcion</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Recordatorio</p>
-<p>Acuérdate que [*] significa que es clave primaria y no olvides poner el tipo de datos de cada uno de los campos.</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Manera de proceder</p>
-<p>No se ha de realizar sobre phpMyadmin, si no sobre un archivo.</p>
-</div>
-</li>
-<li>
-<p><strong>AC611</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Rellena la tabla <code>campeon</code> con, al menos 5 registros, con los datos que tú quieras o si lo prefieres, puedes basarte en la <a href="https://www.leagueoflegends.com/es-es/champions">página oficial del juego</a>.</p>
-</li>
-<li>
-<p><strong>AC612</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una aplicación donde listes todos los campeones del LOL que has metido en tu base de datos. Acuérdate que para ello deberás hacer una conexión con la base de datos y un <code>foreach</code> para cada campeón que tengas albergado en la tabla <code>campeon</code>.</p>
-</li>
-<li>
-<p><strong>AC613</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 5p) - Modifica el archivo creado en AC612 pero pon al lado de cada uno de los campeones listados un botón para <code>editar</code> y otro para <code>borrar</code>. Cada uno de esos botones hará la correspondiente función dependiendo del <code>id</code> del campeón seleccionado.</p>
-<ul>
-<li>Al pinchar en editar, el usuario será redirigido a un archivo donde mostrará un formulario con los campos rellenos por los datos del campeón seleccionado. Al darle al botón de <code>guardar</code> los datos se guardarán en la base de datos y el usuario será redirigido a la lista de campeones para poder ver los cambios.</li>
-<li>Al pinchar en borrar, el usuario será preguntado a través de un mensaje de JavaScript (prompt) si está seguro de que quiere borrar al campeón seleccionado. En el mensaje de confirmación debe aparecer el <strong>nombre del campeón seleccionado</strong>. Si el usuario pincha en <code>Aceptar</code> el campeón será eliminado de la base de datos y el usuario será redirigido nuevamente al listado de campeones para comprobar que, efectivamente dicho campeón se ha eliminado de la lista.</li>
-</ul>
-</li>
-<li>
-<p><strong>PR603</strong> (SA). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 5p) - Realiza una aplicación que te permita recuperar los datos del e-commerce. Para ello deberás mostrar en una tabla los productos que tiene y a su lado el botón de añadir al carrito. Además, tienes que dar la posibilidad de ver tu carrito y de finalizar el pedido. Todo tiene que quedar reflejado en la base de datos que creaste en PR602.</p>
-<div class="admonition note">
-<p class="admonition-title">Recordatorio</p>
-<p>Si durante el proceso te das cuenta que necesitas modificar tu base de datos, hazla. Puede que durante su diseño no tuvieras en cuenta ciertos aspectos que ahora te hacen falta, si lo haces documéntalo.</p>
-</div>
-</li>
-</ul>
-<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
-<!-- Instrumentos de Evaluación -->
-<!-- Instrumentos de Calificación -->
-<!-- Tipo de actividades -->
-<!-- Otras abreviaciones -->
+  <h1>Evaluación práctica docente</h1>
+
+
 
 
 
@@ -4078,7 +3817,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="064_CRUD.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 6.4- Operaciones CRUD">
+          <a href="../uutt/10_ProyectoReactivo/1013_PruebaEspecifica.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10.13- Prueba específica">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4088,20 +3827,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                6.4- Operaciones CRUD
+                10.13- Prueba específica
               </div>
             </div>
           </a>
         
         
           
-          <a href="066_PDO.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 6.6- PDO">
+          <a href="evaluacionporalumnado.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Evaluación por el alumnado">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                6.6- PDO
+                Evaluación por el alumnado
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4190,10 +3929,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
