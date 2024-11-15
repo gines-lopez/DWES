@@ -1282,10 +1282,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1321,11 +1317,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ProgramacionAula.html" class="md-nav__link">
+      <a href="PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Programación de aula
+    Propuesta didáctica
   </span>
   
 
@@ -1342,11 +1338,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Resumen UT
+    Programación de aula
   </span>
   
 
@@ -1532,7 +1528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="045_AutentifcacionUsuarios.html" class="md-nav__link">
+      <a href="045_AutentificacionUsuarios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1595,53 +1591,11 @@
   
   
     <li class="md-nav__item">
-      <a href="048_ReferenciaLinks.html" class="md-nav__link">
+      <a href="048_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.8- Referencia y links de interés
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="049_Autoevaluacion.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.8- Autoevaluación
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="0410_PruebaEspecifica.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.9- Prueba específica
+    4.8- Prueba específica
   </span>
   
 
@@ -3862,33 +3816,33 @@
 
 
 <h1 id="formularios">Formularios<a class="headerlink" href="#formularios" title="Permanent link">&para;</a></h1>
-<p>A la hora de enviar un formulario, debemos tener claro cuando usar GET o POST</p>
+<p>A la hora de enviar un formulario, debemos tener claro cuándo usar GET o POST.</p>
 <ul>
 <li>
 <p>GET: los parámetros se pasan en la URL</p>
 <ul>
-<li>&lt;2048 caracteres, sólo ASCII</li>
-<li>Permite almacenar la dirección completa (marcador  / historial)</li>
-<li>Idempotente: dos llamadas con los mismos datos siempre debe dar el mismo resultado</li>
-<li>El navegador puede cachear las llamadas</li>
+<li>Máximo de 2048 caracteres y solo en ASCII.</li>
+<li>Permite almacenar la dirección completa en el marcador o historial.</li>
+<li>Es idempotente: dos llamadas con los mismos datos siempre deben dar el mismo resultado.</li>
+<li>El navegador puede almacenar en caché las llamadas.</li>
 </ul>
 </li>
 <li>
-<p>POST: parámetros ocultos (no encriptados)</p>
+<p>POST: los parámetros se envían de manera oculta (aunque no encriptada).</p>
 <ul>
 <li>Sin límite de datos, permite datos binarios.</li>
-<li>No se pueden cachear</li>
-<li>No idempotente → actualizar la BBDD</li>
+<li>No se puede almacenar en caché.</li>
+<li>No es idempotente: puede provocar cambios, como actualizar la base de datos.</li>
 </ul>
 </li>
 </ul>
-<p>Así pues, para recoger los datos accederemos al array dependiendo del método del formulario que nos ha invocado:</p>
+<p>Para recoger los datos, accedemos al array adecuado dependiendo del método del formulario:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]</span>
 </span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]</span>
 </span></code></pre></div>
-<p>Para los siguientes apartados nos vamos a basar en el siguiente ejemplo:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;formulario.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;GET&quot;</span><span class="p">&gt;</span>
+<p>Para los siguientes apartados, utilizaremos el siguiente ejemplo de formulario:</p>
+<div class="language-html highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;formulario.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;GET&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Nombre del alumno:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 </span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
 </span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -3905,10 +3859,10 @@
 </span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h2 id="validacion">Validación<a class="headerlink" href="#validacion" title="Permanent link">&para;</a></h2>
-<p>Respecto a la validación, es conveniente siempre hacer <strong>validación doble</strong>:</p>
+<p>Para la validación, es importante implementar <strong>validación doble</strong>:</p>
 <ul>
-<li>En el cliente mediante JS</li>
-<li>En servidor, antes de llamar a negocio, es conveniente volver a validar los datos.</li>
+<li>En el cliente, mediante JavaScript.</li>
+<li>En el servidor, antes de procesar la lógica de negocio, conviene volver a validar los datos para seguridad.</li>
 </ul>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]))</span> <span class="p">{</span>
@@ -3918,17 +3872,12 @@
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Librerías de validación</p>
-<p>Existen diversas librerías que facilitan la validación de los formularios, como son <a href="https://respect-validation.readthedocs.io/en/latest/">respect/validation</a> o <a href="http://validator.particle-php.com/en/latest/">particle/validator</a>.
-Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa.</p>
+<p>Existen diversas librerías que facilitan la validación de los formularios, como <a href="https://respect-validation.readthedocs.io/en/latest/">respect/validation</a> o <a href="http://validator.particle-php.com/en/latest/">particle/validator</a>.</p>
+<p>Cuando estudiemos Laravel, profundizaremos en la validación de forma declarativa.</p>
 </div>
 <h2 id="parametro-multivalor">Parámetro multivalor<a class="headerlink" href="#parametro-multivalor" title="Permanent link">&para;</a></h2>
-<p>Existen elementos HTML que envían varios valores:</p>
-<ul>
-<li><code>select multiple</code></li>
-<li><code>checkbox</code></li>
-</ul>
-<p>Para recoger los datos, el nombre del elemento debe ser un array.</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lenguajes[]&quot;</span> <span class="na">multiple</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
+<p>Algunos elementos HTML, como <code>select multiple</code> o <code>checkbox</code>, envían múltiples valores. Para recoger los datos de estos elementos, el nombre debe ser un array.</p>
+<div class="language-html highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lenguajes[]&quot;</span> <span class="na">multiple</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="p">&gt;</span>C<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
 </span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="p">&gt;</span>Java<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
 </span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;php&quot;</span><span class="p">&gt;</span>PHP<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
@@ -3940,8 +3889,8 @@ Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa
 </span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lenguajes[]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;php&quot;</span> <span class="p">/&gt;</span> Php<span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 </span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lenguajes[]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;python&quot;</span> <span class="p">/&gt;</span> Python<span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 </span></code></pre></div>
-<p>De manera que luego al recoger los datos:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<p>Para recuperar los datos:</p>
+<div class="language-php highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$lenguajes</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;lenguajes&quot;</span><span class="p">];</span>
 </span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>
 </span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$lenguajes</span> <span class="k">as</span> <span class="nv">$lenguaje</span><span class="p">)</span> <span class="p">{</span>
@@ -3949,8 +3898,8 @@ Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa
 </span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="volviendo-a-rellenar-un-formulario">Volviendo a rellenar un formulario<a class="headerlink" href="#volviendo-a-rellenar-un-formulario" title="Permanent link">&para;</a></h2>
-<p>Un <em>sticky form</em> es un formulario que recuerda sus valores. Para ello, hemos de rellenar los atributos <code>value</code> de los elementos HTML con la información que contenían:</p>
-<div class="language-html+php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<p>Un <em>sticky form</em> es un formulario que conserva los valores ingresados. Para lograr esto, rellenamos los atributos  <code>value</code> de los elementos HTML con la información previa:</p>
+<div class="language-html+php highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;modulos&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]))</span> <span class="p">{</span>
 </span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span>  <span class="c1">// Aquí se incluye el código a ejecutar cuando los datos son correctos</span>
 </span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -3975,8 +3924,8 @@ Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa
 </span><span id="__span-5-23"><span class="linenos" data-linenos="23 "></span><span class="cp">&lt;?php</span> <span class="p">}</span> <span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="subiendo-archivos">Subiendo archivos<a class="headerlink" href="#subiendo-archivos" title="Permanent link">&para;</a></h2>
-<p>Se almacenan en el servidor en el array <code>$_FILES</code> con el nombre del campo del tipo <code>file</code> del formulario.</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&quot;multipart/form-data&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&lt;?php echo $_SERVER[&#39;PHP_SELF&#39;]; ?&gt;&quot;</span>  <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<p>Los archivos subidos se almacenan en el servidor en el array <code>$_FILES</code> , en la clave correspondiente al campo de tipo <code>file</code> del formulario.</p>
+<div class="language-html highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&quot;multipart/form-data&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&lt;?php echo $_SERVER[&#39;PHP_SELF&#39;]; ?&gt;&quot;</span>  <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span>    Archivo: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;archivoEnviado&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span> <span class="p">/&gt;</span>
 </span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span>    <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 </span><span id="__span-6-4"><span class="linenos" data-linenos="4 "></span>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;btnSubir&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Subir&quot;</span> <span class="p">/&gt;</span>
@@ -3986,15 +3935,15 @@ Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa
 <ul>
 <li><code>file_uploads</code>: on / off</li>
 <li><code>upload_max_filesize</code>: 2M</li>
-<li><code>upload_tmp_dir</code>: directorio temporal. No es necesario configurarlo, cogerá el predeterminado del sistema</li>
-<li><code>post_max_size</code>: tamaño máximo de los datos POST. Debe ser mayor a upload_max_filesize.</li>
-<li><code>max_file_uploads</code>: número máximo de archivos que se pueden cargar a la vez.</li>
-<li><code>max_input_time</code>: tiempo máximo empleado en la carga (GET/POST y upload → normalmente se configura en 60)</li>
+<li><code>upload_tmp_dir</code>: directorio temporal (si no se configura, toma el predeterminado del sistema).</li>
+<li><code>post_max_size</code>: tamaño máximo de los datos <code>POST</code>, mayor que <code>upload_max_filesize</code>.</li>
+<li><code>max_file_uploads</code>: número máximo de archivos que se pueden cargar simultáneamente.</li>
+<li><code>max_input_time</code>: tiempo máximo para recibir datos (normalmente 60 segundos).</li>
 <li><code>memory_limit</code>: 128M</li>
-<li><code>max_execution_time</code>: tiempo de ejecución de un script (no tiene en cuenta el upload)</li>
+<li><code>max_execution_time</code>: tiempo de ejecución máximo del script (no incluye la carga de archivos).</li>
 </ul>
-<p>Para cargar los archivos, accedemos al array <code>$_FILES</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<p>Para procesar archivos subidos, accedemos a <code>$_FILES</code>:</p>
+<div class="language-php highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;btnSubir&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;btnSubir&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Subir&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nb">is_uploaded_file</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;archivoEnviado&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">]))</span> <span class="p">{</span>
 </span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>        <span class="c1">// subido con éxito</span>
@@ -4010,13 +3959,13 @@ Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa
 <li><code>name</code>: nombre</li>
 <li><code>tmp_name</code>: ruta temporal</li>
 <li><code>size</code>: tamaño en bytes</li>
-<li><code>type</code>: tipo MIME</li>
-<li><code>error</code>: si hay error, contiene un mensaje. Si ok → 0.</li>
+<li><code>type</code>: tipo MIME<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><code>error</code>: indica si ocurrió un error; si fue exitoso, muestra 0.</li>
 </ul>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>AC402</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Utilizando el paso por parámetros GET, crea un formulario que solicite:</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong>AC4 02</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Utilizando el paso por parámetros <code>GET</code>, se solicita la creación de un formulario con los siguientes campos:</p>
 <ul>
 <li>Nombre y apellidos.</li>
 <li>Email.</li>
@@ -4026,12 +3975,10 @@ Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa
 <li>Aficiones (checkboxes) – poner mínimo 4 valores.</li>
 <li>Menú favorito (lista selección múltiple) – poner mínimo 4 valores.</li>
 </ul>
+<p>Los valores han de ser mostrados en una tabla-resumen.</p>
 </li>
-</ul>
-<p>Muestra los valores cargados en una tabla-resumen.</p>
-<ul>
 <li>
-<p><strong>AC403</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Utilizando el paso por parámetros POST, crea un formulario que solicite:</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong>AC4 03</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Utilizando el paso por parámetros <code>POST</code>, se solicita la creación de un formulario con los siguientes campos:</p>
 <ul>
 <li>Nombre y apellidos.</li>
 <li>Email.</li>
@@ -4041,26 +3988,20 @@ Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa
 <li>Aficiones (checkboxes) – poner mínimo 4 valores.</li>
 <li>Menú favorito (lista selección múltiple) – poner mínimo 4 valores.</li>
 </ul>
+<p>Los valores han de ser mostrados en una tabla-resumen.</p>
 </li>
-</ul>
-<p>Muestra los valores cargados en una tabla-resumen.</p>
-<ul>
 <li>
-<p><strong>AC404</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Una vez que has aprendido a manejar formularios, un compañero te solicita que, a partir del formulario anterior, introduzcas validaciones en HTML mediante el atributo required de los campos (uso los tipos adecuados para cada campo), y en compruebes los tipos de los datos y que cumplen los valores esperados (por ejemplo, en los checkboxes que los valores recogidos forman parte de todos los posibles). Puedes probar a pasarle datos erróneos via URL y comprobar su comportamiento.</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 404</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Una vez que se ha trabajado con formularios, un compañero solicita que, a partir del formulario anterior, se introduzcan validaciones en HTML mediante el atributo required de los campos (uso los tipos adecuados para cada campo), y se compruebe los tipos de los datos y que cumplen los valores esperados (por ejemplo, en los checkboxes que los valores recogidos forman parte de todos los posibles). Se puede probar a pasar datos erróneos via URL y comprobar su comportamiento.</p>
 <div class="admonition tip">
 <p class="admonition-title">Ayuda</p>
 <p>Investiga el uso de la función <code>filter_var</code>.</p>
 </div>
 </li>
 <li>
-<p><strong>AC405</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Tu CTO te solicita crear un formulario que permita subir un archivo al servidor para una futura implementación del proyecto. Además del fichero, debes pedir en el mismo formulario dos campos numéricos que soliciten la anchura y la altura. Comprueba que tanto el fichero como los datos llegan correctamente.</p>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 405</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - El CTO solicita crear un formulario que permita subir un archivo al servidor para una futura implementación del proyecto. Además del fichero, se debe solicitar en el mismo formulario dos campos numéricos que soliciten la anchura y la altura. Se solicita la comprobación de que tanto el fichero como los datos llegan correctamente.</p>
 </li>
 <li>
-<p><strong>AC406</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Ahora, se te solicita una modificación sobre el ejercicio anterior para que únicamente permita subir imágenes. Si el usuario selecciona otro tipo de archivos, se le debe informar del error y permitir que suba un nuevo archivo. En el caso de subir el tipo correcto, visualizar la imagen con el tamaño de anchura y altura recibido como parámetro.</p>
-<div class="admonition tip">
-<p class="admonition-title">Ayuda</p>
-<p>Comprueba la propiedad <code>type</code> del archivo subido.</p>
-</div>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 406</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Ahora, se solicita una modificación sobre el ejercicio anterior para que únicamente se permita subir imágenes. Si el usuario selecciona otro tipo de archivos, se le debe informar del error y permitir que suba un nuevo archivo. En el caso de subir el tipo correcto, visualizar la imagen con el tamaño de anchura y altura recibido como parámetro.</p>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
@@ -4068,6 +4009,14 @@ Cuando estudiemos Laravel profundizaremos en la validación de forma declarativa
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
 <!-- Otras abreviaciones -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Forma estandarizada de indicar la naturaleza y el formato de un documento, archivo o conjunto de datos. Puedes encontrar la lista más actualizada y completa en la página de <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">tipos de medios (Media Types)</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/04_ProgramacionWeb/046_SeguridadFiltrado.html">
       
       
-        <link rel="prev" href="045_AutentifcacionUsuarios.html">
+        <link rel="prev" href="045_AutentificacionUsuarios.html">
       
       
         <link rel="next" href="047_PatronMVC.html">
@@ -1282,10 +1282,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1321,11 +1317,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ProgramacionAula.html" class="md-nav__link">
+      <a href="PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Programación de aula
+    Propuesta didáctica
   </span>
   
 
@@ -1342,11 +1338,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Resumen UT
+    Programación de aula
   </span>
   
 
@@ -1447,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="045_AutentifcacionUsuarios.html" class="md-nav__link">
+      <a href="045_AutentificacionUsuarios.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1526,7 +1522,7 @@
           <li class="md-nav__item">
   <a href="#validacion-asegurarse-de-que-los-datos-sean-validos" class="md-nav__link">
     <span class="md-ellipsis">
-      Validación: Asegurarse de que los datos sean válidos
+      Validación: asegurarse de que los datos sean válidos
     </span>
   </a>
   
@@ -1535,7 +1531,7 @@
           <li class="md-nav__item">
   <a href="#limpieza-eliminar-posibles-problemas-con-los-datos" class="md-nav__link">
     <span class="md-ellipsis">
-      Limpieza: Eliminar posibles problemas con los datos
+      Limpieza: eliminar posibles problemas con los datos
     </span>
   </a>
   
@@ -1547,9 +1543,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#actividades" class="md-nav__link">
+  <a href="#actividad" class="md-nav__link">
     <span class="md-ellipsis">
-      Actividades
+      Actividad
     </span>
   </a>
   
@@ -1592,53 +1588,11 @@
   
   
     <li class="md-nav__item">
-      <a href="048_ReferenciaLinks.html" class="md-nav__link">
+      <a href="048_PruebaEspecifica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.8- Referencia y links de interés
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="049_Autoevaluacion.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.8- Autoevaluación
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="0410_PruebaEspecifica.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.9- Prueba específica
+    4.8- Prueba específica
   </span>
   
 
@@ -3859,45 +3813,50 @@
 
 
 <h1 id="seguridad-en-el-desarrollo-de-aplicaciones-php">Seguridad en el Desarrollo de Aplicaciones PHP<a class="headerlink" href="#seguridad-en-el-desarrollo-de-aplicaciones-php" title="Permanent link">&para;</a></h1>
-<p>La seguridad en aplicaciones web implica mucho más que simplemente asegurar que las contraseñas sean fuertes. Aquí abordamos cómo mejorar la seguridad del lado del cliente y del servidor mediante validación y limpieza de datos, además de técnicas para el manejo seguro de contraseñas.</p>
+<p>La seguridad en aplicaciones web va mucho más allá de asegurar que las contraseñas sean fuertes. En este apartado, abordamos cómo mejorar la seguridad tanto del lado del cliente como del servidor, mediante la validación y limpieza de datos, además de técnicas para el manejo seguro de contraseñas.</p>
 <h2 id="mejor-prevenir-que-curar-en-cliente-y-en-servidor">Mejor prevenir que curar (en cliente y en servidor)<a class="headerlink" href="#mejor-prevenir-que-curar-en-cliente-y-en-servidor" title="Permanent link">&para;</a></h2>
-<h3 id="validacion-asegurarse-de-que-los-datos-sean-validos">Validación: Asegurarse de que los datos sean válidos<a class="headerlink" href="#validacion-asegurarse-de-que-los-datos-sean-validos" title="Permanent link">&para;</a></h3>
+<h3 id="validacion-asegurarse-de-que-los-datos-sean-validos">Validación: asegurarse de que los datos sean válidos<a class="headerlink" href="#validacion-asegurarse-de-que-los-datos-sean-validos" title="Permanent link">&para;</a></h3>
+<p>Es fundamental validar los datos ingresados por el usuario para evitar que sean incorrectos o malintencionados. La validación de datos ayuda a prevenir una serie de ataques, como la inyección de SQL o la inyección de scripts.</p>
 <ul>
-<li>Usar expresiones regulares para validar.Es fundamental validar los datos ingresados por el usuario para evitar datos incorrectos o malintencionados. Función PHP relevante: <ul>
-<li><code>preg_match</code>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">if (preg_match(&quot;/^[a-zA-Z ]*$/&quot;, $name)) {</span>
+<li>
+<p>Usar expresiones regulares para validar: Las expresiones regulares son muy útiles para asegurarse de que los datos cumplan con un formato específico, como un correo electrónico, un nombre o un número de teléfono. Función PHP relevante: </p>
+<ul>
+<li>
+<p><code>preg_match</code>: verifica si una cadena cumple con el patrón definido en la expresión regular.</p>
+<div class="language-php highlight"><span class="filename">Ejemplo de validación de nombre con solo letras y espacios:</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">if (preg_match(&quot;/^[a-zA-Z ]*$/&quot;, $name)) {</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="x">    // El nombre es válido</span>
 </span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="x">}</span>
-</span></code></pre></div></li>
+</span></code></pre></div>
+</li>
 </ul>
 </li>
 </ul>
-<h3 id="limpieza-eliminar-posibles-problemas-con-los-datos">Limpieza: Eliminar posibles problemas con los datos<a class="headerlink" href="#limpieza-eliminar-posibles-problemas-con-los-datos" title="Permanent link">&para;</a></h3>
+<h3 id="limpieza-eliminar-posibles-problemas-con-los-datos">Limpieza: eliminar posibles problemas con los datos<a class="headerlink" href="#limpieza-eliminar-posibles-problemas-con-los-datos" title="Permanent link">&para;</a></h3>
+<p>Limpiar los datos es esencial para eliminar cualquier contenido malicioso que pueda comprometer la seguridad de la aplicación, como los intentos de inyección de código (XSS).</p>
 <ul>
 <li>
-<p>Limpiar contenido para eliminar marcas HTML que podrían ser utilizadas para ataques de inyección de código (XSS). 
-  Funciones PHP relevantes:</p>
+<p>Eliminar marcas HTML: La limpieza del contenido evita que los datos introducidos por el usuario contengan código HTML o JavaScript malicioso. Funciones PHP relevantes:</p>
 <ul>
-<li><code>htmlentities</code>
-  <div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_input = htmlentities($input);</span>
-</span></code></pre></div></li>
-<li><code>htmlspecialchars</code>
-  <div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_input = htmlspecialchars($input, ENT_QUOTES, &#39;UTF-8&#39;);</span>
-</span></code></pre></div></li>
+<li>
+<p><code>htmlentities</code>: convierte los caracteres especiales en entidades HTML.</p>
+<p><div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_input = htmlentities($input);</span>
+</span></code></pre></div>
+    * <code>htmlspecialchars</code>: convierte los caracteres especiales en su forma de entidades HTML, lo que ayuda a prevenir ataques XSS.</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_input = htmlspecialchars($input, ENT_QUOTES, &#39;UTF-8&#39;);</span>
+</span></code></pre></div>
+</li>
 </ul>
 </li>
 <li>
-<p>Uso de funciones de filtrado para cualquier variable. 
-  Función PHP relevante: </p>
+<p>Uso de funciones de filtrado para cualquier variable: Aplicar filtros a las variables antes de procesarlas es otra técnica de seguridad importante. Estas funciones permiten asegurarse de que los datos son del tipo esperado y cumplen con los requisitos establecidos. Función PHP relevante: </p>
 <ul>
-<li><code>filter_var</code>: Aplicar sobre un valor:
-  <div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_email = filter_var($email, FILTER_SANITIZE_EMAIL);</span>
-</span></code></pre></div></li>
-<li><code>filter_var</code>: Aplica una serie de filtros:
-  <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="x">$options = array(</span>
+<li><code>filter_var</code>: filtra y valida una variable. Dependiendo del filtro elegido, puede sanitizar o validar datos.
+    <div class="language-php highlight"><span class="filename">Ejemplo de sanitización de un correo electrónico:</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_email = filter_var($email, FILTER_SANITIZE_EMAIL);</span>
+</span></code></pre></div>
+    <div class="language-php highlight"><span class="filename">Ejemplo de validación de un número de edad en un rango específico</span><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="x">$options = array(</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="x">    &#39;options&#39; =&gt; array(</span>
 </span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="x">        &#39;min_range&#39; =&gt; 1,</span>
-</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="x">        &#39;max_range&#39; =&gt; 100</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="x">        &#39;max_range&#39; =&gt; 18</span>
 </span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="x">    )</span>
 </span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span><span class="x">);</span>
 </span><span id="__span-4-7"><span class="linenos" data-linenos="7 "></span><span class="x">$age = filter_var($age, FILTER_VALIDATE_INT, $options);</span>
@@ -3905,9 +3864,9 @@
 </ul>
 </li>
 </ul>
-<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>AC416</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica la actividad <strong>AC415</strong> para que el acceso sea seguro.</li>
+<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 417</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica la actividad <a href="045_AutentificacionUsuarios.html#actividades"><strong>AC414</strong></a> para que el acceso sea seguro.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
@@ -3949,7 +3908,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="045_AutentifcacionUsuarios.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 4.5- Autentificación de usuarios">
+          <a href="045_AutentificacionUsuarios.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 4.5- Autentificación de usuarios">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
