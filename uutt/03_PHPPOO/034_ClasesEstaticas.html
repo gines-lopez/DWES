@@ -3786,41 +3786,40 @@
 <li>Si queremos acceder a un método estático, se antepone el nombre de la clase: <code>Producto::nuevoProducto()</code>.</li>
 <li>Si desde un método queremos acceder a una propiedad estática de la misma clase, se utiliza la referencia <code>self</code>: <code>self::$numProductos</code></li>
 </ul>
-<p>``` php title = "producto.php"
-&lt;?php
-class Producto {
-    const IVA = 0.23;
-    private static $numProductos = 0; </p>
-<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>public static function nuevoProducto() {
-<span class="linenos" data-linenos="2 "></span>    self::$numProductos++;
-<span class="linenos" data-linenos="3 "></span>}
-</code></pre></div>
-<p>}</p>
-<p>Producto::nuevoProducto();
-$impuesto = Producto::IVA;</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>También podemos tener clases normales que tengan alguna propiedad estática:
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>``` php title = &quot;producto.php&quot;
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>&lt;?php
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>class Producto { 
-</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>    const IVA = 0.23;
-</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    private static $numProductos = 0; 
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    private $codigo;
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>    public function __construct(string $cod) { 
-</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>        self::$numProductos++;
-</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>        $this-&gt;codigo = $cod;
-</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    }
-</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>
-</span><span id="__span-0-15"><span class="linenos" data-linenos="15 "></span>    public function mostrarResumen() : string { 
-</span><span id="__span-0-16"><span class="linenos" data-linenos="16 "></span>        return &quot;El producto &quot; . $this-&gt;codigo . &quot; es el número &quot; . self::$numProductos; 
-</span><span id="__span-0-17"><span class="linenos" data-linenos="17 "></span>    }
-</span><span id="__span-0-18"><span class="linenos" data-linenos="18 "></span>}
-</span><span id="__span-0-19"><span class="linenos" data-linenos="19 "></span>
-</span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span>$prod1 = new Producto(&quot;PS5&quot;);
-</span><span id="__span-0-21"><span class="linenos" data-linenos="21 "></span>$prod2 = new Producto(&quot;XBOX Series X&quot;); &lt;!-- Cambio: espacios no estándar eliminados y corregidos en &quot;Series X&quot; --&gt;
-</span><span id="__span-0-22"><span class="linenos" data-linenos="22 "></span>$prod3 = new Producto(&quot;Nintendo Switch&quot;);
-</span><span id="__span-0-23"><span class="linenos" data-linenos="23 "></span>echo $prod3-&gt;mostrarResumen();
+<div class="language-php highlight"><span class="filename">producto.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Producto</span> <span class="p">{</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">const</span> <span class="no">IVA</span> <span class="o">=</span> <span class="mf">0.23</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">private</span> <span class="k">static</span> <span class="nv">$numProductos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">nuevoProducto</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>        <span class="nx">self</span><span class="o">::</span><span class="nv">$numProductos</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="p">}</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="nx">Producto</span><span class="o">::</span><span class="na">nuevoProducto</span><span class="p">();</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="nv">$impuesto</span> <span class="o">=</span> <span class="nx">Producto</span><span class="o">::</span><span class="na">IVA</span><span class="p">;</span>
+</span></code></pre></div>
+<p>También podemos tener clases normales que tengan alguna propiedad estática:</p>
+<div class="language-php highlight"><span class="filename">producto.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">class</span> <span class="nc">Producto</span> <span class="p">{</span> 
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">const</span> <span class="no">IVA</span> <span class="o">=</span> <span class="mf">0.23</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">private</span> <span class="k">static</span> <span class="nv">$numProductos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="k">private</span> <span class="nv">$codigo</span><span class="p">;</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$cod</span><span class="p">)</span> <span class="p">{</span> 
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="nx">self</span><span class="o">::</span><span class="nv">$numProductos</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">codigo</span> <span class="o">=</span> <span class="nv">$cod</span><span class="p">;</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">mostrarResumen</span><span class="p">()</span> <span class="o">:</span> <span class="nx">string</span> <span class="p">{</span> 
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span>        <span class="k">return</span> <span class="s2">&quot;El producto &quot;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">codigo</span> <span class="o">.</span> <span class="s2">&quot; es el número &quot;</span> <span class="o">.</span> <span class="nx">self</span><span class="o">::</span><span class="nv">$numProductos</span><span class="p">;</span> 
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    <span class="p">}</span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span><span class="nv">$prod1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">(</span><span class="s2">&quot;PS5&quot;</span><span class="p">);</span>
+</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span><span class="nv">$prod2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">(</span><span class="s2">&quot;XBOX Series X&quot;</span><span class="p">);</span> <span class="o">&lt;!--</span> <span class="nx">Cambio</span><span class="o">:</span> <span class="nx">espacios</span> <span class="nx">no</span> <span class="nx">estándar</span> <span class="nx">eliminados</span> <span class="nx">y</span> <span class="nx">corregidos</span> <span class="nx">en</span> <span class="s2">&quot;Series X&quot;</span> <span class="o">--&gt;</span>
+</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span><span class="nv">$prod3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Producto</span><span class="p">(</span><span class="s2">&quot;Nintendo Switch&quot;</span><span class="p">);</span>
+</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span><span class="k">echo</span> <span class="nv">$prod3</span><span class="o">-&gt;</span><span class="na">mostrarResumen</span><span class="p">();</span>
 </span></code></pre></div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
