@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/06_AccesoDatos/061_IntroduccionConfiguracion.html">
       
       
-        <link rel="prev" href="ResumenUT.html">
+        <link rel="prev" href="ProgramacionAula.html">
       
       
         <link rel="next" href="062_PersistenciaDatos.html">
@@ -1803,11 +1803,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ProgramacionAula.html" class="md-nav__link">
+      <a href="PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Programación de aula
+    Propuesta didáctica
   </span>
   
 
@@ -1824,11 +1824,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Resumen UT
+    Programación de aula
   </span>
   
 
@@ -3729,19 +3729,19 @@
 
 
 <h1 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h1>
-<p>En esta unidad vamos a aprender a acceder a datos que se encuentran en un servidor; recuperando, editando y creando dichos datos a través de una base de datos.</p>
-<p>A través de las distintas capas o niveles, de las cuales 2 de ellas ya conocemos (<em>Apache</em>, <em>PHP</em>) y <em>MySQL</em> la que vamos a estudiar en este tema.</p>
+<p>En esta unidad aprenderemos a acceder a datos almacenados en un servidor; exploraremos cómo recuperarlos, editarlos y crearlos mediante el uso de una base de datos.</p>
+<p>Trabajaremos con las diferentes capas o niveles, de las cuales ya conocemos dos (Apache y PHP), y estudiaremos en detalle MySQL, que es el enfoque principal de este tema.</p>
 <figure style="align: center;">
     <a class="glightbox" href="../../img/ut06/0601.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../img/ut06/0601.png"></a>
     <figcaption>Modelo de tres capas</figcaption>
 </figure>
 
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<p>A través de <strong><em>XAMPP</em></strong> es muy sencillo, simplemente nos descargaríamos el programa y lo activaríamos. Para descargar XAMPP <a href="https://www.apachefriends.org/es/download.html">pulsa aquí</a>.</p>
-<p>Con <strong><em>Docker</em></strong> nos descargaremos <a href="../../resources/plantilla-APCM.zip">esta imagen de docker</a> y lanzamos </p>
+<p>Con <strong>XAMPP</strong>, la instalación es muy sencilla. Solo necesitamos descargar el programa y activarlo. Para obtener XAMPP, <a href="https://www.apachefriends.org/es/download.html">pulsa aquí</a>.</p>
+<p>Con Docker, descargaremos <a href="../../resources/plantilla-APCM.zip">esta imagen de docker</a> y ejecutaremos el siguiente comando </p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </span></code></pre></div>
-<p>Si todo ha salido bien y el contenedor está en marcha, podremos visitar la página de phpMyAdmin de la siguiente manera</p>
+<p>Si todo ha funcionado correctamente y el contenedor está en marcha, podremos visitar la página de phpMyAdmin ingresando la siguiente dirección en el navegador:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>http://localhost:8000
 </span></code></pre></div>
 <figure style="align: center;max-width:300px">
@@ -3749,12 +3749,12 @@
     <figcaption>Inicio phpMyadmin</figcaption>
 </figure>
 
-<p>Para acceder debemos utilizar las siguientes credenciales que vienen configuradas en el alrchivo <code>docker-compose.yml</code> </p>
+<p>Para acceder, debemos utilizar las siguientes credenciales, que vienen configuradas en el archivo <code>docker-compose.yml</code> </p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>usuario: root
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>contraseña: 1234
 </span></code></pre></div>
 <h2 id="estructura-de-una-base-de-datos">Estructura de una base de datos<a class="headerlink" href="#estructura-de-una-base-de-datos" title="Permanent link">&para;</a></h2>
-<p>Sabemos que una base de datos tiene muchos campos con sus nombres y valores, pero además sabemos que la base de datos debe tener un nombre. por tanto tendríamos la siguiente estructura para una base de datos:</p>
+<p>Sabemos que una base de datos tiene muchos campos con sus nombres y valores, pero además sabemos que la base de datos debe tener un nombre. Por tanto, tendríamos la siguiente estructura para una base de datos:</p>
 <div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>NombreBaseDeDatos
 <span class="linenos" data-linenos=" 2 "></span>    |__Tabla-#1
 <span class="linenos" data-linenos=" 3 "></span>    |       |__DatosTabla-#1
@@ -3766,7 +3766,7 @@
 <span class="linenos" data-linenos=" 9 "></span>    |       |__DatosTabla-#3
 <span class="linenos" data-linenos="10 "></span>    [...]
 </code></pre></div>
-<p>Veámoslo en un ejemplo real</p>
+<p>Veámoslo en un ejemplo real:</p>
 <div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>Ryanair
 <span class="linenos" data-linenos=" 2 "></span>    |__pasajero
 <span class="linenos" data-linenos=" 3 "></span>    |    |__id[*]
@@ -3799,7 +3799,7 @@
 
 <h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>AC601</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Documenta el proceso de instalación de MySQL, comentando las dificultades encontradas.</li>
+<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 601</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Documenta el proceso de instalación de MySQL, comentando las dificultades encontradas.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
@@ -3841,7 +3841,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="ResumenUT.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Resumen UT">
+          <a href="ProgramacionAula.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Programación de aula">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3851,7 +3851,7 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Resumen UT
+                Programación de aula
               </div>
             </div>
           </a>

@@ -1803,11 +1803,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ProgramacionAula.html" class="md-nav__link">
+      <a href="PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Programación de aula
+    Propuesta didáctica
   </span>
   
 
@@ -1824,11 +1824,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Resumen UT
+    Programación de aula
   </span>
   
 
@@ -2047,9 +2047,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#actividades" class="md-nav__link">
+  <a href="#actividad" class="md-nav__link">
     <span class="md-ellipsis">
-      Actividades
+      Actividad
     </span>
   </a>
   
@@ -3775,11 +3775,11 @@
 </span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$usuario</span> <span class="o">=</span> <span class="s1">&#39;usuario&#39;</span><span class="p">;</span>
 </span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$contraseña</span> <span class="o">=</span> <span class="s1">&#39;contraseña&#39;</span><span class="p">;</span>
 </span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="nv">$mbd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="nv">$dsn</span><span class="p">,</span> <span class="nv">$usuario</span><span class="p">,</span> <span class="nv">$contraseña</span><span class="p">);</span>
+</span><span id="__span-1-7"><span class="hll"><span class="linenos" data-linenos=" 7 "></span>    <span class="k">try</span> <span class="p">{</span>
+</span></span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="nv">$mbd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="nv">$dsn</span><span class="p">,</span> <span class="nv">$usuario</span><span class="p">,</span> <span class="nv">$contraseña</span><span class="p">);</span>
 </span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="nv">$mbd</span><span class="o">-&gt;</span><span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>        <span class="k">echo</span> <span class="s1">&#39;Falló la conexión: &#39;</span> <span class="o">.</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+</span><span id="__span-1-10"><span class="hll"><span class="linenos" data-linenos="10 "></span>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>        <span class="k">echo</span> <span class="s1">&#39;Falló la conexión: &#39;</span> <span class="o">.</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
 </span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>    <span class="p">}</span>
 </span></code></pre></div>
 En primer lugar, creamos la conexión con la base de datos a través del constructor PDO pasándole la información de la base de datos.</p>
@@ -3794,19 +3794,17 @@ En primer lugar, creamos la conexión con la base de datos a través del constru
 </div>
 <h2 id="fichero-de-configuracion-de-la-bd">Fichero de configuración de la BD<a class="headerlink" href="#fichero-de-configuracion-de-la-bd" title="Permanent link">&para;</a></h2>
 <p>De la misma manera que creamos nuestro archivo de funciones <code>funciones-php</code> y albergamos todas las funciones que se usan de manera global en la aplicación, podemos establecer un archivo de constantes donde definamos los parámetros de conexión con la base de datos.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">conexion.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="c1">//  ▒▒▒▒▒▒▒▒ conexion.php ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nx">constDSN</span> <span class="o">=</span> <span class="s2">&quot;mysql:host=localhost;dbname=dwes&quot;</span><span class="p">;</span>
-</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="nx">constUSUARIO</span> <span class="o">=</span> <span class="s2">&quot;dwes&quot;</span><span class="p">;</span>
-</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="nx">constPASSWORD</span> <span class="o">=</span> <span class="s2">&quot;abc123&quot;</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="nx">constDSN</span> <span class="o">=</span> <span class="s2">&quot;mysql:host=localhost;dbname=dwes&quot;</span><span class="p">;</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nx">constUSUARIO</span> <span class="o">=</span> <span class="s2">&quot;dwes&quot;</span><span class="p">;</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nx">constPASSWORD</span> <span class="o">=</span> <span class="s2">&quot;abc123&quot;</span><span class="p">;</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="cm">/*  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>
 </span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="cm">/*  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="cm">        ▒▒▒▒▒▒▒▒ NO SUBAS ESTE ARCHIVO A git ▒▒▒▒▒</span>
 </span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="cm">        ▒▒▒▒▒▒▒▒ NO SUBAS ESTE ARCHIVO A git ▒▒▒▒▒</span>
-</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="cm">        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ */</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span><span class="cm">        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ */</span>
 </span></code></pre></div>
 <p>Este archivo contiene información <span class="alert"><strong>muy sensible</strong></span> así que no es recomendable que subas este archivo a git.</p>
 <h2 id="sentencias-preparadas">Sentencias preparadas<a class="headerlink" href="#sentencias-preparadas" title="Permanent link">&para;</a></h2>
@@ -3824,30 +3822,29 @@ En primer lugar, creamos la conexión con la base de datos a través del constru
 </ul>
 <h3 id="ejemplo-parametros">Ejemplo parámetros<a class="headerlink" href="#ejemplo-parametros" title="Permanent link">&para;</a></h3>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="c1">//  ▒▒▒▒▒▒▒▒ Borrando con parámetros ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>
-</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="k">include</span> <span class="s2">&quot;config/database.inc.php&quot;</span><span class="p">;</span>
-</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
-</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>
-</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="k">try</span> <span class="p">{</span> 
-</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="nv">$cantidad</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;cantidad&quot;</span><span class="p">];</span>
-</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>        <span class="nv">$conexion</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="nx">DSN</span><span class="p">,</span> <span class="nx">USUARIO</span><span class="p">,</span> <span class="nx">PASSWORD</span><span class="p">);</span>
-</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>        <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
-</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>
-</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span>        <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM stock WHERE unidades = ?&quot;</span><span class="p">;</span>
-</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span>        <span class="nv">$sentencia</span> <span class="o">=</span> <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span>
-</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span>        <span class="nv">$isOk</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">([</span><span class="nv">$cantidad</span><span class="p">]);</span>
-</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span>        <span class="nv">$cantidadAfectada</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">rowCount</span><span class="p">();</span>
-</span><span id="__span-4-19"><span class="linenos" data-linenos="19 "></span>
-</span><span id="__span-4-20"><span class="linenos" data-linenos="20 "></span>        <span class="k">echo</span> <span class="nv">$cantidadAfectada</span><span class="p">;</span>
-</span><span id="__span-4-21"><span class="linenos" data-linenos="21 "></span>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-4-22"><span class="linenos" data-linenos="22 "></span>        <span class="k">echo</span> <span class="nv">$e</span> <span class="o">-&gt;</span> <span class="na">getMessage</span><span class="p">();</span>
-</span><span id="__span-4-23"><span class="linenos" data-linenos="23 "></span>    <span class="p">}</span>
-</span><span id="__span-4-24"><span class="linenos" data-linenos="24 "></span>
-</span><span id="__span-4-25"><span class="linenos" data-linenos="25 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="k">null</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="k">include</span> <span class="s2">&quot;config/database.inc.php&quot;</span><span class="p">;</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="k">try</span> <span class="p">{</span> 
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="nv">$cantidad</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;cantidad&quot;</span><span class="p">];</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>        <span class="nv">$conexion</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="nx">DSN</span><span class="p">,</span> <span class="nx">USUARIO</span><span class="p">,</span> <span class="nx">PASSWORD</span><span class="p">);</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>        <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>        <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM stock WHERE unidades = ?&quot;</span><span class="p">;</span>
+</span><span id="__span-4-14"><span class="hll"><span class="linenos" data-linenos="14 "></span>        <span class="nv">$sentencia</span> <span class="o">=</span> <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+</span></span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-4-16"><span class="hll"><span class="linenos" data-linenos="16 "></span>        <span class="nv">$isOk</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">([</span><span class="nv">$cantidad</span><span class="p">]);</span>
+</span></span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span>        <span class="nv">$cantidadAfectada</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">rowCount</span><span class="p">();</span>
+</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-4-19"><span class="linenos" data-linenos="19 "></span>        <span class="k">echo</span> <span class="nv">$cantidadAfectada</span><span class="p">;</span>
+</span><span id="__span-4-20"><span class="linenos" data-linenos="20 "></span>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-4-21"><span class="linenos" data-linenos="21 "></span>        <span class="k">echo</span> <span class="nv">$e</span> <span class="o">-&gt;</span> <span class="na">getMessage</span><span class="p">();</span>
+</span><span id="__span-4-22"><span class="linenos" data-linenos="22 "></span>    <span class="p">}</span>
+</span><span id="__span-4-23"><span class="linenos" data-linenos="23 "></span>
+</span><span id="__span-4-24"><span class="linenos" data-linenos="24 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="k">null</span>
 </span></code></pre></div>
 <h3 id="ejemplo-bindparam">Ejemplo bindParam<a class="headerlink" href="#ejemplo-bindparam" title="Permanent link">&para;</a></h3>
 <p>Muy parecido a utilizar parámetros pero esta vez la variable está dentro de la sentencia SQL, en este caso la hemos llamado <code>:cant</code></p>
@@ -3865,10 +3862,10 @@ En primer lugar, creamos la conexión con la base de datos a través del constru
 </span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>        <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM stock WHERE unidades = :cant&quot;</span><span class="p">;</span>
 </span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span>
 </span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span>        <span class="nv">$sentencia</span> <span class="o">=</span> <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span>        <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">bindParam</span><span class="p">(</span><span class="s2">&quot;:cant&quot;</span><span class="p">,</span> <span class="nv">$cantidad</span><span class="p">);</span>
-</span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span>
-</span><span id="__span-5-17"><span class="linenos" data-linenos="17 "></span>        <span class="nv">$isOk</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">();</span>
-</span><span id="__span-5-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-5-15"><span class="hll"><span class="linenos" data-linenos="15 "></span>        <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">bindParam</span><span class="p">(</span><span class="s2">&quot;:cant&quot;</span><span class="p">,</span> <span class="nv">$cantidad</span><span class="p">);</span>
+</span></span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-5-17"><span class="hll"><span class="linenos" data-linenos="17 "></span>        <span class="nv">$isOk</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">();</span>
+</span></span><span id="__span-5-18"><span class="linenos" data-linenos="18 "></span>
 </span><span id="__span-5-19"><span class="linenos" data-linenos="19 "></span>        <span class="nv">$cantidadAfectada</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">rowCount</span><span class="p">();</span>
 </span><span id="__span-5-20"><span class="linenos" data-linenos="20 "></span>
 </span><span id="__span-5-21"><span class="linenos" data-linenos="21 "></span>        <span class="k">echo</span> <span class="nv">$cantidadAfectada</span><span class="p">;</span>
@@ -3888,8 +3885,8 @@ En primer lugar, creamos la conexión con la base de datos a través del constru
 </span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="c1">// bindParam enlaza por referencia</span>
 </span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="nv">$cantidad</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">bindParam</span><span class="p">(</span><span class="s2">&quot;:cant&quot;</span><span class="p">,</span> <span class="nv">$cantidad</span><span class="p">);</span>
-</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span>    <span class="nv">$cantidad</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-6-9"><span class="hll"><span class="linenos" data-linenos=" 9 "></span>    <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">bindParam</span><span class="p">(</span><span class="s2">&quot;:cant&quot;</span><span class="p">,</span> <span class="nv">$cantidad</span><span class="p">);</span>
+</span></span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span>    <span class="nv">$cantidad</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span>
 </span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span>    <span class="c1">// se eliminan con cant = 1</span>
 </span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span>    <span class="nv">$isOk</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">();</span>
@@ -3897,16 +3894,16 @@ En primer lugar, creamos la conexión con la base de datos a través del constru
 </span><span id="__span-6-15"><span class="linenos" data-linenos="15 "></span>    <span class="c1">// bindValue enlaza por valor</span>
 </span><span id="__span-6-16"><span class="linenos" data-linenos="16 "></span>    <span class="nv">$cantidad</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-6-17"><span class="linenos" data-linenos="17 "></span>
-</span><span id="__span-6-18"><span class="linenos" data-linenos="18 "></span>    <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">bindValue</span><span class="p">(</span><span class="s2">&quot;:cant&quot;</span><span class="p">,</span> <span class="nv">$cantidad</span><span class="p">);</span>
-</span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span>    <span class="nv">$cantidad</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-6-18"><span class="hll"><span class="linenos" data-linenos="18 "></span>    <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">bindValue</span><span class="p">(</span><span class="s2">&quot;:cant&quot;</span><span class="p">,</span> <span class="nv">$cantidad</span><span class="p">);</span>
+</span></span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span>    <span class="nv">$cantidad</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-6-20"><span class="linenos" data-linenos="20 "></span>
 </span><span id="__span-6-21"><span class="linenos" data-linenos="21 "></span>    <span class="c1">// se eliminan con cant = 0</span>
 </span><span id="__span-6-22"><span class="linenos" data-linenos="22 "></span>    <span class="nv">$isOk</span> <span class="o">=</span> <span class="nv">$sentencia</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 </span></code></pre></div>
 <p>Para más información y uso de las variables PDO <a href="https://www.php.net/manual/es/pdo.constants.php">consulta el manual de PHP</a>.</p>
-<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>AC614</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Rehaz lo realizado en las AC610-612 pero esta vez utilizando <code>PDO::FETCH_ASSOC</code>.</li>
+<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 614</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Rehaz lo realizado en las <a href="065_MySQLi.html#actividades"><abbr title="Actividades de clase">AC</abbr> 612-614</a> pero esta vez utilizando <code>PDO::FETCH_ASSOC</code>.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

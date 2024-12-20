@@ -1803,11 +1803,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ProgramacionAula.html" class="md-nav__link">
+      <a href="PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Programación de aula
+    Propuesta didáctica
   </span>
   
 
@@ -1824,11 +1824,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Resumen UT
+    Programación de aula
   </span>
   
 
@@ -3772,27 +3772,23 @@
 </ul>
 <h2 id="operaciones-con-archivos">Operaciones con archivos<a class="headerlink" href="#operaciones-con-archivos" title="Permanent link">&para;</a></h2>
 <p>Para poder <strong>leer</strong> un archivo necesitamos usar la función <code>fread()</code> de PHP</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="x">//  ▒▒▒▒▒▒▒▒ Abriendo un archivo y leyendo su contenido ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="x">$file = &quot;miarchivo.txt&quot;;</span>
-</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="x">$fp = fopen($file, &quot;r&quot;);</span>
-</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="x">// filesize() nos devuelve el tamaño del archivo en cuestión</span>
-</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="x">$contents = fread($fp, filesize($file));</span>
-</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="x">// Cerramos la conexión con el archivo</span>
-</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="x">fclose();</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$file = &quot;miarchivo.txt&quot;;</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="x">$fp = fopen($file, &quot;r&quot;);</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span><span class="x">// filesize() nos devuelve el tamaño del archivo en cuestión</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="x">$contents = fread($fp, filesize($file));</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos="6 "></span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos="7 "></span><span class="x">// Cerramos la conexión con el archivo</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos="8 "></span><span class="x">fclose();</span>
 </span></code></pre></div>
 <p>Si lo que queremos es <strong>escribir</strong> en un archivo, deberemos hacer uso de la función <code>fwrite()</code></p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">//  ▒▒▒▒▒▒▒▒ Escribiendo en un archivo ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>
-</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span><span class="x">$file = &quot;miarchivo.txt&quot;;</span>
-</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span><span class="x">$texto = &quot;Hola que tal&quot;;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">$file = &quot;miarchivo.txt&quot;;</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span><span class="x">$texto = &quot;Hola que tal&quot;;</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos="4 "></span><span class="x">$fp = fopen($file, &quot;w&quot;);</span>
 </span><span id="__span-3-5"><span class="linenos" data-linenos="5 "></span>
-</span><span id="__span-3-6"><span class="linenos" data-linenos="6 "></span><span class="x">$fp = fopen($file, &quot;w&quot;);</span>
-</span><span id="__span-3-7"><span class="linenos" data-linenos="7 "></span>
-</span><span id="__span-3-8"><span class="linenos" data-linenos="8 "></span><span class="x">fwrite($fp, $texto);</span>
-</span><span id="__span-3-9"><span class="linenos" data-linenos="9 "></span><span class="x">fclose($fp);</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos="6 "></span><span class="x">fwrite($fp, $texto);</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos="7 "></span><span class="x">fclose($fp);</span>
 </span></code></pre></div>
 <h2 id="informacion-de-un-fichero">Información de un fichero<a class="headerlink" href="#informacion-de-un-fichero" title="Permanent link">&para;</a></h2>
 <p>Con PHP y su método <code>stat()</code> podemos obtener información sobre los archivos que le indiquemos. Este método devuelve hasta un total de 12 elementos con información acerca de nuestro archivo.</p>
@@ -3813,22 +3809,21 @@
 <p>Unos ejemplos...</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span><span class="c1">//  ▒▒▒▒▒▒▒▒ Información del archivo ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="nv">$file</span> <span class="o">=</span> <span class="s2">&quot;miarchivo.txt&quot;</span><span class="p">;</span>
-</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="nv">$texto</span> <span class="o">=</span> <span class="s2">&quot;Todos somos muy ignorantes, lo que ocurre es que no todos ignoramos las mismas cosas.&quot;</span><span class="p">;</span>
-</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>
-</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">);</span>
-</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="nb">fwrite</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="nv">$texto</span><span class="p">);</span>
-</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span><span class="nv">$datos</span> <span class="o">=</span> <span class="nb">stat</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
-</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Número de enlaces, 1</span>
-</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Tamaño en bytes, 85</span>
-</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Momento de último acceso, 1444138104</span>
-</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Momento de última modificación, 1444138251</span>
-</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span>
-</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span><span class="cp">?&gt;</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="nv">$file</span> <span class="o">=</span> <span class="s2">&quot;miarchivo.txt&quot;</span><span class="p">;</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="nv">$texto</span> <span class="o">=</span> <span class="s2">&quot;Todos somos muy ignorantes, lo que ocurre es que no todos ignoramos las mismas cosas.&quot;</span><span class="p">;</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span><span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">);</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="nb">fwrite</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="nv">$texto</span><span class="p">);</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="nv">$datos</span> <span class="o">=</span> <span class="nb">stat</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Número de enlaces, 1</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Tamaño en bytes, 85</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Momento de último acceso, 1444138104</span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Momento de última modificación, 1444138251</span>
+</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <p>Echa un vistazo a <a href="https://www.php.net/manual/es/book.dir.php">las funciones de directorios</a> que tiene PHP, es muy interesante.</p>
 <h2 id="archivos-pdf">Archivos PDF<a class="headerlink" href="#archivos-pdf" title="Permanent link">&para;</a></h2>
@@ -3926,17 +3921,17 @@ Hay muchos ejemplos y tutoriales, así como documentación de la clase FPDF en l
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>AC617</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Métete en <a href="https://www.lipsum.com/">loremipsum.com</a> y genera un texto de 3 párrafos. Copia el texto generado y guárdalo en un archivo nuevo. Genera otro archivo y muestra por pantalla el texto del archivo txt que acabas de crear, su tamaño en <strong>Kilobytes</strong> , la fecha de su última modificación y el ID de usuario que creó el archivo.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 621</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Métete en <a href="https://www.lipsum.com/">loremipsum.com</a> y genera un texto de 3 párrafos. Copia el texto generado y guárdalo en un archivo nuevo. Genera otro archivo y muestra por pantalla el texto del archivo txt que acabas de crear, su tamaño en <strong>Kilobytes</strong> , la fecha de su última modificación y el ID de usuario que creó el archivo.</p>
 </li>
 <li>
-<p><strong>AC618</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Vuelve a AC613 y añade estas dos funcionalidades:</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 622</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Vuelve a <a href="065_MySQLi.html#actividades"><abbr title="Actividades de clase">AC</abbr> 615</a> y añade estas dos funcionalidades:</p>
 <ul>
-<li>Guardar todos los campeanos en un fichero .csv</li>
+<li>Guardar todos los campeones en un fichero .csv</li>
 <li>Los detalles de un campeón en concreto en PDF</li>
 </ul>
 </li>
 <li>
-<p><strong>PR606</strong> (SA). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 5p) - Necesitas añadir una serie de funcionalidades a tu e-commerce. Para ello tienes que modificar PR603 para que:</p>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 623</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Necesitas añadir una serie de funcionalidades a tu e-commerce. Para ello tienes que modificar <a href="065_MySQLi.html#actividades"><abbr title="Proyecto">PR</abbr> 616</a> para que:</p>
 <ul>
 <li>El trabajador pueda sacar todos los pedidos en un CSV.</li>
 <li>El cliente pueda sacar todos sus pedidos en un CSV.</li>

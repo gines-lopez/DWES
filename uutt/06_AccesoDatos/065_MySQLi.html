@@ -1803,11 +1803,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ProgramacionAula.html" class="md-nav__link">
+      <a href="PropuestaDidactica.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Programación de aula
+    Propuesta didáctica
   </span>
   
 
@@ -1824,11 +1824,11 @@
   
   
     <li class="md-nav__item">
-      <a href="ResumenUT.html" class="md-nav__link">
+      <a href="ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Resumen UT
+    Programación de aula
   </span>
   
 
@@ -3783,24 +3783,22 @@
 <p>PHP hace uso de esta extensión mejorada para poder comunicarse con las bases de datos, ya sean MySQL (4.1 o superior) o MariaDB.</p>
 <p>Cualquier consulta que queramos hacer a una base de datos necesitaremos hacer uso de la extensión mysqli()</p>
 <p>Veamos como conectarnos con una base de datos a través del código PHP</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="c1">// ▒▒▒▒▒▒▒▒ pruebas.php ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="c1">// &quot;SERVIDOR&quot;, &quot;USUARIO&quot;, &quot;CONTRASEÑA&quot;, &quot;BASE DE DATOS&quot;</span>
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="s2">&quot;d939ebf6a741&quot;</span><span class="p">,</span><span class="s2">&quot;tuUsuario&quot;</span><span class="p">,</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;pruebas&quot;</span><span class="p">);</span>
-</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="c1">// COMPROBAMOS LA CONEXIÓN</span>
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_connect_errno</span><span class="p">())</span> <span class="p">{</span>
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="k">echo</span> <span class="s2">&quot;Failed to connect to MySQL: &quot;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">();</span>
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>        <span class="k">exit</span><span class="p">();</span>
-</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
-</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;h1&gt;Bienvenid@ a MySQL !!&lt;/h1&gt;&quot;</span><span class="p">;</span>
-</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span><span class="cp">?&gt;</span>
+<div class="language-php highlight"><span class="filename">pruebasMsyQLi.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="c1">// &quot;SERVIDOR&quot;, &quot;USUARIO&quot;, &quot;CONTRASEÑA&quot;, &quot;BASE DE DATOS&quot;</span>
+</span><span id="__span-0-3"><span class="hll"><span class="linenos" data-linenos=" 3 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="s2">&quot;d939ebf6a741&quot;</span><span class="p">,</span><span class="s2">&quot;tuUsuario&quot;</span><span class="p">,</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;pruebas&quot;</span><span class="p">);</span>
+</span></span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="c1">// COMPROBAMOS LA CONEXIÓN</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_connect_error</span><span class="p">())</span> <span class="p">{</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>        <span class="k">echo</span> <span class="s2">&quot;Failed to connect to MySQL: &quot;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">();</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="k">exit</span><span class="p">();</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="p">}</span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;h1&gt;Bienvenid@ a MySQL !!&lt;/h1&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <ul>
 <li>
-<p><code>servidor</code>: El servidor donde se encuentra la base de datos que queremos usar suele ser <strong>localhost</strong>, pero en nuestro caso, al utilizar Docker será el nombre de la imagen <span class="warning"><strong><em>mysql:8.0</em></strong></span> que aparece al dejar el ratón encima en el Visual Studio Code</p>
+<p><code>servidor</code>: El servidor donde se encuentra la base de datos que queremos usar suele ser <strong>localhost</strong>, pero en nuestro caso, al utilizar Docker será el nombre de la imagen <strong>mysql:8.0</strong> que aparece al dejar el ratón encima en el Visual Studio Code</p>
 </li>
 <li>
 <p><code>usuarioDB</code>: El usuario de la base de datos</p>
@@ -3808,47 +3806,43 @@
 <li><code>passwordDB</code>: La contraseña para ese usuario de la base de datos</li>
 <li><code>baseDeDatos</code>: Nombre de la base de datos que queramos usar</li>
 </ul>
-<p>Si todo ha salido bien habréis visto un mensaje diciendo <span class="success"><strong><em>Bienvenid@ a MySQL !!</em></strong></span></p>
 <h2 id="recuperando-datos-de-una-bd">Recuperando datos de una BD<a class="headerlink" href="#recuperando-datos-de-una-bd" title="Permanent link">&para;</a></h2>
 <p>Ahora que ya sabemos cómo conectarnos a una base de datos alojada en nuestro servidor, lo que necesitamos saber es cómo recuperar datos almacenados en la base de datos.</p>
 <p>Durante la instalación de la imagen de Docker, se ha creado una tabla llamada <strong>Pruebas</strong> que contiene varios registros de distintas personas.</p>
 <p>Vamos a recuperar esos datos para ver de qué forma se hace con PHP.</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="c1">// ▒▒▒▒▒▒▒▒ pruebas.php ▒▒▒▒▒▒▒▒</span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="s2">&quot;d939ebf6a741&quot;</span><span class="p">,</span> <span class="s2">&quot;lupa&quot;</span><span class="p">,</span> <span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="s2">&quot;pruebas&quot;</span><span class="p">);</span>
-</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="c1">// COMPROBAMOS LA CONEXIÓN</span>
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">mysqli_connect_errno</span><span class="p">())</span> <span class="p">{</span>
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="k">echo</span> <span class="s2">&quot;Failed to connect to MySQL: &quot;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">();</span>
-</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>        <span class="k">exit</span><span class="p">();</span>
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>
-</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>
-</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>    <span class="c1">// CONSULTA A LA BASE DE DATOS</span>
-</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span>    <span class="nv">$consulta</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM `Person`&quot;</span><span class="p">;</span>
-</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>    <span class="nv">$listaUsuarios</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$conexion</span><span class="p">,</span> <span class="nv">$consulta</span><span class="p">);</span>
-</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span>
-</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span>    <span class="c1">// COMPROBAMOS SI EL SERVIDOR NOS HA DEVUELTO RESULTADOS</span>
-</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span>    <span class="k">if</span><span class="p">(</span><span class="nv">$listaUsuarios</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span>
-</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span>        <span class="c1">// RECORREMOS CADA RESULTADO QUE NOS DEVUELVE EL SERVIDOR</span>
-</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$listaUsuarios</span> <span class="k">as</span> <span class="nv">$usuario</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-1-21"><span class="linenos" data-linenos="21 "></span>            <span class="k">echo</span> <span class="s2">&quot;</span>
-</span><span id="__span-1-22"><span class="linenos" data-linenos="22 "></span><span class="s2">                </span><span class="si">$usuario[id]</span>
-</span><span id="__span-1-23"><span class="linenos" data-linenos="23 "></span><span class="s2">                </span><span class="si">$usuario[name]</span>
-</span><span id="__span-1-24"><span class="linenos" data-linenos="24 "></span><span class="s2">                &lt;br&gt;</span>
-</span><span id="__span-1-25"><span class="linenos" data-linenos="25 "></span><span class="s2">            &quot;</span><span class="p">;</span>
-</span><span id="__span-1-26"><span class="linenos" data-linenos="26 "></span>        <span class="p">}</span>
-</span><span id="__span-1-27"><span class="linenos" data-linenos="27 "></span>    <span class="p">}</span>
-</span><span id="__span-1-28"><span class="linenos" data-linenos="28 "></span><span class="cp">?&gt;</span>
+<div class="language-php highlight"><span class="filename">pruebasMsyQLi.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-1-3"><span class="hll"><span class="linenos" data-linenos=" 3 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="s2">&quot;d939ebf6a741&quot;</span><span class="p">,</span> <span class="s2">&quot;lupa&quot;</span><span class="p">,</span> <span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="s2">&quot;pruebas&quot;</span><span class="p">);</span>
+</span></span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="c1">// COMPROBAMOS LA CONEXIÓN</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">mysqli_connect_errno</span><span class="p">())</span> <span class="p">{</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>        <span class="k">echo</span> <span class="s2">&quot;Failed to connect to MySQL: &quot;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">();</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>        <span class="k">exit</span><span class="p">();</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="p">}</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span>    <span class="c1">// CONSULTA A LA BASE DE DATOS</span>
+</span><span id="__span-1-12"><span class="hll"><span class="linenos" data-linenos="12 "></span>    <span class="nv">$consulta</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM `Person`&quot;</span><span class="p">;</span>
+</span></span><span id="__span-1-13"><span class="hll"><span class="linenos" data-linenos="13 "></span>    <span class="nv">$listaUsuarios</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$conexion</span><span class="p">,</span> <span class="nv">$consulta</span><span class="p">);</span>
+</span></span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span>    <span class="c1">// COMPROBAMOS SI EL SERVIDOR NOS HA DEVUELTO RESULTADOS</span>
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span>    <span class="k">if</span><span class="p">(</span><span class="nv">$listaUsuarios</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span>
+</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span>        <span class="c1">// RECORREMOS CADA RESULTADO QUE NOS DEVUELVE EL SERVIDOR</span>
+</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$listaUsuarios</span> <span class="k">as</span> <span class="nv">$usuario</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span>            <span class="k">echo</span> <span class="s2">&quot;</span>
+</span><span id="__span-1-21"><span class="linenos" data-linenos="21 "></span><span class="s2">                </span><span class="si">$usuario[id]</span>
+</span><span id="__span-1-22"><span class="linenos" data-linenos="22 "></span><span class="s2">                </span><span class="si">$usuario[name]</span>
+</span><span id="__span-1-23"><span class="linenos" data-linenos="23 "></span><span class="s2">                &lt;br&gt;</span>
+</span><span id="__span-1-24"><span class="linenos" data-linenos="24 "></span><span class="s2">            &quot;</span><span class="p">;</span>
+</span><span id="__span-1-25"><span class="linenos" data-linenos="25 "></span>        <span class="p">}</span>
+</span><span id="__span-1-26"><span class="linenos" data-linenos="26 "></span>    <span class="p">}</span>
+</span><span id="__span-1-27"><span class="linenos" data-linenos="27 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <p>Si todo ha salido bien, por pantalla verás el siguiente listado</p>
-<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>▒▒▒▒▒▒▒▒ http://localhost/pruebas.php ▒▒▒▒▒▒▒▒
-<span class="linenos" data-linenos="2 "></span>
-<span class="linenos" data-linenos="3 "></span>1 William
-<span class="linenos" data-linenos="4 "></span>2 Marc
-<span class="linenos" data-linenos="5 "></span>3 John
-<span class="linenos" data-linenos="6 "></span>4 Antonio Moreno
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>1 William
+<span class="linenos" data-linenos="2 "></span>2 Marc
+<span class="linenos" data-linenos="3 "></span>3 John
+<span class="linenos" data-linenos="4 "></span>4 Antonio Moreno
 </code></pre></div>
 <h2 id="flujo-de-trabajo">Flujo de trabajo<a class="headerlink" href="#flujo-de-trabajo" title="Permanent link">&para;</a></h2>
 <h3 id="definir-los-parametros-de-la-cadena-de-conexion">Definir los parámetros de la cadena de conexión<a class="headerlink" href="#definir-los-parametros-de-la-cadena-de-conexion" title="Permanent link">&para;</a></h3>
@@ -3860,7 +3854,7 @@
 <h3 id="cerrar-la-conexion">Cerrar la conexión<a class="headerlink" href="#cerrar-la-conexion" title="Permanent link">&para;</a></h3>
 <p>Una vez que hayamos terminado de realizar todas las operaciones necesarias en la base de datos, es importante cerrar la conexión para liberar los recursos del servidor MySQL y mejorar el rendimiento.</p>
 <h3 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<div class="language-php highlight"><span class="filename">pruebasMsyQLi.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="nv">$servername</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
 </span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="nv">$username</span> <span class="o">=</span> <span class="s2">&quot;usuario&quot;</span><span class="p">;</span>
 </span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="nv">$password</span> <span class="o">=</span> <span class="s2">&quot;contraseña&quot;</span><span class="p">;</span>
@@ -3879,19 +3873,19 @@
 </span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span>
 </span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span><span class="c1">// Realizar acciones pertinentes</span>
 </span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span>
-</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span><span class="nx">mysqli_close</span><span class="p">(</span><span class="nv">$conn</span><span class="p">);</span>
-</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span><span class="cp">?&gt;</span>
+</span><span id="__span-2-20"><span class="hll"><span class="linenos" data-linenos="20 "></span><span class="nx">mysqli_close</span><span class="p">(</span><span class="nv">$conn</span><span class="p">);</span>
+</span></span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>AC610</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una nueva base de datos con el nombre <code>lol</code> y cotejamiento de datos <code>utf8mb4_unicode_ci</code>. En nuestra base de datos <code>lol</code>,  vamos a crear la tabla <code>campeon</code> con los siguientes campos.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 612</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una nueva base de datos con el nombre <code>lol</code> y cotejamiento de datos <code>utf8mb4_unicode_ci</code>. En nuestra base de datos <code>lol</code>,  vamos a crear la tabla <code>campeon</code> con los siguientes campos.</p>
 <ul>
-<li>id [*]</li>
-<li>nombre</li>
-<li>rol</li>
-<li>dificultad</li>
-<li>descripcion</li>
+<li><code>id</code> [*]</li>
+<li><code>nombre</code></li>
+<li><code>rol</code></li>
+<li><code>dificultad</code></li>
+<li><code>descripcion</code></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Recordatorio</p>
@@ -3903,20 +3897,20 @@
 </div>
 </li>
 <li>
-<p><strong>AC611</strong> (<abbr title="Actividades de refuerzo.">AR</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Rellena la tabla <code>campeon</code> con, al menos 5 registros, con los datos que tú quieras o si lo prefieres, puedes basarte en la <a href="https://www.leagueoflegends.com/es-es/champions">página oficial del juego</a>.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 613</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Rellena la tabla <code>campeon</code> con, al menos 5 registros, con los datos que tú quieras o si lo prefieres, puedes basarte en la <a href="https://www.leagueoflegends.com/es-es/champions">página oficial del juego</a>.</p>
 </li>
 <li>
-<p><strong>AC612</strong> (<abbr title="Actividades de enseñanza-aprendizaje">AEA</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una aplicación donde listes todos los campeones del LOL que has metido en tu base de datos. Acuérdate que para ello deberás hacer una conexión con la base de datos y un <code>foreach</code> para cada campeón que tengas albergado en la tabla <code>campeon</code>.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 614</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una aplicación donde se listen todos los campeones del <em>LOL<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></em> que has metido en tu base de datos. </p>
 </li>
 <li>
-<p><strong>AC613</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 5p) - Modifica el archivo creado en AC612 pero pon al lado de cada uno de los campeones listados un botón para <code>editar</code> y otro para <code>borrar</code>. Cada uno de esos botones hará la correspondiente función dependiendo del <code>id</code> del campeón seleccionado.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 615</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 5p) - Modifica el archivo creado en <strong><abbr title="Actividades de clase">AC</abbr> 614</strong> pero pon al lado de cada uno de los campeones listados un botón para <code>editar</code> y otro para <code>borrar</code>. Cada uno de esos botones hará la correspondiente función dependiendo del <code>id</code> del campeón seleccionado.</p>
 <ul>
 <li>Al pinchar en editar, el usuario será redirigido a un archivo donde mostrará un formulario con los campos rellenos por los datos del campeón seleccionado. Al darle al botón de <code>guardar</code> los datos se guardarán en la base de datos y el usuario será redirigido a la lista de campeones para poder ver los cambios.</li>
 <li>Al pinchar en borrar, el usuario será preguntado a través de un mensaje de JavaScript (prompt) si está seguro de que quiere borrar al campeón seleccionado. En el mensaje de confirmación debe aparecer el <strong>nombre del campeón seleccionado</strong>. Si el usuario pincha en <code>Aceptar</code> el campeón será eliminado de la base de datos y el usuario será redirigido nuevamente al listado de campeones para comprobar que, efectivamente dicho campeón se ha eliminado de la lista.</li>
 </ul>
 </li>
 <li>
-<p><strong>PR603</strong> (SA). (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 5p) - Realiza una aplicación que te permita recuperar los datos del e-commerce. Para ello deberás mostrar en una tabla los productos que tiene y a su lado el botón de añadir al carrito. Además, tienes que dar la posibilidad de ver tu carrito y de finalizar el pedido. Todo tiene que quedar reflejado en la base de datos que creaste en PR602.</p>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 616</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Realiza una aplicación que te permita recuperar los datos del e-commerce. Para ello deberás mostrar en una tabla los productos que tiene y a su lado el botón de añadir al carrito. Además, tienes que dar la posibilidad de ver tu carrito y de finalizar el pedido. Todo tiene que quedar reflejado en la base de datos que creaste en <a href="064_CRUD.html#actividades"><abbr title="Proyecto">PR</abbr> 611</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Recordatorio</p>
 <p>Si durante el proceso te das cuenta que necesitas modificar tu base de datos, hazla. Puede que durante su diseño no tuvieras en cuenta ciertos aspectos que ahora te hacen falta, si lo haces documéntalo.</p>
@@ -3928,6 +3922,14 @@
 <!-- Instrumentos de Calificación -->
 <!-- Tipo de actividades -->
 <!-- Otras abreviaciones -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Siglas del popular videojuego <a href="https://www.leagueoflegends.com/">League of Legends</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
