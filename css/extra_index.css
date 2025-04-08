@@ -49,6 +49,7 @@
 
 #mapa-general  #body-ut-head > p:last-child, #mapa-general  #body-ut-head > p:nth-child(11) {
     width: 10.5%;
+    min-width: 10.5%;
 }
 
 #mapa-general  #body-ut-head > p:first-child {
@@ -123,8 +124,8 @@
     width: 79%;
 }
 #rraa-uutt .body-ut > p, #rraa-uutt #body-ut-head p {
-    min-width: 7%;
-    width: 7%;
+    min-width: 8%;
+    width: 8%;
 }
 #rraa-uutt .body-ut  p:last-child, #rraa-uutt .body-ut  p:nth-child(12), #rraa-uutt #body-ut-head  p:last-child, #rraa-uutt #body-ut-head  p:nth-child(12)  {
     min-width: 10.5%;
@@ -133,11 +134,30 @@
 
 
 #rraa-uutt .body-ut > p:first-child, #rraa-uutt #body-ut-head > p:first-child{
-    width: 10%;
-    min-width: 10%;
+    width: 7%;
+    min-width: 7%;
     text-align: center;
 }
 
 #rraa-uutt .body-ut > p:first-child{
     padding-left: 0;
+}
+.group_UP{
+    display: flex;
+}
+.title_UP{
+    width: 79%;
+    text-align: left;
+}
+.weight_UP{
+    width: 10.5%;
+}
+
+#body-ut-div p.title_UP{
+    padding-left: 10px;
+}
+
+#rraa-uutt .body-ut > p:nth-child(11),#rraa-uutt .body-ut > p:nth-child(12){
+    min-width: 10.5%;
+    width: 10.5%;
 }
