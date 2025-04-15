@@ -149,6 +149,9 @@
     width: 79%;
     text-align: left;
 }
+.title_UP a{
+    color: #fff;
+}
 .weight_UP{
     width: 10.5%;
 }
