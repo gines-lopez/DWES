@@ -1661,7 +1661,7 @@
         
   
   <span class="md-ellipsis">
-    4.4- Gestión de estados
+    4.4- Gestión del estado
     
   </span>
   
@@ -3797,7 +3797,7 @@
 <p>A la hora de enviar un formulario, debemos tener claro cuándo usar GET o POST.</p>
 <ul>
 <li>
-<p>GET: los parámetros se pasan en la URL</p>
+<p><code>GET</code>: los parámetros se pasan en la URL</p>
 <ul>
 <li>Máximo de 2048 caracteres y solo en ASCII.</li>
 <li>Permite almacenar la dirección completa en el marcador o historial.</li>
@@ -3806,7 +3806,7 @@
 </ul>
 </li>
 <li>
-<p>POST: los parámetros se envían de manera oculta (aunque no encriptada).</p>
+<p><code>POST</code>: los parámetros se envían de manera oculta (aunque no encriptada).</p>
 <ul>
 <li>Sin límite de datos, permite datos binarios.</li>
 <li>No se puede almacenar en caché.</li>
@@ -3816,12 +3816,12 @@
 </ul>
 <p>Para recoger los datos, accedemos al array adecuado dependiendo del método del formulario:</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]</span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro_get&quot;</span><span class="p">]</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="nv">$par</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;parametro_post&quot;</span><span class="p">]</span>
 </span></code></pre></div>
 <p>Para los siguientes apartados, utilizaremos el siguiente ejemplo de formulario:</p>
-<div class="language-html highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;formulario.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;GET&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Nombre del alumno:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<div class="language-html highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-1-1"><span class="hll"><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;formulario.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;GET&quot;</span><span class="p">&gt;</span>
+</span></span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Nombre del alumno:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 </span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
 </span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>
@@ -3843,8 +3843,8 @@
 <li>En el servidor, antes de procesar la lógica de negocio, conviene volver a validar los datos para seguridad.</li>
 </ul>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">]))</span> <span class="p">{</span>
-</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span>    <span class="nv">$par </span><span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro&quot;</span><span class="p">];</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro_get&quot;</span><span class="p">]))</span> <span class="p">{</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span>    <span class="nv">$par </span><span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;parametro_get&quot;</span><span class="p">];</span>
 </span><span id="__span-2-4"><span class="linenos" data-linenos="4 "></span>    <span class="c1">// comprobar si $par tiene el formato adecuado, su valor, etc...</span>
 </span><span id="__span-2-5"><span class="linenos" data-linenos="5 "></span><span class="p">}</span>
 </span></code></pre></div>
@@ -3887,20 +3887,39 @@
 </span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span>  <span class="cp">?&gt;</span>
 </span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;PHP_SELF&#39;</span><span class="p">];</span><span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span>   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Nombre del alumno:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$nombre</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="p">/&gt;</span> 
-</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>   <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-5-11"><span class="hll"><span class="linenos" data-linenos="11 "></span>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$nombre</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="p">/&gt;</span> 
+</span></span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>   <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span>   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;modulos[]&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;modulosDWES&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;DWES&quot;</span>
-</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span>    <span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;DWES&quot;</span><span class="p">,</span><span class="nv">$modulos</span><span class="p">))</span> <span class="k">echo</span> <span class="s1">&#39;checked=&quot;checked&quot;&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span> <span class="p">/&gt;</span>
-</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span>    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;modulosDWES&quot;</span><span class="p">&gt;</span>Desarrollo web en entorno servidor<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-5-14"><span class="hll"><span class="linenos" data-linenos="14 "></span>    <span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;DWES&quot;</span><span class="p">,</span><span class="nv">$modulos</span><span class="p">))</span> <span class="k">echo</span> <span class="s1">&#39;checked=&quot;checked&quot;&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span> <span class="p">/&gt;</span>
+</span></span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span>    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;modulosDWES&quot;</span><span class="p">&gt;</span>Desarrollo web en entorno servidor<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 </span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span>   <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span><span id="__span-5-17"><span class="linenos" data-linenos="17 "></span>   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;modulos[]&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;modulosDWEC&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;DWEC&quot;</span>
-</span><span id="__span-5-18"><span class="linenos" data-linenos="18 "></span>    <span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;DWEC&quot;</span><span class="p">,</span><span class="nv">$modulos</span><span class="p">))</span> <span class="k">echo</span> <span class="s1">&#39;checked=&quot;checked&quot;&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span> <span class="p">/&gt;</span>
-</span><span id="__span-5-19"><span class="linenos" data-linenos="19 "></span>    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;modulosDWEC&quot;</span><span class="p">&gt;</span>Desarrollo web en entorno cliente<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-5-18"><span class="hll"><span class="linenos" data-linenos="18 "></span>    <span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;DWEC&quot;</span><span class="p">,</span><span class="nv">$modulos</span><span class="p">))</span> <span class="k">echo</span> <span class="s1">&#39;checked=&quot;checked&quot;&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span> <span class="p">/&gt;</span>
+</span></span><span id="__span-5-19"><span class="linenos" data-linenos="19 "></span>    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;modulosDWEC&quot;</span><span class="p">&gt;</span>Desarrollo web en entorno cliente<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 </span><span id="__span-5-20"><span class="linenos" data-linenos="20 "></span>   <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span><span id="__span-5-21"><span class="linenos" data-linenos="21 "></span>   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;enviar&quot;</span><span class="p">/&gt;</span>
 </span><span id="__span-5-22"><span class="linenos" data-linenos="22 "></span>  <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </span><span id="__span-5-23"><span class="linenos" data-linenos="23 "></span><span class="cp">&lt;?php</span> <span class="p">}</span> <span class="cp">?&gt;</span>
 </span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Formulario</label><label for="__tabbed_1_2">Datos correctos</label><label for="__tabbed_1_3">Si no selecciono módulo y doy a enviar</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="span">
+<a class="glightbox" href="../../img/ut04/04_Formulario_01.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Formulario" src="../../img/ut04/04_Formulario_01.png" width="300" /></a>
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="span">
+<a class="glightbox" href="../../img/ut04/04_Formulario_02.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Formulario" src="../../img/ut04/04_Formulario_02.png" width="300" /></a>
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="span">
+<a class="glightbox" href="../../img/ut04/04_Formulario_03.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Formulario" src="../../img/ut04/04_Formulario_03.png" width="300" /></a>
+</figure></p>
+</div>
+</div>
+</div>
 <h2 id="subiendo-archivos">Subiendo archivos<a class="headerlink" href="#subiendo-archivos" title="Permanent link">&para;</a></h2>
 <p>Los archivos subidos se almacenan en el servidor en el array <code>$_FILES</code> , en la clave correspondiente al campo de tipo <code>file</code> del formulario.</p>
 <div class="language-html highlight"><span class="filename">formulario.php</span><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&quot;multipart/form-data&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&lt;?php echo $_SERVER[&#39;PHP_SELF&#39;]; ?&gt;&quot;</span>  <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
@@ -3943,33 +3962,28 @@
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong>AC4 02</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Utilizando el paso por parámetros <code>GET</code>, se solicita la creación de un formulario con los siguientes campos:</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 402</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Utilizando el paso por parámetros <code>GET</code>, se solicita la creación de un formulario con los siguientes campos:</p>
 <ul>
 <li>Nombre y apellidos.</li>
 <li>Email.</li>
 <li>URL página personal.</li>
-<li>Sexo (radio).</li>
+<li>Sexo (<em>radio</em>).</li>
 <li>Número de convivientes en el domicilio.</li>
-<li>Aficiones (checkboxes) – poner mínimo 4 valores.</li>
-<li>Menú favorito (lista selección múltiple) – poner mínimo 4 valores.</li>
+<li>Aficiones (<em>checkboxes</em>) – poner mínimo 4 valores.</li>
+<li>Menú favorito (<em>lista selección múltiple</em>) – poner mínimo 4 valores.</li>
 </ul>
-<p>Los valores han de ser mostrados en una tabla-resumen.</p>
+<p>Se han de formatear los valores obtenidos en una tabla-resumen.</p>
 </li>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong>AC4 03</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Utilizando el paso por parámetros <code>POST</code>, se solicita la creación de un formulario con los siguientes campos:</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 403</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Utilizando el paso por parámetros <code>POST</code>, duplica la <strong><abbr title="Actividades de clase">AC</abbr> 402</strong> y realiza las siguientes acciones:</p>
 <ul>
-<li>Nombre y apellidos.</li>
-<li>Email.</li>
-<li>URL página personal.</li>
-<li>Sexo (radio).</li>
-<li>Número de convivientes en el domicilio.</li>
-<li>Aficiones (checkboxes) – poner mínimo 4 valores.</li>
-<li>Menú favorito (lista selección múltiple) – poner mínimo 4 valores.</li>
+<li>Elimina la URL de la página personal y los convivientes en el domicilio.</li>
+<li>Añade los cubiertos que necesita el usuario.</li>
 </ul>
-<p>Los valores han de ser mostrados en una tabla-resumen.</p>
+<p>Se han de formatear los valores obtenidos en una tabla-resumen.</p>
 </li>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 404</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Una vez que se ha trabajado con formularios, un compañero solicita que, a partir del formulario anterior, se introduzcan validaciones en HTML mediante el atributo required de los campos (uso los tipos adecuados para cada campo), y se compruebe los tipos de los datos y que cumplen los valores esperados (por ejemplo, en los checkboxes que los valores recogidos forman parte de todos los posibles). Se puede probar a pasar datos erróneos via URL y comprobar su comportamiento.</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 404</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Una vez que se ha trabajado con formularios, un compañero solicita que, a partir del formulario anterior, se introduzcan validaciones en HTML mediante el atributo <code>required</code> de los campos (uso los tipos adecuados para cada campo), y se compruebe los tipos de los datos y que cumplen los valores esperados (por ejemplo, en los checkboxes que los valores recogidos forman parte de todos los posibles). Se puede probar a pasar datos erróneos via URL y comprobar su comportamiento.</p>
 <div class="admonition tip">
 <p class="admonition-title">Ayuda</p>
 <p>Investiga el uso de la función <code>filter_var</code>.</p>
@@ -3979,7 +3993,7 @@
 <p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 405</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - El CTO solicita crear un formulario que permita subir un archivo al servidor para una futura implementación del proyecto. Además del fichero, se debe solicitar en el mismo formulario dos campos numéricos que soliciten la anchura y la altura. Se solicita la comprobación de que tanto el fichero como los datos llegan correctamente.</p>
 </li>
 <li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 406</strong> (<abbr title="Actividades de profundización.">AP</abbr>). (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Ahora, se solicita una modificación sobre el ejercicio anterior para que únicamente se permita subir imágenes. Si el usuario selecciona otro tipo de archivos, se le debe informar del error y permitir que suba un nuevo archivo. En el caso de subir el tipo correcto, visualizar la imagen con el tamaño de anchura y altura recibido como parámetro.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 406</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Ahora, se solicita una modificación sobre el ejercicio anterior para que únicamente se permita subir imágenes. Si el usuario selecciona otro tipo de archivos, se le debe informar del error y permitir que suba un nuevo archivo. En el caso de subir el tipo correcto, visualizar la imagen con el tamaño de anchura y altura recibido como parámetro.</p>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

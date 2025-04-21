@@ -1575,7 +1575,7 @@
         
   
   <span class="md-ellipsis">
-    4.4- Gestión de estados
+    4.4- Gestión del estado
     
   </span>
   
@@ -3790,14 +3790,14 @@
 
 
 
-<h1 id="seguridad-en-el-desarrollo-de-aplicaciones-php">Seguridad en el Desarrollo de Aplicaciones <abbr title="Hypertext Preprocessor">PHP</abbr><a class="headerlink" href="#seguridad-en-el-desarrollo-de-aplicaciones-php" title="Permanent link">&para;</a></h1>
+<h1 id="seguridad-en-el-desarrollo-de-aplicaciones-php">Seguridad en el desarrollo de aplicaciones <abbr title="Hypertext Preprocessor">PHP</abbr><a class="headerlink" href="#seguridad-en-el-desarrollo-de-aplicaciones-php" title="Permanent link">&para;</a></h1>
 <p>La seguridad en aplicaciones web va mucho más allá de asegurar que las contraseñas sean fuertes. En este apartado, abordamos cómo mejorar la seguridad tanto del lado del cliente como del servidor, mediante la validación y limpieza de datos, además de técnicas para el manejo seguro de contraseñas.</p>
 <h2 id="mejor-prevenir-que-curar-en-cliente-y-en-servidor">Mejor prevenir que curar (en cliente y en servidor)<a class="headerlink" href="#mejor-prevenir-que-curar-en-cliente-y-en-servidor" title="Permanent link">&para;</a></h2>
 <h3 id="validacion-asegurarse-de-que-los-datos-sean-validos">Validación: asegurarse de que los datos sean válidos<a class="headerlink" href="#validacion-asegurarse-de-que-los-datos-sean-validos" title="Permanent link">&para;</a></h3>
 <p>Es fundamental validar los datos ingresados por el usuario para evitar que sean incorrectos o malintencionados. La validación de datos ayuda a prevenir una serie de ataques, como la inyección de SQL o la inyección de scripts.</p>
 <ul>
 <li>
-<p>Usar expresiones regulares para validar: Las expresiones regulares son muy útiles para asegurarse de que los datos cumplan con un formato específico, como un correo electrónico, un nombre o un número de teléfono. Función <abbr title="Hypertext Preprocessor">PHP</abbr> relevante: </p>
+<p>Usar expresiones regulares para validar: Las expresiones regulares, estudiadas en el módulo profesional de Programación, son muy útiles para asegurarse de que los datos cumplan con un formato específico, como un correo electrónico, un nombre o un número de teléfono. Función <abbr title="Hypertext Preprocessor">PHP</abbr> relevante: </p>
 <ul>
 <li>
 <p><code>preg_match</code>: verifica si una cadena cumple con el patrón definido en la expresión regular.</p>
@@ -3828,23 +3828,30 @@
 <li>
 <p>Uso de funciones de filtrado para cualquier variable: Aplicar filtros a las variables antes de procesarlas es otra técnica de seguridad importante. Estas funciones permiten asegurarse de que los datos son del tipo esperado y cumplen con los requisitos establecidos. Función <abbr title="Hypertext Preprocessor">PHP</abbr> relevante: </p>
 <ul>
-<li><code>filter_var</code>: filtra y valida una variable. Dependiendo del filtro elegido, puede sanitizar o validar datos.
-    <div class="language-php highlight"><span class="filename">Ejemplo de sanitización de un correo electrónico:</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_email = filter_var($email, FILTER_SANITIZE_EMAIL);</span>
+<li>
+<p><code>filter_var</code>: filtra y valida una variable. Dependiendo del filtro elegido, puede sanitizar o validar datos.</p>
+<div class="admonition info">
+<p class="admonition-title">Sanitizar</p>
+<p>En informática, <strong>sanitizar</strong> significa <strong>limpiar o filtrar datos de entrada</strong> para asegurarse de que no contengan elementos maliciosos o inesperados. Este proceso es esencial para evitar vulnerabilidades como <strong>inyecciones SQL, cross-site scripting (XSS)</strong> u otros ataques que pueden comprometer la seguridad de una aplicación.</p>
+<p>Por ejemplo, si un usuario introduce código malicioso en un formulario web, al sanitizar ese dato se eliminan o neutralizan los caracteres peligrosos antes de procesarlos o almacenarlos. De esta forma, se protegen tanto los sistemas como los datos de otros usuarios.</p>
+</div>
+<p><div class="language-php highlight"><span class="filename">Ejemplo de sanitización de un correo electrónico:</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">$clean_email = filter_var($email, FILTER_SANITIZE_EMAIL);</span>
 </span></code></pre></div>
-    <div class="language-php highlight"><span class="filename">Ejemplo de validación de un número de edad en un rango específico</span><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="x">$options = array(</span>
+<div class="language-php highlight"><span class="filename">Ejemplo de validación de un número de edad en un rango específico</span><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="x">$options = array(</span>
 </span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="x">    &#39;options&#39; =&gt; array(</span>
 </span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span><span class="x">        &#39;min_range&#39; =&gt; 1,</span>
 </span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span><span class="x">        &#39;max_range&#39; =&gt; 18</span>
 </span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span><span class="x">    )</span>
 </span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span><span class="x">);</span>
 </span><span id="__span-4-7"><span class="linenos" data-linenos="7 "></span><span class="x">$age = filter_var($age, FILTER_VALIDATE_INT, $options);</span>
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
 <ul>
-<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 417</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.">CE4a</abbr> <abbr title="Se han utilizado sesiones para mantener el estado de las aplicaciones Web.">CE4b</abbr> <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica la actividad <a href="045_AutentificacionUsuarios.html#actividades"><strong>AC414</strong></a> para que el acceso sea seguro.</li>
+<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 417</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> / <abbr title="Se han utilizado mecanismos para almacenar información en el cliente web y para recuperar su contenido.">CE4c</abbr> <abbr title="Se han identificado y caracterizado los mecanismos disponibles para la autentificación de usuarios">CE4d</abbr> <abbr title="Se han escrito aplicaciones que integren mecanismos de autentificación de usuarios.">CE4e</abbr> <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> <abbr title="Se han identificado las ventajas de separar la lógica de negocio de los aspectos de presentación de la aplicación.">CE5a</abbr> <abbr title="Se han analizado y utilizado mecanismos y frameworks que permiten realizar esta separación y sus características principales.">CE5b</abbr> <abbr title="Se han utilizado formularios generados de forma dinámica para responder a los eventos de la aplicación web.">CE5d</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica la actividad <a href="045_AutentificacionUsuarios.html#actividades"><strong><abbr title="Actividades de clase">AC</abbr> 414</strong></a> para que el acceso sea seguro. Asegúrate de validar y sanitizar correctamente los datos ingresados por el usuario para evitar vulnerabilidades como inyección de código. Escapa las entidades que puedan representar un riesgo y valida si el usuario tiene un correo electrónico asociado. Implementa buenas prácticas de autenticación, aunque el sistema utilice <code>usuario@mail.com/usuario</code> como credenciales válidas.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

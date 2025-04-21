@@ -1573,7 +1573,7 @@
         
   
   <span class="md-ellipsis">
-    4.4- Gestión de estados
+    4.4- Gestión del estado
     
   </span>
   
@@ -3826,7 +3826,7 @@
 
 
 
-<h1 id="composer">Composer<a class="headerlink" href="#composer" title="Permanent link">&para;</a></h1>
+<h1 id="composer"><em>Composer</em><a class="headerlink" href="#composer" title="Permanent link">&para;</a></h1>
 <h2 id="conceptos-previos">Conceptos previos<a class="headerlink" href="#conceptos-previos" title="Permanent link">&para;</a></h2>
 <p><strong>Librería</strong></p>
 <p>Una librería en programación es un conjunto de funciones, métodos o clases preescritas que se pueden utilizar para realizar tareas comunes sin necesidad de reescribir código desde cero. Las librerías están diseñadas para ser reutilizables y para proporcionar una manera de acceder a funcionalidades específicas mediante una API (Interfaz de Programación de Aplicaciones) bien definida. En <abbr title="Hypertext Preprocessor">PHP</abbr>, las librerías pueden incluir operaciones para trabajar con fechas, manipulación de imágenes, operaciones de red, etc.</p>
@@ -3834,15 +3834,15 @@
 <p><strong>Framework</strong></p>
 <p>Un framework, en cambio, ofrece una estructura y un enfoque más amplio que una librería. No sólo proporciona librerías y APIs, sino también un marco de trabajo predefinido para desarrollar aplicaciones. Un framework puede dictar la arquitectura de tu proyecto con patrones de diseño específicos, componentes integrados y convenciones que deben seguirse.</p>
 <p>En <abbr title="Hypertext Preprocessor">PHP</abbr>, frameworks como <em>Laravel</em>, <em>Symfony</em>, y <em>CakePHP</em> ofrecen herramientas y componentes para manejar rutas, solicitudes <abbr title="HyperText Transfer Protocol">HTTP</abbr>, acceso a bases de datos, y más, facilitando el desarrollo de aplicaciones robustas y escalables siguiendo buenas prácticas.</p>
-<h2 id="composer_1">Composer<a class="headerlink" href="#composer_1" title="Permanent link">&para;</a></h2>
+<h2 id="composer_1"><em>Composer</em><a class="headerlink" href="#composer_1" title="Permanent link">&para;</a></h2>
 <p>Herramienta por excelencia en <abbr title="Hypertext Preprocessor">PHP</abbr> para la gestión de librerías y dependencias, que instala y actualiza estas, asegurando que todo el equipo de desarrollo tiene el mismo entorno y versiones. Además, ofrece autoloading de nuestro código, de modo que no tengamos que hacerlo nosotros "a mano".</p>
 <p>Está escrito en <abbr title="Hypertext Preprocessor">PHP</abbr>, y se puede consultar toda su documentación en <a href="https://getcomposer.org/">https://getcomposer.org/</a>.</p>
 <p>Utiliza <a href="https://packagist.org/"><em>Packagist</em></a> como repositorio de librerías.</p>
 <p>Funcionalmente, es similar a Maven (Java) / npm (JS).</p>
-<h3 id="la-necesidad-de-composer">La necesidad de Composer<a class="headerlink" href="#la-necesidad-de-composer" title="Permanent link">&para;</a></h3>
-<p>Con el crecimiento en el uso de librerías y frameworks, surge el problema de gestionar todas estas dependencias de manera eficiente. Aquí es donde entra Composer:</p>
-<p>Composer es un sistema de gestión de dependencias para <abbr title="Hypertext Preprocessor">PHP</abbr> que facilita la instalación y actualización de librerías y frameworks. Permite a los desarrolladores declarar las bibliotecas de las que depende su proyecto y las maneja (instala/actualiza) por ellos. Composer trabaja con "packagist.org", que es el repositorio por defecto para paquetes <abbr title="Hypertext Preprocessor">PHP</abbr>, donde se pueden buscar y descargar las librerías y frameworks necesarios para un proyecto.</p>
-<p>Gracias a Composer, los desarrolladores pueden:</p>
+<h3 id="la-necesidad-de-composer">La necesidad de <em>Composer</em><a class="headerlink" href="#la-necesidad-de-composer" title="Permanent link">&para;</a></h3>
+<p>Con el crecimiento en el uso de librerías y frameworks, surge el problema de gestionar todas estas dependencias de manera eficiente. Aquí es donde entra <em>Composer</em>:</p>
+<p><em>Composer</em> es un sistema de gestión de dependencias para <abbr title="Hypertext Preprocessor">PHP</abbr> que facilita la instalación y actualización de librerías y frameworks. Permite a los desarrolladores declarar las bibliotecas de las que depende su proyecto y las maneja (instala/actualiza) por ellos. <em>Composer</em> trabaja con "packagist.org", que es el repositorio por defecto para paquetes <abbr title="Hypertext Preprocessor">PHP</abbr>, donde se pueden buscar y descargar las librerías y frameworks necesarios para un proyecto.</p>
+<p>Gracias a <em>Composer</em>, los desarrolladores pueden:</p>
 <ul>
 <li>Mantener un control claro de las versiones de las librerías usadas.</li>
 <li>Automatizar la instalación y actualización de dependencias.</li>
@@ -3850,7 +3850,7 @@
 <li>Contribuir a una gestión más profesional y mantenible del código base.</li>
 </ul>
 <h3 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h3>
-<p>Si estamos usando XAMPP, debemos de instalar <em>Composer</em> en el propio sistema operativo. Se recomienda seguir las <a href="https://getcomposer.org/doc/00-intro.md">instrucciones oficiales</a> según el sistema operativo a emplear.</p>
+<p>Si estamos usando XAMPP, debemos instalar <em>Composer</em> en el propio sistema operativo. Se recomienda seguir las <a href="https://getcomposer.org/doc/00-intro.md">instrucciones oficiales</a> según el sistema operativo a emplear.</p>
 <p>En cambio, si usamos <em>Docker</em>, necesitamos modificar la configuración de nuestro contenedor. En nuestro caso, hemos decidido modificar el archivo <code>Dockerfile</code> y añadir el siguiente comando:</p>
 <div class="language-docker highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>composer:2.0<span class="w"> </span>/usr/bin/composer<span class="w"> </span>/usr/local/bin/composer
 </span></code></pre></div>
@@ -3907,7 +3907,7 @@
 <p>Si creamos el archivo <code>composer.json</code> nosotros directamente sin inicializar el repositorio, debemos instalar las dependencias:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>install
 </span></code></pre></div>
-<p>Al hacer este paso (tanto instalar como actualizar), como ya hemos comentado, se descargan las librerías en dentro de la carpeta <code>vendor</code>. Es muy importante añadir esta carpeta al archivo <code>.gitignore</code> para no subirlas a GitHub.</p>
+<p>Al hacer este paso (tanto instalar como actualizar), como ya hemos comentado, se descargan las librerías dentro de la carpeta <code>vendor</code>. Es muy importante añadir esta carpeta al archivo <code>.gitignore</code> para no subirlas a GitHub.</p>
 <p>Además se crea el archivo <code>composer.lock</code>, que almacena la versión exacta que se ha instalado de cada librería (este archivo no se toca).</p>
 <h2 id="autoloadphp"><code>autoload.php</code><a class="headerlink" href="#autoloadphp" title="Permanent link">&para;</a></h2>
 <p><em>Composer</em> crea de forma automática en <code>vendor/autoload.php</code> el código para incluir de forma automática todas las librerías que tengamos configuradas en <code>composer.json</code>.</p>
@@ -3915,7 +3915,7 @@
 <div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span><span class="k">require</span> <span class="s1">&#39;vendor/autoload.php&#39;</span><span class="p">;</span>
 </span></code></pre></div>
-<p>En nuestro caso, de momento sólo lo pondremos en los archivos donde probamos las clases. Si queremos que Composer también se encargue de cargar de forma automática nuestras clases de dominio, dentro del archivo <code>composer.json</code>, definiremos la propiedad <code>autoload</code>:</p>
+<p>En nuestro caso, de momento sólo lo pondremos en los archivos donde probamos las clases. Si queremos que <em>Composer</em> también se encargue de cargar de forma automática nuestras clases de dominio, dentro del archivo <code>composer.json</code>, definiremos la propiedad <code>autoload</code>:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&quot;autoload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nt">&quot;psr-4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Dwes\\&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app/Dwes&quot;</span><span class="p">}</span>
 </span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span><span class="p">},</span>
@@ -3926,10 +3926,10 @@
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 501</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> <abbr title="Desarrolla aplicaciones web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.">RA5</abbr> / <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> <abbr title="Se ha probado y documentado el código.">CE5h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se ha de introducir el uso de Composer para administrar las dependencias de <abbr title="Hypertext Preprocessor">PHP</abbr>. Para ello:</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 501</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> <abbr title="Desarrolla aplicaciones web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.">RA5</abbr> / <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> <abbr title="Se ha probado y documentado el código.">CE5h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Se ha de introducir el uso de <em>Composer</em> para administrar las dependencias de <abbr title="Hypertext Preprocessor">PHP</abbr>. Para ello:</p>
 <ul>
 <li>Crea un nuevo directorio para el proyecto y navega hasta él en la línea de comandos.</li>
-<li>Utiliza Composer para inicializar un nuevo proyecto <abbr title="Hypertext Preprocessor">PHP</abbr> ejecutando el comando composer init. Sigue las instrucciones para completar la configuración básica del proyecto.</li>
+<li>Utiliza <em>Composer</em> para inicializar un nuevo proyecto <abbr title="Hypertext Preprocessor">PHP</abbr> ejecutando el comando <code>composer init</code>. Sigue las instrucciones para completar la configuración básica del proyecto.</li>
 <li>Añade una dependencia simple al proyecto. Por ejemplo, puedes utilizar el paquete <code>monolog/monolog</code> para registrar mensajes de registro.</li>
 <li>Crea un script <abbr title="Hypertext Preprocessor">PHP</abbr> en el proyecto que utilice la funcionalidad proporcionada por la dependencia agregada.</li>
 <li>Ejecuta el script <abbr title="Hypertext Preprocessor">PHP</abbr> y verifica que la dependencia funcione correctamente.</li>
@@ -3938,18 +3938,18 @@
 <li>
 <p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 502</strong>. (<abbr title="Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.">RA4</abbr> <abbr title="Desarrolla aplicaciones web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.">RA5</abbr> / <abbr title="Se han realizado adaptaciones a aplicaciones Web existentes como gestores de contenidos u otras.">CE4f</abbr> <abbr title="Se ha probado y documentado el código.">CE5h</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - A raíz de la actividad <a href="../04_ProgramacionWeb/045_AutentificacionUsuarios.html#actividades"><strong><abbr title="Actividades de clase">AC</abbr> 414</strong></a>, has de realizar la siguiente gestión de dependencias con Composer:</p>
 <ul>
-<li>Utiliza un proyecto <abbr title="Hypertext Preprocessor">PHP</abbr> existente en tu computadora que tenga un archivo composer.json con algunas dependencias predefinidas.</li>
-<li>Analiza detenidamente el archivo composer.json para comprender las dependencias incluidas en el proyecto.</li>
+<li>Utiliza un proyecto <abbr title="Hypertext Preprocessor">PHP</abbr> existente en tu computadora que tenga un archivo <code>composer.json</code> con algunas dependencias predefinidas.</li>
+<li>Analiza detenidamente el archivo <code>composer.json</code> para comprender las dependencias incluidas en el proyecto.</li>
 <li>Realiza al menos dos de las siguientes acciones en el proyecto:<ul>
-<li>Agrega una nueva dependencia al archivo composer.json.</li>
+<li>Agrega una nueva dependencia al archivo <code>composer.json</code>.</li>
 <li>Actualiza una dependencia existente a una versión más reciente.</li>
-<li>Elimina una dependencia del archivo composer.json.</li>
+<li>Elimina una dependencia del archivo <code>composer.json</code>.</li>
 </ul>
 </li>
-<li>Después de realizar los cambios, ejecuta composer install para actualizar las dependencias del proyecto según lo modificado en el archivo composer.json.</li>
+<li>Después de realizar los cambios, ejecuta composer install para actualizar las dependencias del proyecto según lo modificado en el archivo <code>composer.json</code>.</li>
 <li>Una vez actualizadas las dependencias, ejecuta pruebas unitarias si están disponibles en el proyecto para asegurarte de que las modificaciones no hayan introducido errores.</li>
-<li>Documenta los cambios realizados en el archivo composer.json y cualquier problema que hayas encontrado durante el proceso de actualización de dependencias.</li>
-<li>Reflexiona sobre la importancia de utilizar Composer y la gestión adecuada de dependencias en proyectos <abbr title="Hypertext Preprocessor">PHP</abbr>.</li>
+<li>Documenta los cambios realizados en el archivo <code>composer.json</code> y cualquier problema que hayas encontrado durante el proceso de actualización de dependencias.</li>
+<li>Reflexiona sobre la importancia de utilizar <em>Composer</em> y la gestión adecuada de dependencias en proyectos <abbr title="Hypertext Preprocessor">PHP</abbr>.</li>
 </ul>
 </li>
 </ul>
