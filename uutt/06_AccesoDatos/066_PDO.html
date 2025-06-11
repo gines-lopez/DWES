@@ -2417,8 +2417,6 @@
       
         
       
-        
-      
     
     
     
@@ -2456,28 +2454,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3223,11 +3199,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3722,7 +3698,6 @@ En primer lugar, creamos la conexión con la base de datos a través del constru
 </div>
 <h2 id="fichero-de-configuracion-de-la-bd">Fichero de configuración de la BD<a class="headerlink" href="#fichero-de-configuracion-de-la-bd" title="Permanent link">&para;</a></h2>
 <p>De la misma manera que creamos nuestro archivo de funciones <code>funciones-php</code> y albergamos todas las funciones que se usan de manera global en la aplicación, podemos establecer un archivo de constantes donde definamos los parámetros de conexión con la base de datos (en nuestro caso lo vamos a colocar dentro de la carpeta <code>config</code>)</p>
-<p>FIXME: revisar el nombre del archivo y la carpeta donde se almacena</p>
 <div class="language-php highlight"><span class="filename">database.inc.php</span><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>
 </span><span id="__span-2-3"><span class="linenos" data-linenos="3 "></span><span class="nx">constDSN</span> <span class="o">=</span> <span class="s2">&quot;mysql:host=localhost;dbname=dwes&quot;</span><span class="p">;</span>
@@ -3801,8 +3776,7 @@ En primer lugar, creamos la conexión con la base de datos a través del constru
 </span><span id="__span-5-26"><span class="linenos" data-linenos="26 "></span><span class="nv">$conexion</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
 </span></code></pre></div>
 <h2 id="bindparam-vs-bindvalue">bindParam VS bindValue<a class="headerlink" href="#bindparam-vs-bindvalue" title="Permanent link">&para;</a></h2>
-<p>Utilizaremos <code>bindValue()</code> cuando tengamos que insertar datos sólo una vez, en cambio, deberemos usar <code>bindParam()</code> cuando tengamos que pasar datos múltiples, como por ejemplo, un array.</p>
-<p>FIXME: el ejemplo no me queda claro...</p>
+<p>Utilizaremos <code>bindValue()</code> cuando tengamos que insertar datos sólo una vez, en cambio, deberemos usar <code>bindParam()</code> cuando tengamos que pasar datos múltiples, como por ejemplo, un array.  </p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span><span class="c1">// se asignan nombre a los parámetros</span>
 </span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM stock WHERE unidades = :cant&quot;</span><span class="p">;</span>
@@ -3828,10 +3802,8 @@ En primer lugar, creamos la conexión con la base de datos a través del constru
 </span></code></pre></div>
 <p>Para más información y uso de las variables PDO <a href="https://www.php.net/manual/es/pdo.constants.php">consulta el manual de <abbr title="Hypertext Preprocessor">PHP</abbr></a>.</p>
 <h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
-<p>FIXME: Revisar, pq pides que hagan FETCH_ASSOC y no lo has explicado todavía</p>
-<p>FIXME: como ibas a cambiar las actividades de MySQLi te toca revisar estas tb</p>
 <ul>
-<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 614</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Vuelve a realizar las actividades <a href="065_MySQLi.html#actividades"><abbr title="Actividades de clase">AC</abbr> 612-614</a>, cambiando todo el uso de MySQLi por PDO, utilizando <code>PDO::FETCH_ASSOC</code>.</li>
+<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 614</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Vuelve a realizar las actividades <a href="065_MySQLi.html#actividades"><abbr title="Actividades de clase">AC</abbr> 610-613</a>, cambiando todo el uso de MySQLi por PDO.</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

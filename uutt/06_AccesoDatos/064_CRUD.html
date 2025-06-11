@@ -2411,8 +2411,6 @@
       
         
       
-        
-      
     
     
     
@@ -2450,28 +2448,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3217,11 +3193,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3684,67 +3660,103 @@
 
 <h1 id="operaciones-crud">Operaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr><a class="headerlink" href="#operaciones-crud" title="Permanent link">&para;</a></h1>
 <p>El concepto de <strong>operaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr></strong> es fundamental en el desarrollo de aplicaciones que involucran la gestión de datos. <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> es un acrónimo que se refiere a las cuatro funciones básicas que se deben implementar en cualquier sistema de gestión de datos persistente:</p>
+<div class="admonition tip">
+<p class="admonition-title">Uso de comillas en SQL</p>
+<p>En SQL, es importante saber cuándo usar comillas simples y cuándo no:</p>
+<ul>
+<li>Usa <strong>comillas simples <code>'</code></strong> para comparar <strong>valores de texto</strong> (strings).</li>
+<li><strong>No uses comillas dobles</strong> para textos en MySQL, ya que pueden provocar errores o comportamientos inesperados.</li>
+</ul>
+<p>Correcto:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pasajero</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Luis&#39;</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>Incorrecto:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pasajero</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Luis&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">-- Puede fallar en MySQL</span>
+</span></code></pre></div></p>
+<p>También recuerda que los <strong>números no llevan comillas</strong>:</p>
+<p>Correcto:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pasajero</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>Incorrecto
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pasajero</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">&#39;30&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">-- Aunque puede funcionar, no es buena práctica</span>
+</span></code></pre></div></p>
+<p>En resumen:<br />
+- Usa <code>'texto'</code> para valores tipo texto.<br />
+- No pongas comillas para valores numéricos.<br />
+- Evita usar comillas dobles en MySQL.</p>
+</div>
 <h2 id="1-crear-c">1. Crear (C)<a class="headerlink" href="#1-crear-c" title="Permanent link">&para;</a></h2>
 <p>Esta operación se refiere a la capacidad de añadir nuevos registros o datos al sistema. En el contexto de una base de datos, esto se traduce típicamente en insertar nuevas filas en una tabla. Ejemplo en <abbr title="Hypertext Preprocessor">PHP</abbr> utilizando una sentencia SQL <code>INSERT</code>:</p>
-<!--
-FIXME: Comentar en un admonition el uso de comillas simples y dobles...
--->
-
-<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;INSERT INTO usuarios (nombre, email) VALUES (&#39;Juan&#39;, &#39;juan@example.com&#39;)&quot;;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;INSERT INTO usuarios (nombre, email) VALUES (&#39;Juan&#39;, &#39;juan@example.com&#39;)&quot;;</span>
 </span></code></pre></div>
 <p>Este comando añadiría un nuevo usuario con nombre "Juan" y correo electrónico "juan@example.com" a la tabla usuarios.</p>
 <h2 id="2-leer-r">2. Leer (R)<a class="headerlink" href="#2-leer-r" title="Permanent link">&para;</a></h2>
 <p>La operación de lectura permite recuperar datos del sistema. Esto puede ser tan simple como obtener un único valor o tan complejo como ejecutar una consulta que recupere grandes conjuntos de datos basados en criterios específicos. Ejemplo en <abbr title="Hypertext Preprocessor">PHP</abbr> con una sentencia SQL <code>SELECT</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;SELECT * FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;SELECT * FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
 </span></code></pre></div>
 <p>Este comando recuperaría todos los datos de los usuarios cuyo nombre sea "Juan".</p>
 <h2 id="3-actualizar-u">3. Actualizar (U)<a class="headerlink" href="#3-actualizar-u" title="Permanent link">&para;</a></h2>
 <p>Actualizar se refiere a modificar datos existentes en el sistema. Esta operación es crucial para mantener la relevancia y la precisión de la información almacenada. Ejemplo en <abbr title="Hypertext Preprocessor">PHP</abbr> utilizando una sentencia SQL <code>UPDATE</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;UPDATE usuarios SET email = &#39;nuevoemail@example.com&#39; WHERE nombre = &#39;Juan&#39;&quot;;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;UPDATE usuarios SET email = &#39;nuevoemail@example.com&#39; WHERE nombre = &#39;Juan&#39;&quot;;</span>
 </span></code></pre></div>
 <p>Este comando actualizaría el correo electrónico del usuario llamado "Juan" al nuevo valor proporcionado.</p>
 <h2 id="4-borrar-d">4. Borrar (D)<a class="headerlink" href="#4-borrar-d" title="Permanent link">&para;</a></h2>
 <p>La última operación es el borrado de datos. Permite eliminar información innecesaria o desactualizada del sistema. Ejemplo en <abbr title="Hypertext Preprocessor">PHP</abbr> con una sentencia SQL <code>DELETE</code>:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;DELETE FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span><span class="x">$sql = &quot;DELETE FROM usuarios WHERE nombre = &#39;Juan&#39;&quot;;</span>
 </span></code></pre></div>
 <p>Este comando eliminaría de la base de datos todos los registros de los usuarios cuyo nombre sea "Juan".</p>
 <h2 id="implementacion-en-el-desarrollo-web">Implementación en el Desarrollo Web<a class="headerlink" href="#implementacion-en-el-desarrollo-web" title="Permanent link">&para;</a></h2>
 <p>En el desarrollo web, estas operaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> son implementadas a menudo a través de formularios web y APIs que interactúan con la base de datos backend. Cada acción <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> en el <em>frontend</em> (como un formulario de entrada de datos o un botón de eliminar) se traduce en una de estas operaciones en el servidor, asegurando que los datos del usuario se gestionen adecuadamente.</p>
 <p>Además, es esencial implementar medidas de seguridad adecuadas, como la validación de datos y la protección contra inyecciones SQL, para asegurar que las operaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> no se conviertan en un vector de ataques que comprometan la integridad y la seguridad de la aplicación.</p>
-<!--
-FIXME: ¿Qué es inyección SQL? ...
--->
-
+<div class="admonition warning">
+<p class="admonition-title">¿Qué es una inyección SQL?</p>
+<p>La <strong>inyección SQL (SQL Injection)</strong> es una vulnerabilidad de seguridad que ocurre cuando un atacante inserta código SQL malicioso en una consulta a través de entradas no controladas por el usuario.</p>
+<p>Esto puede permitir al atacante:
+- Acceder a datos sensibles (como contraseñas o información personal).
+- Modificar o eliminar registros.
+- Ejecutar comandos peligrosos en la base de datos.</p>
+<p><strong>Ejemplo de mala práctica (vulnerable)</strong>:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;$nombre&#39;</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>Si el valor de <code>$nombre</code> proviene de un formulario sin validar, un atacante podría introducir:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>&#39; OR &#39;1&#39;=&#39;1
+</span></code></pre></div>
+Lo que convertiría la consulta en:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p><strong>Buenas prácticas</strong>:
+- Validar y sanear los datos recibidos desde el frontend.
+- Usar <strong>consultas preparadas</strong> o <strong>ORMs</strong> que previenen la inyección SQL.</p>
+</div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<!--
-FIXME: Demasiadas actividades
-Unir 606 y 607 en una
-Unir 608 y 609 en una
-Dar más peso a PR611, que realmente hace lo mismo que les has pedido hasta ahora.
-
-Me reafirmo... esto son cosas que ya deben saber de BD de primero ... está bien verlas a modo de repaso, pero no como para hacer actividades que sólo hagan SQL contra PHPMyAdmin... puedes bajarle la importancia a estas primeras 4 sesiones, para darselas a las dos siguientes, de manera que todo el CRUD lo realicen directamente con PHP.
-
-Es más, yo pasaría de 8h que llevas hasta ahora para la intro a 4 máxima, y así le puedes dedicar 4h a MySQLi y 4h a PDO.
--->
-
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 606</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una tabla llamada <code>clientes</code> con las siguientes columnas: <code>id</code> (clave primaria autoincremental), <code>nombre</code>, <code>apellido</code>, <code>email</code>, y <code>fecha_registro</code> (tipo fecha). Una vez creada la tabla, inserta cinco registros en la tabla con datos ficticios de clientes.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 606</strong> (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p). Crea y consulta datos de una tabla <code>clientes</code>.</p>
+<ol>
+<li>Crea una tabla llamada <code>clientes</code> con las columnas:
+- <code>id</code> (clave primaria autoincremental)
+- <code>nombre</code>
+- <code>apellido</code>
+- <code>email</code>
+- <code>fecha_registro</code> (tipo <code>DATE</code>)</li>
+<li>Inserta <strong>cinco registros</strong> con datos ficticios.</li>
+<li>Realiza una consulta SQL que muestre todos los campos de todos los clientes.</li>
+<li>Modifica la consulta para que solo muestre los clientes registrados en el <strong>último mes</strong>.</li>
+</ol>
 </li>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 607</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Utiliza la tabla <code>clientes</code> que creaste. Escribe una consulta SQL que muestre todos los campos de todos los clientes. Luego, modifica esta consulta para que solo muestre los clientes que se registraron en el último mes.</p>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 607</strong> . (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Actualiza y elimina registros en la tabla <code>clientes</code>.</p>
+<ol>
+<li>Actualiza el <code>email</code> de un cliente conocido (por su <code>id</code>).</li>
+<li>Elimina un cliente cuyo <code>apellido</code> sea <code>"González"</code>, asegurándote de que la condición se aplique correctamente.</li>
+<li>Escribe las consultas SQL que utilizaste en ambos casos.</li>
+</ol>
 </li>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 608</strong> . (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - En la tabla <code>clientes</code>, actualiza el <code>email</code> de uno de los clientes. Escoge un cliente cuyo <code>id</code> conozcas y cambia su email a uno nuevo. Escribe la consulta SQL que utilizaste para realizar esta actualización.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 608</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una segunda tabla llamada <code>pedidos</code> que incluya las columnas <code>id</code> (clave primaria autoincremental), <code>id_cliente</code> (clave foránea que referencia a <code>clientes.id</code>), <code>producto</code>, <code>cantidad</code> y <code>fecha_pedido</code>. Asegúrate de establecer la relación de clave foránea correctamente. Inserta datos que representen pedidos de los clientes. Después, escribe una consulta SQL para obtener una lista de todos los clientes junto con los detalles de sus pedidos. Utiliza una consulta de unión (<code>JOIN</code>) para combinar datos de ambas tablas.</p>
 </li>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 609</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Escribe una consulta SQL para eliminar un cliente de la tabla <code>clientes</code> cuyo <code>apellido</code> sea "González". Asegúrate de que la consulta solo afecte a los registros que cumplen con esta condición específica.</p>
-</li>
-<li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 610</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una segunda tabla llamada <code>pedidos</code> que incluya las columnas <code>id</code> (clave primaria autoincremental), <code>id_cliente</code> (clave foránea que referencia a <code>clientes.id</code>), <code>producto</code>, <code>cantidad</code> y <code>fecha_pedido</code>. Asegúrate de establecer la relación de clave foránea correctamente. Inserta datos que representen pedidos de los clientes. Después, escribe una consulta SQL para obtener una lista de todos los clientes junto con los detalles de sus pedidos. Utiliza una consulta de unión (<code>JOIN</code>) para combinar datos de ambas tablas.</p>
-</li>
-<li>
-<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 611</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 3p) - El CTO necesita que crees la base de datos del e-commerce, en ella deberás tener, al menos, las tablas <code>carrito</code>, <code>cliente</code>, <code>producto</code> y <code>pedido</code>. Te han aconsejado que documentes el proceso justificando la creación de las tablas que te han pedido.</p>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 609</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - El CTO necesita que crees la base de datos del e-commerce, en ella deberás tener, al menos, las tablas <code>carrito</code>, <code>cliente</code>, <code>producto</code> y <code>pedido</code>. Te han aconsejado que documentes el proceso justificando la creación de las tablas que te han pedido.</p>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

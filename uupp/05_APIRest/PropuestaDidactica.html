@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#propuesta-didactica-up-01-puesta-en-marcha" class="md-skip">
+        <a href="#propuesta-didactica-up-05-api-rest" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -2312,8 +2312,6 @@
       
         
       
-        
-      
     
     
     
@@ -2351,28 +2349,6 @@
   
     <li class="md-nav__item">
       <a href="../../uutt/07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../uutt/restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3221,11 +3197,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3686,78 +3662,80 @@
 
 
 
-<h1 id="propuesta-didactica-up-01-puesta-en-marcha">Propuesta didáctica <abbr title="Unidad de Programación">UP</abbr> 01: Puesta en marcha<a class="headerlink" href="#propuesta-didactica-up-01-puesta-en-marcha" title="Permanent link">&para;</a></h1>
+<h1 id="propuesta-didactica-up-05-api-rest">Propuesta didáctica <abbr title="Unidad de Programación">UP</abbr> 05: API Rest<a class="headerlink" href="#propuesta-didactica-up-05-api-rest" title="Permanent link">&para;</a></h1>
 <h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
-<p>En la presente Unidad de Programación (<abbr title="Unidad de Programación">UP</abbr>) aprenderemos conceptos básicos del desarrollo web. Es esencial comprender los modelos de ejecución de código en el servidor y las herramientas disponibles para la programación en este entorno, lo que permite crear aplicaciones dinámicas y eficientes. Para lograrlo, es fundamental tener clara la diferencia entre cliente y servidor y entender cómo estos interactúan dentro de la arquitectura de una web dinámica. Un enfoque clave en este tipo de arquitectura es el Modelo Vista Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>), que organiza el desarrollo de software en tres componentes, facilitando la separación de la lógica de negocio, la interfaz y el control del flujo de datos.</p>
-<p>Además, configurar correctamente un entorno de trabajo en local es indispensable para simular las condiciones del servidor real, garantizando un desarrollo más eficiente. Las herramientas para la programación web en entorno servidor y la adecuada configuración del entorno local son recursos esenciales que permiten a los desarrolladores ejecutar, depurar y mejorar sus aplicaciones en un entorno controlado antes de desplegarlas en producción.</p>
+<p>La Unidad de Programación "API Rest" tiene como objetivo dotar al alumnado de los conocimientos y habilidades necesarios para diseñar e implementar <strong>interfaces de programación de aplicaciones</strong> (API) siguiendo los principios del estilo arquitectónico REST. A lo largo de esta unidad se abordará el desarrollo de APIs utilizando Laravel 11, desde su configuración inicial hasta la creación de rutas, controladores y respuestas en formato JSON. Se hará especial énfasis en la implementación de operaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> sobre recursos de la base de datos, el uso de métodos personalizados para necesidades específicas del negocio, y la integración de validaciones y excepciones adaptadas al contexto API. El estudiante aprenderá a aplicar prácticas de desarrollo profesional que respetan la <strong>separación de responsabilidades</strong>, el uso eficiente de recursos, y el diseño de sistemas escalables y mantenibles.</p>
+<p>Además, se trabajará la interacción y validación de estas APIs mediante herramientas especializadas como Postman e Insomnia, que permiten probar y depurar endpoints sin necesidad de integrar aún la capa cliente. Asimismo, se introducirá el uso de Laravel Sanctum como sistema de autenticación ligera basada en tokens, esencial para garantizar la seguridad en entornos de producción. Esta unidad también contempla el tratamiento de errores y excepciones desde una perspectiva centrada en la API, asegurando respuestas claras, controladas y consistentes. Con ello, el alumnado estará preparado para diseñar APIs modernas y robustas, capaces de ser consumidas por frontend en JavaScript, aplicaciones móviles o sistemas externos, promoviendo una arquitectura orientada a servicios.</p>
 <h3 id="cuestionario-inicial">Cuestionario inicial<a class="headerlink" href="#cuestionario-inicial" title="Permanent link">&para;</a></h3>
 <details class="question">
 <summary>¡Ponte a prueba!</summary>
 <ol>
-<li>¿Qué define una arquitectura web?<ol>
-<li>El diseño visual de una página web.</li>
-<li>La forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí.</li>
-<li>El tipo de contenido multimedia utilizado.</li>
-<li>La velocidad de carga de la página web​</li>
-</ol>
-</li>
-</ol>
-<details class="abstract">
-<summary>Respuesta correcta</summary>
-<p>Respuesta correcta: b. La forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí.</p>
-</details>
-<ol start="2">
-<li>En una arquitectura cliente-servidor, ¿qué papel suele desempeñar el cliente?<ol>
-<li>Servidor de base de datos.</li>
-<li>Balanceador de carga.</li>
-<li>Navegador web.</li>
-<li>Servidor de aplicaciones​</li>
-</ol>
-</li>
+<li>
+<p>¿Qué comando es necesario ejecutar para publicar el archivo <code>api.php</code> en Laravel 11?  </p>
+<ol>
+<li>php artisan make:api  </li>
+<li>php artisan serve:api  </li>
+<li>php artisan install:api  </li>
+<li>php artisan route:api  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. Navegador web.</p>
+<p>Respuesta correcta: c. php artisan install:api</p>
 </details>
-<ol start="3">
-<li>¿Qué se necesita para generar una página web dinámica?<ol>
-<li>Solo HTML y CSS.</li>
-<li>Lenguaje de servidor y/o servicios REST.</li>
-<li>Únicamente JavaScript.</li>
-<li>Conexión a una red privada virtual (<abbr title="Virtual Private Network">VPN</abbr>)​</li>
-</ol>
 </li>
+<li>
+<p>¿Qué formato devuelve una API REST al cliente, típicamente, cuando se usa Laravel?  </p>
+<ol>
+<li>HTML  </li>
+<li>XML  </li>
+<li>JSON  </li>
+<li>TXT  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: b. Lenguaje de servidor y/o servicios REST.</p>
+<p>Respuesta correcta: c. JSON</p>
 </details>
-<ol start="4">
-<li>¿Qué perfiles de desarrollo se asocian con la generación de páginas dinámicas?<ol>
-<li>Analista de datos y científico de datos.</li>
-<li>Diseñador gráfico y desarrollador de juegos.</li>
-<li>Front-end/cliente y Back-end/servidor.</li>
-<li>Gestor de redes y administrador de sistemas​</li>
-</ol>
 </li>
+<li>
+<p>¿Qué método de Laravel se utiliza para devolver una respuesta en formato JSON desde un controlador?  </p>
+<ol>
+<li><code>echo()</code>  </li>
+<li><code>return view()</code>  </li>
+<li><code>response()-&gt;json()</code>  </li>
+<li><code>return data()</code>  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. Front-end/cliente y Back-end/servidor.</p>
+<p>Respuesta correcta: c. <code>response()-&gt;json()</code></p>
 </details>
-<ol start="5">
-<li>¿Qué representa el "Modelo" en el patrón de diseño Modelo-Vista-Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>)?<ol>
-<li>La interfaz de usuario.</li>
-<li>La lógica de negocio y gestión de eventos.</li>
-<li>La información y gestión de accesos a esta.</li>
-<li>El componente que gestiona las comunicaciones y eventos​</li>
-</ol>
 </li>
+<li>
+<p>¿Dónde se deben registrar las rutas de una API en un proyecto Laravel?  </p>
+<ol>
+<li>routes/web.php  </li>
+<li>app/Providers/RouteServiceProvider.php  </li>
+<li>public/index.php  </li>
+<li>routes/api.php  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. La información y gestión de accesos a esta.</p>
+<p>Respuesta correcta: d. routes/api.php</p>
 </details>
+</li>
+<li>
+<p>¿Cuál es el propósito principal de herramientas como Postman o Insomnia en el desarrollo de APIs?  </p>
+<ol>
+<li>Diseñar la base de datos  </li>
+<li>Validar formularios HTML  </li>
+<li>Probar y depurar endpoints de una API  </li>
+<li>Compilar el código <abbr title="Hypertext Preprocessor">PHP</abbr>  </li>
+</ol>
+<details class="abstract">
+<summary>Respuesta correcta</summary>
+<p>Respuesta correcta: c. Probar y depurar endpoints de una API</p>
+</details>
+</li>
+</ol>
 </details>
 <h2 id="resumen-up">Resumen <abbr title="Unidad de Programación">UP</abbr><a class="headerlink" href="#resumen-up" title="Permanent link">&para;</a></h2>
 <article id="resumen-ut">
@@ -3769,57 +3747,57 @@
 <section class="ut-datrecap">
 <section class="ut-ut">
 <p class="ut-emp"><strong>Unidad de Programación</strong></p>
-<p><strong><abbr title="Unidad de Programación">UP</abbr> 01. Puesta en marcha</strong></p>
+<p><strong><abbr title="Unidad de Programación">UP</abbr> 05. API Rest</strong></p>
 </section>
 <section class="ut-hours">
 <p class="ut-emp"><strong>Duración</strong></p>
-<p>2 Sesiones - 4H</p>
+<p>10 Sesiones - 20H</p>
 </section>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Unidad de Trabajo de la <abbr title="Unidad de Programación">UP</abbr></strong></p>
-<p><a href="../../uutt/01_Arquitectura/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 01. Arquitectura Web y herramientas de programación.</a></p>
+<p><a href="../../uutt/08_APIRest/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 08. Servicios REST.</a></p>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Resultados de Aprendizaje</strong></p>
-<p><strong><abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr></strong>. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</p>
+<p><strong><abbr title="Desarrolla servicios web reutilizables y accesibles mediante protocolos web, verificando su funcionamiento.">RA7</abbr></strong>. Desarrolla servicios web reutilizables y accesibles mediante protocolos web, verificando su funcionamiento.</p>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Preconocimiento</strong></p>
-<p>Conocer la estructura de una web y el uso de IDE.</p>
+<p>Conocimientos de <abbr title="Hypertext Preprocessor">PHP</abbr>, Laravel y de acceso a datos.</p>
 </section>
 </section>
 <section id="objetivos">
 <section class="ut-data">
 <p class="ut-emp"><strong>Objetivos Generales</strong></p>
 <ul>
-    <li><strong>OGc</strong>: Identificar los modelos de ejecución de código en el servidor.</li>
-    <li><strong>OGd</strong>: Distinguir las herramientas de programación en entorno servidor. </li>
+    <li><strong>OG</strong>: </li>
+    <li><strong>OG</strong>: </li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Competencias Profesionales, Personales y Sociales.</strong></p>
 <ul>
-<li><strong>CPRs</strong>. Gestionar servidores en distintos ámbitos de implantación adaptando su configuración en cada caso para permitir el despliegue de aplicaciones web.</li>
-<li><strong>CPSq</strong>. Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo.</li>
+<li><strong>CPR</strong>. </li>
+<li><strong>CPS</strong>. </li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Objetivos Didácticos</strong></p>
 <ul>
-    <li><strong>OD1</strong>: Identificar los modelos de ejecución de código en el servidor.</li>
-    <li><strong>OD2</strong>: Distinguir las herramientas de programación en entorno servidor. </li>
-    <li><strong>OD3</strong>: Configurar entorno de trabajo en local.</li>
+    <li><strong>OD1</strong>: Comprender los principios del diseño REST y su aplicación en el desarrollo de APIs.</li>
+    <li><strong>OD2</strong>: Implementar operaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> sobre recursos mediante controladores API en Laravel.</li>
+    <li><strong>OD3</strong>: Probar y depurar endpoints API utilizando herramientas como Postman o Insomnia.</li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Contenidos Específicos</strong></p>
 <ul>
-<li><strong>CES1</strong>. Diferencias entre cliente y servidor</li>
-<li><strong>CES2</strong>. Arquitectura de una web dinámica</li>
-<li><strong>CES3</strong>. Modelo Vista Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>)</li>
-<li><strong>CES4</strong>. Herramientas para programación web en entorno servidor</li>
-<li><strong>CES5</strong>. Configuración entorno local</li>
+    <li><strong>CES1</strong>. Principios del diseño REST y estructura de una API RESTful</li>
+    <li><strong>CES2</strong>. Configuración y uso del archivo <code>api.php</code> en Laravel</li>
+    <li><strong>CES3</strong>. Creación de controladores API y rutas para operaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr></li>
+    <li><strong>CES4</strong>. Envío y recepción de datos en formato JSON</li>
+    <li><strong>CES5</strong>. Pruebas de endpoints mediante herramientas como Postman o Insomnia</li>
 </ul>
 </section>
 </section>
@@ -3892,11 +3870,11 @@
 <section class="ut-datrecap">
 <section class="ut-ut">
 <p class="ut-emp"><strong>Resultado de Aprendizaje</strong></p>
-<p><strong><abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr></strong>. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</p>
+<p><strong><abbr title="Desarrolla servicios web reutilizables y accesibles mediante protocolos web, verificando su funcionamiento.">RA7</abbr></strong>. Desarrolla servicios web reutilizables y accesibles mediante protocolos web, verificando su funcionamiento.</p>
 </section>
 <section class="ut-hours">
 <p class="ut-emp"><strong>Duración</strong></p>
-<p>2 Sesiones - 4H</p>
+<p>10 Sesiones - 20H</p>
 </section>
 </section>
 <section id="body-ut">
@@ -3909,66 +3887,76 @@
 </section>
 <!-- Inicio RRAA -->
 <section class="body-ce">
-<p><abbr title="Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.">CE1a</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se han reconocido las características propias y el ámbito de aplicación de los servicios web.">CE7a</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han reconocido las ventajas que proporciona la generación dinámica de páginas Web y sus diferencias con la inclusión de sentencias de guiones en el interior de las páginas Web.">CE1b</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se han reconocido las ventajas de utilizar servicios web para proporcionar acceso a funcionalidades incorporadas a la lógica de negocio de una aplicación.">CE7b</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 103, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102, <abbr title="Actividades de profundización.">AP</abbr> 104</p>
+<p><abbr title="Se han identificado las tecnologías y los protocolos implicados en el consumo de servicios web.">CE7c</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su integración con los servidores Web.">CE1d</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
+<p><abbr title="Se han utilizado los estándares y arquitecturas más difundidos e implicados en el desarrollo de servicios web.">CE7d</abbr></p>
 <p></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Actividades de clase">AC</abbr> 103, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de profundización.">AP</abbr> 104</p>
+<p><abbr title="Se ha programado un servicio web.">CE7e</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.">CE1f</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se ha verificado el funcionamiento del servicio web.">CE7f</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han reconocido y evaluado las herramientas de programación en entorno servidor.">CE1g</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se ha consumido el servicio web.">CE7g</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se ha documentado un servicio web.">CE7h</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 </section>
 </section>
 </article>
 <h2 id="referencias">Referencias<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Curso: <a href="https://sergarb1.github.io/CursoIntroduccionADocker/">Introducción a Docker</a>, por Sergi García Barea</li>
-<li>Artículo: <a href="https://www.arquitecturajava.com/arquitecturas-web-y-su-evolucion/">Arquitecturas Web y su evolución</a></li>
-<li>Web: <a href="https://aitor-medrano.github.io/dwes2122/">Desarrollo Web en Entorno Servidor</a>, por Aitor Medrano</li>
+<li>Web: <a href="https://www.ibm.com/es-es/topics/rest-apis">¿Qué es una API REST?</a> por IBM</li>
+<li>Web: <a href="https://www.redhat.com/es/topics/api/what-is-a-rest-api">¿Qué es una API REST?</a> por Red Hat</li>
+<li>Manual: <a href="https://laravel.com/docs/11.x/errors">Documentación oficial</a></li>
 </ul>
 <h2 id="links-de-interes">Links de interés<a class="headerlink" href="#links-de-interes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Artículo: <a href="https://www.unir.net/ingenieria/revista/full-stack-developer/">Full stack developer: ¿cuáles son sus funciones y qué formación necesito?</a></li>
+<li>Web: <a href="https://roy.gbiv.com/">Roy T. Fielding</a></li>
+<li>Vídeo: <a href="https://www.youtube.com/watch?v=4fZKFQjkNw0">¿Que es un API REST? ✔️ ¿Para que sirve un API RESTful? 🛰️ ¿El futuro del Backend?</a> por Victor Robles</li>
+<li>Vídeo: <a href="https://www.youtube.com/watch?v=bUmy7Nvsh4s">6 consejos para que DISEÑES BIEN tu API REST</a> por Manuel Zapata</li>
+<li>Curso: <a href="https://www.youtube.com/watch?v=iFDQ3NFs95M&amp;list=PLDbrnXa6SAzUsLG1gjECgFYLSZDov09fO">Curso de POSTMAN COMPLETO Y DESDE CERO</a> por dfbastidas</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

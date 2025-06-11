@@ -2282,6 +2282,48 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#es-necesario-acceder-a-ficheros-en-esta-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Es necesario acceder a ficheros en esta actividad?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Es necesario acceder a ficheros en esta actividad?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casos-en-los-que-si-tiene-sentido-acceder-a-ficheros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos en los que sí tiene sentido acceder a ficheros:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casos-en-los-que-puede-no-ser-necesario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos en los que puede NO ser necesario:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accediendo-a-ficheros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accediendo a ficheros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#modos-de-apertura-de-ficheros" class="md-nav__link">
     <span class="md-ellipsis">
       Modos de apertura de ficheros
@@ -2300,20 +2342,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#informacion-de-un-fichero" class="md-nav__link">
-    <span class="md-ellipsis">
-      Información de un fichero
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#archivos-pdf" class="md-nav__link">
     <span class="md-ellipsis">
       Archivos PDF
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Archivos PDF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-con-composer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación con Composer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-generar-un-pdf-con-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Generar un PDF con "Hello World"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2402,8 +2459,6 @@
       
         
       
-        
-      
     
     
     
@@ -2441,28 +2496,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3208,11 +3241,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3674,7 +3707,22 @@
 
 
 <h1 id="acceso-a-ficheros">Acceso a ficheros<a class="headerlink" href="#acceso-a-ficheros" title="Permanent link">&para;</a></h1>
-<p>FIXME: introducir la necesidad o no de acceder a ficheros. Realmente no está asociado a ningún <abbr title="Criterio de Evaluación">CE</abbr></p>
+<h2 id="es-necesario-acceder-a-ficheros-en-esta-actividad">¿Es necesario acceder a ficheros en esta actividad?<a class="headerlink" href="#es-necesario-acceder-a-ficheros-en-esta-actividad" title="Permanent link">&para;</a></h2>
+<p>En el desarrollo de aplicaciones web y bases de datos, el acceso a ficheros puede ser útil en ciertos escenarios, pero no siempre es estrictamente necesario. Antes de implementarlo, conviene reflexionar sobre si realmente aporta valor a la actividad o si complica innecesariamente el proceso.</p>
+<h3 id="casos-en-los-que-si-tiene-sentido-acceder-a-ficheros">Casos en los que sí tiene sentido acceder a ficheros:<a class="headerlink" href="#casos-en-los-que-si-tiene-sentido-acceder-a-ficheros" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Para <strong>cargar datos</strong> iniciales desde un archivo <code>.sql</code> o <code>.csv</code>.</li>
+<li>Para <strong>registrar logs</strong> o historiales de operaciones realizadas por el usuario.</li>
+<li>Para <strong>exportar información</strong> (por ejemplo, lista de campeones en formato CSV o JSON).</li>
+<li>Para procesar <strong>subidas de archivos</strong> desde formularios (por ejemplo, imágenes o documentos).</li>
+</ul>
+<h3 id="casos-en-los-que-puede-no-ser-necesario">Casos en los que puede NO ser necesario:<a class="headerlink" href="#casos-en-los-que-puede-no-ser-necesario" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cuando el objetivo principal es practicar operaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> básicas sobre una base de datos.</li>
+<li>Si ya se está trabajando desde un entorno como phpMyAdmin o con scripts SQL directamente.</li>
+<li>Cuando el acceso a datos se hace exclusivamente desde y hacia la base de datos, sin intermediación de archivos.</li>
+</ul>
+<h2 id="accediendo-a-ficheros">Accediendo a ficheros<a class="headerlink" href="#accediendo-a-ficheros" title="Permanent link">&para;</a></h2>
 <p>Gracias a la función <code>fopen()</code> desde <abbr title="Hypertext Preprocessor">PHP</abbr> podemos abrir archivos que se encuentren en nuestros servidor o una URL.</p>
 <p>A esta función hay que pasarle 2 parámetros; el nombre del archivo que queremos abrir y el modo en el que se abrirá</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="x">$fp = fopen(&quot;miarchivo.txt&quot;, &quot;r&quot;);</span>
@@ -3721,132 +3769,111 @@
 </span><span id="__span-3-8"><span class="linenos" data-linenos="8 "></span><span class="nb">fwrite</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="nv">$texto</span><span class="p">);</span>
 </span><span id="__span-3-9"><span class="linenos" data-linenos="9 "></span><span class="nb">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span>
 </span></code></pre></div>
-<h2 id="informacion-de-un-fichero">Información de un fichero<a class="headerlink" href="#informacion-de-un-fichero" title="Permanent link">&para;</a></h2>
-<p>FIXME: ¿Esto sirve para algo para <abbr title="Desarrollo Web en Entorno Servidor">DWES</abbr>???? Yo quitaría todo el apartado</p>
-<p>Con <abbr title="Hypertext Preprocessor">PHP</abbr> y su método <code>stat()</code> podemos obtener información sobre los archivos que le indiquemos. Este método devuelve hasta un total de 12 elementos con información acerca de nuestro archivo.</p>
-<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>0   dev         número de dispositivo
-<span class="linenos" data-linenos=" 2 "></span>1   ino         número de i-nodo
-<span class="linenos" data-linenos=" 3 "></span>2   mode        modo de protección del i-nodo
-<span class="linenos" data-linenos=" 4 "></span>3   nlink       número de enlaces
-<span class="linenos" data-linenos=" 5 "></span>4   uid         ID de usuario del propietario
-<span class="linenos" data-linenos=" 6 "></span>5   gid         ID de grupo del propietario
-<span class="linenos" data-linenos=" 7 "></span>6   rdev        tipo de dispositivo, si es un dispositivo i-nodo
-<span class="linenos" data-linenos=" 8 "></span>7   size        tamaño en bytes
-<span class="linenos" data-linenos=" 9 "></span>8   atime       momento del último acceso (tiempo Unix)
-<span class="linenos" data-linenos="10 "></span>9   mtime       momento de la última modificación (tiempo Unix)
-<span class="linenos" data-linenos="11 "></span>10  ctime       momento de la última modificación del i-nodo (tiempo Unix)
-<span class="linenos" data-linenos="12 "></span>11  blksize     tamaño del bloque E/S del sistema de ficheros
-<span class="linenos" data-linenos="13 "></span>12  blocks      número de bloques de 512 bytes asignados
-</code></pre></div>
-<p>Unos ejemplos...</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>
-</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="nv">$file</span> <span class="o">=</span> <span class="s2">&quot;miarchivo.txt&quot;</span><span class="p">;</span>
-</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="nv">$texto</span> <span class="o">=</span> <span class="s2">&quot;Todos somos muy ignorantes, lo que ocurre es que no todos ignoramos las mismas cosas.&quot;</span><span class="p">;</span>
-</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span><span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">);</span>
-</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="nb">fwrite</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="nv">$texto</span><span class="p">);</span>
-</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>
-</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="nv">$datos</span> <span class="o">=</span> <span class="nb">stat</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
-</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>
-</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Número de enlaces, 1</span>
-</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Tamaño en bytes, 85</span>
-</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Momento de último acceso, 1444138104</span>
-</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="k">echo</span> <span class="nv">$datos</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span> <span class="c1">// Momento de última modificación, 1444138251</span>
-</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span>
-</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span><span class="cp">?&gt;</span>
-</span></code></pre></div>
-<p>Echa un vistazo a <a href="https://www.php.net/manual/es/book.dir.php">las funciones de directorios</a> que tiene <abbr title="Hypertext Preprocessor">PHP</abbr>, es muy interesante.</p>
 <h2 id="archivos-pdf">Archivos PDF<a class="headerlink" href="#archivos-pdf" title="Permanent link">&para;</a></h2>
-<p>Con <abbr title="Hypertext Preprocessor">PHP</abbr> podemos manejar todo tipo de archivos como ya hemos visto pero, ¿qué pasa si queremos generar ficheros PDF con datos sacados de una base de datos?</p>
-<p>Gracias a una clase escrita en <abbr title="Hypertext Preprocessor">PHP</abbr>, podemos generar archivos PDF sin necesidad de instalar librerías adicionales en nuestro servidor.</p>
-<p>FIXME: Cual???? un par de líneas con enlace a fpdf, incluso todo dentro de un admonition, y pones los enlaces e info que has puesto más abajo</p>
-<p>Para ello, como tenemos <em>Composer</em> dentro de nuestra imagen de <em>Docker</em>, lo usaremos para instalar esta dependencia.</p>
-<p>FIXME: Como????</p>
-<p>Acuérdate que debemos haber hecho <code>composer init</code> para empezar un proyecto con <em>Composer</em>, de lo contrario no podrás añadir ningún paquete.</p>
-<p>Veamos un ejemplo de <em>Hello World</em> convertido a PDF</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="nb">ob_end_clean</span><span class="p">();</span>
-</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">require</span><span class="p">(</span><span class="s1">&#39;fpdf/fpdf.php&#39;</span><span class="p">);</span>
-</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="c1">// Instanciamos la clase</span>
-</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="c1">// P = Portrait | mm = unidades en milímetros | A4 = formato</span>
-</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="nv">$pdf</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FPDF</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span><span class="s1">&#39;A4&#39;</span><span class="p">);</span>
-</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span>
-</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="c1">// Añadimos una página</span>
-</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">AddPage</span><span class="p">();</span>
-</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="c1">// Establecemos la fuente y el tamaño de letra</span>
-</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">SetFont</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
-</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span>
-</span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span><span class="c1">// Imprimimos una celda con el texto que nosotros queramos</span>
-</span><span id="__span-5-17"><span class="linenos" data-linenos="17 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">);</span>
-</span><span id="__span-5-18"><span class="linenos" data-linenos="18 "></span>
-</span><span id="__span-5-19"><span class="linenos" data-linenos="19 "></span><span class="c1">// Terminamos el PDF</span>
-</span><span id="__span-5-20"><span class="linenos" data-linenos="20 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">Output</span><span class="p">();</span>
-</span><span id="__span-5-21"><span class="linenos" data-linenos="21 "></span>
-</span><span id="__span-5-22"><span class="linenos" data-linenos="22 "></span><span class="cp">?&gt;</span>
+<p>Con <abbr title="Hypertext Preprocessor">PHP</abbr> podemos manejar todo tipo de archivos como ya hemos visto, pero… ¿qué pasa si queremos <strong>generar archivos PDF con datos sacados de una base de datos</strong>?</p>
+<p>Gracias a una clase escrita en <abbr title="Hypertext Preprocessor">PHP</abbr>, podemos generar archivos PDF sin necesidad de instalar extensiones complicadas del servidor.</p>
+<div class="admonition info">
+<p class="admonition-title">¿Qué herramienta usamos?</p>
+<p>Para generar PDFs con <abbr title="Hypertext Preprocessor">PHP</abbr> usaremos la clase <strong><a href="http://www.fpdf.org/">FPDF</a></strong>, una biblioteca gratuita y fácil de usar.</p>
+<ul>
+<li>Sitio oficial: <a href="http://www.fpdf.org/">http://www.fpdf.org/</a>  </li>
+<li>También puedes instalarla a través de Composer o descargarla manualmente.  </li>
+<li>Documentación y ejemplos disponibles en su web.</li>
+</ul>
+</div>
+<h3 id="instalacion-con-composer">Instalación con Composer<a class="headerlink" href="#instalacion-con-composer" title="Permanent link">&para;</a></h3>
+<p>Como ya tenemos <strong>Composer</strong> instalado en nuestra imagen Docker, podemos utilizarlo para gestionar esta dependencia.</p>
+<div class="admonition tip">
+<p class="admonition-title">¿Cómo instalar FPDF con Composer?</p>
+<p>Asegúrate de haber inicializado Composer en tu proyecto:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>init
+</span></code></pre></div>
+<p>Luego instala FPDF desde Packagist con:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>setasign/fpdf
+</span></code></pre></div>
+<p>Esto añadirá FPDF como dependencia y podrás usarla desde el <code>autoload</code> de Composer o requerirla manualmente si prefieres trabajar en modo clásico.</p>
+</div>
+<h3 id="ejemplo-generar-un-pdf-con-hello-world">Ejemplo: Generar un PDF con "Hello World"<a class="headerlink" href="#ejemplo-generar-un-pdf-con-hello-world" title="Permanent link">&para;</a></h3>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="nb">ob_end_clean</span><span class="p">();</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">require</span><span class="p">(</span><span class="s1">&#39;fpdf/fpdf.php&#39;</span><span class="p">);</span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span><span class="c1">// Instanciamos la clase</span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span><span class="c1">// P = Portrait | mm = milímetros | A4 = tamaño papel</span>
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span><span class="nv">$pdf</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FPDF</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span><span class="s1">&#39;A4&#39;</span><span class="p">);</span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="c1">// Añadimos una página</span>
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">AddPage</span><span class="p">();</span>
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span><span class="c1">// Establecemos la fuente y tamaño</span>
+</span><span id="__span-6-14"><span class="linenos" data-linenos="14 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">SetFont</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+</span><span id="__span-6-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-6-16"><span class="linenos" data-linenos="16 "></span><span class="c1">// Escribimos una celda con texto</span>
+</span><span id="__span-6-17"><span class="linenos" data-linenos="17 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">);</span>
+</span><span id="__span-6-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span><span class="c1">// Terminamos el PDF</span>
+</span><span id="__span-6-20"><span class="linenos" data-linenos="20 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">Output</span><span class="p">();</span>
+</span><span id="__span-6-21"><span class="linenos" data-linenos="21 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <p>Hay muchos ejemplos y tutoriales, así como documentación de la clase FPDF en la página oficial.</p>
 <p>Visita <a href="http://www.fpdf.org/">la sección de tutoriales y el manual</a> para sacar mayor partido a esta clase.</p>
 <p>Pero además de añadir contenido, podemos configurar su encabezado, pie de página o diferentes elementos, por ejemplo:</p>
-<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">require</span><span class="p">(</span><span class="s1">&#39;fpdf/fpdf.php&#39;</span><span class="p">);</span>
-</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">class</span> <span class="nc">PDF</span> <span class="k">extends</span> <span class="nx">FPDF</span> <span class="p">{</span>
-</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="c1">// Cabecera</span>
-</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="k">function</span> <span class="nf">Header</span><span class="p">()</span> <span class="p">{</span>
-</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span>
-</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span>        <span class="c1">// Añadimos un logotipo</span>
-</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Image</span><span class="p">(</span><span class="s1">&#39;logo.png&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">33</span><span class="p">);</span>
-</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span>
-</span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span>        <span class="c1">// establecemos la fuente y el tamaño</span>
-</span><span id="__span-6-14"><span class="linenos" data-linenos="14 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">SetFont</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
-</span><span id="__span-6-15"><span class="linenos" data-linenos="15 "></span>
-</span><span id="__span-6-16"><span class="linenos" data-linenos="16 "></span>        <span class="c1">// Movemos el contenido un poco a la derecha</span>
-</span><span id="__span-6-17"><span class="linenos" data-linenos="17 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
-</span><span id="__span-6-18"><span class="linenos" data-linenos="18 "></span>
-</span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span>        <span class="c1">// Pintamos la celda</span>
-</span><span id="__span-6-20"><span class="linenos" data-linenos="20 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Cabecera&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">);</span>
-</span><span id="__span-6-21"><span class="linenos" data-linenos="21 "></span>
-</span><span id="__span-6-22"><span class="linenos" data-linenos="22 "></span>        <span class="c1">// Pasamos a la siguiente línea</span>
-</span><span id="__span-6-23"><span class="linenos" data-linenos="23 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ln</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
-</span><span id="__span-6-24"><span class="linenos" data-linenos="24 "></span>    <span class="p">}</span>
-</span><span id="__span-6-25"><span class="linenos" data-linenos="25 "></span>
-</span><span id="__span-6-26"><span class="linenos" data-linenos="26 "></span>    <span class="c1">// Pie de página</span>
-</span><span id="__span-6-27"><span class="linenos" data-linenos="27 "></span>    <span class="k">function</span> <span class="nf">Footer</span><span class="p">()</span> <span class="p">{</span>
-</span><span id="__span-6-28"><span class="linenos" data-linenos="28 "></span>
-</span><span id="__span-6-29"><span class="linenos" data-linenos="29 "></span>        <span class="c1">// Nos posicionamos a 1.5 cm  desde abajo del todo de la página</span>
-</span><span id="__span-6-30"><span class="linenos" data-linenos="30 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">SetY</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">);</span>
-</span><span id="__span-6-31"><span class="linenos" data-linenos="31 "></span>
-</span><span id="__span-6-32"><span class="linenos" data-linenos="32 "></span>        <span class="c1">// Arial italic 8</span>
-</span><span id="__span-6-33"><span class="linenos" data-linenos="33 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">SetFont</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">);</span>
-</span><span id="__span-6-34"><span class="linenos" data-linenos="34 "></span>
-</span><span id="__span-6-35"><span class="linenos" data-linenos="35 "></span>        <span class="c1">// Número de página</span>
-</span><span id="__span-6-36"><span class="linenos" data-linenos="36 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Página &#39;</span> <span class="o">.</span> 
-</span><span id="__span-6-37"><span class="linenos" data-linenos="37 "></span>            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">PageNo</span><span class="p">()</span> <span class="o">.</span> <span class="s1">&#39;/{nb}&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">);</span>
-</span><span id="__span-6-38"><span class="linenos" data-linenos="38 "></span>    <span class="p">}</span>
-</span><span id="__span-6-39"><span class="linenos" data-linenos="39 "></span><span class="p">}</span>
-</span><span id="__span-6-40"><span class="linenos" data-linenos="40 "></span>
-</span><span id="__span-6-41"><span class="linenos" data-linenos="41 "></span><span class="c1">// Instanciamos la clase</span>
-</span><span id="__span-6-42"><span class="linenos" data-linenos="42 "></span><span class="nv">$pdf</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDF</span><span class="p">();</span>
-</span><span id="__span-6-43"><span class="linenos" data-linenos="43 "></span>
-</span><span id="__span-6-44"><span class="linenos" data-linenos="44 "></span><span class="c1">// Definimos un alias para la numeración de páginas</span>
-</span><span id="__span-6-45"><span class="linenos" data-linenos="45 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">AliasNbPages</span><span class="p">();</span>
-</span><span id="__span-6-46"><span class="linenos" data-linenos="46 "></span>
-</span><span id="__span-6-47"><span class="linenos" data-linenos="47 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">AddPage</span><span class="p">();</span>
-</span><span id="__span-6-48"><span class="linenos" data-linenos="48 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">SetFont</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">);</span>
-</span><span id="__span-6-49"><span class="linenos" data-linenos="49 "></span>
-</span><span id="__span-6-50"><span class="linenos" data-linenos="50 "></span><span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
-</span><span id="__span-6-51"><span class="linenos" data-linenos="51 "></span>    <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Número de línea &#39;</span> 
-</span><span id="__span-6-52"><span class="linenos" data-linenos="52 "></span>            <span class="o">.</span> <span class="nv">$i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-6-53"><span class="linenos" data-linenos="53 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">Output</span><span class="p">();</span>
-</span><span id="__span-6-54"><span class="linenos" data-linenos="54 "></span>
-</span><span id="__span-6-55"><span class="linenos" data-linenos="55 "></span><span class="cp">?&gt;</span>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span><span class="k">require</span><span class="p">(</span><span class="s1">&#39;fpdf/fpdf.php&#39;</span><span class="p">);</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span><span class="k">class</span> <span class="nc">PDF</span> <span class="k">extends</span> <span class="nx">FPDF</span> <span class="p">{</span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="c1">// Cabecera</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="k">function</span> <span class="nf">Header</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span>        <span class="c1">// Añadimos un logotipo</span>
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Image</span><span class="p">(</span><span class="s1">&#39;logo.png&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">33</span><span class="p">);</span>
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span>
+</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span>        <span class="c1">// establecemos la fuente y el tamaño</span>
+</span><span id="__span-7-14"><span class="linenos" data-linenos="14 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">SetFont</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-7-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-7-16"><span class="linenos" data-linenos="16 "></span>        <span class="c1">// Movemos el contenido un poco a la derecha</span>
+</span><span id="__span-7-17"><span class="linenos" data-linenos="17 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+</span><span id="__span-7-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-7-19"><span class="linenos" data-linenos="19 "></span>        <span class="c1">// Pintamos la celda</span>
+</span><span id="__span-7-20"><span class="linenos" data-linenos="20 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Cabecera&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">);</span>
+</span><span id="__span-7-21"><span class="linenos" data-linenos="21 "></span>
+</span><span id="__span-7-22"><span class="linenos" data-linenos="22 "></span>        <span class="c1">// Pasamos a la siguiente línea</span>
+</span><span id="__span-7-23"><span class="linenos" data-linenos="23 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Ln</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-7-24"><span class="linenos" data-linenos="24 "></span>    <span class="p">}</span>
+</span><span id="__span-7-25"><span class="linenos" data-linenos="25 "></span>
+</span><span id="__span-7-26"><span class="linenos" data-linenos="26 "></span>    <span class="c1">// Pie de página</span>
+</span><span id="__span-7-27"><span class="linenos" data-linenos="27 "></span>    <span class="k">function</span> <span class="nf">Footer</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-7-28"><span class="linenos" data-linenos="28 "></span>
+</span><span id="__span-7-29"><span class="linenos" data-linenos="29 "></span>        <span class="c1">// Nos posicionamos a 1.5 cm  desde abajo del todo de la página</span>
+</span><span id="__span-7-30"><span class="linenos" data-linenos="30 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">SetY</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">);</span>
+</span><span id="__span-7-31"><span class="linenos" data-linenos="31 "></span>
+</span><span id="__span-7-32"><span class="linenos" data-linenos="32 "></span>        <span class="c1">// Arial italic 8</span>
+</span><span id="__span-7-33"><span class="linenos" data-linenos="33 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">SetFont</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">);</span>
+</span><span id="__span-7-34"><span class="linenos" data-linenos="34 "></span>
+</span><span id="__span-7-35"><span class="linenos" data-linenos="35 "></span>        <span class="c1">// Número de página</span>
+</span><span id="__span-7-36"><span class="linenos" data-linenos="36 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Página &#39;</span> <span class="o">.</span> 
+</span><span id="__span-7-37"><span class="linenos" data-linenos="37 "></span>            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">PageNo</span><span class="p">()</span> <span class="o">.</span> <span class="s1">&#39;/{nb}&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">);</span>
+</span><span id="__span-7-38"><span class="linenos" data-linenos="38 "></span>    <span class="p">}</span>
+</span><span id="__span-7-39"><span class="linenos" data-linenos="39 "></span><span class="p">}</span>
+</span><span id="__span-7-40"><span class="linenos" data-linenos="40 "></span>
+</span><span id="__span-7-41"><span class="linenos" data-linenos="41 "></span><span class="c1">// Instanciamos la clase</span>
+</span><span id="__span-7-42"><span class="linenos" data-linenos="42 "></span><span class="nv">$pdf</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDF</span><span class="p">();</span>
+</span><span id="__span-7-43"><span class="linenos" data-linenos="43 "></span>
+</span><span id="__span-7-44"><span class="linenos" data-linenos="44 "></span><span class="c1">// Definimos un alias para la numeración de páginas</span>
+</span><span id="__span-7-45"><span class="linenos" data-linenos="45 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">AliasNbPages</span><span class="p">();</span>
+</span><span id="__span-7-46"><span class="linenos" data-linenos="46 "></span>
+</span><span id="__span-7-47"><span class="linenos" data-linenos="47 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">AddPage</span><span class="p">();</span>
+</span><span id="__span-7-48"><span class="linenos" data-linenos="48 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">SetFont</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">);</span>
+</span><span id="__span-7-49"><span class="linenos" data-linenos="49 "></span>
+</span><span id="__span-7-50"><span class="linenos" data-linenos="50 "></span><span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-7-51"><span class="linenos" data-linenos="51 "></span>    <span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">Cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Número de línea &#39;</span> 
+</span><span id="__span-7-52"><span class="linenos" data-linenos="52 "></span>            <span class="o">.</span> <span class="nv">$i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-7-53"><span class="linenos" data-linenos="53 "></span><span class="nv">$pdf</span><span class="o">-&gt;</span><span class="na">Output</span><span class="p">();</span>
+</span><span id="__span-7-54"><span class="linenos" data-linenos="54 "></span>
+</span><span id="__span-7-55"><span class="linenos" data-linenos="55 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <figure style="align: center;max-width:500px">
     <a class="glightbox" href="../../img/ut06/0607.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../img/ut06/0607.gif"></a>
@@ -3854,29 +3881,38 @@
 </figure>
 
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<p>FIXME: borrar AC621, hacer la primera parte AR622 como <abbr title="Actividades de clase">AC</abbr> la parte de CSV
-Hacer otro <abbr title="Actividades de refuerzo.">AR</abbr> un listado de usuarios sólo con nombre y login, sin password
-Hacer un <abbr title="Actividades de profundización.">AP</abbr> para generar un JSON de los campeones
-Hacer un <abbr title="Actividades de clase">AC</abbr> por separado para hacer el PDF</p>
-<p>FIXME: Cada funcionalidad, en una actividad.. .en la misma actividad no puedes generar un fichero sencillo, y un PDF</p>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 621</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Métete en <a href="https://www.lipsum.com/">loremipsum.com</a> y genera un texto de 3 párrafos. Copia el texto generado y guárdalo en un archivo nuevo. Genera otro archivo y muestra por pantalla el texto del archivo txt que acabas de crear, su tamaño en <strong>Kilobytes</strong> , la fecha de su última modificación y el ID de usuario que creó el archivo.</p>
+<p>:<img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 619</strong> (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Añade una funcionalidad al proyecto lol que permita <strong>exportar todos los campeones</strong> de la base de datos a un archivo <code>.csv</code>. Este archivo debe contener:</p>
+<ul>
+<li>Nombre del archivo: <code>campeones.csv</code></li>
+<li>Columnas: <code>id</code>, <code>nombre</code>, <code>rol</code>, <code>dificultad</code>, <code>descripcion</code></li>
+</ul>
+<p>Guarda el archivo en el servidor y asegúrate de que se pueda descargar desde el navegador.</p>
 </li>
 <li>
-<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 622</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Vuelve a <a href="065_MySQLi.html#actividades"><abbr title="Actividades de clase">AC</abbr> 615</a> y añade estas dos funcionalidades:</p>
-<ul>
-<li>Guardar todos los campeones en un fichero .csv</li>
-<li>Los detalles de un campeón en concreto en PDF</li>
-</ul>
+<p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 620</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) -  Añade una funcionalidad al proyecto lol que muestre un listado de usuarios, mostrando <strong>únicamente</strong> su <code>nombre</code> y <code>login</code>. No se debe mostrar el campo <code>password</code> bajo ningún concepto. El listado puede mostrarse en HTML o como archivo descargable en <code>.txt</code> o <code>.csv</code>.</p>
 </li>
 <li>
-<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 623</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Necesitas añadir una serie de funcionalidades a tu e-commerce. Para ello tienes que modificar <a href="065_MySQLi.html#actividades"><abbr title="Proyecto">PR</abbr> 616</a> para que:</p>
-<ul>
-<li>El trabajador pueda sacar todos los pedidos en un CSV.</li>
-<li>El cliente pueda sacar todos sus pedidos en un CSV.</li>
-<li>El cliente pueda sacar la factura (contenido del pedido) en formato PDF de cada uno de sus pedidos</li>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 621</strong> (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una funcionalidad en proyecto lol que genere un archivo <code>.json</code> con todos los campeones registrados en la base de datos. Este archivo debe contener los datos de forma estructurada y bien formateada.</p>
+</li>
+<li>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 622</strong> (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p)  Crea un script que, al seleccionar un campeón concreto, genere un <strong>archivo PDF</strong> con todos sus detalles (<code>nombre</code>, <code>rol</code>, <code>dificultad</code>, <code>descripcion</code>). Usa la librería FPDF para crear el documento.</p>
+<p>El archivo debe poder descargarse desde el navegador. Guarda el archivo como <code>campeones.json</code> y permite su descarga.</p>
+</li>
+<li>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 623</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Necesitas añadir una serie de funcionalidades a tu e-commerce. Para ello tienes que modificar <a href="065_MySQLi.html#actividades"><abbr title="Proyecto">PR</abbr> 613</a> para que:</p>
+<ol>
+<li>El trabajador puede exportar <strong>todos los pedidos</strong> a un archivo <code>.csv</code>.</li>
+<li>Cada cliente puede exportar <strong>solo sus propios pedidos</strong> a <code>.csv</code>.</li>
+<li>El cliente puede descargar la <strong>factura de cada pedido</strong> como archivo PDF, que debe incluir:<ul>
+<li>Número de pedido</li>
+<li>Fecha</li>
+<li>Productos, cantidades, precios</li>
+<li>Total del pedido</li>
 </ul>
+</li>
+</ol>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

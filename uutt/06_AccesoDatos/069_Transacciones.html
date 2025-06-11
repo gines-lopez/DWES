@@ -2390,8 +2390,6 @@
       
         
       
-        
-      
     
     
     
@@ -2429,28 +2427,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3196,11 +3172,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3700,16 +3676,24 @@
 </span><span id="__span-0-20"><span class="linenos" data-linenos="20 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<p>FIXME: hay que rescribir mejor los enunciados de las actividades ... contextualizarlas...</p>
-<p>Una vez que sabemos como configurar las transacciones, vamos a modificar el acceso a los usuarios (que hicimos en la actividad 617) para que no se inserten registros en la tabla <code>usuario</code> si hay algún fallo.</p>
-<p>Una vez familiarizado, repite el proceso con los datos de los campeones, almacenados en la tabla <code>campeon</code>.</p>
-<p>FIXME: dicho esto, las transacciones se realizan de forma explicita cuando se realizan 2 o más operaciones... con un solo insert, no haría falta, ya que se realiza el auto-commit. ¿Tienes algún caso de uso donde se inserten o modifiquen datos de 2 o más datos a la vez?????</p>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 619</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr> <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Modifica <a href="068_OperacionesRegistros.html#actividades"><abbr title="Actividades de clase">AC</abbr> 617</a> para que no se inserten registros en la tablas <code>usuario</code> y <code>campeon</code> si hay algún fallo.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 617</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr> <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Partimos de la actividad <a href="067_Autenticacion.html#actividad"><abbr title="Actividades de clase">AC</abbr> 615</a> donde insertabas registros en la tabla <code>usuario</code>. Ahora, amplía el proceso para que también se inserte un registro relacionado en la tabla <code>campeon</code>. Queremos que ambas operaciones ocurran <strong>en una misma transacción</strong>. </p>
 </li>
 <li>
-<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 620</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr> <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Modifica <strong><abbr title="Actividades de clase">AC</abbr> 619</strong> para que no se inserten registros en la tabla <code>pedidos</code> si hay algún fallo.</p>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 618</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr> <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Ahora que sabes cómo utilizar transacciones para controlar operaciones múltiples en la base de datos, vamos a aplicar este conocimiento a un sistema de gestión de campeones del juego League of Legends. Imagina que ahora además de tener la tabla <code>campeon</code>, cuentas también con una tabla <code>historial_creacion</code>, donde se almacena un registro cada vez que se añade un nuevo campeón. Tu tarea es:</p>
+<ol>
+<li>Insertar un nuevo registro en la tabla <code>campeon</code> con todos sus datos (<code>nombre</code>, <code>rol</code>, <code>dificultad</code>, <code>descripcion</code>).</li>
+<li>
+<p>Insertar simultáneamente un registro en la tabla <code>historial_creacion</code> con los siguientes campos:</p>
+<ul>
+<li><code>id</code> (autoincremental)</li>
+<li><code>campeon_id</code> (clave foránea a <code>campeon.id</code>)</li>
+<li><code>fecha_creacion</code> (tipo <code>DATETIME</code>)</li>
+<li><code>creado_por</code> (nombre del usuario que añadió el campeón)</li>
+</ul>
+</li>
+</ol>
 </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->

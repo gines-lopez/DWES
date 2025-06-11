@@ -14,7 +14,7 @@
         <link rel="prev" href="../../uutt/08_APIRest/088_PruebaEspecifica.html">
       
       
-        <link rel="next" href="../../retos/Reto4.html">
+        <link rel="next" href="../../retos/Reto5.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#propuesta-didactica-up-01-puesta-en-marcha" class="md-skip">
+        <a href="#propuesta-didactica-up-06-reactividad" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -2312,8 +2312,6 @@
       
         
       
-        
-      
     
     
     
@@ -2351,28 +2349,6 @@
   
     <li class="md-nav__item">
       <a href="../../uutt/07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../uutt/restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3221,11 +3197,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3686,78 +3662,80 @@
 
 
 
-<h1 id="propuesta-didactica-up-01-puesta-en-marcha">Propuesta didáctica <abbr title="Unidad de Programación">UP</abbr> 01: Puesta en marcha<a class="headerlink" href="#propuesta-didactica-up-01-puesta-en-marcha" title="Permanent link">&para;</a></h1>
+<h1 id="propuesta-didactica-up-06-reactividad">Propuesta didáctica <abbr title="Unidad de Programación">UP</abbr> 06: Reactividad<a class="headerlink" href="#propuesta-didactica-up-06-reactividad" title="Permanent link">&para;</a></h1>
 <h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
-<p>En la presente Unidad de Programación (<abbr title="Unidad de Programación">UP</abbr>) aprenderemos conceptos básicos del desarrollo web. Es esencial comprender los modelos de ejecución de código en el servidor y las herramientas disponibles para la programación en este entorno, lo que permite crear aplicaciones dinámicas y eficientes. Para lograrlo, es fundamental tener clara la diferencia entre cliente y servidor y entender cómo estos interactúan dentro de la arquitectura de una web dinámica. Un enfoque clave en este tipo de arquitectura es el Modelo Vista Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>), que organiza el desarrollo de software en tres componentes, facilitando la separación de la lógica de negocio, la interfaz y el control del flujo de datos.</p>
-<p>Además, configurar correctamente un entorno de trabajo en local es indispensable para simular las condiciones del servidor real, garantizando un desarrollo más eficiente. Las herramientas para la programación web en entorno servidor y la adecuada configuración del entorno local son recursos esenciales que permiten a los desarrolladores ejecutar, depurar y mejorar sus aplicaciones en un entorno controlado antes de desplegarlas en producción.</p>
+<p>La Unidad de Programación "Reactividad" tiene como objetivo proporcionar al alumnado las competencias necesarias para construir <strong>aplicaciones web híbridas que integren el backend con Laravel y el frontend con Vue.js</strong>. A lo largo de esta unidad se trabajará en la integración de interfaces reactivas que consumen APIs REST, implementando procesos como la autenticación de usuarios, el consumo seguro de recursos protegidos mediante tokens y el uso de cookies. El alumnado pondrá en práctica los conocimientos adquiridos en el módulo profesional de "Desarrollo Web en entorno cliente" sobre Vue, además de gestionar rutas, manejar formularios, interactuar con Laravel Breeze para la autenticación, y trabajar con herramientas modernas como Axios y Vite. Esta unidad pone especial énfasis en la separación de responsabilidades, la eficiencia en la comunicación cliente-servidor y la experiencia de usuario fluida.</p>
+<p>Asimismo, se abordarán aspectos avanzados como el despliegue de aplicaciones a producción, la visualización de grandes volúmenes de datos con herramientas como D3.js, y la <strong>integración de bases de datos NoSQL como MongoDB</strong>. Las alumnas y los alumnos aprenderá a optimizar el rendimiento del sistema aplicando buenas prácticas en la configuración del entorno de producción, como la cache de rutas, vistas y configuración. Se trabajará también con estructuras de control de acceso, verificación del estado de autenticación y creación de dashboards de usuario, consolidando un enfoque profesional y seguro en el desarrollo de aplicaciones web modernas. Con todo ello, el alumnado finalizará la unidad capacitado para entregar soluciones completas, escalables y eficientes, preparadas para entornos reales.</p>
 <h3 id="cuestionario-inicial">Cuestionario inicial<a class="headerlink" href="#cuestionario-inicial" title="Permanent link">&para;</a></h3>
 <details class="question">
 <summary>¡Ponte a prueba!</summary>
 <ol>
-<li>¿Qué define una arquitectura web?<ol>
-<li>El diseño visual de una página web.</li>
-<li>La forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí.</li>
-<li>El tipo de contenido multimedia utilizado.</li>
-<li>La velocidad de carga de la página web​</li>
-</ol>
-</li>
-</ol>
-<details class="abstract">
-<summary>Respuesta correcta</summary>
-<p>Respuesta correcta: b. La forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí.</p>
-</details>
-<ol start="2">
-<li>En una arquitectura cliente-servidor, ¿qué papel suele desempeñar el cliente?<ol>
-<li>Servidor de base de datos.</li>
-<li>Balanceador de carga.</li>
-<li>Navegador web.</li>
-<li>Servidor de aplicaciones​</li>
-</ol>
-</li>
+<li>
+<p>¿Qué función cumple Laravel Breeze en un proyecto?  </p>
+<ol>
+<li>Administrar la base de datos  </li>
+<li>Crear la estructura de carpetas del proyecto  </li>
+<li>Proveer autenticación sencilla con frontend integrado  </li>
+<li>Compilar los assets del proyecto  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. Navegador web.</p>
+<p>Respuesta correcta: c. Proveer autenticación sencilla con frontend integrado</p>
 </details>
-<ol start="3">
-<li>¿Qué se necesita para generar una página web dinámica?<ol>
-<li>Solo HTML y CSS.</li>
-<li>Lenguaje de servidor y/o servicios REST.</li>
-<li>Únicamente JavaScript.</li>
-<li>Conexión a una red privada virtual (<abbr title="Virtual Private Network">VPN</abbr>)​</li>
-</ol>
 </li>
+<li>
+<p>¿Qué herramienta se utiliza en Vue para hacer peticiones <abbr title="HyperText Transfer Protocol">HTTP</abbr> a una API?  </p>
+<ol>
+<li>Laravel  </li>
+<li>VueRouter  </li>
+<li>Axios  </li>
+<li>Webpack  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: b. Lenguaje de servidor y/o servicios REST.</p>
+<p>Respuesta correcta: c. Axios</p>
 </details>
-<ol start="4">
-<li>¿Qué perfiles de desarrollo se asocian con la generación de páginas dinámicas?<ol>
-<li>Analista de datos y científico de datos.</li>
-<li>Diseñador gráfico y desarrollador de juegos.</li>
-<li>Front-end/cliente y Back-end/servidor.</li>
-<li>Gestor de redes y administrador de sistemas​</li>
-</ol>
 </li>
+<li>
+<p>¿Qué archivo se configura para definir rutas en una aplicación Vue con Vue Router?  </p>
+<ol>
+<li>routes/api.php  </li>
+<li>vue.config.js  </li>
+<li>router.js  </li>
+<li>app.vue  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. Front-end/cliente y Back-end/servidor.</p>
+<p>Respuesta correcta: c. router.js</p>
 </details>
-<ol start="5">
-<li>¿Qué representa el "Modelo" en el patrón de diseño Modelo-Vista-Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>)?<ol>
-<li>La interfaz de usuario.</li>
-<li>La lógica de negocio y gestión de eventos.</li>
-<li>La información y gestión de accesos a esta.</li>
-<li>El componente que gestiona las comunicaciones y eventos​</li>
-</ol>
 </li>
+<li>
+<p>¿Qué cabecera <abbr title="HyperText Transfer Protocol">HTTP</abbr> se utiliza comúnmente para enviar un token de autenticación?  </p>
+<ol>
+<li>X-CSRF-Token  </li>
+<li>Authorization: Bearer  </li>
+<li>Content-Type  </li>
+<li>Accept-Encoding  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. La información y gestión de accesos a esta.</p>
+<p>Respuesta correcta: b. Authorization: Bearer</p>
 </details>
+</li>
+<li>
+<p>¿Cuál es la utilidad de la librería D3.js en un proyecto Vue?  </p>
+<ol>
+<li>Validar formularios  </li>
+<li>Establecer rutas entre componentes  </li>
+<li>Visualizar datos mediante gráficos SVG  </li>
+<li>Cifrar contraseñas  </li>
+</ol>
+<details class="abstract">
+<summary>Respuesta correcta</summary>
+<p>Respuesta correcta: c. Visualizar datos mediante gráficos SVG</p>
+</details>
+</li>
+</ol>
 </details>
 <h2 id="resumen-up">Resumen <abbr title="Unidad de Programación">UP</abbr><a class="headerlink" href="#resumen-up" title="Permanent link">&para;</a></h2>
 <article id="resumen-ut">
@@ -3769,57 +3747,57 @@
 <section class="ut-datrecap">
 <section class="ut-ut">
 <p class="ut-emp"><strong>Unidad de Programación</strong></p>
-<p><strong><abbr title="Unidad de Programación">UP</abbr> 01. Puesta en marcha</strong></p>
+<p><strong><abbr title="Unidad de Programación">UP</abbr> 06. Reactividad</strong></p>
 </section>
 <section class="ut-hours">
 <p class="ut-emp"><strong>Duración</strong></p>
-<p>2 Sesiones - 4H</p>
+<p>10 Sesiones - 20H</p>
 </section>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Unidad de Trabajo de la <abbr title="Unidad de Programación">UP</abbr></strong></p>
-<p><a href="../../uutt/01_Arquitectura/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 01. Arquitectura Web y herramientas de programación.</a></p>
+<p><a href="../../uutt/09_Reactividad/ProgramacionAula.md"><abbr title="Unidad de Trabajo">UT</abbr> 09. Reactividad.</a></p>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Resultados de Aprendizaje</strong></p>
-<p><strong><abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr></strong>. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</p>
+<p><strong><abbr title="Desarrolla aplicaciones web híbridas seleccionando y utilizando tecnologías, frameworks servidor y repositorios heterogéneos de información.">RA9</abbr></strong>. Desarrolla aplicaciones web híbridas seleccionando y utilizando tecnologías, frameworks servidor y repositorios heterogéneos de información.</p>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Preconocimiento</strong></p>
-<p>Conocer la estructura de una web y el uso de IDE.</p>
+<p>Conocimientos de JavaScript y de <abbr title="Hypertext Preprocessor">PHP</abbr>.</p>
 </section>
 </section>
 <section id="objetivos">
 <section class="ut-data">
 <p class="ut-emp"><strong>Objetivos Generales</strong></p>
 <ul>
-    <li><strong>OGc</strong>: Identificar los modelos de ejecución de código en el servidor.</li>
-    <li><strong>OGd</strong>: Distinguir las herramientas de programación en entorno servidor. </li>
+    <li><strong>OG</strong>: .</li>
+    <li><strong>OG</strong>: . </li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Competencias Profesionales, Personales y Sociales.</strong></p>
 <ul>
-<li><strong>CPRs</strong>. Gestionar servidores en distintos ámbitos de implantación adaptando su configuración en cada caso para permitir el despliegue de aplicaciones web.</li>
-<li><strong>CPSq</strong>. Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo.</li>
+<li><strong>CPR</strong>. .</li>
+<li><strong>CPS</strong>. .</li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Objetivos Didácticos</strong></p>
 <ul>
-    <li><strong>OD1</strong>: Identificar los modelos de ejecución de código en el servidor.</li>
-    <li><strong>OD2</strong>: Distinguir las herramientas de programación en entorno servidor. </li>
-    <li><strong>OD3</strong>: Configurar entorno de trabajo en local.</li>
+    <li><strong>OD1</strong>: Desarrollar webs repositorios de terceros.</li>
+    <li><strong>OD2</strong>: Generar webs con comportamiento reactivo. </li>
+    <li><strong>OD3</strong>: Programar aplicaciones de Big Data.</li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Contenidos Específicos</strong></p>
 <ul>
-<li><strong>CES1</strong>. Diferencias entre cliente y servidor</li>
-<li><strong>CES2</strong>. Arquitectura de una web dinámica</li>
-<li><strong>CES3</strong>. Modelo Vista Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>)</li>
-<li><strong>CES4</strong>. Herramientas para programación web en entorno servidor</li>
-<li><strong>CES5</strong>. Configuración entorno local</li>
+<li><strong>CES1</strong>. Proyecto reactivo</li>
+<li><strong>CES2</strong>. Uso de componentes de terceros</li>
+<li><strong>CES3</strong>. Gestión de subida en el servidor</li>
+<li><strong>CES4</strong>. Puesta en producción de una aplicación</li>
+<li><strong>CES5</strong>. Aplicación del Big Data en un proyecto reactivo</li>
 </ul>
 </section>
 </section>
@@ -3892,11 +3870,11 @@
 <section class="ut-datrecap">
 <section class="ut-ut">
 <p class="ut-emp"><strong>Resultado de Aprendizaje</strong></p>
-<p><strong><abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr></strong>. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</p>
+<p><strong><abbr title="Desarrolla aplicaciones web híbridas seleccionando y utilizando tecnologías, frameworks servidor y repositorios heterogéneos de información.">RA9</abbr></strong>. Desarrolla aplicaciones web híbridas seleccionando y utilizando tecnologías, frameworks servidor y repositorios heterogéneos de información.</p>
 </section>
 <section class="ut-hours">
 <p class="ut-emp"><strong>Duración</strong></p>
-<p>2 Sesiones - 4H</p>
+<p>10 Sesiones - 20H</p>
 </section>
 </section>
 <section id="body-ut">
@@ -3909,66 +3887,82 @@
 </section>
 <!-- Inicio RRAA -->
 <section class="body-ce">
-<p><abbr title="Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.">CE1a</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se han reconocido las ventajas que proporciona la reutilización de código y el aprovechamiento de información ya existente.">CE9a</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han reconocido las ventajas que proporciona la generación dinámica de páginas Web y sus diferencias con la inclusión de sentencias de guiones en el interior de las páginas Web.">CE1b</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se han identificado tecnologías y frameworks aplicables en la creación de aplicaciones web híbridas.">CE9b</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 103, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102, <abbr title="Actividades de profundización.">AP</abbr> 104</p>
+<p><abbr title="Se ha creado una aplicación web que recupere y procese repositorios de información ya existentes.">CE9c</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su integración con los servidores Web.">CE1d</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
+<p><abbr title="Se han creado repositorios específicos a partir de información existente en almacenes de información.">CE9d</abbr></p>
 <p></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Actividades de clase">AC</abbr> 103, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de profundización.">AP</abbr> 104</p>
+<p><abbr title="Se han utilizado librerías de código y frameworks para incorporar funcionalidades específicas a una aplicación web.">CE9e</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.">CE1f</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se han programado servicios y aplicaciones web utilizando como base información y código generados por terceros.">CE9f</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han reconocido y evaluado las herramientas de programación en entorno servidor.">CE1g</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se han analizado y utilizado librerías de código relacionadas con Big Data e inteligencia de negocios, para incorporar análisis e inteligencia de datos proveniente de repositorios.">CE9g</abbr></p>
 <p></p>
-<p>14.28%</p>
+<p></p>
+<p></p>
+<p></p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han probado, depurado y documentado las aplicaciones generadas.">CE9h</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 </section>
 </section>
 </section>
 </article>
 <h2 id="referencias">Referencias<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Curso: <a href="https://sergarb1.github.io/CursoIntroduccionADocker/">Introducción a Docker</a>, por Sergi García Barea</li>
-<li>Artículo: <a href="https://www.arquitecturajava.com/arquitecturas-web-y-su-evolucion/">Arquitecturas Web y su evolución</a></li>
-<li>Web: <a href="https://aitor-medrano.github.io/dwes2122/">Desarrollo Web en Entorno Servidor</a>, por Aitor Medrano</li>
+<li>Web: <a href="https://keepcoding.io/blog/que-es-la-programacion-reactiva/">¿Qué es la programación reactiva?</a> </li>
+<li>Web: <a href="https://es.vuejs.org/v2/guide/">Documentación oficial Vue.js</a></li>
+<li>Web: <a href="https://router.vuejs.org/">Documentación oficial de Vue Router</a></li>
+<li>Web: <a href="https://mcalvaro.gitbook.io/laravel-10-documentacion-en-espanol/reference/primeros-pasos/despliegue">Despliegue aplicación</a></li>
+<li>Web: <a href="https://d3js.org/community">Documentación D3.js</a></li>
 </ul>
 <h2 id="links-de-interes">Links de interés<a class="headerlink" href="#links-de-interes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Artículo: <a href="https://www.unir.net/ingenieria/revista/full-stack-developer/">Full stack developer: ¿cuáles son sus funciones y qué formación necesito?</a></li>
+<li>Web: <a href="https://platzi.com/blog/programacion-reactiva/">Programación reactiva: Guía para desarrolladores</a></li>
+<li>Web: <a href="https://keepcoding.io/blog/fetch-o-axios/">Elegir entre Fetch o Axios</a></li>
+<li>Web: <a href="https://blog.logrocket.com/data-visualization-vue-js-d3/">Data visualization with Vue.js and D3</a></li>
+<li>Web: <a href="https://www.mongodb.com/resources/products/compatibilities/mongodb-laravel-integration">MongoDB and Laravel Integration</a></li>
+<li>Vídeo: <a href="https://www.youtube.com/playlist?list=PLPl81lqbj-4J-gfAERGDCdOQtVgRhSvIT">Curso de Vue JS - Tutorial en Español [Desde Cero]</a></li>
+<li>Vídeo: <a href="https://www.youtube.com/playlist?list=PLg-z1C9R1jutezByZ3WmH8NE_JqYBsDOA">Curso de Vue.js 3 en Español</a></li>
+<li>Vídeo: <a href="https://www.youtube.com/playlist?list=PLC3y8-rFHvwgeQIfSDtEGVvvSEPDkL_1f">Vue JS 3 Tutorial for Beginners</a></li>
+<li>Vídeo: <a href="https://www.youtube.com/watch?v=AeUyV8of7a0">Visualización de Datos Interactiva en aplicaciones con Vue.js y React</a> por Javier Abadía</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
@@ -4027,13 +4021,13 @@
         
         
           
-          <a href="../../retos/Reto4.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 🎯 Reto 4">
+          <a href="../../retos/Reto5.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 🎯 Reto 5">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                🎯 Reto 4
+                🎯 Reto 5
               </div>
             </div>
             <div class="md-footer__button md-icon">

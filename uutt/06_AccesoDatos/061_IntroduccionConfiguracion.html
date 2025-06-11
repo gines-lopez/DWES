@@ -2102,6 +2102,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#como-importar-una-base-de-datos-en-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo importar una base de datos en MySQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo importar una base de datos en MySQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-usando-la-linea-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Usando la línea de comandos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-usando-phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Usando phpMyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consideraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consideraciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#actividad" class="md-nav__link">
     <span class="md-ellipsis">
       Actividad
@@ -2384,8 +2426,6 @@
       
         
       
-        
-      
     
     
     
@@ -2423,28 +2463,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3190,11 +3208,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3664,11 +3682,15 @@
 </figure>
 
 <h2 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h2>
-<!--
-TODO: Qué es XAMPP
--->
-
-<p>Con <strong>XAMPP</strong>, la instalación es muy sencilla. Solo necesitamos descargar el programa y activarlo. Para obtener XAMPP, <a href="https://www.apachefriends.org/es/download.html">pulsa aquí</a>.</p>
+<p><strong>XAMPP</strong> es un paquete de software libre que permite montar un servidor web local de forma sencilla. El nombre es un acrónimo que significa:</p>
+<ul>
+<li><strong>X</strong>: Multiplataforma (funciona en Windows, Linux y macOS)</li>
+<li><strong>A</strong>: Apache (servidor web)</li>
+<li><strong>M</strong>: MySQL o MariaDB (sistema de gestión de bases de datos)</li>
+<li><strong>P</strong>: <abbr title="Hypertext Preprocessor">PHP</abbr> (lenguaje de programación del lado del servidor)</li>
+<li><strong>P</strong>: Perl (lenguaje de programación)</li>
+</ul>
+<p>Una vez que sabemos lo que es <strong>XAMPP</strong>, la instalación es muy sencilla. Solo necesitamos descargar el programa y activarlo. Para obtener XAMPP, <a href="https://www.apachefriends.org/es/download.html">pulsa aquí</a>.</p>
 <p>Con Docker, descargaremos <a href="../../resources/plantilla-APCM.zip">esta imagen de Docker</a> y ejecutaremos el siguiente comando </p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </span></code></pre></div>
@@ -3685,26 +3707,37 @@ TODO: Qué es XAMPP
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>contraseña: 1234
 </span></code></pre></div>
 <h2 id="estructura-de-una-base-de-datos">Estructura de una base de datos<a class="headerlink" href="#estructura-de-una-base-de-datos" title="Permanent link">&para;</a></h2>
-<!-- 
-TODO: estructura de DB -> Tablas -> Filas -> Columnas (nombre y tipo de dato)
--->
-<p>Sabemos que una base de datos tiene muchos campos con sus nombres y valores, pero además sabemos que la base de datos debe tener un nombre. Por tanto, tendríamos la siguiente estructura para una base de datos:</p>
-<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>NombreBaseDeDatos
-<span class="linenos" data-linenos=" 2 "></span>    |__Tabla-#1
-<span class="linenos" data-linenos=" 3 "></span>    |       |__DatosTabla-#1
-<span class="linenos" data-linenos=" 4 "></span>    |
-<span class="linenos" data-linenos=" 5 "></span>    |__Tabla-#2
-<span class="linenos" data-linenos=" 6 "></span>    |       |__DatosTabla-#2
-<span class="linenos" data-linenos=" 7 "></span>    |
-<span class="linenos" data-linenos=" 8 "></span>    |__Tabla-#3
-<span class="linenos" data-linenos=" 9 "></span>    |       |__DatosTabla-#3
-<span class="linenos" data-linenos="10 "></span>    [...]
-</code></pre></div>
-<!-- 
-TODO: explicar, donde tenemos tres tablas, relacionadas entre sí...
--->
-
-<p>Veámoslo en un ejemplo real:</p>
+<p>Sabemos que una base de datos tiene muchos campos con sus nombres y valores, pero además, debe tener un nombre que la identifique. Por tanto, la estructura general de una base de datos relacional se organiza de la siguiente manera:</p>
+<ol>
+<li><strong>Base de datos</strong>: tiene un <strong>nombre</strong> único que la identifica.</li>
+<li><strong>Tablas</strong>: dentro de la base de datos, se definen múltiples tablas, cada una también con un nombre único.</li>
+<li><strong>Filas (registros)</strong>: cada fila representa una instancia individual de los datos almacenados en una tabla.</li>
+<li>
+<p><strong>Columnas (campos)</strong>: cada columna tiene:
+   - <strong>Nombre</strong>: describe el tipo de información que contiene.
+   - <strong>Tipo de dato</strong>: define qué tipo de valores puede almacenar (por ejemplo: <code>INTEGER</code>, <code>VARCHAR</code>, <code>DATE</code>, etc.).</p>
+<p>NombreBaseDeDatos
+    |__Tabla-#1
+    |       |__DatosTabla-#1
+    |
+    |__Tabla-#2
+    |       |__DatosTabla-#2
+    |
+    |__Tabla-#3
+    |       |__DatosTabla-#3
+    [...]</p>
+</li>
+</ol>
+<p>Para comprender mejor cómo se estructura y organiza una base de datos relacional, vamos a utilizar un ejemplo práctico basado en una aerolínea ficticia llamada <strong>Ryanair</strong>.</p>
+<p>Este ejemplo nos permitirá observar:</p>
+<ul>
+<li>Cómo se nombra y organiza una base de datos.</li>
+<li>Qué es una tabla y cómo se define.</li>
+<li>Cómo se representan las filas (registros) y las columnas (campos).</li>
+<li>Cómo se manejan claves primarias y claves foráneas para establecer relaciones entre datos.</li>
+</ul>
+<p>A partir de este escenario, construiremos la estructura de una base de datos que almacene información sobre <strong>pasajeros</strong>, <strong>vuelos</strong> y <strong>países</strong> de destino. Esta estructura es común en aplicaciones del mundo real como sistemas de reservas, plataformas de gestión de vuelos o bases de datos de clientes.</p>
+<p>El objetivo es identificar claramente la jerarquía: base de datos → tablas → filas → columnas (con nombre y tipo de dato).</p>
 <div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>Ryanair
 <span class="linenos" data-linenos=" 2 "></span>    |__pasajero
 <span class="linenos" data-linenos=" 3 "></span>    |    |__id[*]
@@ -3727,28 +3760,52 @@ TODO: explicar, donde tenemos tres tablas, relacionadas entre sí...
 <p class="admonition-title">Leyenda</p>
 <ul>
 <li>[*] Clave primaria </li>
-<li>[^] Clave Foránea</li>
+<li>[^] Clave foránea</li>
 </ul>
 </div>
-<!-- 
-TODO: en Foránea, f minúscula
--->
-
-<!-- 
-TODO: El cual se traduce en el siguiente diagrama ... pero falta la tabla vuelo!!!
--->
-<figure style="align: center;">
-    <a class="glightbox" href="../../img/ut06/0603.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../img/ut06/0603.png"></a>
-    <figcaption>Estructura base de datos</figcaption>
-</figure>
-
-<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
-<!-- 
-TODO: En la actividad, además de instalar, les pediría que importasen una base de datos... y esto último lo añadiría a los apuntes, ya que siempre tienen dudas y no se acuerdan cómo se hace
--->
-
+<h2 id="como-importar-una-base-de-datos-en-mysql">Cómo importar una base de datos en MySQL<a class="headerlink" href="#como-importar-una-base-de-datos-en-mysql" title="Permanent link">&para;</a></h2>
+<p>Existen varias formas de importar una base de datos en MySQL. A continuación, se muestran los métodos más comunes:</p>
+<h3 id="1-usando-la-linea-de-comandos">1. Usando la línea de comandos<a class="headerlink" href="#1-usando-la-linea-de-comandos" title="Permanent link">&para;</a></h3>
+<p>Si tienes un archivo <code>.sql</code> con la estructura y/o datos de la base de datos, puedes importarlo fácilmente desde la terminal.</p>
+<h4 id="requisitos">Requisitos:<a class="headerlink" href="#requisitos" title="Permanent link">&para;</a></h4>
 <ul>
-<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 601</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Documenta el proceso de instalación de MySQL, comentando las dificultades encontradas.</li>
+<li>Tener instalado MySQL o XAMPP.</li>
+<li>Tener el archivo <code>.sql</code> exportado previamente.</li>
+</ul>
+<h4 id="comando">Comando:<a class="headerlink" href="#comando" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>mysql<span class="w"> </span>-u<span class="w"> </span>usuario<span class="w"> </span>-p<span class="w"> </span>nombre_base_de_datos<span class="w"> </span>&lt;<span class="w"> </span>ruta/al/archivo.sql
+</span></code></pre></div>
+<p>Donde:</p>
+<ul>
+<li><code>usuario</code>: nombre del usuario (por defecto suele ser root).</li>
+<li><code>nombre_base_de_datos</code>: nombre de la base de datos donde se importarán los datos (debe existir previamente).</li>
+<li><code>ruta/al/archivo.sql</code>: ubicación del archivo SQL.</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>ryanair<span class="w"> </span>&lt;<span class="w"> </span>backup_ryanair.sql
+</span></code></pre></div>
+<h3 id="2-usando-phpmyadmin">2. Usando phpMyAdmin<a class="headerlink" href="#2-usando-phpmyadmin" title="Permanent link">&para;</a></h3>
+<h4 id="pasos">Pasos:<a class="headerlink" href="#pasos" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Accede a <code>http://localhost/phpmyadmin</code>.</li>
+<li>Crea una nueva base de datos (si aún no existe) con el nombre deseado.</li>
+<li>Selecciona esa base de datos en el panel izquierdo.</li>
+<li>Ve a la pestaña Importar.</li>
+<li>Haz clic en Seleccionar archivo y elige el archivo .sql desde tu equipo.</li>
+<li>Pulsa Continuar para ejecutar la importación.</li>
+</ol>
+<div class="admonition info">
+<p>phpMyAdmin se encarga de ejecutar automáticamente las sentencias SQL contenidas en el archivo.</p>
+</div>
+<h3 id="consideraciones">Consideraciones<a class="headerlink" href="#consideraciones" title="Permanent link">&para;</a></h3>
+<p>Elijas el método que elijas, tienes que tener en cuenta:</p>
+<ul>
+<li>Asegúrate de que el archivo <code>.sql</code> contiene instrucciones válidas para MySQL.</li>
+<li>Si la base de datos no existe, debes crearla antes de importar (o incluir la instrucción <code>CREATE DATABASE</code> en el archivo).</li>
+<li>Revisa el cotejamiento (<code>collation</code>) si trabajas con acentos o caracteres especiales (<code>utf8_general_ci</code> o <code>utf8mb4_unicode_ci</code> son buenas opciones).</li>
+</ul>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
+<ul>
+<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 601</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Documenta el proceso de instalación de MySQL, comentando las dificultades encontradas. Además importa el siguiente <a href="../../resources/MOCK_DATA.sql">fichero</a>, ¿qué ha ocurrido al importarlo?</li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

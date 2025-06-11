@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#propuesta-didactica-up-01-puesta-en-marcha" class="md-skip">
+        <a href="#propuesta-didactica-up-04-accediendo-a-datos-con-framework" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -2415,8 +2415,6 @@
       
         
       
-        
-      
     
     
     
@@ -2454,28 +2452,6 @@
   
     <li class="md-nav__item">
       <a href="../../uutt/07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../uutt/restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3221,11 +3197,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3686,78 +3662,145 @@
 
 
 
-<h1 id="propuesta-didactica-up-01-puesta-en-marcha">Propuesta didáctica <abbr title="Unidad de Programación">UP</abbr> 01: Puesta en marcha<a class="headerlink" href="#propuesta-didactica-up-01-puesta-en-marcha" title="Permanent link">&para;</a></h1>
+<h1 id="propuesta-didactica-up-04-accediendo-a-datos-con-framework">Propuesta didáctica <abbr title="Unidad de Programación">UP</abbr> 04: Accediendo a datos con framework<a class="headerlink" href="#propuesta-didactica-up-04-accediendo-a-datos-con-framework" title="Permanent link">&para;</a></h1>
 <h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
-<p>En la presente Unidad de Programación (<abbr title="Unidad de Programación">UP</abbr>) aprenderemos conceptos básicos del desarrollo web. Es esencial comprender los modelos de ejecución de código en el servidor y las herramientas disponibles para la programación en este entorno, lo que permite crear aplicaciones dinámicas y eficientes. Para lograrlo, es fundamental tener clara la diferencia entre cliente y servidor y entender cómo estos interactúan dentro de la arquitectura de una web dinámica. Un enfoque clave en este tipo de arquitectura es el Modelo Vista Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>), que organiza el desarrollo de software en tres componentes, facilitando la separación de la lógica de negocio, la interfaz y el control del flujo de datos.</p>
-<p>Además, configurar correctamente un entorno de trabajo en local es indispensable para simular las condiciones del servidor real, garantizando un desarrollo más eficiente. Las herramientas para la programación web en entorno servidor y la adecuada configuración del entorno local son recursos esenciales que permiten a los desarrolladores ejecutar, depurar y mejorar sus aplicaciones en un entorno controlado antes de desplegarlas en producción.</p>
+<p>La Unidad de Programación "Accediendo a datos con framework" tiene como objetivo dotar a los estudiantes de las competencias necesarias para desarrollar aplicaciones web dinámicas, organizadas y seguras que acceden y <strong>manipulan datos de manera persistente</strong>. A lo largo de esta unidad, se trabajará con tecnologías como <abbr title="Hypertext Preprocessor">PHP</abbr> y <strong>el framework Laravel</strong>, permitiendo construir aplicaciones que integren operaciones de base de datos con estructuras modernas como el patrón <abbr title="Modelo Vista Controlador.">MVC</abbr>. Se hará especial énfasis en la conexión con sistemas de gestión de bases de datos mediante PDO, el uso de sentencias preparadas para prevenir inyecciones SQL, la gestión de sesiones y archivos. Además, se abordará el desarrollo orientado a objetos en <abbr title="Hypertext Preprocessor">PHP</abbr> mediante un framework, facilitando la implementación de lógica de negocio clara y mantenible.</p>
+<p>Adicionalmente, se centrará en la calidad del software, capacitando al alumnado en la implementación de aplicaciones <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> completas utilizando Laravel y <em>Eloquent <abbr title="Mapeo Objeto-Relacional.">ORM</abbr></em>. Se enseñará a estructurar proyectos según las convenciones del framework, gestionar rutas, controladores, vistas y modelos de manera coherente y segura, y a aplicar principios de diseño que fomenten la escalabilidad y el mantenimiento del código. A través de ejemplos prácticos y entornos virtualizados como Docker, los estudiantes desarrollarán competencias clave para el desarrollo profesional de aplicaciones web modernas y eficientes, integrando la lógica del servidor con una gestión de datos robusta y segura.</p>
 <h3 id="cuestionario-inicial">Cuestionario inicial<a class="headerlink" href="#cuestionario-inicial" title="Permanent link">&para;</a></h3>
 <details class="question">
 <summary>¡Ponte a prueba!</summary>
 <ol>
-<li>¿Qué define una arquitectura web?<ol>
-<li>El diseño visual de una página web.</li>
-<li>La forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí.</li>
-<li>El tipo de contenido multimedia utilizado.</li>
-<li>La velocidad de carga de la página web​</li>
-</ol>
-</li>
-</ol>
-<details class="abstract">
-<summary>Respuesta correcta</summary>
-<p>Respuesta correcta: b. La forma en que las páginas de un sitio web están estructuradas y enlazadas entre sí.</p>
-</details>
-<ol start="2">
-<li>En una arquitectura cliente-servidor, ¿qué papel suele desempeñar el cliente?<ol>
-<li>Servidor de base de datos.</li>
-<li>Balanceador de carga.</li>
-<li>Navegador web.</li>
-<li>Servidor de aplicaciones​</li>
-</ol>
-</li>
+<li>
+<p>¿Qué significa PDO en el contexto de <abbr title="Hypertext Preprocessor">PHP</abbr>?  </p>
+<ol>
+<li><abbr title="Hypertext Preprocessor">PHP</abbr> Data Optimization  </li>
+<li><abbr title="Hypertext Preprocessor">PHP</abbr> Directory Object  </li>
+<li><abbr title="Hypertext Preprocessor">PHP</abbr> Data Objects  </li>
+<li><abbr title="Hypertext Preprocessor">PHP</abbr> Development Operator  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. Navegador web.</p>
+<p>Respuesta correcta: c. <abbr title="Hypertext Preprocessor">PHP</abbr> Data Objects</p>
 </details>
-<ol start="3">
-<li>¿Qué se necesita para generar una página web dinámica?<ol>
-<li>Solo HTML y CSS.</li>
-<li>Lenguaje de servidor y/o servicios REST.</li>
-<li>Únicamente JavaScript.</li>
-<li>Conexión a una red privada virtual (<abbr title="Virtual Private Network">VPN</abbr>)​</li>
-</ol>
 </li>
+<li>
+<p>¿Cuál de las siguientes operaciones corresponde a la "U" de <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr>?  </p>
+<ol>
+<li>Unir  </li>
+<li>Utilizar  </li>
+<li>Usar  </li>
+<li>Actualizar  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: b. Lenguaje de servidor y/o servicios REST.</p>
+<p>Respuesta correcta: d. Actualizar</p>
 </details>
-<ol start="4">
-<li>¿Qué perfiles de desarrollo se asocian con la generación de páginas dinámicas?<ol>
-<li>Analista de datos y científico de datos.</li>
-<li>Diseñador gráfico y desarrollador de juegos.</li>
-<li>Front-end/cliente y Back-end/servidor.</li>
-<li>Gestor de redes y administrador de sistemas​</li>
-</ol>
 </li>
+<li>
+<p>¿Qué ventaja principal ofrecen las sentencias preparadas en PDO?  </p>
+<ol>
+<li>Mejor compresión de datos  </li>
+<li>Menor uso de memoria  </li>
+<li>Prevención de inyecciones SQL  </li>
+<li>Generación automática de vistas  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. Front-end/cliente y Back-end/servidor.</p>
+<p>Respuesta correcta: c. Prevención de inyecciones SQL</p>
 </details>
-<ol start="5">
-<li>¿Qué representa el "Modelo" en el patrón de diseño Modelo-Vista-Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>)?<ol>
-<li>La interfaz de usuario.</li>
-<li>La lógica de negocio y gestión de eventos.</li>
-<li>La información y gestión de accesos a esta.</li>
-<li>El componente que gestiona las comunicaciones y eventos​</li>
-</ol>
 </li>
+<li>
+<p>¿Cuál es el patrón arquitectónico que sigue Laravel por defecto?  </p>
+<ol>
+<li>Singleton  </li>
+<li><abbr title="Modelo Vista Controlador.">MVC</abbr>  </li>
+<li>MVP  </li>
+<li>DAO  </li>
 </ol>
 <details class="abstract">
 <summary>Respuesta correcta</summary>
-<p>Respuesta correcta: c. La información y gestión de accesos a esta.</p>
+<p>Respuesta correcta: b. <abbr title="Modelo Vista Controlador.">MVC</abbr></p>
 </details>
+</li>
+<li>
+<p>¿Qué hace el método <code>lastInsertId()</code> en PDO?  </p>
+<ol>
+<li>Devuelve el número total de filas  </li>
+<li>Borra el último registro insertado  </li>
+<li>Obtiene el ID del último registro insertado  </li>
+<li>Lanza una excepción  </li>
+</ol>
+<details class="abstract">
+<summary>Respuesta correcta</summary>
+<p>Respuesta correcta: c. Obtiene el ID del último registro insertado</p>
+</details>
+</li>
+<li>
+<p>¿Dónde se definen las rutas web en un proyecto Laravel?  </p>
+<ol>
+<li>config/web.php  </li>
+<li>routes/api.php  </li>
+<li>public/web.php  </li>
+<li>routes/web.php  </li>
+</ol>
+<details class="abstract">
+<summary>Respuesta correcta</summary>
+<p>Respuesta correcta: d. routes/web.php</p>
+</details>
+</li>
+<li>
+<p>¿Cuál es el <abbr title="Mapeo Objeto-Relacional.">ORM</abbr> utilizado por Laravel para interactuar con bases de datos?  </p>
+<ol>
+<li>Doctrine  </li>
+<li>Propel  </li>
+<li>Eloquent  </li>
+<li>ActiveRecord  </li>
+</ol>
+<details class="abstract">
+<summary>Respuesta correcta</summary>
+<p>Respuesta correcta: c. Eloquent</p>
+</details>
+</li>
+<li>
+<p>¿Qué método Artisan se utiliza para crear un controlador tipo resource en Laravel?  </p>
+<ol>
+<li><code>php artisan controller:make</code>  </li>
+<li><code>php artisan make:controller -r</code>  </li>
+<li><code>php artisan controller new</code>  </li>
+<li><code>php artisan generate controller</code>  </li>
+</ol>
+<details class="abstract">
+<summary>Respuesta correcta</summary>
+<p>Respuesta correcta: b. <code>php artisan make:controller -r</code></p>
+</details>
+</li>
+<li>
+<p>¿Qué hace la instrucción <code>Route::resource('post', PostController::class);</code> en Laravel?  </p>
+<ol>
+<li>Define una sola ruta llamada <code>post</code>  </li>
+<li>Crea rutas personalizadas para el controlador  </li>
+<li>Define todas las rutas <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> automáticamente  </li>
+<li>Elimina todas las rutas relacionadas con <code>post</code>  </li>
+</ol>
+<details class="abstract">
+<summary>Respuesta correcta</summary>
+<p>Respuesta correcta: c. Define todas las rutas <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> automáticamente</p>
+</details>
+</li>
+<li>
+<p>¿Qué tipo de resultado devuelve el método <code>fetch(PDO::FETCH_ASSOC)</code>?  </p>
+<ol>
+<li>Un objeto  </li>
+<li>Un array indexado numéricamente  </li>
+<li>Un array asociativo con nombres de columnas  </li>
+<li>Un booleano  </li>
+</ol>
+<details class="abstract">
+<summary>Respuesta correcta</summary>
+<p>Respuesta correcta: c. Un array asociativo con nombres de columnas</p>
+</details>
+</li>
+</ol>
 </details>
 <h2 id="resumen-up">Resumen <abbr title="Unidad de Programación">UP</abbr><a class="headerlink" href="#resumen-up" title="Permanent link">&para;</a></h2>
 <article id="resumen-ut">
@@ -3769,57 +3812,71 @@
 <section class="ut-datrecap">
 <section class="ut-ut">
 <p class="ut-emp"><strong>Unidad de Programación</strong></p>
-<p><strong><abbr title="Unidad de Programación">UP</abbr> 01. Puesta en marcha</strong></p>
+<p><strong><abbr title="Unidad de Programación">UP</abbr> 04. Accediendo a datos con framework</strong></p>
 </section>
 <section class="ut-hours">
 <p class="ut-emp"><strong>Duración</strong></p>
-<p>2 Sesiones - 4H</p>
+<p>24 Sesiones - 48H</p>
 </section>
 </section>
 <section class="ut-data">
-<p class="ut-emp"><strong>Unidad de Trabajo de la <abbr title="Unidad de Programación">UP</abbr></strong></p>
-<p><a href="../../uutt/01_Arquitectura/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 01. Arquitectura Web y herramientas de programación.</a></p>
+<p class="ut-emp"><strong>Unidades de Trabajo de la <abbr title="Unidad de Programación">UP</abbr></strong></p>
+<p><a href="../../uutt/06_AccesoDatos/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 06. Acceso a Datos.</a><br>
+<a href="../../uutt/07_Laravel/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 07. Framework: Laravel.</a></p>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Resultados de Aprendizaje</strong></p>
-<p><strong><abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr></strong>. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</p>
+<p><strong><abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr></strong>. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.<br><strong><abbr title="Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.">RA8</abbr></strong>. Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.</p>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Preconocimiento</strong></p>
-<p>Conocer la estructura de una web y el uso de IDE.</p>
+<p>Conocimientos adquiridos en el módulo de Base de Datos.<br>Conocimientos de <abbr title="Hypertext Preprocessor">PHP</abbr> y de BBDD</p>
 </section>
 </section>
 <section id="objetivos">
 <section class="ut-data">
 <p class="ut-emp"><strong>Objetivos Generales</strong></p>
 <ul>
-    <li><strong>OGc</strong>: Identificar los modelos de ejecución de código en el servidor.</li>
-    <li><strong>OGd</strong>: Distinguir las herramientas de programación en entorno servidor. </li>
+    <li><strong>OG</strong>: </li>
+    <li><strong>OG</strong>: </li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Competencias Profesionales, Personales y Sociales.</strong></p>
 <ul>
-<li><strong>CPRs</strong>. Gestionar servidores en distintos ámbitos de implantación adaptando su configuración en cada caso para permitir el despliegue de aplicaciones web.</li>
-<li><strong>CPSq</strong>. Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo.</li>
+<li><strong>CPRj</strong>. Desarrollar e integrar componentes software en el entorno del servidor web, empleando herramientas y lenguajes específicos, para cumplir las especificaciones de la aplicación.</li>
+<li><strong>CPRk</strong>. Desarrollar servicios para integrar sus funciones en otras aplicaciones web, asegurando su funcionalidad.</li>
+<li><strong>CPRq</strong>. Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo.</li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Objetivos Didácticos</strong></p>
 <ul>
-    <li><strong>OD1</strong>: Identificar los modelos de ejecución de código en el servidor.</li>
-    <li><strong>OD2</strong>: Distinguir las herramientas de programación en entorno servidor. </li>
-    <li><strong>OD3</strong>: Configurar entorno de trabajo en local.</li>
+    <li><strong>OD1</strong>: Analizar tecnologías que permitan el acceso a la información.</li>
+    <li><strong>OD2</strong>: Realizar aplicaciones que interactúen con una base de datos. </li>
+    <li><strong>OD3</strong>: Documentar y probar aplicaciones web.</li>
+    <li><strong>OD4</strong>: Identificar las ventajas e inconvenientes del uso de frameworks en el desarrollo web en entorno servidor.</li>
+    <li><strong>OD5</strong>: Desarrollar servicios web mediante frameworks </li>
+    <li><strong>OD6</strong>: Generar páginas web siguiendo el patrón <abbr title="Modelo Vista Controlador.">MVC</abbr></li>
+    <li><strong>OD7</strong>: Manejar roles dentro de una aplicación web. </li>
+    <li><strong>OD8</strong>: Introducir datos de ejemplos en una aplicación web de manera automatizada.</li>
 </ul>
 </section>
 <section class="ut-data">
 <p class="ut-emp"><strong>Contenidos Específicos</strong></p>
 <ul>
-<li><strong>CES1</strong>. Diferencias entre cliente y servidor</li>
-<li><strong>CES2</strong>. Arquitectura de una web dinámica</li>
-<li><strong>CES3</strong>. Modelo Vista Controlador (<abbr title="Modelo Vista Controlador.">MVC</abbr>)</li>
-<li><strong>CES4</strong>. Herramientas para programación web en entorno servidor</li>
-<li><strong>CES5</strong>. Configuración entorno local</li>
+    <li><strong>CES1</strong>. Conexión con una base de datos</li>
+    <li><strong>CES2</strong>. Recuperación de información de una base de datos</li>
+    <li><strong>CES3</strong>. Utilización de conjunto de datos para almacenar la información</li>
+    <li><strong>CES4</strong>. Programación de aplicaciones que permitan actualizar y eliminar datos</li>
+    <li><strong>CES5</strong>. Inicio de un proyecto web con Laravel 11</li>
+    <li><strong>CES6</strong>. Arquitectura de una aplicación realizada con Laravel</li>
+    <li><strong>CES7</strong>. Uso del <abbr title="Modelo Vista Controlador.">MVC</abbr> con framework</li>
+    <li><strong>CES8</strong>. Uso de <abbr title="Crear, Leer, Actualizar y Borrar.">CRUD</abbr> con el <abbr title="Modelo Vista Controlador.">MVC</abbr> y el framework</li>
+    <li><strong>CES9</strong>. Configuración paginación de una aplicación</li>
+    <li><strong>CES10</strong>. Roles en una apliación</li>
+    <li><strong>CES11</strong>. Eloquent</li>
+    <li><strong>CES12</strong>. Datos de prueba: uso de factorías y semilleros</li>
 </ul>
 </section>
 </section>
@@ -3837,12 +3894,6 @@
 <section class="ut-actividad">
 <p><strong><abbr title="Actividades de clase">AC</abbr> 101</strong>. Identificar los tres frameworks de <abbr title="Hypertext Preprocessor">PHP</abbr> más utilizados</p>
 <p><abbr title="Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.">CE1a</abbr>, <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr>, <abbr title="Se han reconocido y evaluado las herramientas de programación en entorno servidor.">CE1g</abbr></p>
-<p><abbr title="Actividades de la Unidad (AU). Actividades teórico-practicas que serán evaluadas con el IC1.">IE1</abbr></p>
-<p><abbr title="Escala de valores.">IC1</abbr></p>
-</section>
-<section class="ut-actividad">
-<p><strong><abbr title="Actividades de clase">AC</abbr> 103</strong>. Configurar un servidor <abbr title="Hypertext Preprocessor">PHP</abbr> y mostrar características</p>
-<p><abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr>, <abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr></p>
 <p><abbr title="Actividades de la Unidad (AU). Actividades teórico-practicas que serán evaluadas con el IC1.">IE1</abbr></p>
 <p><abbr title="Escala de valores.">IC1</abbr></p>
 </section>
@@ -3892,11 +3943,11 @@
 <section class="ut-datrecap">
 <section class="ut-ut">
 <p class="ut-emp"><strong>Resultado de Aprendizaje</strong></p>
-<p><strong><abbr title="Selecciona las arquitecturas y tecnologías de programación web en entorno servidor, analizando sus capacidades y características propias.">RA1</abbr></strong>. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</p>
+<p><strong><abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr></strong>. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.</p>
 </section>
 <section class="ut-hours">
 <p class="ut-emp"><strong>Duración</strong></p>
-<p>2 Sesiones - 4H</p>
+<p>12 Sesiones - 24H</p>
 </section>
 </section>
 <section id="body-ut">
@@ -3909,51 +3960,125 @@
 </section>
 <!-- Inicio RRAA -->
 <section class="body-ce">
-<p><abbr title="Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.">CE1a</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.">CE6a</abbr></p>
 <p></p>
-<p>14.28%</p>
-</section>
-<section class="body-ce">
-<p><abbr title="Se han reconocido las ventajas que proporciona la generación dinámica de páginas Web y sus diferencias con la inclusión de sentencias de guiones en el interior de las páginas Web.">CE1b</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
-<p></p>
-<p>14.28%</p>
-</section>
-<section class="body-ce">
-<p><abbr title="Se han identificado los mecanismos de ejecución de código en los servidores Web.">CE1c</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 103, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102, <abbr title="Actividades de profundización.">AP</abbr> 104</p>
-<p></p>
-<p>14.28%</p>
-</section>
-<section class="body-ce">
-<p><abbr title="Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su integración con los servidores Web.">CE1d</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
 <p></p>
 <p></p>
 <p>14.28%</p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han identificado los mecanismos de ejecución de código en los servidores web.">CE1e</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Actividades de clase">AC</abbr> 103, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de profundización.">AP</abbr> 104</p>
+<p><abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr></p>
+<p></p>
+<p></p>
 <p></p>
 <p>14.28%</p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.">CE1f</abbr></p>
-<p><abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr></p>
+<p></p>
+<p></p>
 <p></p>
 <p>14.28%</p>
 </section>
 <section class="body-ce">
-<p><abbr title="Se han reconocido y evaluado las herramientas de programación en entorno servidor.">CE1g</abbr></p>
-<p><abbr title="Actividades de clase">AC</abbr> 101, <abbr title="Cuestionario">CU</abbr> 105</p>
-<p><abbr title="Actividades de refuerzo.">AR</abbr> 102</p>
+<p><abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+</section>
+</section>
+</article>
+<article id="resumen-ce">
+<!-- Head -->
+<section id="head">
+<section class="ut-datrecap">
+<section class="ut-ut">
+<p class="ut-emp"><strong>Resultado de Aprendizaje</strong></p>
+<p><strong><abbr title="Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.">RA8</abbr></strong>. Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.</p>
+</section>
+<section class="ut-hours">
+<p class="ut-emp"><strong>Duración</strong></p>
+<p>12 Sesiones - 24H</p>
+</section>
+</section>
+<section id="body-ut">
+<section id="body-ce-head">
+<p><abbr title="Criterios de Evaluación">CCEE</abbr></p>
+<p>Actividades Obligatorias<br>(<abbr title="Actividades de clase">AC</abbr> / <abbr title="Proyecto">PR</abbr> / <abbr title="Actividades del reto">RE</abbr> / <abbr title="Cuestionario">CU</abbr> / <abbr title="Prueba Objetiva">PO</abbr>)</p>
+<p>Actividades Refuerzo / Profundización <br> (<abbr title="Actividades de refuerzo.">AR</abbr> / <abbr title="Actividades de profundización.">AP</abbr>)</p>
+<p>Puntos</p>
+<p>Relevancia porcentual</p>
+</section>
+<!-- Inicio RRAA -->
+<section class="body-ce">
+<p><abbr title="Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente web.">CE8a</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.">CE8b</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han identificado las tecnologías y frameworks relacionadas con la generación por parte del servidor de páginas web con guiones embebidos.">CE8c</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han utilizado estas tecnologías y frameworks para generar páginas web que incluyan interacción con el usuario.">CE8d</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han utilizado estas tecnologías y frameworks, para generar páginas web que incluyan verificación de formularios.">CE8e</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han utilizado estas tecnologías y frameworks para generar páginas web que incluyan modificación dinámica de su contenido y su estructura.">CE8f</abbr></p>
+<p></p>
+<p></p>
+<p></p>
+<p>14.28%</p>
+</section>
+<section class="body-ce">
+<p><abbr title="Se han aplicado estas tecnologías y frameworks en la programación de aplicaciones web.">CE8g</abbr></p>
+<p></p>
+<p></p>
 <p></p>
 <p>14.28%</p>
 </section>
@@ -3962,13 +4087,19 @@
 </article>
 <h2 id="referencias">Referencias<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Curso: <a href="https://sergarb1.github.io/CursoIntroduccionADocker/">Introducción a Docker</a>, por Sergi García Barea</li>
-<li>Artículo: <a href="https://www.arquitecturajava.com/arquitecturas-web-y-su-evolucion/">Arquitecturas Web y su evolución</a></li>
-<li>Web: <a href="https://aitor-medrano.github.io/dwes2122/">Desarrollo Web en Entorno Servidor</a>, por Aitor Medrano</li>
+<li>Web: <a href="https://www.php.net/manual/es/book.pdo.php">PDO en <abbr title="Hypertext Preprocessor">PHP</abbr> - Manual oficial</a> por php.net  </li>
+<li>Web: <a href="https://victorroblesweb.es/2013/11/18/tutorial-mvc-en-php-nativo/"><abbr title="Modelo Vista Controlador.">MVC</abbr> (Modelo Vista Controlador) en <abbr title="Hypertext Preprocessor">PHP</abbr> nativo</a> por Víctor Robles  </li>
+<li>Manual: <a href="https://desarrolloweb.com/manuales/37">Sistema de autenticación con <abbr title="Hypertext Preprocessor">PHP</abbr></a>  </li>
+<li>Web: <a href="https://laravel.com/docs">Laravel - Documentación oficial</a> por Laravel  </li>
+<li>Web: <a href="https://owasp.org/www-community/attacks/SQL_Injection">Inyección SQL - OWASP</a>  </li>
 </ul>
 <h2 id="links-de-interes">Links de interés<a class="headerlink" href="#links-de-interes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Artículo: <a href="https://www.unir.net/ingenieria/revista/full-stack-developer/">Full stack developer: ¿cuáles son sus funciones y qué formación necesito?</a></li>
+<li>Web: <a href="https://desarrolloweb.com/manuales/tutorial-composer.html">Tutorial de Composer</a>  </li>
+<li>Web: <a href="https://hub.docker.com/r/bitnami/laravel/">Laravel en Docker con Bitnami</a>  </li>
+<li>Web: <a href="https://documentacionlaravel.com">Laravel Español - documentación alternativa</a>  </li>
+<li>Web: <a href="https://laracasts.com/series/laravel-8-from-scratch">Curso Laravel desde cero (Laracasts)</a>  </li>
+<li>Web: <a href="https://github.com/laravel/laravel">Repositorio oficial de Laravel en GitHub</a>  </li>
 </ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->

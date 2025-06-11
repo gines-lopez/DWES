@@ -2274,9 +2274,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#actividades" class="md-nav__link">
+  <a href="#actividad" class="md-nav__link">
     <span class="md-ellipsis">
-      Actividades
+      Actividad
     </span>
   </a>
   
@@ -2402,8 +2402,6 @@
       
         
       
-        
-      
     
     
     
@@ -2441,28 +2439,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3208,11 +3184,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3676,7 +3652,6 @@
 <h1 id="operaciones-con-registros">Operaciones con registros<a class="headerlink" href="#operaciones-con-registros" title="Permanent link">&para;</a></h1>
 <h2 id="insertando-registros">Insertando registros<a class="headerlink" href="#insertando-registros" title="Permanent link">&para;</a></h2>
 <p>A la hora de insertar registros en una base de datos, debemos tener en cuenta que en la tabla puede haber valores autoincrementales. Para salvaguardar ésto, lo que debemos hacer es dejar ese campo autoincrementado vacío, pero a la hora de hacer la conexión, debemos recuperarlo con el método <code>lastInsertId()</code>.</p>
-<p>FIXME: poner la estructura de la tabla tienda (el DDL de MySQL) para que quede más claro</p>
 <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
 </span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span><span class="nv">$nombre</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span> <span class="o">??</span> <span class="s2">&quot;SUCURSAL X&quot;</span><span class="p">;</span>
@@ -3839,40 +3814,10 @@ Pero si lo que queremos es leer datos con forma de objeto utilizando <code>PDO::
 </span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">fetchAll</span><span class="p">();</span>
 </span></code></pre></div>
 <p>Tenéis una lista de ejemplos muy completa en la <a href="https://phpdelusions.net/pdo/objects">documentación oficial</a>.</p>
-<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<p>FIXME: esta es la actividad que pasaría a la sesión anterior
-FIXME: y si no, dividela, y que en la sesión anterior, inserten los datos y en esta, que hagan el login con FETCH_ASSOC
-FIXME: también puedes didivir esta página en dos ... una para FETCH_ASSOC, y ahí pones las actividades, y luego la de FETCH_CLASS y pones la de profundización</p>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 617</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr> <abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr> <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una tabla nueva dentro de la base de datos <code>lol</code> que ya tienes y crea un sistema de login con usuarios. Introduce en la base de datos al menos 3 usuarios diferentes con sus contraseñas distintas. Recuerda que:</p>
-<ul>
-<li>La tabla nueva ha de llamarse <code>usuario</code></li>
-<li>
-<p>Los campos a crear en la nueva tabla deben ser</p>
-<ul>
-<li><code>id</code> [*]</li>
-<li><code>nombre</code></li>
-<li><code>usuario</code></li>
-<li><code>password</code></li>
-<li><code>email</code></li>
-</ul>
-</li>
-<li>
-<p>Las contraseñas deben ser cifradas antes de guardar el datos en la base de datos.</p>
-</li>
-<li>Crea el formulario donde el usuario introduzca los datos de registro y vincúlalo para que recoja los datos mediante POST y los inserte en la base de datos si todo ha ido bien.</li>
-<li>No se ha de acceder a al archivo de nuevo usuario sin el formulario rellenado.</li>
-<li>La sentencia de INSERT debe estar controlada para que no pueda introducirse ningún dato en blanco. Ten en cuenta que estás modificando la base de datos y no queremos campos mal rellenados.</li>
-<li>Si todo ha ido bien, muestra un mensaje por pantalla diciendo <code>El usuario XXX ha sido introducido en el sistema con la contraseña YYY</code>.</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Estructura de ficheros</p>
-<p>Las aplicaciones van aumentando de complejidad, es el momento que empieces a pensar la estructura de ficheros antes de empezar a desarrollar. Es por ello que es recomendable separar las acciones en la mayor cantidad de ficheros posibles, pese a que esto aumente la complejidad de la gestión. Una buena documentación es clave.</p>
-</div>
-</li>
-<li>
-<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 618</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr> <abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr> <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Se te ha dado el visto bueno a tu propuesta de e-commerce. Ahora toca aumentar la complejidad y generar las siguientes acciones:</p>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 616</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr> <abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr> <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Se te ha dado el visto bueno a tu propuesta de e-commerce. Ahora toca aumentar la complejidad y generar las siguientes acciones:</p>
 <ul>
 <li>Crear una pantalla de inicio de sesión en el frontal. En el momento del <em>login</em> se ha de actualizar la hora de conexión del cliente.</li>
 <li>Crear una pantalla de inicio de sesión en el backend. En el momento del <em>login</em> se ha de actualizar la hora de conexión del trabajador.</li>
@@ -3881,7 +3826,7 @@ FIXME: también puedes didivir esta página en dos ... una para FETCH_ASSOC, y a
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Estructura de ficheros</p>
-<p>Vas a tener que rehacer lo programado en <a href="065_MySQLi.html#actividades"><abbr title="Proyecto">PR</abbr> 616</a> a <code>PDO::FETCH_ASSOC</code>.</p>
+<p>Vas a tener que rehacer lo programado en <a href="065_MySQLi.html#actividades"><abbr title="Proyecto">PR</abbr> 613</a> a <code>PDO::FETCH_ASSOC</code>.</p>
 </div>
 </li>
 </ul>

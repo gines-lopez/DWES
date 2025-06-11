@@ -2408,8 +2408,6 @@
       
         
       
-        
-      
     
     
     
@@ -2447,28 +2445,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3214,11 +3190,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3680,29 +3656,20 @@
 
 
 <h1 id="sql-y-phpmyadmin">SQL y phpMyAdmin<a class="headerlink" href="#sql-y-phpmyadmin" title="Permanent link">&para;</a></h1>
-<!--
-FIXME: Al título le faltaba la A mayúscula de Admin
--->
-
 <h2 id="sql">SQL<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h2>
 <p>Este lenguaje de consulta estructurada (<em>Structured Query Language</em>) es el que vamos a utilizar para realizar las consultas a nuestras bases de datos para mostrar el contenido en las distintas interfaces web que creemos a lo largo de la unidad. Si quieres saber más detalles visita <a href="https://es.wikipedia.org/wiki/SQL">Wiki SQL</a>.</p>
-<p>Ejemplo de una sentencia SQL donde seleccionamos todas las filas y columnas de nuestra tabla llamada <strong><code>pais</code></strong></p>
-<!--
-FIXME: cambiar consultas y SQL para que utilicen el ejemplo montado en la sesión 061
-FIXME: comentar que esa sesión es un repaso de lo aprendido el curso pasado en el módulo de BD
--->
-
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pais</span>
+<p>Ejemplo de una sentencia SQL donde seleccionamos todas las filas y columnas de nuestra tabla llamada <strong><code>Ryanair</code></strong> que creamos en la <a href="061_IntroduccionConfiguracion.html">sesión de introducción</a> de la <abbr title="Unidad de Trabajo">UT</abbr>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Foco de esta sesión</p>
+<p>Esta sesión es un repaso de lo que se aprendió en el módulo profesional de Base de Datos de primero. En caso de dudas sobre SQL, te recomiendo estos <a href="https://aitor-medrano.github.io/bd/">apuntes</a> que pueden ayudarte.</p>
+</div>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Ryanair</span>
 </span></code></pre></div>
 <p>Estas sentencias pueden invocarse desde la consola de comandos mediante el intérprete <em>mysql</em> (previamente instalado en el sistema) o a través de la herramienta phpMyAdmin.</p>
 <p>Las sentencias SQL también las podemos usar dentro de nuestro código <abbr title="Hypertext Preprocessor">PHP</abbr>, de tal manera que cuando se cargue nuestra interfaz web, lance una sentencia SQL para mostrar los datos que queramos.</p>
-<!--
-FIXME: Tenías una errata en la consulta - Cambiar consulta para que cuadre con el ejemplo de la sesión 061
--->
-
 <div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>    <span class="c1">// Listado de clientes, ordenados por DNI de manera ASCendente</span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>    <span class="nv">$clientesOrdenadosPorDNI</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM `pasajero` ORDER BY `dni` ASC&quot;</span> <span class="p">;</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>    <span class="c1">// Listado de pasajero, ordenados por id de manera ASCendente</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>    <span class="nv">$pasajerosOrdenadosPorID</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM `pasajero` ORDER BY `id` ASC&quot;</span> <span class="p">;</span>
 </span><span id="__span-1-4"><span class="linenos" data-linenos="4 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="phpmyadmin">phpMyAdmin<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h2>
@@ -3749,13 +3716,16 @@ FIXME: Tenías una errata en la consulta - Cambiar consulta para que cuadre con 
 <p>No vamos a profundizar en el resto de opciones pero, en la pestaña <strong>Más</strong> existe la opción <strong><em>Diseñador</em></strong> para poder editar las relaciones entre tablas de una manera gráfica (pinchando y arrastrando) que veremos más adelante.</p>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <ul>
-<li><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 603</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una base de datos llamada <code>libreria</code> y dentro de ella, una tabla libros con las siguientes columnas: <code>id</code>(clave primaria autoincremental), <code>titulo</code>, <code>autor</code>, y <code>anio_publicacion</code>. </li>
-</ul>
-<!--
-FIXME: Cambiar 603 y darles el DDL `para que creen la BD y cargue algunos datos. Sobre esa BD, demás de pedirles algunas consultas sencillas, les puedes dar algún SQL y preguntarles qué es lo que obtiene.
--->
-
-<ul>
+<li>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 603</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una base de datos llamada <code>libreria</code> y carga el fichero <a href="../../resources/libreria.sql">SQL</a> (contiene la estructura y algunos datos de ejemplo). A continuación, realiza las siguientes consultas:</p>
+<ol>
+<li>Mostrar todos los libros disponibles.</li>
+<li>Mostrar solo los títulos y autores de todos los libros.</li>
+<li>Buscar los libros publicados <strong>antes del año 2000</strong>.</li>
+<li>Ordenar los libros por año de publicación (de más reciente a más antiguo).</li>
+<li>Buscar todos los libros de un autor específico (por ejemplo, <code>George Orwell</code>).</li>
+</ol>
+</li>
 <li>
 <p><img alt="⚓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2693.svg" title=":anchor:" /> <strong><abbr title="Actividades de refuerzo.">AR</abbr> 604</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.">CE6a</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Utilizando únicamente phpMyAdmin, realiza las siguientes tareas en la base de datos <code>libreria</code>:</p>
 <ul>

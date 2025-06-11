@@ -2435,8 +2435,6 @@
       
         
       
-        
-      
     
     
     
@@ -2474,28 +2472,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3241,11 +3217,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3708,11 +3684,7 @@
 
 <h1 id="mysqli">MySQLi<a class="headerlink" href="#mysqli" title="Permanent link">&para;</a></h1>
 <p><abbr title="Hypertext Preprocessor">PHP</abbr> hace uso de esta extensión mejorada para poder comunicarse con las bases de datos, ya sean <em>MySQL</em> (4.1 o superior) o <em>MariaDB</em>.</p>
-<!-- 
-TODO: mysqli() ... pq ()
--->
-
-<p>Cualquier consulta que queramos hacer a una base de datos necesitaremos hacer uso de la extensión <code>mysqli()</code></p>
+<p>Cualquier consulta que queramos hacer a una base de datos necesitaremos hacer uso de la extensión <code>mysqli</code>.</p>
 <p>Veamos cómo conectarnos con una base de datos a través del código <abbr title="Hypertext Preprocessor">PHP</abbr>:</p>
 <div class="language-php highlight"><span class="filename">pruebasMsyQLi.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="c1">// &quot;SERVIDOR&quot;, &quot;USUARIO&quot;, &quot;CONTRASEÑA&quot;, &quot;BASE DE DATOS&quot;</span>
@@ -3739,10 +3711,6 @@ TODO: mysqli() ... pq ()
 </ul>
 <h2 id="recuperando-datos-de-una-bd">Recuperando datos de una BD<a class="headerlink" href="#recuperando-datos-de-una-bd" title="Permanent link">&para;</a></h2>
 <p>Ahora que ya sabemos cómo conectarnos a una base de datos alojada en nuestro servidor, lo que necesitamos saber es cómo recuperar datos almacenados en la base de datos.</p>
-<!-- 
-TODO: Luego pones un ejemplo completo, y más tarde uno por partes... igual deberías ir poniendo los fragmentos en cada apartado, y luego el ejemplo completo... no me termina de cuadrar el ejemplo completo con los apartados que luego desgranas
--->
-
 <p>Durante la instalación de la imagen de Docker, se ha creado una tabla llamada <strong>pruebas</strong> que contiene varios registros de distintas personas.</p>
 <p>Vamos a recuperar esos datos para ver de qué forma se hace con <abbr title="Hypertext Preprocessor">PHP</abbr>.</p>
 <div class="language-php highlight"><span class="filename">pruebasMsyQLi.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
@@ -3812,43 +3780,46 @@ TODO: Luego pones un ejemplo completo, y más tarde uno por partes... igual debe
 </span></span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span><span class="cp">?&gt;</span>
 </span></code></pre></div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
-<!--
-FIXME: quitar AC612, poner el codigo SQL, y cargarla desde PhpMyAdmin,... y desde PHP, realiza la actividad 613
--->
 <ul>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 612</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una nueva base de datos con el nombre <code>lol</code> y cotejamiento de datos <code>utf8mb4_unicode_ci</code>. En nuestra base de datos <code>lol</code>,  vamos a crear la tabla <code>campeon</code> con los siguientes campos.</p>
-<ul>
-<li><code>id</code> [*]</li>
-<li><code>nombre</code></li>
-<li><code>rol</code></li>
-<li><code>dificultad</code></li>
-<li><code>descripcion</code></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Recordatorio</p>
-<p>Acuérdate que [*] significa que es clave primaria y no olvides poner el tipo de datos de cada uno de los campos.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 610</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Rellena la tabla <code>campeon</code> con, al menos 5 registros, con los datos que tú quieras o si lo prefieres, puedes basarte en la <a href="https://www.leagueoflegends.com/es-es/champions">página oficial del juego</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Usa el código</p>
+<p>Guarda el siguiente contenido en un archivo llamado <code>lol.sql</code>:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">-- Crear la base de datos</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">lol</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="n">USE</span><span class="w"> </span><span class="n">lol</span><span class="p">;</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span><span class="c1">-- Crear la tabla &#39;campeon&#39;</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">campeon</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">nombre</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">rol</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">dificultad</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">descripcion</span><span class="w"> </span><span class="nb">TEXT</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="p">);</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span><span class="c1">-- Insertar algunos campeones de ejemplo</span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">campeon</span><span class="w"> </span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">rol</span><span class="p">,</span><span class="w"> </span><span class="n">dificultad</span><span class="p">,</span><span class="w"> </span><span class="n">descripcion</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span><span class="p">(</span><span class="s1">&#39;Ahri&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mago&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Campeona ágil con habilidades de daño a distancia.&#39;</span><span class="p">),</span>
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span><span class="p">(</span><span class="s1">&#39;Garen&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Luchador&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Campeón resistente con habilidades cuerpo a cuerpo.&#39;</span><span class="p">),</span>
+</span><span id="__span-3-18"><span class="linenos" data-linenos="18 "></span><span class="p">(</span><span class="s1">&#39;Lee Sin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Asesino&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Campeón versátil con gran movilidad.&#39;</span><span class="p">),</span>
+</span><span id="__span-3-19"><span class="linenos" data-linenos="19 "></span><span class="p">(</span><span class="s1">&#39;Lux&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mago&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Campeona con control de zonas y gran alcance.&#39;</span><span class="p">);</span>
+</span></code></pre></div>
 </div>
-<div class="admonition danger">
-<p class="admonition-title">Manera de proceder</p>
-<p>No se ha de realizar sobre phpMyadmin, si no sobre un archivo.</p>
-</div>
 </li>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 613</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Rellena la tabla <code>campeon</code> con, al menos 5 registros, con los datos que tú quieras o si lo prefieres, puedes basarte en la <a href="https://www.leagueoflegends.com/es-es/champions">página oficial del juego</a>.</p>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 611</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una aplicación donde se listen todos los campeones del <em>LOL<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></em> que has metido en tu base de datos. </p>
 </li>
 <li>
-<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 614</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una aplicación donde se listen todos los campeones del <em>LOL<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></em> que has metido en tu base de datos. </p>
-</li>
-<li>
-<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 615</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 5p) - Modifica el archivo creado en <strong><abbr title="Actividades de clase">AC</abbr> 614</strong> pero pon al lado de cada uno de los campeones listados un botón para <code>editar</code> y otro para <code>borrar</code>. Cada uno de esos botones hará la correspondiente función dependiendo del <code>id</code> del campeón seleccionado.</p>
+<p><img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f52c.svg" title=":microscope:" /> <strong><abbr title="Actividades de profundización.">AP</abbr> 612</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Escala de valores.">IC1</abbr> / 5p) - Modifica el archivo creado en <strong><abbr title="Actividades de clase">AC</abbr> 614</strong> pero pon al lado de cada uno de los campeones listados un botón para <code>editar</code> y otro para <code>borrar</code>. Cada uno de esos botones hará la correspondiente función dependiendo del <code>id</code> del campeón seleccionado.</p>
 <ul>
 <li>Al pinchar en editar, el usuario será redirigido a un archivo donde mostrará un formulario con los campos rellenos por los datos del campeón seleccionado. Al darle al botón de <code>guardar</code> los datos se guardarán en la base de datos y el usuario será redirigido a la lista de campeones para poder ver los cambios.</li>
 <li>Al pinchar en borrar, el usuario será preguntado a través de un mensaje de JavaScript (prompt) si está seguro de que quiere borrar al campeón seleccionado. En el mensaje de confirmación debe aparecer el <strong>nombre del campeón seleccionado</strong>. Si el usuario pincha en <code>Aceptar</code> el campeón será eliminado de la base de datos y el usuario será redirigido nuevamente al listado de campeones para comprobar que, efectivamente dicho campeón se ha eliminado de la lista.</li>
 </ul>
 </li>
 <li>
-<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 616</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Realiza una aplicación que te permita recuperar los datos del e-commerce. Para ello deberás mostrar en una tabla los productos que tiene y a su lado el botón de añadir al carrito. Además, tienes que dar la posibilidad de ver tu carrito y de finalizar el pedido. Todo tiene que quedar reflejado en la base de datos que creaste en <a href="064_CRUD.html#actividades"><abbr title="Proyecto">PR</abbr> 611</a>.</p>
+<p><img alt="🧪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" title=":test_tube:" /> <strong><abbr title="Proyecto">PR</abbr> 613</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr>/ <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p) - Realiza una aplicación que te permita recuperar los datos del e-commerce. Para ello deberás mostrar en una tabla los productos que tiene y a su lado el botón de añadir al carrito. Además, tienes que dar la posibilidad de ver tu carrito y de finalizar el pedido. Todo tiene que quedar reflejado en la base de datos que creaste en <a href="064_CRUD.html#actividades"><abbr title="Proyecto">PR</abbr> 609</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Recordatorio</p>
 <p>Si durante el proceso te das cuenta que necesitas modificar tu base de datos, hazla. Puede que durante su diseño no tuvieras en cuenta ciertos aspectos que ahora te hacen falta, si lo haces documéntalo.</p>

@@ -2177,6 +2177,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    6.7- Autenticación
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="067_Autenticacion.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2187,6 +2199,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2326,8 +2366,6 @@
       
         
       
-        
-      
     
     
     
@@ -2365,28 +2403,6 @@
   
     <li class="md-nav__item">
       <a href="../07_Laravel/ProgramacionAula.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programación de aula
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restos/ProgramacionAula.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3132,11 +3148,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../retos/Reto4.html" class="md-nav__link">
+      <a href="../../retos/Reto5.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    🎯 Reto 4
+    🎯 Reto 5
     
   </span>
   
@@ -3622,39 +3638,102 @@
 </li>
 </ul>
 <p>Veamos un ejemplo:</p>
-<p>FIXME: poner un admonition recordando que los siguientes archivos deben incluir ¿el fichero de constantes? ¿de donde sale la variable de $conexion? Igual tienes que añadir a la sesión 66_PDO la creación de ese archivo de conexion.php, que a su vez lea del archivo de constantes</p>
-<div class="language-php highlight"><span class="filename">save.php</span><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="nv">$usu</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;usuario&quot;</span><span class="p">];</span>
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$pas</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">];</span>
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-0-6"><span class="hll"><span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO usuarios(usuario, password) VALUES (:usuario, :password)&quot;</span><span class="p">;</span>
-</span></span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="nv">$sentencia</span> <span class="o">=</span> <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>    <span class="nv">$isOk</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">([</span>
-</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>        <span class="s2">&quot;usuario&quot;</span> <span class="o">=&gt;</span> <span class="nv">$usu</span><span class="p">,</span>
-</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>        <span class="s2">&quot;password&quot;</span> <span class="o">=&gt;</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$pas</span><span class="p">,</span><span class="nx">PASSWORD_DEFAULT</span><span class="p">)</span>
-</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">]);</span>
+<div class="admonition tip">
+<p class="admonition-title">¿De dónde sale la variable <code>$conexion</code>?</p>
+<p>Recuerda que para realizar consultas a la base de datos utilizando <strong>PDO</strong>, necesitas tener configurado previamente el acceso a la base de datos.</p>
+<p>Para ello, debes haber creado:</p>
+<ol>
+<li>
+<p>Un archivo llamado <code>constantes.php</code> que contenga los datos de conexión:
+    <div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_HOST&#39;</span><span class="p">,</span> <span class="s1">&#39;localhost&#39;</span><span class="p">);</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre_de_tu_base_de_datos&#39;</span><span class="p">);</span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos="4 "></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_USER&#39;</span><span class="p">,</span> <span class="s1">&#39;root&#39;</span><span class="p">);</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos="5 "></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_PASS&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos="6 "></span><span class="cp">?&gt;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Un archivo <code>conexion.php</code> que use esas constantes y cree la conexión PDO:
+    <div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="k">require_once</span> <span class="s1">&#39;constantes.php&#39;</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$conexion</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s2">&quot;mysql:host=&quot;</span> <span class="o">.</span> <span class="nx">DB_HOST</span> <span class="o">.</span> <span class="s2">&quot;;dbname=&quot;</span> <span class="o">.</span> <span class="nx">DB_NAME</span><span class="p">,</span> <span class="nx">DB_USER</span><span class="p">,</span> <span class="nx">DB_PASS</span><span class="p">);</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$conexion</span><span class="o">-&gt;</span><span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Error en la conexión: &quot;</span> <span class="o">.</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="cp">?&gt;</span>
+</span></code></pre></div></p>
+</li>
+</ol>
+<p>💡 Es recomendable haber trabajado esto previamente en la sesión <a href="066_PDO.html">de PDO</a>, o incluirlo allí si aún no lo has hecho.</p>
+<p>Todos los archivos de actividades que interactúan con la base de datos <strong>deben incluir</strong> al principio:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span><span class="x">require_once &#39;conexion.php&#39;;</span>
+</span></code></pre></div>
+</div>
+<div class="language-php highlight"><span class="filename">save.php</span><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>    <span class="nv">$usu</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;usuario&quot;</span><span class="p">];</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$pas</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">];</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-3-6"><span class="hll"><span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO usuarios(usuario, password) VALUES (:usuario, :password)&quot;</span><span class="p">;</span>
+</span></span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>    <span class="nv">$sentencia</span> <span class="o">=</span> <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>    <span class="nv">$isOk</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">([</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span>        <span class="s2">&quot;usuario&quot;</span> <span class="o">=&gt;</span> <span class="nv">$usu</span><span class="p">,</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span>        <span class="s2">&quot;password&quot;</span> <span class="o">=&gt;</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$pas</span><span class="p">,</span><span class="nx">PASSWORD_DEFAULT</span><span class="p">)</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">]);</span>
 </span></code></pre></div>
 <p>Ahora que tenemos el usuario codificado y guardado en la base de datos, vamos a recuperarlo para poder loguearlo correctamente.</p>
-<div class="language-php highlight"><span class="filename">login.php</span><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="nv">$usu</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;login&quot;</span><span class="p">]</span> <span class="o">??</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span>
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;select * from usuarios where usuario = ?&quot;</span><span class="p">;</span>
-</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>
-</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$sentencia</span> <span class="o">=</span> <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">([</span><span class="nv">$usu</span><span class="p">]);</span>
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span>
-</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="nv">$usuario</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">fetch</span><span class="p">();</span>
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span>
-</span><span id="__span-1-11"><span class="hll"><span class="linenos" data-linenos="11 "></span>    <span class="k">if</span><span class="p">(</span><span class="nv">$usuario</span> <span class="o">&amp;&amp;</span> <span class="nb">password_verify</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pass&#39;</span><span class="p">],</span> <span class="nv">$usuario</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]))</span> <span class="p">{</span>
-</span></span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span>        <span class="k">echo</span><span class="s2">&quot;OK!&quot;</span><span class="p">;</span>
-</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span>        <span class="k">echo</span><span class="s2">&quot;KO&quot;</span><span class="p">;</span>
-</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span>    <span class="p">}</span>
+<div class="language-php highlight"><span class="filename">login.php</span><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span>    <span class="nv">$usu</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;login&quot;</span><span class="p">]</span> <span class="o">??</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;select * from usuarios where usuario = ?&quot;</span><span class="p">;</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$sentencia</span> <span class="o">=</span> <span class="nv">$conexion</span> <span class="o">-&gt;</span> <span class="na">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>    <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">execute</span><span class="p">([</span><span class="nv">$usu</span><span class="p">]);</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span>    <span class="nv">$usuario</span> <span class="o">=</span> <span class="nv">$sentencia</span> <span class="o">-&gt;</span> <span class="na">fetch</span><span class="p">();</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-4-11"><span class="hll"><span class="linenos" data-linenos="11 "></span>    <span class="k">if</span><span class="p">(</span><span class="nv">$usuario</span> <span class="o">&amp;&amp;</span> <span class="nb">password_verify</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pass&#39;</span><span class="p">],</span> <span class="nv">$usuario</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span>        <span class="k">echo</span><span class="s2">&quot;OK!&quot;</span><span class="p">;</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span>        <span class="k">echo</span><span class="s2">&quot;KO&quot;</span><span class="p">;</span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span>    <span class="p">}</span>
 </span></code></pre></div>
-<p>FIXME: la actividad que tienes en la siguiente sesión AC617 debería estar aquí ... sólo que tienes que revisar bien lo que saben hasta este momento... como te dije en su día, toda la <abbr title="Unidad de Trabajo">UT</abbr> la tienes que programar, para que veas si te va cuadrando...</p>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":memo:" /> <strong><abbr title="Actividades de clase">AC</abbr> 615</strong>. (<abbr title="Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.">RA6</abbr> / <abbr title="Se han creado aplicaciones que establezcan conexiones con bases de datos.">CE6b</abbr> <abbr title="Se ha recuperado información almacenada en bases de datos.">CE6c</abbr> <abbr title="Se ha publicado en aplicaciones web la información recuperada.">CE6d</abbr> <abbr title="Se han utilizado conjuntos de datos para almacenar la información.">CE6e</abbr> <abbr title="Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.">CE6f</abbr> <abbr title="Se han probado y documentado las aplicaciones web.">CE6g</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3p) - Crea una tabla nueva dentro de la base de datos <code>lol</code> que ya tienes y crea un sistema de login con usuarios. Introduce en la base de datos al menos 3 usuarios diferentes con sus contraseñas distintas. Recuerda que:</p>
+<ul>
+<li>La tabla nueva ha de llamarse <code>usuario</code></li>
+<li>
+<p>Los campos a crear en la nueva tabla deben ser</p>
+<ul>
+<li><code>id</code> [*]</li>
+<li><code>nombre</code></li>
+<li><code>usuario</code></li>
+<li><code>password</code></li>
+<li><code>email</code></li>
+</ul>
+</li>
+<li>
+<p>Las contraseñas deben ser cifradas antes de guardar el datos en la base de datos.</p>
+</li>
+<li>Crea el formulario donde el usuario introduzca los datos de registro y vincúlalo para que recoja los datos mediante POST y los inserte en la base de datos si todo ha ido bien.</li>
+<li>No se ha de acceder a al archivo de nuevo usuario sin el formulario rellenado.</li>
+<li>La sentencia de INSERT debe estar controlada para que no pueda introducirse ningún dato en blanco. Ten en cuenta que estás modificando la base de datos y no queremos campos mal rellenados.</li>
+<li>Si todo ha ido bien, muestra un mensaje por pantalla diciendo <code>El usuario XXX ha sido introducido en el sistema con la contraseña YYY</code>.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Estructura de ficheros</p>
+<p>Las aplicaciones van aumentando de complejidad, es el momento que empieces a pensar la estructura de ficheros antes de empezar a desarrollar. Es por ello que es recomendable separar las acciones en la mayor cantidad de ficheros posibles, pese a que esto aumente la complejidad de la gestión. Una buena documentación es clave.</p>
+</div>
+</li>
+</ul>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
