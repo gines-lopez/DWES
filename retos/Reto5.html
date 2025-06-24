@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reto-5" class="md-skip">
+        <a href="#reto-05" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -3015,11 +3015,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../uutt/08_APIRest/088_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/08_APIRest/088_PruebaConocimiento.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8.8- Prueba específica
+    8.8- Prueba de conocimiento
     
   </span>
   
@@ -3186,27 +3186,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#elementos-evaluables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elementos evaluables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#criterios-de-evaluacion" class="md-nav__link">
     <span class="md-ellipsis">
       Criterios de evaluación
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recursos-disponibles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recursos disponibles
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrega" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entrega
     </span>
   </a>
   
@@ -3541,11 +3532,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../uutt/09_ProyectoReactivo/0911_PruebaEspecifica.html" class="md-nav__link">
+      <a href="../uutt/09_ProyectoReactivo/0911_PruebaConocimiento.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9.11- Prueba específica
+    9.11- Prueba de conocimiento
     
   </span>
   
@@ -3704,42 +3695,99 @@
 
 
 
-<h1 id="reto-5">Reto 5<a class="headerlink" href="#reto-5" title="Permanent link">&para;</a></h1>
-<p>Bienvenidos al desafío de Desarrollo Web en Entorno Servidor, enfocado en la creación de un prototipo funcional de una herramienta de comercio electrónico utilizando <abbr title="Hypertext Preprocessor">PHP</abbr> orientado a objetos. Este proyecto te invita a aplicar y profundizar en tus conocimientos en programación web, enfocándose en la construcción de un prototipo que simule la funcionalidad básica de una tienda en línea. Durante este reto, se espera que desarrolles funcionalidades clave como la navegación de productos, gestión del carrito de compras y el proceso de checkout, utilizando clases y objetos para organizar el código de manera eficiente. Este enfoque práctico te permitirá experimentar con el diseño y la implementación de soluciones web, mejorando vuestras habilidades técnicas y preparándote para futuros proyectos de desarrollo web.</p>
+<h1 id="reto-05">Reto 05<a class="headerlink" href="#reto-05" title="Permanent link">&para;</a></h1>
+<p>Durante este <strong>quinto reto</strong> del módulo de <em>Desarrollo Web en Entorno Servidor</em>, el alumnado desarrollará una <strong>aplicación frontend reactiva</strong>, que consuma los servicios de la <strong>API REST creada en el Reto 04</strong>. El objetivo es integrar un cliente web moderno con backend Laravel, aplicando buenas prácticas en el consumo de datos, navegación, autenticación y experiencia de usuario.</p>
+<p>Este reto se realiza <strong>de forma individual</strong> y representa una oportunidad para aplicar los conocimientos adquiridos tanto en el módulo de Desarrollo web en entorno cliente como en Desarrollo web en entorno servidor. La aplicación final debe ser funcional, usable y organizada, empleando herramientas modernas del ecosistema JavaScript y <abbr title="Hypertext Preprocessor">PHP</abbr>.</p>
 <h2 id="objetivo-del-reto">Objetivo del reto<a class="headerlink" href="#objetivo-del-reto" title="Permanent link">&para;</a></h2>
-<p>Desarrollar una aplicación final funcional de una herramienta de comercio electrónico desplegada en internet.</p>
+<p>Diseñar y consumir los recursos expuestos por una API Laravel ya existente (<a href="Reto4.html">Reto 04</a>), aplicando un enfoque reactivo. Se busca fomentar la separación de responsabilidades entre frontend y backend, optimizar la experiencia de usuario y garantizar una comunicación segura con el servidor.</p>
 <h2 id="requisitos-especificos">Requisitos específicos<a class="headerlink" href="#requisitos-especificos" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Será un trabajo en grupo de 3-4 participantes. Cada integrante deberá pasar al menos una vez por los puestos de CTO, desarrollador, tester y documentador.</li>
-<li>Se utilizará la metodología de trabajo SCRUM y es obligatorio tener un repositorio remoto para poder trabajar en equipo.</li>
+<li>Consumir la API del <a href="Reto4.html">Reto 04</a>.</li>
+<li>Implementar autenticación y proteger las rutas privadas.</li>
 <li>
-<p>Se han de realizar las siguientes fases en el reto:</p>
-<ul>
-<li>Documentar las fases en las que cada uno adquiere cada rol de manera semanal.</li>
-<li>Cumplimentar las co-evaluaciones y las autoevaluaciones al final de la semana.</li>
-</ul>
+<p>Crear vistas reactivas para los siguientes recursos:</p>
 </li>
+<li>
+<p>Listado de publicaciones.</p>
+</li>
+<li>Formulario para crear, editar y borrar publicaciones.</li>
+<li>
+<p>Visualización y gestión de comentarios.</p>
+</li>
+<li>
+<p>Gestionar la subida de archivos.</p>
+</li>
+<li>Incluir manejo de errores (mensajes claros al usuario).</li>
+<li>Implementar navegación.</li>
+<li>Subir el proyecto a un servidor de pruebas o entorno de producción simulado (como mínimo en local con instrucciones de despliegue).</li>
+</ul>
+<h2 id="elementos-evaluables">Elementos evaluables<a class="headerlink" href="#elementos-evaluables" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Consumo correcto de la API.</li>
+<li>Navegación fluida.</li>
+<li>Gestión de autenticación, rutas protegidas y tokens.</li>
+<li>Formularios funcionales y validados (cliente y servidor).</li>
+<li>Interfaz ordenada y visualmente clara.</li>
+<li>Código limpio y estructurado.</li>
+<li>Documentación del proceso de desarrollo y despliegue.</li>
 </ul>
 <h2 id="criterios-de-evaluacion">Criterios de evaluación<a class="headerlink" href="#criterios-de-evaluacion" title="Permanent link">&para;</a></h2>
-<p>Además de los los criterios de evaluación que se trabajan en las <a href="../uutt/09_ProyectoReactivo/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 09</a>, se valorará:</p>
-<ul>
-<li>Funcionalidad: La aplicación debe ser operativa.</li>
-<li>Adherencia a Estándares: El código debe seguir buenas prácticas de programación y estar bien organizado.</li>
-</ul>
-<h2 id="recursos-disponibles">Recursos disponibles<a class="headerlink" href="#recursos-disponibles" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Apuntes del módulo.</li>
-<li>Acceso a recursos en línea para investigación y consulta.</li>
-</ul>
-<h2 id="entrega">Entrega<a class="headerlink" href="#entrega" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Trabajo en grupo.</li>
-<li>Repositorio remoto del proyecto.</li>
-<li>Documentación y manual de usuario.</li>
-<li>Co-evaluaciones y autoevaluaciones.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio de Evaluación</strong></th>
+<th><strong>Nivel Bajo (0)</strong></th>
+<th><strong>Nivel Medio (1)</strong></th>
+<th><strong>Nivel Alto (3)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><abbr title="Se han reconocido las ventajas que proporciona la reutilización de código y el aprovechamiento de información ya existente.">CE9a</abbr>. Configuración inicial del proyecto frontend.</strong></td>
+<td>Proyecto mal configurado o no funcional.</td>
+<td>Proyecto funcional pero sin estructura clara.</td>
+<td>Proyecto bien configurado, funcional y estructurado.</td>
+</tr>
+<tr>
+<td><strong><abbr title="Se han identificado tecnologías y frameworks aplicables en la creación de aplicaciones web híbridas.">CE9b</abbr>. Consumo de servicios REST.</strong></td>
+<td>No se realiza consumo o es incorrecto.</td>
+<td>Se consume parcialmente o con errores.</td>
+<td>Consumo completo y correcto de la API del Reto 04.</td>
+</tr>
+<tr>
+<td><strong><abbr title="Se ha creado una aplicación web que recupere y procese repositorios de información ya existentes.">CE9c</abbr>. Navegación y rutas con Vue Router.</strong></td>
+<td>No hay navegación o está desorganizada.</td>
+<td>Navegación funcional pero limitada.</td>
+<td>Navegación fluida con rutas protegidas correctamente implementadas.</td>
+</tr>
+<tr>
+<td><strong><abbr title="Se han creado repositorios específicos a partir de información existente en almacenes de información.">CE9d</abbr>. Gestión de autenticación (tokens/sesiones).</strong></td>
+<td>No hay autenticación.</td>
+<td>Autenticación parcial o insegura.</td>
+<td>Sistema de login completo, seguro y funcional.</td>
+</tr>
+<tr>
+<td><strong><abbr title="Se han utilizado librerías de código y frameworks para incorporar funcionalidades específicas a una aplicación web.">CE9e</abbr>. Formularios reactivos con validación.</strong></td>
+<td>Formularios sin validar o no funcionales.</td>
+<td>Funcionales pero con problemas de usabilidad.</td>
+<td>Formularios intuitivos, validados y bien conectados a la API.</td>
+</tr>
+<tr>
+<td><strong><abbr title="Se han programado servicios y aplicaciones web utilizando como base información y código generados por terceros.">CE9f</abbr>. Diseño visual y experiencia de usuario.</strong></td>
+<td>Interfaz confusa o poco usable.</td>
+<td>Diseño básico sin enfoque en UX.</td>
+<td>Interfaz clara, responsive y con buena experiencia de usuario.</td>
+</tr>
+<tr>
+<td><strong><abbr title="Se han probado, depurado y documentado las aplicaciones generadas.">CE9h</abbr>. Documentación y despliegue del proyecto.</strong></td>
+<td>No hay documentación ni instrucciones.</td>
+<td>Documentación parcial o confusa.</td>
+<td>Documentación completa con guía de despliegue funcional.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="fecha-de-entrega">Fecha de entrega<a class="headerlink" href="#fecha-de-entrega" title="Permanent link">&para;</a></h2>
-<p>La entrega será a través de Aules al finalizar la <a href="../uutt/09_ProyectoReactivo/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 09</a></p>
+<p>La entrega se realizará a través de <em>Aules</em> en la <a href="../uutt/09_ProyectoReactivo/ProgramacionAula.html"><abbr title="Unidad de Trabajo">UT</abbr> 09</a> sobre la actividad <a href="../uutt/09_ProyectoReactivo/0911_PruebaConocimiento.html"><abbr title="Actividades del reto">RE</abbr> 915</a>.</p>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
