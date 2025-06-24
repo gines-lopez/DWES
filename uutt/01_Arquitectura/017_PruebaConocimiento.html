@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/012_Arquitectura3Capas.html">
+        <link rel="canonical" href="https://github.com/gines-lopez/DWES/uutt/01_Arquitectura/017_PruebaConocimiento.html">
       
       
-        <link rel="prev" href="011_ModeloClienteServidor.html">
+        <link rel="prev" href="016_PuestaEnMarcha.html">
       
       
-        <link rel="next" href="013_MCV.html">
+        <link rel="next" href="../../uupp/02_PHP/PropuestaDidactica.html">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>1.2- Arquitectura de 3 capas - Desarrollo Web en Entorno Servidor</title>
+        <title>1.7- Prueba de conocimiento - Desarrollo Web en Entorno Servidor</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arquitectura-de-3-capas" class="md-skip">
+        <a href="#prueba-de-conocimiento-ut-01" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.2- Arquitectura de 3 capas
+              1.7- Prueba de conocimiento
             
           </span>
         </div>
@@ -470,31 +470,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    1.2- Arquitectura de 3 capas
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="012_Arquitectura3Capas.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="012_Arquitectura3Capas.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,44 +483,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tier" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tier
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -639,10 +580,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="017_PruebaConocimiento.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="017_PruebaConocimiento.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -652,6 +602,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -3670,33 +3621,189 @@
 
 
 
-<h1 id="arquitectura-de-3-capas">Arquitectura de 3 capas<a class="headerlink" href="#arquitectura-de-3-capas" title="Permanent link">&para;</a></h1>
-<p>Hay que distinguir entre capas <strong>físicas</strong> (<em>tier</em>) y capas <strong>lógicas</strong> (<em>layer</em>).</p>
-<h2 id="tier">Tier<a class="headerlink" href="#tier" title="Permanent link">&para;</a></h2>
-<p>Capa física de una arquitectura. Supone un nuevo elemento hardware separado físicamente. Las capas físicas más alejadas del cliente están más protegidas, tanto por <em>firewalls</em> como por redes privadas virtuales (<abbr title="Virtual Private Network">VPN</abbr>).</p>
-<p>Ejemplo de arquitectura en tres capas físicas (<em>3 tier</em>):</p>
+<h1 id="prueba-de-conocimiento-ut-01">Prueba de conocimiento <abbr title="Unidad de Trabajo">UT</abbr> 01<a class="headerlink" href="#prueba-de-conocimiento-ut-01" title="Permanent link">&para;</a></h1>
+<ol>
+<li>
+<p>¿Qué elemento se encarga de procesar las peticiones y generar respuestas en una arquitectura cliente-servidor?</p>
 <ul>
-<li>Servidor web</li>
-<li>Servidor de aplicaciones</li>
-<li>Servidor de base de datos</li>
+<li>a. El navegador web  </li>
+<li>b. El controlador  </li>
+<li>c. El servidor  </li>
+<li>d. El modelo</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title"><em>Cluster</em> en <em>tiers</em></p>
-<p>No confundir las capas con la cantidad de servidores. Actualmente se trabaja con arquitecturas con múltiples servidores en una misma capa física mediante un clúster, para ofrecer tolerancia a errores y escalabilidad horizontal.</p>
-</div>
-<h2 id="layer">Layer<a class="headerlink" href="#layer" title="Permanent link">&para;</a></h2>
-<p>En cambio, las capas lógicas (<em>layers</em>) organizan el código respecto a su funcionalidad:</p>
+</li>
+<li>
+<p>¿Qué protocolo se utiliza habitualmente para realizar peticiones desde el cliente al servidor?</p>
 <ul>
-<li><strong>Presentación</strong>. Es la capa donde la aplicación se muestra al usuario. Básicamente es la GUI (<em>Graphical User Interface</em>, Interfaz Gráfica de Usuario). En el caso de una aplicación web sería el código HTML que se carga directamente en el navegador web. En cualquier caso, se ejecuta directamente en el equipo del cliente.</li>
-<li><strong>Negocio / Aplicación / Proceso</strong>. Es la capa intermedia donde se lleva a cabo toda la lógica de la aplicación. Siempre se ejecutará en el lado servidor. Esta capa, tras realizar todos los cálculos y/o operaciones sobre los datos, genera el código HTML que será presentado al usuario en la capa siguiente.</li>
-<li><strong>Datos / Persistencia</strong>. Es la capa que almacena los datos. Básicamente, en condiciones normales, hace referencia al propio <abbr title="Sistema de Gestión de Bases de Datos">SGBD</abbr> (Sistema de Gestión de Bases de Datos) que es el encargado de almacenar los datos. Dependiendo de la arquitectura de la aplicación, esta capa y la de negocio se pueden encontrar físicamente en el mismo equipo, aunque también es posible que se tengan que separar por cuestiones de rendimiento. La capa de datos sirve toda la información necesaria a la capa de negocio para llevar a cabo sus operaciones.</li>
+<li>a. FTP  </li>
+<li>b. SMTP  </li>
+<li>c. SSH  </li>
+<li>d. <abbr title="HyperText Transfer Protocol">HTTP</abbr>/HTTPS</li>
 </ul>
-<p>Como se observa, cada una de las capas se puede implementar con diferentes lenguajes de programación y/o herramientas.</p>
-<figure>
-<p><a class="glightbox" href="../../img/ut01/tierlayer.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Arquitectura de tres capas físicas en tres lógicas" src="../../img/ut01/tierlayer.png" /></a>
-  </p>
-<figcaption>Arquitectura de tres capas físicas en tres lógicas.</figcaption>
-</figure>
+</li>
+<li>
+<p>¿Qué tipo de aplicación permite cambiar su contenido sin recargar la página completa?</p>
+<ul>
+<li>a. Aplicación de escritorio  </li>
+<li>b. Web estática  </li>
+<li>c. <abbr title="Single-Page Application">SPA</abbr> (Single Page Application)  </li>
+<li>d. Aplicación híbrida</li>
+</ul>
+</li>
+<li>
+<p>¿Qué capa lógica en la arquitectura de tres capas se encarga de mostrar la interfaz al usuario?</p>
+<ul>
+<li>a. Datos  </li>
+<li>b. Lógica de negocio  </li>
+<li>c. Presentación  </li>
+<li>d. Controlador</li>
+</ul>
+</li>
+<li>
+<p>¿Cuál de los siguientes elementos <strong>no</strong> pertenece a las capas físicas (<em>tiers</em>)?</p>
+<ul>
+<li>a. Servidor web  </li>
+<li>b. Servidor de aplicaciones  </li>
+<li>c. Base de datos  </li>
+<li>d. Vista</li>
+</ul>
+</li>
+<li>
+<p>¿Qué componente del patrón <abbr title="Modelo Vista Controlador.">MVC</abbr> se encarga de mostrar los datos al usuario?</p>
+<ul>
+<li>a. Controlador  </li>
+<li>b. Vista  </li>
+<li>c. Modelo  </li>
+<li>d. Middleware</li>
+</ul>
+</li>
+<li>
+<p>¿Cuál es la función principal del controlador en el modelo <abbr title="Modelo Vista Controlador.">MVC</abbr>?</p>
+<ul>
+<li>a. Mostrar los datos  </li>
+<li>b. Guardar los datos  </li>
+<li>c. Responder a las acciones del usuario  </li>
+<li>d. Crear los formularios HTML</li>
+</ul>
+</li>
+<li>
+<p>¿Qué herramienta permite ejecutar Apache, MySQL y <abbr title="Hypertext Preprocessor">PHP</abbr> de forma integrada y sencilla en local?</p>
+<ul>
+<li>a. Docker  </li>
+<li>b. PhpStorm  </li>
+<li>c. VSCode  </li>
+<li>d. XAMPP</li>
+</ul>
+</li>
+<li>
+<p>¿Cuál es la ventaja principal de usar Docker frente a una máquina virtual tradicional?</p>
+<ul>
+<li>a. Mayor seguridad  </li>
+<li>b. Más potencia gráfica  </li>
+<li>c. Menor consumo de recursos  </li>
+<li>d. Interfaz más amigable</li>
+</ul>
+</li>
+<li>
+<p>¿Qué archivo se utiliza en Docker Compose para definir la configuración de los servicios?</p>
+<ul>
+<li>a. docker-config.json  </li>
+<li>b. config.yml  </li>
+<li>c. docker-compose.yaml  </li>
+<li>d. dockerfile.yml</li>
+</ul>
+</li>
+<li>
+<p>¿Qué servidor de aplicaciones se usa comúnmente para proyectos Java?</p>
+<ul>
+<li>a. Apache  </li>
+<li>b. Nginx  </li>
+<li>c. Tomcat  </li>
+<li>d. <abbr title="Hypertext Preprocessor">PHP</abbr></li>
+</ul>
+</li>
+<li>
+<p>¿Qué lenguaje es utilizado para el desarrollo de aplicaciones dinámicas embebido en HTML?</p>
+<ul>
+<li>a. Java  </li>
+<li>b. Python  </li>
+<li>c. <abbr title="Hypertext Preprocessor">PHP</abbr>  </li>
+<li>d. Ruby</li>
+</ul>
+</li>
+<li>
+<p>¿Cuál es una característica distintiva del lenguaje <abbr title="Hypertext Preprocessor">PHP</abbr>?</p>
+<ul>
+<li>a. Es compilado  </li>
+<li>b. Es tipado estáticamente  </li>
+<li>c. Se integra en HTML mediante etiquetas <code>&lt;?php ?&gt;</code>  </li>
+<li>d. Utiliza <code>print()</code> para mostrar contenido</li>
+</ul>
+</li>
+<li>
+<p>¿Qué herramienta se usa en el navegador para mostrar el contenido de una aplicación web?</p>
+<ul>
+<li>a. Servidor de aplicaciones  </li>
+<li>b. Frontend  </li>
+<li>c. Controlador  </li>
+<li>d. Docker</li>
+</ul>
+</li>
+<li>
+<p>¿Qué tipo de arquitectura permite escalar horizontalmente mediante múltiples servidores?</p>
+<ul>
+<li>a. Arquitectura monolítica  </li>
+<li>b. Arquitectura cliente-servidor  </li>
+<li>c. Arquitectura con clúster en tiers  </li>
+<li>d. Arquitectura lógica de tres capas</li>
+</ul>
+</li>
+<li>
+<p>¿Cuál es uno de los principales criterios al tomar decisiones de diseño en un proyecto web?</p>
+<ul>
+<li>a. El color del logotipo  </li>
+<li>b. Conocimiento de lenguajes de programación  </li>
+<li>c. Número de formularios  </li>
+<li>d. Cantidad de usuarios finales</li>
+</ul>
+</li>
+<li>
+<p>¿Qué servidor web destaca por su alto rendimiento en comparación con Apache?</p>
+<ul>
+<li>a. IIS  </li>
+<li>b. Nginx  </li>
+<li>c. Tomcat  </li>
+<li>d. Devbox</li>
+</ul>
+</li>
+<li>
+<p>¿Qué componente de una <abbr title="Single-Page Application">SPA</abbr> se encarga de actualizar la interfaz sin recargar la página?</p>
+<ul>
+<li>a. HTML  </li>
+<li>b. CSS  </li>
+<li>c. JavaScript  </li>
+<li>d. <abbr title="Hypertext Preprocessor">PHP</abbr></li>
+</ul>
+</li>
+<li>
+<p>¿Qué herramienta facilita la gestión de contenedores Docker desde un entorno gráfico?</p>
+<ul>
+<li>a. PhpMyAdmin  </li>
+<li>b. DockerHub  </li>
+<li>c. Docker Desktop  </li>
+<li>d. Vagrant</li>
+</ul>
+</li>
+<li>
+<p>¿Qué extensión se recomienda instalar en VSCode para facilitar el desarrollo con <abbr title="Hypertext Preprocessor">PHP</abbr>?</p>
+<ul>
+<li>a. <abbr title="Hypertext Preprocessor">PHP</abbr> Toolkit  </li>
+<li>b. <abbr title="Hypertext Preprocessor">PHP</abbr> Intelephense  </li>
+<li>c. IntelliJ <abbr title="Hypertext Preprocessor">PHP</abbr>  </li>
+<li>d. VSCode Advanced <abbr title="Hypertext Preprocessor">PHP</abbr></li>
+</ul>
+</li>
+</ol>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
@@ -3737,7 +3844,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="011_ModeloClienteServidor.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 1.1- Modelo Cliente/Servidor">
+          <a href="016_PuestaEnMarcha.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 1.6- Puesta en marcha">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3747,20 +3854,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                1.1- Modelo Cliente/Servidor
+                1.6- Puesta en marcha
               </div>
             </div>
           </a>
         
         
           
-          <a href="013_MCV.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 1.3- Modelo Vista Controlador">
+          <a href="../../uupp/02_PHP/PropuestaDidactica.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 📍 Propuesta didáctica">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                1.3- Modelo Vista Controlador
+                📍 Propuesta didáctica
               </div>
             </div>
             <div class="md-footer__button md-icon">
